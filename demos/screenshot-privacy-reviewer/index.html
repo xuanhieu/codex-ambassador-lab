@@ -1,0 +1,37 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self' blob: data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Redact personal information from screenshots locally with opaque masks. No upload, no account.">
+<title>N111 · Screenshot Privacy Reviewer</title><link rel="stylesheet" href="./styles.css">
+<script src="./redaction_core.js" defer></script><script src="./app.js" defer></script></head><body>
+<a class="skip" href="#editor">Bỏ qua phần giới thiệu</a>
+<div class="shell">
+<header><a class="brand" href="../../dashboard/#workspace"><span class="mark"><span aria-hidden="true">▧</span></span><span>PRIVACY REVIEWER<small>N111 · CODEX BUILD TOOLS</small></span></a><div class="header-actions"><span class="offline">● CHỈ TRÊN MÁY CỦA BẠN</span><label for="language" class="sr-only">Language</label><select id="language"><option value="vi">Tiếng Việt</option><option value="en">English</option></select><a href="../../dashboard/#workspace" class="back">Project Map ↗</a></div></header>
+<main>
+<section class="hero"><div><span class="overline">NO UPLOAD · OPAQUE REDACTION · BROWSER ONLY</span><h1 data-t="title">Che thông tin riêng tư trước khi chia sẻ.</h1><p data-t="desc">Kéo chọn vùng cần che, xác nhận rồi xuất PNG mới. Công cụ không gửi ảnh đến máy chủ và không nhận token/API key.</p><div class="tags"><span>SCREENSHOTS</span><span>QA REPORTS</span><span>PORTFOLIO</span><span>SHARE SAFE</span></div></div><div class="trust"><span data-t="safe">CHẾ ĐỘ LOCAL</span><strong>0 <small data-t="uploads">lần upload</small></strong><p data-t="privacy">File ảnh chỉ nằm trong tab hiện tại; xuất PNG mới sẽ loại bỏ metadata EXIF của ảnh nhập.</p></div></section>
+<section id="editor" class="workspace"><aside class="sidebar"><section class="panel">
+<div class="panel-head"><span class="eyebrow">01 / LOAD IMAGE</span><h2 data-t="load">Chọn ảnh cần xử lý</h2></div>
+<label class="upload" for="fileInput"><span data-t="choose">Chọn PNG, JPEG hoặc WebP</span><small data-t="limit">Tối đa 15 MB, 16 triệu pixel</small></label><input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+<button class="ghost" id="sample" type="button" data-t="sample">Dùng ảnh mẫu có dữ liệu giả</button>
+<p class="file-details" id="fileStatus" role="status" aria-live="polite">Ảnh mẫu đang được hiển thị</p></section>
+<section class="panel"><div class="panel-head"><span class="eyebrow">02 / REDACT</span><h2 data-t="redact">Khoanh vùng che</h2></div>
+<p class="subtle" data-t="drag">Kéo chuột hoặc ngón tay trên ảnh. Mỗi vùng sẽ được tô đặc, không làm mờ.</p>
+<div class="quick-buttons" id="presets"><button type="button" data-sample-mask="email" data-t="email">Che email mẫu</button><button type="button" data-sample-mask="key" data-t="key">Che mã mẫu</button><button type="button" data-sample-mask="avatar" data-t="avatar">Che avatar mẫu</button></div>
+<details class="manual" id="manual"><summary data-t="numeric">Thêm vùng bằng tọa độ (%)</summary><p data-t="numericInfo">Dành cho thao tác bàn phím hoặc ảnh cần chọn vùng chính xác.</p><div class="number-grid">
+<label><span data-t="left">Từ trái</span><input id="left" type="number" min="0" max="100" step="1" value="15"></label>
+<label><span data-t="top">Từ trên</span><input id="top" type="number" min="0" max="100" step="1" value="20"></label>
+<label><span data-t="width">Rộng</span><input id="width" type="number" min="1" max="100" step="1" value="20"></label>
+<label><span data-t="height">Cao</span><input id="height" type="number" min="1" max="100" step="1" value="8"></label></div>
+<button type="button" class="secondary" id="addNumeric" data-t="addNumeric">+ Thêm vùng</button></details>
+<div class="mask-footer"><strong id="maskCount">0 vùng đã che</strong><div><button id="undo" type="button" data-t="undo">↶ Hoàn tác</button><button id="clear" type="button" data-t="clear">Xóa tất cả</button></div></div></section>
+<section class="panel export"><div class="panel-head"><span class="eyebrow">03 / EXPORT</span><h2 data-t="export">Xuất ảnh an toàn</h2></div>
+<label class="confirm"><input type="checkbox" id="reviewed"><span data-t="reviewed">Tôi đã kiểm tra mọi vùng chứa dữ liệu nhạy cảm, kể cả thông tin nhỏ trong ảnh.</span></label>
+<button class="primary" type="button" id="download" disabled data-t="download">Xuất PNG đã che ↓</button>
+<p class="subtle" data-t="exportHint">Ảnh gốc không bị ghi đè. Bản xuất là ảnh PNG mới và không giữ lớp che có thể bỏ đi.</p></section></aside>
+<div class="stage"><div class="stage-top"><div><span class="overline">LIVE PREVIEW</span><h2 data-t="preview">Kiểm tra ảnh trước khi xuất</h2></div><div class="stage-badges"><span id="dimensions">—</span><span id="stageState" class="state">MẪU GIẢ LẬP</span></div></div>
+<div class="canvas-outer" id="canvasOuter"><canvas id="canvas" role="img" aria-label="Bản xem trước với các vùng che. Kéo chuột để tạo vùng che hoặc dùng các trường phần trăm." tabindex="0"></canvas></div>
+<div class="stage-bottom"><div class="help"><span class="help-icon">i</span><p data-t="note">Che kín toàn bộ dữ liệu. PNG xuất ra sẽ dùng các hình chữ nhật màu đặc chứ không phải lớp phủ có thể tháo gỡ.</p></div><div class="legend"><span class="legend-block"></span><span data-t="legend">Vùng được che</span></div></div>
+<div class="result" id="message" role="status" aria-live="polite" hidden></div>
+<div class="risk-guide"><div><strong data-t="checkTitle">Checklist trước khi đăng</strong><p data-t="checkDesc">Kiểm tra cả thông tin trong thanh địa chỉ, tab trình duyệt, tên tệp, email, số điện thoại, token, ảnh đại diện và mã QR.</p></div><a href="./README.md" data-t="docs">Hướng dẫn xử lý ↗</a></div></div></section>
+</main><footer><span>N111 · Open standalone training utility · no AI image model or external server used</span><a href="../../dashboard/#workspace">← Quay về Dashboard</a></footer></div>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body></html>

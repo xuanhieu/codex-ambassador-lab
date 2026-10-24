@@ -1,0 +1,5 @@
+{
+  "title": "SYNTHETIC DEMO / VÍ DỤ GIẢ LẬP — export fails",
+  "steps": "1. Open the local demo / Mở bản thử cục bộ.\r\n2. Press Export / Nhấn Xuất.\r\n3. Observe an error / Quan sát lỗi.",
+  "trace": "SyntheticError: fixture only, never a real account\ncontact=builder@example.invalid\nAuthorization: Bearer SYNTHETIC_TOKEN_NOT_VALID\napi_key=SYNTHETIC_KEY_NOT_VALID\nkey=sk-SYNTHETIC_ONLY_NOT_VALID_0000\nFile /home/demo-user/workshop/main.py\nFile C:\\Users\\demo-user\\workshop\\main.py\npeer=192.0.2.23 ipv6=[2001:db8::23]\nUntrusted Markdown: </script><img src=x onerror=alert(1)>\n```\n# forged heading\n```"
+}

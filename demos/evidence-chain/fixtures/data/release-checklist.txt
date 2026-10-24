@@ -1,0 +1,4 @@
+Synthetic release readiness checklist
+[ ] Build passes tests
+[ ] Manifest reviewed
+[ ] Human deployment approval recorded separately

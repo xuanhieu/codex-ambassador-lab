@@ -1,0 +1,130 @@
+{
+  "notice": "SYNTHETIC educational claims; no linked tests were executed / Dữ liệu giáo dục tổng hợp; chưa chạy các kiểm thử được liên kết",
+  "scenarios": {
+    "covered": {
+      "schema_version": 1,
+      "provenance": "synthetic",
+      "requirements": [
+        {
+          "id": "REQ-01",
+          "text": "Reject empty requirements / Từ chối danh sách yêu cầu rỗng",
+          "revision": 1
+        },
+        {
+          "id": "REQ-02",
+          "text": "Reject duplicate IDs / Từ chối ID trùng",
+          "revision": 1
+        }
+      ],
+      "tests": [
+        {
+          "id": "TEST-EMPTY",
+          "text": "test_trace.TraceTests.test_empty_requirements: empty requirements produce a diagnostic / Yêu cầu rỗng tạo thông báo lỗi",
+          "revision": 1
+        },
+        {
+          "id": "TEST-DUP",
+          "text": "test_trace.TraceTests.test_duplicate_requirement: duplicate requirements produce a diagnostic / Yêu cầu trùng tạo thông báo lỗi",
+          "revision": 1
+        }
+      ],
+      "links": [
+        {
+          "requirement_id": "REQ-01",
+          "test_id": "TEST-EMPTY",
+          "requirement_revision": 1,
+          "test_revision": 1,
+          "outcome": "pass"
+        },
+        {
+          "requirement_id": "REQ-02",
+          "test_id": "TEST-DUP",
+          "requirement_revision": 1,
+          "test_revision": 1,
+          "outcome": "pass"
+        }
+      ]
+    },
+    "missing-coverage": {
+      "schema_version": 1,
+      "provenance": "synthetic",
+      "requirements": [
+        {
+          "id": "REQ-01",
+          "text": "Reject empty requirements / Từ chối danh sách yêu cầu rỗng",
+          "revision": 1
+        },
+        {
+          "id": "REQ-02",
+          "text": "Reject duplicate IDs / Từ chối ID trùng",
+          "revision": 1
+        }
+      ],
+      "tests": [
+        {
+          "id": "TEST-EMPTY",
+          "text": "test_trace.TraceTests.test_empty_requirements: empty requirements produce a diagnostic / Yêu cầu rỗng tạo thông báo lỗi",
+          "revision": 1
+        },
+        {
+          "id": "TEST-DUP",
+          "text": "test_trace.TraceTests.test_duplicate_requirement: duplicate requirements produce a diagnostic / Yêu cầu trùng tạo thông báo lỗi",
+          "revision": 1
+        }
+      ],
+      "links": [
+        {
+          "requirement_id": "REQ-01",
+          "test_id": "TEST-EMPTY",
+          "requirement_revision": 1,
+          "test_revision": 1,
+          "outcome": "pass"
+        }
+      ]
+    },
+    "stale-and-failed": {
+      "schema_version": 1,
+      "provenance": "synthetic",
+      "requirements": [
+        {
+          "id": "REQ-01",
+          "text": "Reject empty requirements / Từ chối danh sách yêu cầu rỗng",
+          "revision": 2
+        },
+        {
+          "id": "REQ-02",
+          "text": "Reject duplicate IDs / Từ chối ID trùng",
+          "revision": 1
+        }
+      ],
+      "tests": [
+        {
+          "id": "TEST-EMPTY",
+          "text": "test_trace.TraceTests.test_empty_requirements: empty requirements produce a diagnostic / Yêu cầu rỗng tạo thông báo lỗi",
+          "revision": 1
+        },
+        {
+          "id": "TEST-DUP",
+          "text": "test_trace.TraceTests.test_duplicate_requirement: duplicate requirements produce a diagnostic / Yêu cầu trùng tạo thông báo lỗi",
+          "revision": 1
+        }
+      ],
+      "links": [
+        {
+          "requirement_id": "REQ-01",
+          "test_id": "TEST-EMPTY",
+          "requirement_revision": 1,
+          "test_revision": 1,
+          "outcome": "pass"
+        },
+        {
+          "requirement_id": "REQ-02",
+          "test_id": "TEST-DUP",
+          "requirement_revision": 1,
+          "test_revision": 1,
+          "outcome": "fail"
+        }
+      ]
+    }
+  }
+}

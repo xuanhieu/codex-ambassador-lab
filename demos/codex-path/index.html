@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#081629">
+<meta name="description" content="Codex Path — independent AI learning and career roadmap from Zero to Pro, powered by verified lessons and career outcomes.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Codex Path — AI Learning & Career OS</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#content">Bỏ qua điều hướng</a>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+ <a class="brand" href="#overview" aria-label="Codex Path homepage"><span class="brand-emblem" aria-hidden="true">⌘</span><span>CODEX<span class="brand-blue">PATH</span><small>LEARNING × CAREER OS</small></span></a>
+ <div class="sidebar-label"><span>WAYFINDER / 001</span><span class="status-pin" title="Local-first"></span></div>
+ <nav class="sidebar-nav" aria-label="Điều hướng Codex Path">
+  <a href="#overview" data-tab="overview" class="active"><span class="nav-icon">◫</span><span data-i="overview">Tổng quan</span></a>
+  <a href="#path" data-tab="path"><span class="nav-icon">⌁</span><span data-i="path">Lộ trình học</span></a>
+  <a href="#career" data-tab="career"><span class="nav-icon">◇</span><span data-i="career">Con đường nghề</span></a>
+  <a href="#lab" data-tab="lab"><span class="nav-icon">◈</span><span data-i="lab">Practice Lab</span></a>
+  <a href="#evidence" data-tab="evidence"><span class="nav-icon">▣</span><span data-i="evidence">Portfolio / Proof</span></a>
+ </nav>
+ <div class="sidebar-rule"></div>
+ <div class="sidebar-label">LINKED WORKSPACE</div>
+ <div class="linked">
+  <a href="../codex-academy/" class="linked-item"><span>↗</span><span>Zero-to-Hero Academy</span></a>
+  <a href="../../dashboard/#workspace" class="linked-item"><span>↗</span><span>Mission Control</span></a>
+  <a href="../agent-ops-clinic/" class="linked-item"><span>↗</span><span>Agent Ops Clinic</span></a>
+  <a href="../approval-drill/" class="linked-item"><span>↗</span><span>Approval Drill</span></a>
+ </div>
+ <div class="sidebar-spacer"></div>
+ <div class="status-card"><span class="eyebrow">LEARNING FILE</span><div class="status-card-value"><span id="side-progress">0%</span><span>→</span></div><div class="meter"><i id="side-meter"></i></div><span class="muted" id="side-next">Hãy chọn lộ trình</span></div>
+ <div class="sidebar-footer"><span class="local-dot"></span> <span data-i="privacyMini">Dữ liệu chỉ trên trình duyệt</span></div>
+</aside>
+<div class="page-column">
+ <header class="topbar">
+  <button type="button" id="menu-toggle" class="icon-btn mobile-only" aria-controls="sidebar" aria-expanded="false" aria-label="Mở menu">☰</button>
+  <div class="breadcrumb"><span>WORKSPACE</span><span>/</span><strong id="current-tab">Tổng quan</strong></div>
+  <div class="topbar-actions">
+   <a href="../../dashboard/#portfolio" class="top-link" data-i="portfolioLink">Portfolio ↗</a>
+   <button type="button" id="theme-toggle" class="icon-btn" aria-label="Đổi theme" title="Light/Dark">◐</button>
+   <button type="button" id="locale-toggle" class="icon-btn lang-btn" aria-label="Change language">EN</button>
+   <button type="button" id="export-action" class="button top-export" data-action="export-json">⇩ <span data-i="backup">Backup</span></button>
+  </div>
+ </header>
+ <main id="main">
+  <div class="page-intro">
+   <div class="hero-copy">
+    <div class="eyebrow"><span class="eyebrow-line"></span><span>THE NEXT CHAPTER IS BUILT</span><span class="hero-spark">✧</span></div>
+    <h1 id="ascii-heading" data-ascii="surface">Your path to <em>AI mastery.</em></h1>
+    <p id="hero-description">Từ mới bắt đầu đến builder chuyên nghiệp. Thiết kế hành trình phù hợp nghề nghiệp, giờ học và bằng chứng thực hành.</p>
+    <div class="hero-cta">
+     <button class="button primary" type="button" data-action="create-plan"><span data-i="buildMyPath">Tạo lộ trình của tôi</span> <span aria-hidden="true">↗</span></button>
+     <a class="button outline" href="../codex-academy/#paths" data-i="academyLink">Mở kho bài học ↗</a>
+    </div>
+   </div>
+   <div class="hero-graphic" aria-hidden="true">
+    <div class="orbit orbit-outer"></div><div class="orbit orbit-mid"></div><div class="orbit orbit-inner"></div>
+    <div class="orbit-center">⌘</div><span class="orbit-label left">ZERO</span><span class="orbit-label right">PRO</span>
+    <div class="hero-graphic-foot">LEARN <span>/</span> BUILD <span>/</span> PROVE</div>
+   </div>
+  </div>
+  <div class="workspace">
+   <aside class="config-panel" id="config-panel">
+    <div class="panel-kicker">01 / YOUR PROFILE <span class="mini-status">INTERACTIVE</span></div>
+    <div class="profile-heading"><h2 id="profile-title">Xác định điểm xuất phát</h2><p id="profile-desc">Điều chỉnh thông tin để hệ thống lên roadmap. Không cần tài khoản.</p></div>
+    <form id="profile-form" novalidate>
+     <label for="career"><span data-i="careerLabel">Hướng nghề nghiệp</span><span class="required">*</span></label>
+     <select id="career" name="career" required></select><span class="input-status" id="career-status" role="status"></span>
+     <div class="two-fields"><div><label for="level" data-i="levelLabel">Trình độ hiện tại</label><select id="level" name="level" required></select></div><div><label for="hours" data-i="hoursLabel">Giờ học / tuần</label><select id="hours" name="hours" required></select></div></div>
+     <label for="weeks" data-i="goalLabel">Mục tiêu hoàn thành</label>
+     <div class="slider-row"><input type="range" min="2" max="32" step="1" id="weeks" name="weeks" value="8" aria-describedby="weeks-output"><output id="weeks-output" for="weeks">8 tuần</output></div>
+     <div class="inline-tip" id="readiness-tip">Lộ trình là ước tính học tập, không phải cam kết nghề nghiệp.</div>
+     <button class="button primary build-btn" type="submit"><span data-i="generate">Thiết kế roadmap</span> <span>→</span></button>
+    </form>
+    <div class="profile-foot"><span class="tiny-icon">⌁</span><span id="state-status" aria-live="polite">Không dùng tài khoản, không gửi hồ sơ lên máy chủ.</span></div>
+   </aside>
+   <section class="content-panel" id="content" tabindex="-1" aria-live="polite">
+    <div class="loading-state"><span class="loading-glyph" aria-hidden="true">[::/::]</span><span>Đang tải học liệu từ Academy…</span></div>
+   </section>
+  </div>
+ </main>
+ <footer class="page-footer"><span>CODEX PATH / independent learning resource</span><span>No official OpenAI affiliation or employment guarantee</span><span>© 2026 · Local-first</span></footer>
+</div>
+</div>
+<div class="toast" id="toast" aria-live="polite" role="status"></div>
+<dialog id="lesson-dialog" class="lesson-dialog" aria-labelledby="lesson-modal-title">
+ <div class="dialog-head"><div><div class="eyebrow" id="lesson-code">LESSON</div><h2 id="lesson-modal-title">Lesson detail</h2></div><button type="button" class="icon-btn" id="close-dialog" aria-label="Đóng">✕</button></div>
+ <div id="lesson-dialog-body"></div>
+</dialog>
+<input id="backup-import" type="file" accept=".json,application/json" hidden aria-label="Import learning backup JSON">
+<script data-cfasync="false" defer src="./engine.js"></script>
+<script data-cfasync="false" defer src="./app.js"></script>
+<script data-cfasync="false" type="module" src="./motion.js"></script>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body>
+</html>

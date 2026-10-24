@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="Independent Codex & ChatGPT Zero-to-Hero Academy. 204 official resource links, 25 bilingual practical lessons, personalized tracks and offline progress.">
+<title>Codex × ChatGPT | Zero-to-Hero Academy</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua menu, vào bài học</a>
+<div class="site-shell">
+<header class="appbar">
+ <a href="./" class="brand" aria-label="Academy home">
+  <span class="brand-symbol" aria-hidden="true">⌘</span>
+  <span>CODEX<span class="brand-x">×</span>CHATGPT <small>ACADEMY</small></span>
+ </a>
+ <nav class="navtabs" aria-label="Main sections" id="navtabs">
+  <button type="button" data-view="home" class="nav-button selected" aria-current="page" data-label="navHome">Tổng quan</button>
+  <button type="button" data-view="library" class="nav-button" data-label="navDocs">Thư viện</button>
+  <button type="button" data-view="paths" class="nav-button" data-label="navPaths">Lộ trình</button>
+  <a class="nav-button" href="../codex-path/" title="Personalized career and learning planner">Codex Path ↗</a>
+  <button type="button" data-view="progress" class="nav-button" data-label="navProgress">Tiến độ</button>
+  <button type="button" data-view="lab" class="nav-button" data-label="navLab">Thực hành</button>
+ </nav>
+ <div class="tools">
+  <button id="locale" class="tool-button" type="button" aria-label="Switch language">EN</button>
+  <button id="theme" class="tool-button" type="button" aria-label="Change color scheme" title="Light/Dark">◐</button>
+ </div>
+</header>
+<div class="edition">
+ <span id="edition-text">Tài liệu chính thức • Bản chỉ mục 24/10/2026 • Nội dung hướng dẫn độc lập</span>
+ <a target="_blank" rel="noopener noreferrer" href="https://learn.chatgpt.com/docs/llms.txt">SOURCE ↗</a>
+</div>
+<main id="main">
+ <section class="intro" id="hero">
+  <div class="intro-main">
+   <div class="eyebrow"><span class="live-dot"></span> LEARN • PRACTICE • VERIFY</div>
+   <h1 id="headline">Từ người mới đến người xây dựng AI chuyên nghiệp.</h1>
+   <p id="subheading">Một bản đồ học ChatGPT và Codex đi từ nền tảng tới automation, agent engineering và production. Không chỉ đọc: thực hành từng bước, kiểm tra và lưu tiến độ của bạn.</p>
+   <div class="hero-actions">
+    <button type="button" class="button primary" data-view="paths" id="start-path">Bắt đầu lộ trình <span aria-hidden="true">→</span></button>
+    <button type="button" class="button ghost" data-view="library" id="browse-docs">Khám phá tài liệu</button>
+   </div>
+  </div>
+  <div class="intro-aside">
+   <div class="mini-label">YOUR PROGRESSION</div>
+   <div class="level-line"><span>ZERO</span><span>PRO</span></div>
+   <div class="level-meter" aria-hidden="true"><i id="hero-meter"></i></div>
+   <div class="stat-row">
+    <div><strong id="stat-sources">—</strong><small data-label="officialLinks">Nguồn chính thức</small></div>
+    <div><strong id="stat-lessons">—</strong><small data-label="labLessons">Bài thực hành</small></div>
+    <div><strong id="stat-done">0</strong><small data-label="doneLessons">Đã hoàn thành</small></div>
+   </div>
+   <div class="aside-note"><span aria-hidden="true">◈</span><span id="privacy-note">Tiến độ và bookmark nằm trên trình duyệt này. Không dùng API key hay gửi dữ liệu lên server.</span></div>
+  </div>
+ </section>
+
+ <section class="quick-nav" id="quick-nav">
+  <button type="button" class="quick-tile" data-view="paths"><span class="quick-icon">↗</span><span><strong data-label="pathCard">Lộ trình theo trình độ</strong><small data-label="pathCardSub">5 cấp độ • 6 nhóm nghề nghiệp</small></span></button>
+  <button type="button" class="quick-tile" data-view="library"><span class="quick-icon">⌕</span><span><strong data-label="docsCard">Nguồn tài liệu chính thống</strong><small data-label="docsCardSub">Tìm kiếm và lọc theo chủ đề</small></span></button>
+  <button type="button" class="quick-tile" data-view="lab"><span class="quick-icon">◎</span><span><strong data-label="labCard">Bài tập thực chiến</strong><small data-label="labCardSub">MVP • kiểm chứng • không giả kết quả</small></span></button>
+ </section>
+
+ <section id="content" class="content" aria-live="polite">
+   <div class="loading"><span class="spinner"></span> Đang tải danh mục và giáo trình…</div>
+ </section>
+</main>
+<footer class="footer">
+ <span>Independent learning resource. No OpenAI affiliation or certification is claimed.</span>
+ <span id="footer-snapshot">Source snapshot: 2026-10-24</span>
+</footer>
+</div>
+<dialog id="lesson-modal" class="lesson-modal" aria-labelledby="lesson-title">
+ <div class="modal-toolbar">
+  <div><span id="lesson-kicker" class="eyebrow">PRACTICAL LESSON</span><h2 id="lesson-title">Lesson</h2></div>
+  <button type="button" id="close-modal" class="close-button" aria-label="Close lesson">✕</button>
+ </div>
+ <div id="lesson-detail"></div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script data-cfasync="false" src="./logic.js" defer></script>
+<script data-cfasync="false" src="./app.js" defer></script>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body>
+</html>

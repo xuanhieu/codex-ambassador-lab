@@ -1,0 +1,2038 @@
+{
+  "schema": 1,
+  "kind": "independent-learning-guidance",
+  "academy": "../codex-academy/",
+  "academySource": "../codex-academy/lessons.json",
+  "sourceSnapshot": "2026-10-24",
+  "authorship": "Independent educational plan; no job-placement guarantee or official OpenAI certification",
+  "levels": [
+    {
+      "level": "Zero",
+      "theme": {
+        "vi": "Tư duy đầu ra",
+        "en": "Outcome thinking"
+      },
+      "checkpoint": {
+        "vi": "Tạo 1 brief có giới hạn và tự kiểm tra nguồn.",
+        "en": "Create one bounded brief and verify sources."
+      }
+    },
+    {
+      "level": "Beginner",
+      "theme": {
+        "vi": "Toolset & an toàn",
+        "en": "Tools and safety"
+      },
+      "checkpoint": {
+        "vi": "Dựng một ví dụ nhỏ, lưu source và ghi cách hoàn tác.",
+        "en": "Build one small example with source and rollback notes."
+      }
+    },
+    {
+      "level": "Intermediate",
+      "theme": {
+        "vi": "Workflow & kỹ năng",
+        "en": "Workflow and reusable skills"
+      },
+      "checkpoint": {
+        "vi": "Viết contract, test và checklist có thể tái sử dụng.",
+        "en": "Produce a repeatable contract, tests and checklist."
+      }
+    },
+    {
+      "level": "Advanced",
+      "theme": {
+        "vi": "Agent & đánh giá",
+        "en": "Agents and review"
+      },
+      "checkpoint": {
+        "vi": "Chạy mô phỏng có approval và độc lập QA.",
+        "en": "Simulate gated approvals and independent QA."
+      }
+    },
+    {
+      "level": "Pro",
+      "theme": {
+        "vi": "Production discipline",
+        "en": "Production discipline"
+      },
+      "checkpoint": {
+        "vi": "Nộp source reproducible với release notes và evidence.",
+        "en": "Publish a reproducible source package and release evidence."
+      }
+    }
+  ],
+  "careers": [
+    {
+      "id": "automation",
+      "name": {
+        "vi": "AI Automation Specialist",
+        "en": "AI Automation Specialist"
+      },
+      "tagline": {
+        "vi": "Tự động hóa workflow có kiểm soát",
+        "en": "Automate workflows with human review"
+      },
+      "family": "Operations",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead"
+      ],
+      "role": "Newbie",
+      "icon": "⚙",
+      "accent": "#59d3cf",
+      "skills": [
+        "Prompt contracts",
+        "No-code orchestration",
+        "Approvals",
+        "RAG boundaries",
+        "Monitoring"
+      ],
+      "starter": [
+        "L01",
+        "L02",
+        "L03",
+        "L05",
+        "L08",
+        "L10",
+        "L12",
+        "L16",
+        "L20",
+        "L24"
+      ],
+      "growth": [
+        "L13",
+        "L14",
+        "L15",
+        "L17",
+        "L23"
+      ],
+      "capstone": {
+        "vi": "Mô phỏng một quy trình nhận yêu cầu → kiểm tra dữ liệu → xin duyệt → xuất báo cáo, kèm test và video walkthrough.",
+        "en": "Build a synthetic intake → validate → approve → report workflow with tests and walkthrough."
+      },
+      "evidence": [
+        "Flowchart",
+        "Approved action matrix",
+        "10 synthetic test cases",
+        "Readme + rollback plan"
+      ],
+      "seniority": [
+        "AI Ops Associate",
+        "Automation Specialist",
+        "AI Workflow Architect"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": {
+        "vi": "AI Growth & SEO Engineer",
+        "en": "AI Growth & SEO Engineer"
+      },
+      "tagline": {
+        "vi": "Từ chiến lược nội dung đến hệ thống kiểm chứng",
+        "en": "From content systems to trustworthy growth"
+      },
+      "family": "Growth",
+      "audiences": [
+        "Marketer",
+        "Creator",
+        "Team Lead",
+        "Developer"
+      ],
+      "role": "Marketer",
+      "icon": "↗",
+      "accent": "#b29cff",
+      "skills": [
+        "Research",
+        "Source validation",
+        "Content QA",
+        "SEO technical checks",
+        "Analytics"
+      ],
+      "starter": [
+        "L01",
+        "L03",
+        "L04",
+        "L05",
+        "L10",
+        "L12",
+        "L15",
+        "L16",
+        "L19",
+        "L20"
+      ],
+      "growth": [
+        "L07",
+        "L09",
+        "L11",
+        "L13",
+        "L23"
+      ],
+      "capstone": {
+        "vi": "Tạo công cụ rà soát 30 trang nội dung giả lập: citation, canonical, freshness và checklist xuất CSV.",
+        "en": "Build a 30-page synthetic content QA app: citation, canonical, freshness and CSV evidence."
+      },
+      "evidence": [
+        "Input data contract",
+        "30-row sample CSV",
+        "Validation report",
+        "SEO regression tests"
+      ],
+      "seniority": [
+        "AI Content Ops",
+        "Growth Automation Lead",
+        "AI Growth Architect"
+      ]
+    },
+    {
+      "id": "developer",
+      "name": {
+        "vi": "AI Product Engineer",
+        "en": "AI Product Engineer"
+      },
+      "tagline": {
+        "vi": "Dựng sản phẩm, test, review và triển khai",
+        "en": "Build, test, review and ship AI products"
+      },
+      "family": "Engineering",
+      "audiences": [
+        "Developer",
+        "Pro",
+        "Team Lead"
+      ],
+      "role": "Developer",
+      "icon": "⌘",
+      "accent": "#72c3ff",
+      "skills": [
+        "Git",
+        "Codex CLI",
+        "Test design",
+        "API integration",
+        "Release review"
+      ],
+      "starter": [
+        "L05",
+        "L06",
+        "L07",
+        "L08",
+        "L09",
+        "L11",
+        "L13",
+        "L14",
+        "L15",
+        "L16",
+        "L19",
+        "L21",
+        "L23"
+      ],
+      "growth": [
+        "L17",
+        "L18",
+        "L20",
+        "L22",
+        "L25"
+      ],
+      "capstone": {
+        "vi": "Build một mini web app có source public, test tự động, CI review-gated và changelog rõ ràng.",
+        "en": "Ship a small open-source web app with tests, gated CI and verified changelog."
+      },
+      "evidence": [
+        "GitHub repository",
+        "Unit tests",
+        "CI run receipt",
+        "Reproducible setup"
+      ],
+      "seniority": [
+        "AI-Assisted Developer",
+        "AI Product Engineer",
+        "Senior AI Engineer"
+      ]
+    },
+    {
+      "id": "agents",
+      "name": {
+        "vi": "Agent Systems Engineer",
+        "en": "Agent Systems Engineer"
+      },
+      "tagline": {
+        "vi": "Đa tác tử có sandbox, quyền và bằng chứng",
+        "en": "Bounded agents with approvals and reproducible evidence"
+      },
+      "family": "Engineering",
+      "audiences": [
+        "Developer",
+        "Pro",
+        "Team Lead"
+      ],
+      "role": "Pro",
+      "icon": "◈",
+      "accent": "#f3c878",
+      "skills": [
+        "Agent contracts",
+        "Context isolation",
+        "Worktrees",
+        "Tool security",
+        "Observability"
+      ],
+      "starter": [
+        "L05",
+        "L06",
+        "L08",
+        "L09",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L16",
+        "L17",
+        "L18",
+        "L19",
+        "L20",
+        "L21",
+        "L23",
+        "L24",
+        "L25"
+      ],
+      "growth": [
+        "L10",
+        "L15",
+        "L22"
+      ],
+      "capstone": {
+        "vi": "Dựng agent orchestration giả lập 3 vai trò: planner → builder → independent QA, có approval gates, audit JSON và rollback.",
+        "en": "Simulate a planner → builder → independent QA workflow with approval gates and audit trail."
+      },
+      "evidence": [
+        "Agent role contracts",
+        "Approval matrix",
+        "Isolated fixtures",
+        "Deterministic QA"
+      ],
+      "seniority": [
+        "Agent Integration Engineer",
+        "Agent Engineer",
+        "Agent Systems Architect"
+      ]
+    },
+    {
+      "id": "creator",
+      "name": {
+        "vi": "AI Creator & Educator",
+        "en": "AI Creator & Educator"
+      },
+      "tagline": {
+        "vi": "Chuyển hiểu biết thành workshop và sản phẩm dạy học",
+        "en": "Turn practical understanding into workshops"
+      },
+      "family": "Education",
+      "audiences": [
+        "Creator",
+        "Newbie",
+        "Marketer",
+        "Team Lead"
+      ],
+      "role": "Creator",
+      "icon": "✦",
+      "accent": "#f48eb6",
+      "skills": [
+        "Content synthesis",
+        "Lesson planning",
+        "Accessibility",
+        "Fact checking",
+        "Course publishing"
+      ],
+      "starter": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L07",
+        "L08",
+        "L10",
+        "L12",
+        "L15"
+      ],
+      "growth": [
+        "L11",
+        "L16",
+        "L19",
+        "L20",
+        "L24"
+      ],
+      "capstone": {
+        "vi": "Thiết kế workshop 20 phút về 1 chức năng Codex; có bài thực hành, quiz, tài liệu nguồn và bộ ví dụ giả lập.",
+        "en": "Create a 20-minute Codex workshop with exercises, quiz, official sources and synthetic examples."
+      },
+      "evidence": [
+        "Facilitator guide",
+        "Learner worksheet",
+        "Lesson screenshots",
+        "Peer review notes"
+      ],
+      "seniority": [
+        "AI Content Creator",
+        "AI Educator",
+        "Developer Advocate"
+      ]
+    },
+    {
+      "id": "lead",
+      "name": {
+        "vi": "AI Enablement & Team Lead",
+        "en": "AI Enablement & Team Lead"
+      },
+      "tagline": {
+        "vi": "Quản trị áp dụng AI theo KPI, quyền và năng lực",
+        "en": "Lead teams through measurable AI adoption"
+      },
+      "family": "Leadership",
+      "audiences": [
+        "Team Lead",
+        "Pro",
+        "Developer"
+      ],
+      "role": "Team Lead",
+      "icon": "◇",
+      "accent": "#a4e6a8",
+      "skills": [
+        "Capability audit",
+        "Governance",
+        "Approval roles",
+        "Training plan",
+        "ROI measurement"
+      ],
+      "starter": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L09",
+        "L10",
+        "L11",
+        "L13",
+        "L15",
+        "L16",
+        "L17",
+        "L20",
+        "L23",
+        "L24"
+      ],
+      "growth": [
+        "L18",
+        "L19",
+        "L21",
+        "L25"
+      ],
+      "capstone": {
+        "vi": "Lập chương trình nâng cấp năng lực 30 ngày cho team giả lập 6 người, có policy, risk register và review hàng tuần.",
+        "en": "Design a 30-day AI enablement rollout for a six-person synthetic team with policies and weekly reviews."
+      },
+      "evidence": [
+        "Skills gap matrix",
+        "Policy handbook",
+        "Risk register",
+        "30-day review dashboard"
+      ],
+      "seniority": [
+        "AI Champion",
+        "Enablement Lead",
+        "AI Transformation Manager"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "L01",
+      "level": "Zero",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "duration": 15,
+      "prerequisites": [],
+      "sources": [
+        "https://learn.chatgpt.com/docs/quickstart.md"
+      ],
+      "en": {
+        "title": "Your first ChatGPT task",
+        "purpose": "Pick a concrete output and review it before reuse.",
+        "outcome": "A revised one-page brief for an imaginary community event.",
+        "exercise": [
+          "Write the outcome, intended reader and two constraints.",
+          "Ask ChatGPT for a 120-word draft without personal data.",
+          "Check dates and claims manually; record two edits."
+        ],
+        "checklist": [
+          "Ask ChatGPT for a 120-word draft without personal data.",
+          "Check dates and claims manually; record two edits."
+        ],
+        "quiz": {
+          "question": "Which practice makes a first answer safer?",
+          "options": [
+            "Check factual claims and revise it",
+            "Forward it unreviewed",
+            "Assume it is correct if fluent"
+          ],
+          "answer": 0,
+          "explanation": "Fluency is not evidence; people must validate important claims."
+        }
+      },
+      "vi": {
+        "title": "Bắt đầu với ChatGPT",
+        "purpose": "Chọn đầu ra cụ thể và rà soát trước khi dùng.",
+        "outcome": "Bản brief một trang đã hiệu chỉnh cho sự kiện cộng đồng giả lập.",
+        "exercise": [
+          "Xác định mục tiêu, người đọc và hai giới hạn.",
+          "Yêu cầu ChatGPT soạn 120 từ bằng dữ liệu giả lập.",
+          "Tự kiểm tra ngày tháng và dẫn chứng, ghi hai chỉnh sửa."
+        ],
+        "checklist": [
+          "Yêu cầu ChatGPT soạn 120 từ bằng dữ liệu giả lập.",
+          "Tự kiểm tra ngày tháng và dẫn chứng, ghi hai chỉnh sửa."
+        ],
+        "quiz": {
+          "question": "Cách nào giúp câu trả lời đầu an toàn hơn?",
+          "options": [
+            "Kiểm tra dữ kiện và sửa lại",
+            "Chuyển tiếp ngay không duyệt",
+            "Tin đúng nếu câu chữ trôi chảy"
+          ],
+          "answer": 0,
+          "explanation": "Văn bản tự nhiên không phải bằng chứng; người dùng cần kiểm tra dữ kiện."
+        }
+      }
+    },
+    {
+      "id": "L02",
+      "level": "Zero",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Team Lead"
+      ],
+      "duration": 20,
+      "prerequisites": [
+        "L01"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/projects.md"
+      ],
+      "en": {
+        "title": "Organize work into a project",
+        "purpose": "Group related source files and clear project instructions.",
+        "outcome": "A small research workspace with a reusable decision log.",
+        "exercise": [
+          "Define one work objective and what is out of scope.",
+          "Create a project or mimic its folder structure if not available.",
+          "Add two sample sources and a one-paragraph decision log."
+        ],
+        "checklist": [
+          "Create a project or mimic its folder structure if not available.",
+          "Add two sample sources and a one-paragraph decision log."
+        ],
+        "quiz": {
+          "question": "Why organize related context?",
+          "options": [
+            "To grant unlimited access automatically",
+            "To maintain a coherent objective across tasks",
+            "To prove every source is reliable"
+          ],
+          "answer": 1,
+          "explanation": "Organization improves continuity but does not bypass permissions or verify sources."
+        }
+      },
+      "vi": {
+        "title": "Tổ chức công việc bằng Project",
+        "purpose": "Gom tài liệu liên quan và chỉ dẫn rõ phạm vi.",
+        "outcome": "Không gian nghiên cứu mẫu cùng nhật ký quyết định.",
+        "exercise": [
+          "Viết mục tiêu và các việc ngoài phạm vi.",
+          "Tạo Project nếu có, hoặc mô phỏng cấu trúc thư mục.",
+          "Thêm hai nguồn mẫu và nhật ký quyết định một đoạn."
+        ],
+        "checklist": [
+          "Tạo Project nếu có, hoặc mô phỏng cấu trúc thư mục.",
+          "Thêm hai nguồn mẫu và nhật ký quyết định một đoạn."
+        ],
+        "quiz": {
+          "question": "Vì sao gom ngữ cảnh theo dự án?",
+          "options": [
+            "Để tự được toàn quyền mọi nguồn",
+            "Để giữ mục tiêu xuyên suốt các tác vụ",
+            "Để khẳng định mọi tài liệu đều tin cậy"
+          ],
+          "answer": 1,
+          "explanation": "Project giúp duy trì ngữ cảnh, không cấp quyền hay xác thực nguồn tự động."
+        }
+      }
+    },
+    {
+      "id": "L03",
+      "level": "Zero",
+      "audience": [
+        "Newbie",
+        "Marketer",
+        "Creator"
+      ],
+      "duration": 20,
+      "prerequisites": [
+        "L02"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/prompting.md"
+      ],
+      "en": {
+        "title": "Prompt with an acceptance contract",
+        "purpose": "Give the agent an outcome, boundaries and verification criteria.",
+        "outcome": "A reusable prompt template with measurable acceptance checks.",
+        "exercise": [
+          "Describe an imaginary newsletter to be produced.",
+          "Specify format, source constraints and three acceptance checks.",
+          "Compare two drafts and note which check failed."
+        ],
+        "checklist": [
+          "Specify format, source constraints and three acceptance checks.",
+          "Compare two drafts and note which check failed."
+        ],
+        "quiz": {
+          "question": "What belongs in an actionable prompt?",
+          "options": [
+            "A list of adjectives only",
+            "A demand to never say uncertain",
+            "Outcome, limits and how to verify"
+          ],
+          "answer": 2,
+          "explanation": "Explicit checks make a task reviewable; they do not guarantee correctness."
+        }
+      },
+      "vi": {
+        "title": "Prompt có tiêu chí nghiệm thu",
+        "purpose": "Giao mục tiêu, giới hạn và cách xác minh kết quả.",
+        "outcome": "Mẫu prompt có ba tiêu chí kiểm tra cụ thể.",
+        "exercise": [
+          "Mô tả bản tin giả lập cần tạo.",
+          "Quy định định dạng, nguồn và ba tiêu chí đạt.",
+          "So sánh hai bản nháp và ghi tiêu chí chưa đạt."
+        ],
+        "checklist": [
+          "Quy định định dạng, nguồn và ba tiêu chí đạt.",
+          "So sánh hai bản nháp và ghi tiêu chí chưa đạt."
+        ],
+        "quiz": {
+          "question": "Prompt dùng được cần những gì?",
+          "options": [
+            "Chỉ các tính từ mô tả phong cách",
+            "Yêu cầu không bao giờ nói chưa chắc",
+            "Mục tiêu, giới hạn và cách kiểm chứng"
+          ],
+          "answer": 2,
+          "explanation": "Tiêu chí giúp đánh giá rõ hơn, không bảo đảm tính đúng đắn."
+        }
+      }
+    },
+    {
+      "id": "L04",
+      "level": "Zero",
+      "audience": [
+        "Creator",
+        "Marketer",
+        "Team Lead"
+      ],
+      "duration": 25,
+      "prerequisites": [
+        "L03"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/get-started-with-work.md"
+      ],
+      "en": {
+        "title": "Delegate a bounded Work task",
+        "purpose": "Plan an end-to-end deliverable without losing review points.",
+        "outcome": "A deliverable contract with an explicit approval checkpoint.",
+        "exercise": [
+          "Choose a mock meeting recap and final output format.",
+          "Separate allowed research steps from sharing/sending actions.",
+          "Write the acceptance criteria and mark where approval is required."
+        ],
+        "checklist": [
+          "Separate allowed research steps from sharing/sending actions.",
+          "Write the acceptance criteria and mark where approval is required."
+        ],
+        "quiz": {
+          "question": "When should a Work task ask approval?",
+          "options": [
+            "Before sensitive external or irreversible actions",
+            "After deleting source evidence",
+            "Never, since the task was described once"
+          ],
+          "answer": 0,
+          "explanation": "Approval gates should precede impactful actions and remain user-controlled."
+        }
+      },
+      "vi": {
+        "title": "Giao việc có giới hạn cho Work",
+        "purpose": "Thiết kế đầu ra nhiều bước nhưng vẫn có điểm duyệt.",
+        "outcome": "Hợp đồng đầu việc với bước phê duyệt rõ ràng.",
+        "exercise": [
+          "Chọn ví dụ tổng kết cuộc họp và định dạng nộp.",
+          "Phân biệt bước đọc dữ liệu và bước gửi/chia sẻ ra ngoài.",
+          "Ghi tiêu chí nghiệm thu cùng điểm cần chủ sở hữu phê duyệt."
+        ],
+        "checklist": [
+          "Phân biệt bước đọc dữ liệu và bước gửi/chia sẻ ra ngoài.",
+          "Ghi tiêu chí nghiệm thu cùng điểm cần chủ sở hữu phê duyệt."
+        ],
+        "quiz": {
+          "question": "Work nên xin duyệt khi nào?",
+          "options": [
+            "Trước hành động nhạy cảm hoặc khó đảo ngược",
+            "Sau khi xóa bằng chứng",
+            "Không bao giờ vì đã mô tả việc"
+          ],
+          "answer": 0,
+          "explanation": "Duyệt phải xảy ra trước các hành động có tác động đáng kể."
+        }
+      }
+    },
+    {
+      "id": "L05",
+      "level": "Zero",
+      "audience": [
+        "Newbie",
+        "Developer",
+        "Creator"
+      ],
+      "duration": 15,
+      "prerequisites": [
+        "L04"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/use-chatgpt.md"
+      ],
+      "en": {
+        "title": "Choose Chat, Work or Codex",
+        "purpose": "Select the appropriate surface for a question, multi-step deliverable or code change.",
+        "outcome": "A one-page routing decision table for five fictitious tasks.",
+        "exercise": [
+          "Write five tasks: Q&A, report, code test, design brief and file audit.",
+          "Match each to Chat, Work or Codex by the required actions.",
+          "Write one limitation or permission assumption per match."
+        ],
+        "checklist": [
+          "Match each to Chat, Work or Codex by the required actions.",
+          "Write one limitation or permission assumption per match."
+        ],
+        "quiz": {
+          "question": "What makes Codex a better fit?",
+          "options": [
+            "A simple language translation only",
+            "A scoped coding task that needs code edits and tests",
+            "Every task that has a document"
+          ],
+          "answer": 1,
+          "explanation": "Codex is specialized for coding; choose by the real task and access requirements."
+        }
+      },
+      "vi": {
+        "title": "Chọn Chat, Work hay Codex",
+        "purpose": "Phân luồng hỏi đáp, công việc nhiều bước và thay đổi mã nguồn.",
+        "outcome": "Bảng phân loại năm tình huống thực tế giả lập.",
+        "exercise": [
+          "Liệt kê năm việc: hỏi đáp, báo cáo, test code, thiết kế và audit.",
+          "Chọn Chat, Work hoặc Codex theo thao tác cần thiết.",
+          "Nêu một giới hạn hoặc giả định quyền truy cập mỗi lựa chọn."
+        ],
+        "checklist": [
+          "Chọn Chat, Work hoặc Codex theo thao tác cần thiết.",
+          "Nêu một giới hạn hoặc giả định quyền truy cập mỗi lựa chọn."
+        ],
+        "quiz": {
+          "question": "Khi nào Codex phù hợp hơn?",
+          "options": [
+            "Chỉ dịch một câu ngắn",
+            "Tác vụ mã nguồn cần sửa và chạy test trong phạm vi",
+            "Mọi việc có tệp đính kèm"
+          ],
+          "answer": 1,
+          "explanation": "Codex tập trung vào kỹ thuật phần mềm; chọn công cụ theo nhiệm vụ."
+        }
+      }
+    },
+    {
+      "id": "L06",
+      "level": "Beginner",
+      "audience": [
+        "Developer",
+        "Newbie"
+      ],
+      "duration": 25,
+      "prerequisites": [
+        "L01"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/codex/cli.md"
+      ],
+      "en": {
+        "title": "First safe Codex CLI run",
+        "purpose": "Use a disposable repository and review every proposed file change.",
+        "outcome": "A tiny checked README change with a clear before/after diff.",
+        "exercise": [
+          "Initialize a new demo Git repo with no secrets.",
+          "Ask Codex to improve a sample README in that repo.",
+          "Read git diff and run a local check before accepting."
+        ],
+        "checklist": [
+          "Ask Codex to improve a sample README in that repo.",
+          "Read git diff and run a local check before accepting."
+        ],
+        "quiz": {
+          "question": "What should happen before accepting an edit?",
+          "options": [
+            "Trust the agent because it said done",
+            "Disable every approval gate",
+            "Read the diff and run a relevant check"
+          ],
+          "answer": 2,
+          "explanation": "Review changed files and run tests before considering work complete."
+        }
+      },
+      "vi": {
+        "title": "Chạy Codex CLI đầu tiên",
+        "purpose": "Dùng repository thử và duyệt mọi file thay đổi.",
+        "outcome": "Một chỉnh sửa README nhỏ với diff và kết quả kiểm tra.",
+        "exercise": [
+          "Khởi tạo Git repo giả lập không chứa bí mật.",
+          "Nhờ Codex cải tiến README mẫu trong repo.",
+          "Đọc git diff và chạy kiểm tra trước khi chấp nhận."
+        ],
+        "checklist": [
+          "Nhờ Codex cải tiến README mẫu trong repo.",
+          "Đọc git diff và chạy kiểm tra trước khi chấp nhận."
+        ],
+        "quiz": {
+          "question": "Trước khi chấp nhận sửa mã cần làm gì?",
+          "options": [
+            "Tin vì agent báo hoàn tất",
+            "Tắt hết bước phê duyệt",
+            "Đọc diff và chạy kiểm tra phù hợp"
+          ],
+          "answer": 2,
+          "explanation": "Phải xem thay đổi và kiểm tra thực tế trước khi kết luận xong."
+        }
+      }
+    },
+    {
+      "id": "L07",
+      "level": "Beginner",
+      "audience": [
+        "Developer",
+        "Creator"
+      ],
+      "duration": 25,
+      "prerequisites": [
+        "L06"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/codex/ide.md"
+      ],
+      "en": {
+        "title": "Review a change in your editor",
+        "purpose": "Keep IDE context limited and verify suggested edits.",
+        "outcome": "A documented fix to one synthetic function and its test.",
+        "exercise": [
+          "Open a small demo file and one failing test in the IDE.",
+          "Select the relevant lines only and ask for a minimal fix.",
+          "Review the proposed patch and rerun the test."
+        ],
+        "checklist": [
+          "Select the relevant lines only and ask for a minimal fix.",
+          "Review the proposed patch and rerun the test."
+        ],
+        "quiz": {
+          "question": "What should be sent as IDE context?",
+          "options": [
+            "Only files and lines needed for the fix",
+            "Entire private disk by default",
+            "A password file to prove access"
+          ],
+          "answer": 0,
+          "explanation": "Scoped context reduces noise and accidental disclosure."
+        }
+      },
+      "vi": {
+        "title": "Rà soát thay đổi trong IDE",
+        "purpose": "Giữ ngữ cảnh editor vừa đủ và tự kiểm chứng mã.",
+        "outcome": "Bản sửa một hàm giả lập kèm test đối chiếu.",
+        "exercise": [
+          "Mở file demo và một test đang thất bại.",
+          "Chọn đúng đoạn liên quan và yêu cầu sửa tối thiểu.",
+          "Duyệt diff rồi chạy lại bài test."
+        ],
+        "checklist": [
+          "Chọn đúng đoạn liên quan và yêu cầu sửa tối thiểu.",
+          "Duyệt diff rồi chạy lại bài test."
+        ],
+        "quiz": {
+          "question": "Nên gửi ngữ cảnh IDE ra sao?",
+          "options": [
+            "Chỉ file và đoạn cần cho lỗi",
+            "Mặc định toàn bộ ổ cá nhân",
+            "File mật khẩu để chứng minh quyền"
+          ],
+          "answer": 0,
+          "explanation": "Ngữ cảnh có giới hạn giảm nhiễu và rủi ro lộ dữ liệu."
+        }
+      }
+    },
+    {
+      "id": "L08",
+      "level": "Beginner",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer"
+      ],
+      "duration": 20,
+      "prerequisites": [
+        "L07"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/glossary.md"
+      ],
+      "en": {
+        "title": "Understand CLI and Git vocabulary",
+        "purpose": "Explain commit, diff, tests and fixtures using a tiny safe example.",
+        "outcome": "A bilingual four-term mini glossary with verified examples.",
+        "exercise": [
+          "Write one sentence for commit, diff, test and fixture.",
+          "Demonstrate a Git change in a new sample repo.",
+          "Correct two common misconceptions from a peer glossary."
+        ],
+        "checklist": [
+          "Demonstrate a Git change in a new sample repo.",
+          "Correct two common misconceptions from a peer glossary."
+        ],
+        "quiz": {
+          "question": "What is a test fixture?",
+          "options": [
+            "A live production incident",
+            "Controlled input that makes a test repeatable",
+            "A guarantee all behaviors work"
+          ],
+          "answer": 1,
+          "explanation": "Fixtures support reproducibility but do not represent production outcomes."
+        }
+      },
+      "vi": {
+        "title": "Hiểu từ vựng CLI và Git",
+        "purpose": "Phân biệt commit, diff, test và fixture bằng ví dụ dễ.",
+        "outcome": "Bảng giải thích bốn thuật ngữ song ngữ.",
+        "exercise": [
+          "Viết một câu cho commit, diff, test và fixture.",
+          "Minh họa một thay đổi Git trong repo thử.",
+          "Sửa hai hiểu lầm phổ biến từ bảng thuật ngữ."
+        ],
+        "checklist": [
+          "Minh họa một thay đổi Git trong repo thử.",
+          "Sửa hai hiểu lầm phổ biến từ bảng thuật ngữ."
+        ],
+        "quiz": {
+          "question": "Fixture trong kiểm thử là gì?",
+          "options": [
+            "Một sự cố production thật",
+            "Đầu vào được kiểm soát giúp kiểm thử lặp lại",
+            "Bảo đảm mọi hành vi đều đúng"
+          ],
+          "answer": 1,
+          "explanation": "Fixture tăng khả năng lặp, không thay thế bằng chứng thực tế."
+        }
+      }
+    },
+    {
+      "id": "L09",
+      "level": "Beginner",
+      "audience": [
+        "Developer",
+        "Team Lead"
+      ],
+      "duration": 30,
+      "prerequisites": [
+        "L08"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/code-review.md"
+      ],
+      "en": {
+        "title": "First human-reviewed code review",
+        "purpose": "Classify observable defects separately from preferences.",
+        "outcome": "A three-column defect/evidence/repair report.",
+        "exercise": [
+          "Review a tiny example patch with a failing assertion.",
+          "Identify one reproducible defect and one stylistic suggestion.",
+          "Attach test output and decide which edit to prioritize."
+        ],
+        "checklist": [
+          "Identify one reproducible defect and one stylistic suggestion.",
+          "Attach test output and decide which edit to prioritize."
+        ],
+        "quiz": {
+          "question": "What makes a review finding actionable?",
+          "options": [
+            "A vague claim that code looks wrong",
+            "An unrelated style preference labeled critical",
+            "A precise location, cause and reproduction evidence"
+          ],
+          "answer": 2,
+          "explanation": "Actionable findings have grounded evidence and realistic remedies."
+        }
+      },
+      "vi": {
+        "title": "Code review có bằng chứng",
+        "purpose": "Tách lỗi tái hiện được khỏi góp ý thẩm mỹ.",
+        "outcome": "Bảng lỗi, bằng chứng và cách sửa.",
+        "exercise": [
+          "Xem diff mẫu kèm một test thất bại.",
+          "Tìm một lỗi có thể tái hiện và một góp ý phong cách.",
+          "Gắn kết quả test và chọn thay đổi ưu tiên."
+        ],
+        "checklist": [
+          "Tìm một lỗi có thể tái hiện và một góp ý phong cách.",
+          "Gắn kết quả test và chọn thay đổi ưu tiên."
+        ],
+        "quiz": {
+          "question": "Phát hiện review nào có thể xử lý?",
+          "options": [
+            "Chỉ nói code có vẻ sai",
+            "Đánh dấu góp ý style là lỗi nghiêm trọng",
+            "Vị trí, nguyên nhân và bằng chứng tái hiện rõ"
+          ],
+          "answer": 2,
+          "explanation": "Nhận xét tốt cần bằng chứng và cách khắc phục khả thi."
+        }
+      }
+    },
+    {
+      "id": "L10",
+      "level": "Beginner",
+      "audience": [
+        "Creator",
+        "Marketer",
+        "Team Lead"
+      ],
+      "duration": 20,
+      "prerequisites": [
+        "L09"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/artifacts-viewer.md"
+      ],
+      "en": {
+        "title": "Turn notes into a reviewable artifact",
+        "purpose": "Separate source-backed facts from invented placeholders in a report.",
+        "outcome": "A two-section report with source notes and open questions.",
+        "exercise": [
+          "Create a fictional status summary and label the mock figures.",
+          "Write one conclusion only supported by the supplied notes.",
+          "Export the artifact and record unresolved questions."
+        ],
+        "checklist": [
+          "Write one conclusion only supported by the supplied notes.",
+          "Export the artifact and record unresolved questions."
+        ],
+        "quiz": {
+          "question": "Which number is safe to publish as fact?",
+          "options": [
+            "A verified value with identified source and period",
+            "Any plausible sample number",
+            "One fabricated to fill empty space"
+          ],
+          "answer": 0,
+          "explanation": "Label sample values; never imply invented metrics were observed."
+        }
+      },
+      "vi": {
+        "title": "Biến ghi chú thành sản phẩm có thể duyệt",
+        "purpose": "Phân biệt thông tin có nguồn với dữ liệu mẫu trong báo cáo.",
+        "outcome": "Báo cáo hai phần có ghi nguồn và câu hỏi còn mở.",
+        "exercise": [
+          "Tạo báo cáo giả lập và gắn nhãn số liệu mẫu.",
+          "Viết kết luận chỉ dựa trên ghi chú được cung cấp.",
+          "Xuất tài liệu và ghi những việc chưa xác minh."
+        ],
+        "checklist": [
+          "Viết kết luận chỉ dựa trên ghi chú được cung cấp.",
+          "Xuất tài liệu và ghi những việc chưa xác minh."
+        ],
+        "quiz": {
+          "question": "Số liệu nào có thể công bố như sự thật?",
+          "options": [
+            "Số đã kiểm tra, có nguồn và thời kỳ rõ ràng",
+            "Bất kỳ số mẫu nghe hợp lý",
+            "Số tự điền để lấp chỗ trống"
+          ],
+          "answer": 0,
+          "explanation": "Cần ghi rõ dữ liệu mẫu, không giả là kết quả quan sát."
+        }
+      }
+    },
+    {
+      "id": "L11",
+      "level": "Intermediate",
+      "audience": [
+        "Developer",
+        "Team Lead",
+        "Pro"
+      ],
+      "duration": 35,
+      "prerequisites": [
+        "L06"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md"
+      ],
+      "en": {
+        "title": "Write a lean AGENTS.md contract",
+        "purpose": "Create durable project-specific scope without bloating agent context.",
+        "outcome": "An AGENTS.md with allowed paths, tests and stopping conditions.",
+        "exercise": [
+          "Inspect a harmless sample repo and its actual test command.",
+          "Document scope, rules, evidence and when the agent must stop.",
+          "Ask a peer to find contradictory or outdated instructions."
+        ],
+        "checklist": [
+          "Document scope, rules, evidence and when the agent must stop.",
+          "Ask a peer to find contradictory or outdated instructions."
+        ],
+        "quiz": {
+          "question": "Which AGENTS.md instruction is strongest?",
+          "options": [
+            "Repeat ten generic slogans",
+            "Specific allowed files, tests and failure gates",
+            "Grant unconditional global filesystem access"
+          ],
+          "answer": 1,
+          "explanation": "Precise local constraints prevent ambiguity and unnecessary risk."
+        }
+      },
+      "vi": {
+        "title": "Viết AGENTS.md gọn và chính xác",
+        "purpose": "Tạo chỉ dẫn dự án có phạm vi mà không nhồi context.",
+        "outcome": "Tệp AGENTS.md có đường dẫn, test và điều kiện dừng.",
+        "exercise": [
+          "Xem repo mẫu và lệnh test thực tế.",
+          "Ghi phạm vi, quy tắc, bằng chứng và khi nào phải dừng.",
+          "Nhờ người khác rà chỗ mâu thuẫn hoặc đã lỗi thời."
+        ],
+        "checklist": [
+          "Ghi phạm vi, quy tắc, bằng chứng và khi nào phải dừng.",
+          "Nhờ người khác rà chỗ mâu thuẫn hoặc đã lỗi thời."
+        ],
+        "quiz": {
+          "question": "Chỉ dẫn AGENTS.md nào mạnh nhất?",
+          "options": [
+            "Lặp lại nhiều khẩu hiệu chung",
+            "Phạm vi file, test và điều kiện thất bại rõ",
+            "Cho toàn quyền hệ thống không điều kiện"
+          ],
+          "answer": 1,
+          "explanation": "Ràng buộc cụ thể giảm mơ hồ và rủi ro."
+        }
+      }
+    },
+    {
+      "id": "L12",
+      "level": "Intermediate",
+      "audience": [
+        "Developer",
+        "Creator",
+        "Pro"
+      ],
+      "duration": 35,
+      "prerequisites": [
+        "L11"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/build-skills.md"
+      ],
+      "en": {
+        "title": "Build a reusable skill",
+        "purpose": "Package a small repeatable workflow with references and tests.",
+        "outcome": "A local skill scaffold and one testable example.",
+        "exercise": [
+          "Identify a repeated workflow with an unambiguous trigger.",
+          "Write a short SKILL.md and a safe sample input/output.",
+          "Test a positive trigger and a near-miss trigger without privileged actions."
+        ],
+        "checklist": [
+          "Write a short SKILL.md and a safe sample input/output.",
+          "Test a positive trigger and a near-miss trigger without privileged actions."
+        ],
+        "quiz": {
+          "question": "What makes a skill different from a generic prompt?",
+          "options": [
+            "A secret API key included in text",
+            "A guarantee that every model behaves identically",
+            "Repeatable instructions plus appropriate resources and trigger"
+          ],
+          "answer": 2,
+          "explanation": "A skill encodes workflow; test the trigger and tools rather than promising universal results."
+        }
+      },
+      "vi": {
+        "title": "Đóng gói skill tái sử dụng",
+        "purpose": "Biến quy trình lặp lại thành hướng dẫn có ví dụ kiểm tra.",
+        "outcome": "Bộ khung skill và một case đã đối chiếu.",
+        "exercise": [
+          "Chọn công việc lặp lại có điều kiện kích hoạt cụ thể.",
+          "Viết SKILL.md gọn và đầu vào/ra giả lập.",
+          "Kiểm tra một case đúng mục đích và một case gần giống nhưng không phù hợp."
+        ],
+        "checklist": [
+          "Viết SKILL.md gọn và đầu vào/ra giả lập.",
+          "Kiểm tra một case đúng mục đích và một case gần giống nhưng không phù hợp."
+        ],
+        "quiz": {
+          "question": "Skill khác prompt chung ở điểm nào?",
+          "options": [
+            "Chứa API key trong câu chữ",
+            "Bảo đảm mọi mô hình hoạt động y hệt",
+            "Có trigger, quy trình và tài nguyên tái sử dụng"
+          ],
+          "answer": 2,
+          "explanation": "Skill định nghĩa workflow; cần kiểm tra trigger và công cụ liên quan."
+        }
+      }
+    },
+    {
+      "id": "L13",
+      "level": "Intermediate",
+      "audience": [
+        "Developer",
+        "Team Lead"
+      ],
+      "duration": 35,
+      "prerequisites": [
+        "L12"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/extend/mcp.md"
+      ],
+      "en": {
+        "title": "Connect a read-only MCP source",
+        "purpose": "Understand how tools expand context without granting arbitrary writes.",
+        "outcome": "A table of tool name, data scope, permission and audit action.",
+        "exercise": [
+          "Identify a documentation-only MCP endpoint from official docs.",
+          "List the methods and data categories it exposes.",
+          "Design a denied-write test and a least-privilege approval rule."
+        ],
+        "checklist": [
+          "List the methods and data categories it exposes.",
+          "Design a denied-write test and a least-privilege approval rule."
+        ],
+        "quiz": {
+          "question": "What does a read-only docs MCP server do?",
+          "options": [
+            "Find and read allowed documentation",
+            "Run production deployment automatically",
+            "Grant account billing privileges"
+          ],
+          "answer": 0,
+          "explanation": "Documentation retrieval and operational actions must be treated separately."
+        }
+      },
+      "vi": {
+        "title": "Kết nối MCP chỉ đọc",
+        "purpose": "Hiểu công cụ bổ sung ngữ cảnh nhưng không mặc định cho ghi.",
+        "outcome": "Bảng công cụ, dữ liệu, quyền và bước audit.",
+        "exercise": [
+          "Tìm MCP tài liệu chỉ đọc từ trang chính thức.",
+          "Liệt kê nhóm dữ liệu và thao tác nó cho phép.",
+          "Thiết kế test từ chối ghi và quy tắc cấp quyền tối thiểu."
+        ],
+        "checklist": [
+          "Liệt kê nhóm dữ liệu và thao tác nó cho phép.",
+          "Thiết kế test từ chối ghi và quy tắc cấp quyền tối thiểu."
+        ],
+        "quiz": {
+          "question": "MCP tài liệu chỉ đọc làm gì?",
+          "options": [
+            "Tìm và đọc tài liệu được phép",
+            "Tự deploy production",
+            "Tự cấp quyền thanh toán"
+          ],
+          "answer": 0,
+          "explanation": "Tìm tài liệu và thao tác hệ thống là hai nhóm quyền riêng."
+        }
+      }
+    },
+    {
+      "id": "L14",
+      "level": "Intermediate",
+      "audience": [
+        "Developer",
+        "Team Lead",
+        "Pro"
+      ],
+      "duration": 40,
+      "prerequisites": [
+        "L13"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/environments/git-worktrees.md"
+      ],
+      "en": {
+        "title": "Parallel changes with worktrees",
+        "purpose": "Isolate branches and prevent agents silently overwriting each other.",
+        "outcome": "Two worktree branches with independent test outputs and a merge checklist.",
+        "exercise": [
+          "Create two disposable worktrees in a fresh sample repo.",
+          "Change different files and run tests separately.",
+          "Compare results and rehearse a conflict resolution before merge."
+        ],
+        "checklist": [
+          "Change different files and run tests separately.",
+          "Compare results and rehearse a conflict resolution before merge."
+        ],
+        "quiz": {
+          "question": "Why use isolated worktrees?",
+          "options": [
+            "To eliminate all merge conflicts permanently",
+            "To separate concurrent filesystem edits and histories",
+            "To grant access to any repository"
+          ],
+          "answer": 1,
+          "explanation": "Worktrees reduce collisions; integration still requires tests and review."
+        }
+      },
+      "vi": {
+        "title": "Phát triển song song bằng worktree",
+        "purpose": "Cô lập nhánh để agent không ghi đè lẫn nhau.",
+        "outcome": "Hai worktree có kết quả test riêng và checklist merge.",
+        "exercise": [
+          "Tạo hai worktree trong repo thử.",
+          "Sửa file khác nhau và chạy test riêng.",
+          "So sánh kết quả rồi diễn tập giải quyết xung đột trước merge."
+        ],
+        "checklist": [
+          "Sửa file khác nhau và chạy test riêng.",
+          "So sánh kết quả rồi diễn tập giải quyết xung đột trước merge."
+        ],
+        "quiz": {
+          "question": "Vì sao dùng worktree độc lập?",
+          "options": [
+            "Để không còn xung đột merge mãi mãi",
+            "Để tách thay đổi và lịch sử chạy đồng thời",
+            "Để có quyền mọi repository"
+          ],
+          "answer": 1,
+          "explanation": "Worktree giảm va chạm nhưng vẫn phải review khi tích hợp."
+        }
+      }
+    },
+    {
+      "id": "L15",
+      "level": "Intermediate",
+      "audience": [
+        "Developer",
+        "Team Lead"
+      ],
+      "duration": 30,
+      "prerequisites": [
+        "L14"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/third-party/github.md"
+      ],
+      "en": {
+        "title": "Trace a review from issue to test",
+        "purpose": "Translate acceptance criteria into specific assertions and reviewable evidence.",
+        "outcome": "A synthetic pull request review receipt.",
+        "exercise": [
+          "Write two requirement IDs for a sample bug fix.",
+          "Map each ID to a runnable test and an expected outcome.",
+          "Review the changed files and record missing evidence honestly."
+        ],
+        "checklist": [
+          "Map each ID to a runnable test and an expected outcome.",
+          "Review the changed files and record missing evidence honestly."
+        ],
+        "quiz": {
+          "question": "What is required to claim a PR is tested?",
+          "options": [
+            "A green emoji in the summary",
+            "An agent message saying passed without logs",
+            "Actual reproducible test output for relevant requirements"
+          ],
+          "answer": 2,
+          "explanation": "Evidence needs source, test command and observed results."
+        }
+      },
+      "vi": {
+        "title": "Truy vết issue đến test trong PR",
+        "purpose": "Gắn yêu cầu với assertion và bằng chứng có thể kiểm tra.",
+        "outcome": "Biên nhận review PR giả lập.",
+        "exercise": [
+          "Viết hai ID yêu cầu cho lỗi mẫu.",
+          "Gắn mỗi yêu cầu với test và kết quả kỳ vọng.",
+          "Duyệt file sửa và ghi rõ bằng chứng còn thiếu."
+        ],
+        "checklist": [
+          "Gắn mỗi yêu cầu với test và kết quả kỳ vọng.",
+          "Duyệt file sửa và ghi rõ bằng chứng còn thiếu."
+        ],
+        "quiz": {
+          "question": "Muốn nói PR đã được test cần gì?",
+          "options": [
+            "Một biểu tượng màu xanh",
+            "Agent tự báo đạt không có log",
+            "Lệnh test và kết quả quan sát tái hiện được"
+          ],
+          "answer": 2,
+          "explanation": "Bằng chứng phải có nguồn, lệnh và kết quả thật."
+        }
+      }
+    },
+    {
+      "id": "L16",
+      "level": "Advanced",
+      "audience": [
+        "Developer",
+        "Team Lead",
+        "Pro"
+      ],
+      "duration": 40,
+      "prerequisites": [
+        "L11"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/agent-approvals-security.md"
+      ],
+      "en": {
+        "title": "Design human approval boundaries",
+        "purpose": "Apply explicit approval before risky or sensitive operations.",
+        "outcome": "A deny-by-default action matrix for seven sample tools.",
+        "exercise": [
+          "List read-only, external-send, deploy and delete actions.",
+          "Mark the required authorization scope and rollback path.",
+          "Simulate unauthorized action and verify the plan stops."
+        ],
+        "checklist": [
+          "Mark the required authorization scope and rollback path.",
+          "Simulate unauthorized action and verify the plan stops."
+        ],
+        "quiz": {
+          "question": "Which action demands explicit approval?",
+          "options": [
+            "Publishing data outside a private workspace",
+            "Reading a local sample README",
+            "Formatting a markdown heading"
+          ],
+          "answer": 0,
+          "explanation": "External and irreversible operations must respect user authorization."
+        }
+      },
+      "vi": {
+        "title": "Thiết kế ranh giới phê duyệt",
+        "purpose": "Yêu cầu duyệt trước thao tác rủi ro hoặc nhạy cảm.",
+        "outcome": "Ma trận từ chối mặc định cho bảy thao tác.",
+        "exercise": [
+          "Liệt kê đọc, gửi ngoài, deploy và xóa.",
+          "Ghi phạm vi duyệt và kế hoạch hoàn tác.",
+          "Giả lập hành động chưa được duyệt và kiểm tra quy trình dừng."
+        ],
+        "checklist": [
+          "Ghi phạm vi duyệt và kế hoạch hoàn tác.",
+          "Giả lập hành động chưa được duyệt và kiểm tra quy trình dừng."
+        ],
+        "quiz": {
+          "question": "Hành động nào cần duyệt rõ?",
+          "options": [
+            "Công bố dữ liệu khỏi workspace riêng",
+            "Đọc README mẫu cục bộ",
+            "Định dạng một tiêu đề"
+          ],
+          "answer": 0,
+          "explanation": "Thao tác ra ngoài hoặc khó đảo ngược cần quyền rõ."
+        }
+      }
+    },
+    {
+      "id": "L17",
+      "level": "Advanced",
+      "audience": [
+        "Developer",
+        "Team Lead",
+        "Pro"
+      ],
+      "duration": 45,
+      "prerequisites": [
+        "L16"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
+      ],
+      "en": {
+        "title": "Orchestrate multiple bounded agents",
+        "purpose": "Split coding work along ownership boundaries and verify cross-branch contracts.",
+        "outcome": "Four role cards with file ownership and independent test receipts.",
+        "exercise": [
+          "Choose four tasks with nonoverlapping file ownership.",
+          "Define each agent's stop conditions and expected artifacts.",
+          "Collect independent test outputs and review merge risk."
+        ],
+        "checklist": [
+          "Define each agent's stop conditions and expected artifacts.",
+          "Collect independent test outputs and review merge risk."
+        ],
+        "quiz": {
+          "question": "What is the strongest multi-agent design?",
+          "options": [
+            "All agents write the same files simultaneously",
+            "Separate scopes plus shared acceptance and independent QA",
+            "Mark every agent complete when it starts"
+          ],
+          "answer": 1,
+          "explanation": "Parallelism helps only with controlled ownership and verification."
+        }
+      },
+      "vi": {
+        "title": "Điều phối nhiều agent an toàn",
+        "purpose": "Tách phần việc theo quyền sở hữu file và kiểm tra hợp đồng giao tiếp.",
+        "outcome": "Bốn thẻ vai trò kèm phạm vi file và kết quả test.",
+        "exercise": [
+          "Chọn bốn đầu việc không trùng file sửa.",
+          "Đặt điều kiện dừng và artifact bàn giao cho từng agent.",
+          "Gom test độc lập và rà rủi ro trước merge."
+        ],
+        "checklist": [
+          "Đặt điều kiện dừng và artifact bàn giao cho từng agent.",
+          "Gom test độc lập và rà rủi ro trước merge."
+        ],
+        "quiz": {
+          "question": "Kiến trúc nhiều agent nào tốt nhất?",
+          "options": [
+            "Mọi agent sửa cùng file song song",
+            "Cô lập phạm vi, chung tiêu chí và QA độc lập",
+            "Coi xong ngay khi mới tạo agent"
+          ],
+          "answer": 1,
+          "explanation": "Song song có ích khi có ranh giới và kiểm chứng."
+        }
+      }
+    },
+    {
+      "id": "L18",
+      "level": "Advanced",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "duration": 35,
+      "prerequisites": [
+        "L17"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/non-interactive-mode.md"
+      ],
+      "en": {
+        "title": "Codex in CI without overprivilege",
+        "purpose": "Build a safe noninteractive task contract using fixture-only inputs.",
+        "outcome": "An auditable local codex exec command proposal with read-only policy.",
+        "exercise": [
+          "Draft a task that only inspects tests in a sample repo.",
+          "Specify sandbox, output format, timeouts and exit handling.",
+          "Write a mock CI script that refuses destructive steps by default."
+        ],
+        "checklist": [
+          "Specify sandbox, output format, timeouts and exit handling.",
+          "Write a mock CI script that refuses destructive steps by default."
+        ],
+        "quiz": {
+          "question": "Which flag policy is safest to start with?",
+          "options": [
+            "Always bypass all sandbox and approvals",
+            "Run unknown downloaded scripts silently",
+            "Least privilege and explicit review of exceptions"
+          ],
+          "answer": 2,
+          "explanation": "CI agents require controlled permissions and output verification."
+        }
+      },
+      "vi": {
+        "title": "Codex trong CI với quyền tối thiểu",
+        "purpose": "Thiết kế hợp đồng non-interactive chỉ dùng dữ liệu thử.",
+        "outcome": "Lệnh Codex exec mẫu có audit và mặc định an toàn.",
+        "exercise": [
+          "Thiết kế nhiệm vụ chỉ đọc test trong repo mẫu.",
+          "Quy định sandbox, output, timeout và mã thoát.",
+          "Viết script CI giả lập từ chối thao tác nguy hiểm mặc định."
+        ],
+        "checklist": [
+          "Quy định sandbox, output, timeout và mã thoát.",
+          "Viết script CI giả lập từ chối thao tác nguy hiểm mặc định."
+        ],
+        "quiz": {
+          "question": "Chính sách quyền nào nên dùng trước?",
+          "options": [
+            "Luôn bypass sandbox và approvals",
+            "Âm thầm chạy script tải ngoài",
+            "Quyền tối thiểu và duyệt ngoại lệ rõ"
+          ],
+          "answer": 2,
+          "explanation": "CI cần quyền kiểm soát và xác minh đầu ra."
+        }
+      }
+    },
+    {
+      "id": "L19",
+      "level": "Advanced",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "duration": 40,
+      "prerequisites": [
+        "L18"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/hooks.md"
+      ],
+      "en": {
+        "title": "Add a verification hook",
+        "purpose": "Use lifecycle hooks to request checks without hiding side effects.",
+        "outcome": "A simulated pre-release hook contract with a fail-closed result.",
+        "exercise": [
+          "Write a hook rule that checks only local test artifacts.",
+          "Supply one passing fixture and one failing fixture.",
+          "Explain that blocked evidence must prevent release, not be overwritten."
+        ],
+        "checklist": [
+          "Supply one passing fixture and one failing fixture.",
+          "Explain that blocked evidence must prevent release, not be overwritten."
+        ],
+        "quiz": {
+          "question": "What should a failed verification hook do?",
+          "options": [
+            "Block release and report the reason",
+            "Rewrite results to pass",
+            "Erase failed fixtures"
+          ],
+          "answer": 0,
+          "explanation": "Fail-closed handling preserves trustworthy evidence."
+        }
+      },
+      "vi": {
+        "title": "Thêm hook kiểm tra có kiểm soát",
+        "purpose": "Dùng hook để kiểm tra nhưng không ẩn tác động phụ.",
+        "outcome": "Hợp đồng hook trước release có tình huống từ chối.",
+        "exercise": [
+          "Viết quy tắc chỉ kiểm tra artifact test cục bộ.",
+          "Đưa một fixture đạt và một fixture lỗi.",
+          "Giải thích vì sao bằng chứng sai phải chặn phát hành."
+        ],
+        "checklist": [
+          "Đưa một fixture đạt và một fixture lỗi.",
+          "Giải thích vì sao bằng chứng sai phải chặn phát hành."
+        ],
+        "quiz": {
+          "question": "Hook kiểm tra thất bại phải làm gì?",
+          "options": [
+            "Chặn release và ghi lý do",
+            "Sửa kết quả thành đạt",
+            "Xóa fixture lỗi"
+          ],
+          "answer": 0,
+          "explanation": "Từ chối phát hành khi thiếu bằng chứng giữ tính trung thực."
+        }
+      }
+    },
+    {
+      "id": "L20",
+      "level": "Advanced",
+      "audience": [
+        "Team Lead",
+        "Pro",
+        "Developer"
+      ],
+      "duration": 45,
+      "prerequisites": [
+        "L19"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/long-running-work.md"
+      ],
+      "en": {
+        "title": "Make long tasks resumable",
+        "purpose": "Separate checkpoints, receipts and human approval from background assumptions.",
+        "outcome": "A restartable execution plan with explicit checkpoint state.",
+        "exercise": [
+          "Define objective, permitted tools, and completion test.",
+          "Design a checkpoint log with stable IDs and retry strategy.",
+          "Write blocked conditions and who may approve a restart."
+        ],
+        "checklist": [
+          "Design a checkpoint log with stable IDs and retry strategy.",
+          "Write blocked conditions and who may approve a restart."
+        ],
+        "quiz": {
+          "question": "What makes long work resumable?",
+          "options": [
+            "A promise to return some day",
+            "Durable checkpoints and bounded retries",
+            "Never saving test outputs"
+          ],
+          "answer": 1,
+          "explanation": "Resume requires state, evidence and explicit boundaries."
+        }
+      },
+      "vi": {
+        "title": "Thiết kế tác vụ dài có thể tiếp tục",
+        "purpose": "Phân biệt checkpoint, biên nhận và quyền duyệt.",
+        "outcome": "Bản kế hoạch có trạng thái checkpoint và điều kiện chạy lại.",
+        "exercise": [
+          "Xác định mục tiêu, công cụ và test đạt.",
+          "Thiết kế log checkpoint có ID ổn định và quy tắc retry.",
+          "Viết điều kiện dừng và ai được quyền tiếp tục."
+        ],
+        "checklist": [
+          "Thiết kế log checkpoint có ID ổn định và quy tắc retry.",
+          "Viết điều kiện dừng và ai được quyền tiếp tục."
+        ],
+        "quiz": {
+          "question": "Điều gì giúp công việc dài tiếp tục an toàn?",
+          "options": [
+            "Chỉ hứa sẽ quay lại",
+            "Checkpoint lưu được và số lần thử có giới hạn",
+            "Không giữ kết quả test"
+          ],
+          "answer": 1,
+          "explanation": "Cần trạng thái, bằng chứng và giới hạn rõ."
+        }
+      }
+    },
+    {
+      "id": "L21",
+      "level": "Pro",
+      "audience": [
+        "Developer",
+        "Pro",
+        "Team Lead"
+      ],
+      "duration": 50,
+      "prerequisites": [
+        "L16"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/codex-sdk.md"
+      ],
+      "en": {
+        "title": "Build a Codex SDK integration contract",
+        "purpose": "Specify structured inputs, streamed outputs and explicit cancellation.",
+        "outcome": "An SDK integration architecture with typed event examples.",
+        "exercise": [
+          "Diagram one request with expected response events.",
+          "List validation for inputs, timeouts and cancellation.",
+          "Design tests for partial output and rejected approvals."
+        ],
+        "checklist": [
+          "List validation for inputs, timeouts and cancellation.",
+          "Design tests for partial output and rejected approvals."
+        ],
+        "quiz": {
+          "question": "What should application code assume about SDK output?",
+          "options": [
+            "Every task finishes successfully",
+            "Permissions are automatically unlimited",
+            "Events may be partial and need validation"
+          ],
+          "answer": 2,
+          "explanation": "SDK integration must handle partial states and control flow."
+        }
+      },
+      "vi": {
+        "title": "Thiết kế tích hợp Codex SDK",
+        "purpose": "Quy định đầu vào cấu trúc, luồng sự kiện và hủy rõ.",
+        "outcome": "Sơ đồ tích hợp SDK kèm ví dụ event có kiểu.",
+        "exercise": [
+          "Vẽ một request và sự kiện trả về kỳ vọng.",
+          "Liệt kê kiểm tra input, timeout và hủy.",
+          "Thiết kế test cho output dở dang và từ chối phê duyệt."
+        ],
+        "checklist": [
+          "Liệt kê kiểm tra input, timeout và hủy.",
+          "Thiết kế test cho output dở dang và từ chối phê duyệt."
+        ],
+        "quiz": {
+          "question": "Ứng dụng nên giả định gì về SDK?",
+          "options": [
+            "Mọi tác vụ luôn thành công",
+            "Mặc định có quyền không giới hạn",
+            "Sự kiện có thể chưa đủ và phải xác minh"
+          ],
+          "answer": 2,
+          "explanation": "Tích hợp SDK phải xử lý trạng thái chưa hoàn tất."
+        }
+      }
+    },
+    {
+      "id": "L22",
+      "level": "Pro",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "duration": 55,
+      "prerequisites": [
+        "L21"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/app-server.md"
+      ],
+      "en": {
+        "title": "Plan a streaming agent UI",
+        "purpose": "Represent approvals, cancellation and streamed task events in a dashboard.",
+        "outcome": "A state machine and synthetic event trace for an agent panel.",
+        "exercise": [
+          "Define task states queued, running, awaiting approval, done, blocked.",
+          "Map each state to a visible UI and actionable control.",
+          "Replay a synthetic cancelled task and verify its terminal state."
+        ],
+        "checklist": [
+          "Map each state to a visible UI and actionable control.",
+          "Replay a synthetic cancelled task and verify its terminal state."
+        ],
+        "quiz": {
+          "question": "What does a streaming agent UI need?",
+          "options": [
+            "Distinct pending, approval and final states",
+            "One endless spinner for every condition",
+            "A hidden automatic approval"
+          ],
+          "answer": 0,
+          "explanation": "Visible state and human controls prevent ambiguous progress."
+        }
+      },
+      "vi": {
+        "title": "Thiết kế giao diện agent streaming",
+        "purpose": "Thể hiện sự kiện, phê duyệt và hủy trong dashboard.",
+        "outcome": "State machine cùng trace giả lập cho panel agent.",
+        "exercise": [
+          "Định nghĩa queued, running, awaiting approval, done, blocked.",
+          "Gắn mỗi trạng thái với UI và hành động được phép.",
+          "Replay tác vụ bị hủy giả lập và xác minh trạng thái kết thúc."
+        ],
+        "checklist": [
+          "Gắn mỗi trạng thái với UI và hành động được phép.",
+          "Replay tác vụ bị hủy giả lập và xác minh trạng thái kết thúc."
+        ],
+        "quiz": {
+          "question": "UI streaming agent cần điều gì?",
+          "options": [
+            "Phân biệt chờ, cần duyệt và kết thúc",
+            "Một vòng xoay vô tận cho mọi tình huống",
+            "Phê duyệt ẩn tự động"
+          ],
+          "answer": 0,
+          "explanation": "Trạng thái rõ và quyền điều khiển giúp tránh hiểu sai tiến độ."
+        }
+      }
+    },
+    {
+      "id": "L23",
+      "level": "Pro",
+      "audience": [
+        "Developer",
+        "Team Lead",
+        "Pro"
+      ],
+      "duration": 50,
+      "prerequisites": [
+        "L22"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/github-action.md"
+      ],
+      "en": {
+        "title": "Design a review-gated CI pipeline",
+        "purpose": "Use tests, provenance and manual promotion gates before release.",
+        "outcome": "A mock pipeline YAML with isolated build and rollback plan.",
+        "exercise": [
+          "Define branch, build, test, review and deploy jobs.",
+          "Pin least-privilege permissions and protect secrets.",
+          "Add rollback and failed-test gates; review sample logs."
+        ],
+        "checklist": [
+          "Pin least-privilege permissions and protect secrets.",
+          "Add rollback and failed-test gates; review sample logs."
+        ],
+        "quiz": {
+          "question": "When should CI publish a release?",
+          "options": [
+            "As soon as an agent starts generating code",
+            "After tests and required approvals are verified",
+            "After deleting failed logs"
+          ],
+          "answer": 1,
+          "explanation": "CI promotion needs evidence and explicit policy gates."
+        }
+      },
+      "vi": {
+        "title": "Thiết kế CI có cổng kiểm duyệt",
+        "purpose": "Dùng test và provenance trước release.",
+        "outcome": "YAML pipeline mẫu có quyền tối thiểu và hoàn tác.",
+        "exercise": [
+          "Tách job branch, build, test, review và deploy.",
+          "Khóa phạm vi quyền và bảo vệ bí mật.",
+          "Thêm cổng test lỗi và rollback rồi duyệt log mẫu."
+        ],
+        "checklist": [
+          "Khóa phạm vi quyền và bảo vệ bí mật.",
+          "Thêm cổng test lỗi và rollback rồi duyệt log mẫu."
+        ],
+        "quiz": {
+          "question": "Khi nào CI nên phát hành?",
+          "options": [
+            "Ngay khi agent bắt đầu tạo code",
+            "Sau khi test và phê duyệt yêu cầu đều đạt",
+            "Sau khi xóa log lỗi"
+          ],
+          "answer": 1,
+          "explanation": "Phát hành cần bằng chứng và chính sách rõ."
+        }
+      }
+    },
+    {
+      "id": "L24",
+      "level": "Pro",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "duration": 50,
+      "prerequisites": [
+        "L23"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/enterprise/governance.md"
+      ],
+      "en": {
+        "title": "Govern a multi-team agent rollout",
+        "purpose": "Align permission tiers, data classification and audit ownership.",
+        "outcome": "A governance matrix for three hypothetical teams.",
+        "exercise": [
+          "Classify public, internal and restricted source data.",
+          "Assign policy owner and tool permission boundary per team.",
+          "Design an incident and access-revocation rehearsal."
+        ],
+        "checklist": [
+          "Assign policy owner and tool permission boundary per team.",
+          "Design an incident and access-revocation rehearsal."
+        ],
+        "quiz": {
+          "question": "Who should decide privileged agent access?",
+          "options": [
+            "Any model independently",
+            "A copied prompt from another team",
+            "Authorized administrators under documented policy"
+          ],
+          "answer": 2,
+          "explanation": "Governance requires accountable human owners and scoped rights."
+        }
+      },
+      "vi": {
+        "title": "Quản trị agent đa phòng ban",
+        "purpose": "Gắn quyền, phân loại dữ liệu và người chịu trách nhiệm audit.",
+        "outcome": "Ma trận quản trị cho ba nhóm giả lập.",
+        "exercise": [
+          "Phân loại dữ liệu công khai, nội bộ và hạn chế.",
+          "Gắn người phụ trách và giới hạn công cụ mỗi nhóm.",
+          "Diễn tập sự cố và thu hồi quyền truy cập."
+        ],
+        "checklist": [
+          "Gắn người phụ trách và giới hạn công cụ mỗi nhóm.",
+          "Diễn tập sự cố và thu hồi quyền truy cập."
+        ],
+        "quiz": {
+          "question": "Ai quyết định quyền đặc biệt của agent?",
+          "options": [
+            "Bất kỳ mô hình nào tự quyết",
+            "Prompt sao chép từ đội khác",
+            "Quản trị viên được ủy quyền theo chính sách"
+          ],
+          "answer": 2,
+          "explanation": "Quản trị cần người chịu trách nhiệm và quyền đúng phạm vi."
+        }
+      }
+    },
+    {
+      "id": "L25",
+      "level": "Pro",
+      "audience": [
+        "Developer",
+        "Team Lead",
+        "Pro"
+      ],
+      "duration": 55,
+      "prerequisites": [
+        "L24"
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/security.md"
+      ],
+      "en": {
+        "title": "Review a security finding responsibly",
+        "purpose": "Separate a synthetic vulnerability signal from confirmed impact.",
+        "outcome": "A privacy-safe triage record with risk, evidence and next test.",
+        "exercise": [
+          "Load a fictional security finding and identify affected scope.",
+          "List assumptions and a safe verification procedure.",
+          "Draft remediation and re-test steps without targeting live systems."
+        ],
+        "checklist": [
+          "List assumptions and a safe verification procedure.",
+          "Draft remediation and re-test steps without targeting live systems."
+        ],
+        "quiz": {
+          "question": "What does an automated security alert prove?",
+          "options": [
+            "A finding requires triage and validation",
+            "A live system is definitely compromised",
+            "It authorizes scanning unrelated accounts"
+          ],
+          "answer": 0,
+          "explanation": "Security evidence needs review, scope and permission."
+        }
+      },
+      "vi": {
+        "title": "Đánh giá cảnh báo bảo mật có trách nhiệm",
+        "purpose": "Tách tín hiệu giả lập khỏi tác động đã xác nhận.",
+        "outcome": "Biên bản triage có rủi ro, bằng chứng và test tiếp.",
+        "exercise": [
+          "Nạp finding bảo mật giả lập và xác định phạm vi.",
+          "Liệt kê giả định cùng quy trình kiểm chứng an toàn.",
+          "Soạn bản sửa và test lại, không đụng hệ thống thật."
+        ],
+        "checklist": [
+          "Liệt kê giả định cùng quy trình kiểm chứng an toàn.",
+          "Soạn bản sửa và test lại, không đụng hệ thống thật."
+        ],
+        "quiz": {
+          "question": "Cảnh báo bảo mật tự động chứng minh gì?",
+          "options": [
+            "Cần triage và xác minh phát hiện",
+            "Chắc chắn hệ thống đã bị tấn công",
+            "Cho phép quét mọi tài khoản"
+          ],
+          "answer": 0,
+          "explanation": "Bằng chứng an ninh cần duyệt, phạm vi và quyền."
+        }
+      }
+    }
+  ]
+}

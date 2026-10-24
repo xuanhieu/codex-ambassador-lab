@@ -1,0 +1,89 @@
+{
+  "new-student": {
+    "checks": {
+      "codex": {
+        "code": "synthetic_fixture",
+        "status": "missing",
+        "version": ""
+      },
+      "git": {
+        "code": "",
+        "status": "ok",
+        "version": "git 2.46.0"
+      },
+      "node": {
+        "code": "",
+        "status": "ok",
+        "version": "v22.0.0"
+      },
+      "repo": {
+        "code": "synthetic_fixture",
+        "status": "missing",
+        "version": ""
+      }
+    },
+    "mode": "synthetic-demo",
+    "platform": "fixture",
+    "ready": false,
+    "scenario": "new-student",
+    "schema": "codex-workshop-preflight/v1"
+  },
+  "ready": {
+    "checks": {
+      "codex": {
+        "code": "",
+        "status": "ok",
+        "version": "codex-cli 0.160.0"
+      },
+      "git": {
+        "code": "",
+        "status": "ok",
+        "version": "git 2.46.0"
+      },
+      "node": {
+        "code": "",
+        "status": "ok",
+        "version": "v22.0.0"
+      },
+      "repo": {
+        "code": "",
+        "status": "ok",
+        "version": ""
+      }
+    },
+    "mode": "synthetic-demo",
+    "platform": "fixture",
+    "ready": true,
+    "scenario": "ready",
+    "schema": "codex-workshop-preflight/v1"
+  },
+  "restricted-device": {
+    "checks": {
+      "codex": {
+        "code": "synthetic_fixture",
+        "status": "missing",
+        "version": ""
+      },
+      "git": {
+        "code": "",
+        "status": "ok",
+        "version": "git 2.46.0"
+      },
+      "node": {
+        "code": "synthetic_fixture",
+        "status": "missing",
+        "version": ""
+      },
+      "repo": {
+        "code": "synthetic_fixture",
+        "status": "missing",
+        "version": ""
+      }
+    },
+    "mode": "synthetic-demo",
+    "platform": "fixture",
+    "ready": false,
+    "scenario": "restricted-device",
+    "schema": "codex-workshop-preflight/v1"
+  }
+}

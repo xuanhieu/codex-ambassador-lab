@@ -1,0 +1,3 @@
+Synthetic test report (illustrative)
+22 checks passed on local fixtures
+Not evidence of an external production release.

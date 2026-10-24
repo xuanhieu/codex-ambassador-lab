@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e9eff9">
+<meta name="description" content="Codex Ambassador application command center — private offline dashboard">
+<title>Codex Ambassador — Mission Control</title>
+<script data-cfasync="false">try{let s=localStorage.getItem('amb-ui-prefs-v2');let p=s?JSON.parse(s):{};document.documentElement.dataset.nuiTheme=p.theme||((window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');if(p.motion===false)document.documentElement.classList.add('nui-motion-off');}catch{document.documentElement.dataset.nuiTheme='light';}</script>
+<link rel="stylesheet" href="./dashboard.css">
+<link rel="stylesheet" href="./compact-workspace.css">
+</head>
+<body class="nui">
+<div class="nui-backdrop" aria-hidden="true"><div class="nui-aurora"></div><div class="nui-aurora"></div><div class="nui-aurora"></div><div class="nui-grain"></div></div>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#overview" aria-label="Codex Ambassador dashboard">
+    <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3 28 10v12L16 29 4 22V10z" fill="none" stroke="currentColor" stroke-width="2.1"/><path d="m11 12-4 4 4 4m10-8 4 4-4 4m-7-10-4 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span>
+    <span>CODEX<span class="brand-light">PRO</span><small>AMBASSADOR • 2026</small></span>
+  </a>
+  <div class="side-label">MISSION CONTROL <span class="online-dot" aria-label="Local workspace ready"></span></div>
+  <nav class="side-nav" aria-label="Điều hướng dashboard">
+    <button type="button" data-route="overview"><span class="nav-icon">◈</span> Tổng quan</button>
+    <button type="button" data-route="application"><span class="nav-icon">▤</span> Form ứng tuyển <span class="nav-tip" id="nav-form-count"></span></button>
+    <button type="button" data-route="ideas"><span class="nav-icon">◇</span> Idea Lab <span class="nav-tip" id="nav-idea-count">155</span></button>
+    <a class="academy-nav-link" href="../demos/codex-path/" target="_blank" rel="noopener noreferrer"><span class="nav-icon">⌁</span> Codex Path • Career OS ↗</a>
+    <a class="academy-nav-link" href="../demos/codex-academy/" target="_blank" rel="noopener noreferrer"><span class="nav-icon">⌘</span> Zero-to-Hero Academy ↗</a>
+    <button type="button" data-route="workspace"><span class="nav-icon">⌘</span> Bản đồ dự án / Finder</button>
+    <button type="button" data-route="portfolio"><span class="nav-icon">▥</span> Portfolio / Demo</button>
+    <button type="button" data-route="timeline"><span class="nav-icon">◷</span> Deadline & Tasks</button>
+    <button type="button" data-route="video"><span class="nav-icon">▣</span> Video Studio</button>
+    <button type="button" data-route="strategy"><span class="nav-icon">✧</span> Chiến lược 6 tháng</button>
+    <button type="button" data-route="settings"><span class="nav-icon">⚙</span> Dữ liệu & Thiết lập</button>
+  </nav>
+  <div class="side-spacer"></div>
+  <div class="side-deadline nui-glass">
+    <div class="tiny-caps">APPLICATION WINDOW</div>
+    <strong id="sideCountdown">30 OCT • 16:00</strong>
+    <span>Hạn mục tiêu riêng</span>
+    <div class="side-bar"><i id="sideProgress"></i></div>
+    <a href="https://openai.com/form/codex-ambassadors/" target="_blank" rel="noopener noreferrer">OpenAI form <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="side-foot"><span class="avatar">AI</span><div><strong>Local Builder</strong><small>Personal browser workspace</small></div><span class="sync-dot" title="Lưu tự động trên trình duyệt">●</span></div>
+</aside>
+<div class="main-column">
+  <header class="topbar nui-glass">
+    <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Mở menu" aria-expanded="false" aria-controls="sidebar">☰</button>
+    <div class="crumb"><span>WORKSPACE</span><span aria-hidden="true">/</span><strong id="headerTitle">Overview</strong></div>
+    <div class="top-actions">
+      <label class="top-search"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="Tìm ý tưởng, form…  /" autocomplete="off" aria-label="Tìm kiếm trong dashboard"></label>
+      <button class="icon-button" id="themeToggle" type="button" title="Đổi chế độ sáng/tối" aria-label="Đổi chế độ sáng/tối">◐</button>
+      <button class="icon-button" id="motionToggle" type="button" title="Bật/tắt motion" aria-label="Bật/tắt motion">✧</button>
+      <button class="top-export" id="exportTop" type="button">↧ <span>Export</span></button>
+    </div>
+  </header>
+  <main id="view" tabindex="-1" aria-live="polite"></main>
+  <footer class="main-foot"><span>PRIVATE • LOCAL-FIRST • NOT SUBMITTED</span><span>Codex Ambassador Mission Control v2 · Noti UI design language</span></footer>
+</div>
+</div>
+<div id="toastRegion" class="toast-stack" role="status" aria-live="polite"></div>
+<dialog id="detailsDialog" class="nui-dialog" aria-labelledby="dialogTitle">
+ <div class="dialog-head"><h2 id="dialogTitle">Chi tiết</h2><button class="icon-button" data-action="close-dialog" aria-label="Đóng">✕</button></div>
+ <div id="dialogBody"></div>
+</dialog>
+<input type="file" id="importFile" accept=".json,application/json" hidden aria-label="Nhập dữ liệu backup">
+<script data-cfasync="false" src="./data.js"></script>
+<script data-cfasync="false" src="./ideas-base.js"></script>
+<script data-cfasync="false" src="./ideas.js"></script>
+<script data-cfasync="false" src="./workspace-map.js"></script>
+<script data-cfasync="false" src="./logic.js"></script>
+<script data-cfasync="false" src="./app.js"></script>
+</body>
+</html>
