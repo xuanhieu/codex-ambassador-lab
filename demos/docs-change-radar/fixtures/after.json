@@ -1,0 +1,132 @@
+{
+  "schema": "docs-radar-v1",
+  "label": "after · synthetic snapshot (2026-10)",
+  "documents": [
+    {
+      "id": "DOC001",
+      "title": "Codex CLI Getting Started",
+      "url": "https://example.org/synthetic-codex-docs/guide-001",
+      "section": "Getting started",
+      "content_sha256": "85182119bbec67f1063eb86b6973117042075c9413796af8964fc63332a12f35",
+      "updated": "2026-10-23",
+      "critical": true
+    },
+    {
+      "id": "DOC002",
+      "title": "Installation checklist",
+      "url": "https://example.org/synthetic-codex-docs/guide-002",
+      "section": "CLI",
+      "content_sha256": "132e34be83d7e20be5b2bd3676c181bdbef6af2a85456a1e15b0f07c8dae6b4b",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC003",
+      "title": "Agent approvals and review",
+      "url": "https://example.org/synthetic-codex-docs/guide-003",
+      "section": "Security",
+      "content_sha256": "f65857afd69fae9ef9e444a500c44ee207f25540b56755d423ed7de2001d06b8",
+      "updated": "2026-10-23",
+      "critical": true
+    },
+    {
+      "id": "DOC004",
+      "title": "Tool sandbox permissions",
+      "url": "https://example.org/synthetic-codex-docs/policies/sandbox-permissions",
+      "section": "Security",
+      "content_sha256": "dc2c0d4a5cc5255a0992ce09ed62a9d574c91c5e0ef950f9f6d45780e90a0073",
+      "updated": "2026-10-23",
+      "critical": true
+    },
+    {
+      "id": "DOC005",
+      "title": "Prompt patterns for beginners",
+      "url": "https://example.org/synthetic-codex-docs/guide-005",
+      "section": "Getting started",
+      "content_sha256": "6aba185172c88d3f5af0498b38dd11de34de8b9c74a942cb9838b70a45e1dea5",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC006",
+      "title": "Session history and checkpoints",
+      "url": "https://example.org/synthetic-codex-docs/guide-006",
+      "section": "CLI",
+      "content_sha256": "67ebcf87c45b657ad1cce236ce20b996d30c7e12190f8ec8245576fcf312b5b1",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC007",
+      "title": "Sub-agent delegation",
+      "url": "https://example.org/synthetic-codex-docs/guide-007",
+      "section": "Automation",
+      "content_sha256": "08b42f6d1e508ff6d2d214b26be0536eace298554afe8886c9cbd83f18519266",
+      "updated": "2026-10-12",
+      "critical": true
+    },
+    {
+      "id": "DOC008",
+      "title": "Workspace rule files",
+      "url": "https://example.org/synthetic-codex-docs/guide-008",
+      "section": "Agents",
+      "content_sha256": "4475bc49b46907c9870e393ca1c7f833ea3da42c22c90996ccb0d624635b2a0e",
+      "updated": "2026-10-12",
+      "critical": true
+    },
+    {
+      "id": "DOC009",
+      "title": "Automated test workflows",
+      "url": "https://example.org/synthetic-codex-docs/guide-009",
+      "section": "Automation",
+      "content_sha256": "aef5b112d6829ba26d5b357549d60f4a7313896c0783e9dad9e96e1a35ffcc1f",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC010",
+      "title": "Team setup and roles",
+      "url": "https://example.org/synthetic-codex-docs/guide-010",
+      "section": "Projects",
+      "content_sha256": "62ab77479497a6c698eaaa34bed48b04f63bfeca81823cffe49e36e4945e9a16",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC011",
+      "title": "API integration safety",
+      "url": "https://example.org/synthetic-codex-docs/guide-011",
+      "section": "API",
+      "content_sha256": "2db0a839ab4e2cb205a19829746e8d8e86c8961100d99676c872cd5579fe918c",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC014",
+      "title": "Local code reviews",
+      "url": "https://example.org/synthetic-codex-docs/guide-014",
+      "section": "CLI",
+      "content_sha256": "d0ccfdb19435f33b23ef6b8fc0b2b65ccf89c89f11999db570f7554301c619a6",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC015",
+      "title": "Advanced task planning",
+      "url": "https://example.org/synthetic-codex-docs/guide-015",
+      "section": "Agents",
+      "content_sha256": "4260b9dc6dc385201a762e04df8b4d4c01d054ae2b27047bf90400407ea2ead5",
+      "updated": "2026-10-12",
+      "critical": false
+    },
+    {
+      "id": "DOC016",
+      "title": "Incident response exercise",
+      "url": "https://example.org/synthetic-codex-docs/guide-016",
+      "section": "Security",
+      "content_sha256": "aebd97e98526175cd5a501f41c94169b9da175a5b312afa9af04de59bbd87ffd",
+      "updated": "2026-10-12",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+N108 Evidence Chain • synthetic document only.
+Owner: demo workshop (fictional).
+Scope: demonstrate integrity verification; no identity authentication.

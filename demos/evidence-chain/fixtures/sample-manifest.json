@@ -1,0 +1,55 @@
+{
+  "schema": "evidence-chain-v1",
+  "algorithm": "SHA-256",
+  "claim": "Integrity checksums only; not identity, signatures or source authenticity",
+  "root": "c7def4acf5e1d1fdd10d1aa92fef4f57cd0e323f167642f1816bceb3c43bb9f3",
+  "files": [
+    {
+      "path": "qa-summary.txt",
+      "size": 120,
+      "sha256": "85735461ac3e4ea6ba4be525a11efc198c98dc707e0957335fa0ab7aa43ae139"
+    },
+    {
+      "path": "release-checklist.txt",
+      "size": 133,
+      "sha256": "5bbe766477ec6b6c06a8a410a42addfafcab508ff1c8e506890ddf570ec276d2"
+    },
+    {
+      "path": "sample-note.txt",
+      "size": 154,
+      "sha256": "5035b1e6fa60476534c4181bb7ac1ddc0b47f2d4a772847cb657d7059b0eb616"
+    }
+  ],
+  "chain": [
+    {
+      "index": 1,
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "file": {
+        "path": "qa-summary.txt",
+        "size": 120,
+        "sha256": "85735461ac3e4ea6ba4be525a11efc198c98dc707e0957335fa0ab7aa43ae139"
+      },
+      "digest": "5337c8e18e88178a1375c311e0c081971d047859061a8eb845cfb97887bd9159"
+    },
+    {
+      "index": 2,
+      "prev": "5337c8e18e88178a1375c311e0c081971d047859061a8eb845cfb97887bd9159",
+      "file": {
+        "path": "release-checklist.txt",
+        "size": 133,
+        "sha256": "5bbe766477ec6b6c06a8a410a42addfafcab508ff1c8e506890ddf570ec276d2"
+      },
+      "digest": "016a5759e3db8a8cf657674a355c1ea37e4e1133f9f004aa80d3393204dcd7c6"
+    },
+    {
+      "index": 3,
+      "prev": "016a5759e3db8a8cf657674a355c1ea37e4e1133f9f004aa80d3393204dcd7c6",
+      "file": {
+        "path": "sample-note.txt",
+        "size": 154,
+        "sha256": "5035b1e6fa60476534c4181bb7ac1ddc0b47f2d4a772847cb657d7059b0eb616"
+      },
+      "digest": "c7def4acf5e1d1fdd10d1aa92fef4f57cd0e323f167642f1816bceb3c43bb9f3"
+    }
+  ]
+}

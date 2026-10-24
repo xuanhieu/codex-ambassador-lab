@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Requirement-to-Test / Yêu cầu đến kiểm thử</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#e6edf5;background:#101925;color-scheme:dark}*{box-sizing:border-box}body{max-width:1180px;margin:auto;padding:24px}h1{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:8px}h2{font-size:1.15rem}p{line-height:1.6;color:#bbcbdc}.tag{color:#70e0c2;font-weight:700}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}section{background:#182637;border:1px solid #36506a;border-radius:12px;padding:20px;margin:18px 0}label{display:block;margin:12px 0 6px}textarea,input,select,button{font:inherit;border:1px solid #64829e;border-radius:6px;padding:10px;max-width:100%}textarea,input,select{background:#0f1c2b;color:#fff;width:100%}textarea{min-height:220px;font-family:ui-monospace,monospace}button{background:#23495b;color:#fff;cursor:pointer;margin:8px 8px 4px 0}button:hover{background:#306378}button:disabled{opacity:.5;cursor:default}:focus-visible{outline:3px solid #ffd37a;outline-offset:3px}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;text-align:left}th,td{padding:12px 8px;border-bottom:1px solid #36506a;vertical-align:top;overflow-wrap:anywhere}td select{min-width:130px}.status{white-space:pre-wrap;overflow-wrap:anywhere;border-left:4px solid #ffd37a;padding:12px;background:#101925}.muted{font-size:.9rem}#summary{font-weight:700;color:#70e0c2}code{color:#ffd37a}@media(max-width:760px){.grid{grid-template-columns:1fr}body{padding:14px}section{padding:14px}}
+</style></head>
+<body>
+<header><span class="tag">OFFLINE LAB / PHÒNG THỰC HÀNH NGOẠI TUYẾN</span><h1>Requirement-to-Test Trace Matrix<br>Ma trận yêu cầu → kiểm thử</h1><p>Link requirements to evidence claims. Revision changes make evidence stale.<br>Liên kết yêu cầu với khai báo bằng chứng. Đổi phiên bản làm bằng chứng hết hiệu lực.</p></header>
+<p class="status">No tests execute here. “Pass” is a declared outcome, never proof of execution.<br>Không chạy kiểm thử tại đây. “Pass” là kết quả khai báo, không chứng minh đã chạy.</p>
+<div class="grid"><section><h2>1. Import / Nhập dữ liệu</h2><label for="file">Receipt or fixtures.json / Biên nhận hoặc fixtures.json (≤ 1 MB)</label><input id="file" type="file" accept=".json,application/json"><label for="scenario">Seeded scenario / Tình huống mẫu</label><select id="scenario" disabled><option>Load fixtures.json first / Tải fixtures.json trước</option></select><button id="loadScenario" disabled>Load scenario / Tải tình huống</button><label for="json">Paste a receipt / Dán JSON biên nhận</label><textarea id="json" spellcheck="false">{"schema_version":1,"provenance":"synthetic","requirements":[{"id":"REQ-01","text":"Example requirement / Yêu cầu mẫu","revision":1}],"tests":[],"links":[]}</textarea><button id="apply">Apply JSON / Áp dụng JSON</button><p class="muted">Requirements-only? Supply <code>requirements</code>; omitted tests and links become empty arrays. / Chỉ có yêu cầu? Mảng tests và links thiếu sẽ được tạo rỗng.</p></section>
+<section><h2>2. Add a deterministic test / Thêm kiểm thử xác định</h2><p>Use a stable ID and describe the exact check. Run the real test separately before declaring an observed result.<br>Dùng ID ổn định, mô tả phép kiểm tra cụ thể. Chạy kiểm thử thật riêng trước khi khai báo kết quả quan sát.</p><form id="testForm"><label for="testId">Test ID / ID kiểm thử</label><input id="testId" required maxlength="120"><label for="testText">Specific check / Phép kiểm tra cụ thể</label><input id="testText" required maxlength="500"><button>Add test (revision 1) / Thêm kiểm thử (bản 1)</button></form><label for="provenance">Provenance / Nguồn gốc</label><select id="provenance"><option value="synthetic">Synthetic exercise / Bài tập tổng hợp</option><option value="manual">Manual claims / Khai báo thủ công</option></select><p class="muted">Imported fixture claims stay synthetic. Changing this label does not execute or authenticate tests.<br>Đổi nhãn không chạy hay xác thực kiểm thử; dữ liệu mẫu vẫn là tổng hợp.</p></section></div>
+<section><h2>3. Link & inspect / Liên kết & xem xét</h2><p id="summary"></p><form id="linkForm"><div class="grid"><div><label for="requirement">Requirement / Yêu cầu</label><select id="requirement" required></select></div><div><label for="test">Test / Kiểm thử</label><select id="test" required></select></div></div><button>Add unverified link / Thêm liên kết chưa xác minh</button></form><p class="muted">Changing an outcome preserves recorded revisions. “Attest current revisions” explicitly replaces them; use only after reviewing changed requirements and rerunning the check.<br>Đổi kết quả giữ phiên bản đã ghi. Chỉ xác nhận phiên bản hiện tại sau khi xem thay đổi và chạy lại kiểm thử.</p><div class="scroll"><table><caption>Evidence links / Liên kết bằng chứng</caption><thead><tr><th>Requirement / Yêu cầu</th><th>Test / Kiểm thử</th><th>Outcome / Kết quả</th><th>Revisions / Phiên bản</th><th>Actions / Thao tác</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section><h2>4. Validate & export / Kiểm tra & xuất</h2><p id="diagnostics" class="status" role="status" aria-live="polite"></p><button id="export">Export receipt JSON / Xuất JSON biên nhận</button><p>Validate the exported file with <code>python3 trace.py receipt.json</code>. This CLI is the authoritative strict validator.<br>Kiểm tra tệp xuất bằng CLI trên; CLI là bộ kiểm tra nghiêm ngặt chính thức.</p><p id="message" role="status" aria-live="polite"></p></section>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+let data={schema_version:1,provenance:'synthetic',requirements:[],tests:[],links:[]}, scenarios={};
+const message=text=>{$('message').textContent=text;};
+function shape(value){
+ if(!value||typeof value!=='object'||Array.isArray(value))throw Error('Expected object / Cần đối tượng JSON');
+ const d=JSON.parse(JSON.stringify(value));
+ d.tests??=[];d.links??=[];d.schema_version??=1;d.provenance??='synthetic';
+ for(const key of ['requirements','tests','links'])if(!Array.isArray(d[key]))throw Error(key+' must be array / phải là mảng');
+ if(d.schema_version!==1||!['synthetic','manual'].includes(d.provenance))throw Error('Invalid schema or provenance / Sai lược đồ hoặc nguồn gốc');
+ for(const key of ['requirements','tests']){
+ const seen=new Set();
+ for(const x of d[key]){
+ if(!x||typeof x.id!=='string'||!x.id.trim()||x.id!==x.id.trim()||typeof x.text!=='string'||!x.text.trim()||!Number.isSafeInteger(x.revision)||x.revision<1)throw Error('Invalid entity / Mục không hợp lệ: '+key);
+ if(seen.has(x.id))throw Error('Duplicate ID / ID trùng: '+x.id);seen.add(x.id);
+ }}
+ const seen=new Set();
+ for(const x of d.links){
+ if(!x||typeof x.requirement_id!=='string'||typeof x.test_id!=='string'||!['pass','fail','unverified'].includes(x.outcome)||!Number.isSafeInteger(x.requirement_revision)||!Number.isSafeInteger(x.test_revision))throw Error('Invalid link / Liên kết không hợp lệ');
+ const pair=JSON.stringify([x.requirement_id,x.test_id]);if(seen.has(pair))throw Error('Duplicate link / Liên kết trùng');seen.add(pair);
+ }
+ return d;
+}
+function option(value,text){const el=document.createElement('option');el.value=value;el.textContent=text;return el;}
+function diagnostics(){
+ const issues=[],covered=new Set();
+ if(!data.requirements.length)issues.push('No requirements / Chưa có yêu cầu');
+ for(const l of data.links){
+ const r=data.requirements.find(x=>x.id===l.requirement_id),t=data.tests.find(x=>x.id===l.test_id);
+ if(!r||!t){issues.push('Unknown reference / Tham chiếu không tồn tại: '+l.requirement_id+' → '+l.test_id);continue;}
+ covered.add(r.id);
+ if(r.revision!==l.requirement_revision||t.revision!==l.test_revision)issues.push('Stale / Hết hiệu lực: '+r.id+' → '+t.id);
+ if(l.outcome!=='pass')issues.push(l.outcome+' : '+t.id);
+ }
+ for(const r of data.requirements)if(!covered.has(r.id))issues.push('Missing coverage / Thiếu bao phủ: '+r.id);
+ return issues;
+}
+function render(){
+ $('provenance').value=data.provenance;
+ $('summary').textContent=`${data.requirements.length} requirements / yêu cầu · ${data.tests.length} tests / kiểm thử · ${data.links.length} links / liên kết · ${data.provenance}`;
+ for(const [id,key] of [['requirement','requirements'],['test','tests']])$(''+id).replaceChildren(...data[key].map(x=>option(x.id,`${x.id} (r${x.revision}) — ${x.text}`)));
+ $('rows').replaceChildren();
+ data.links.forEach((l,i)=>{
+ const tr=document.createElement('tr');
+ for(const text of [l.requirement_id,l.test_id]){const td=document.createElement('td');td.textContent=text;tr.append(td);}
+ const outcome=document.createElement('select');outcome.setAttribute('aria-label',`Outcome / Kết quả ${l.requirement_id} ${l.test_id}`);
+ for(const v of ['unverified','pass','fail'])outcome.append(option(v,{unverified:'unverified / chưa xác minh',pass:'pass / đạt',fail:'fail / lỗi'}[v]));
+ outcome.value=l.outcome;outcome.onchange=()=>{l.outcome=outcome.value;refresh();};
+ const td=document.createElement('td');td.append(outcome);tr.append(td);
+ const revisions=document.createElement('td');revisions.textContent=`req r${l.requirement_revision} / test r${l.test_revision}`;tr.append(revisions);
+ const actions=document.createElement('td');
+ const attest=document.createElement('button');attest.textContent='Attest current / Xác nhận bản hiện tại';attest.onclick=()=>{
+ const r=data.requirements.find(x=>x.id===l.requirement_id),t=data.tests.find(x=>x.id===l.test_id);
+ if(!r||!t){message('Repair unknown references through JSON / Sửa tham chiếu qua JSON');return;}
+ l.requirement_revision=r.revision;l.test_revision=t.revision;render();
+ };
+ const remove=document.createElement('button');remove.textContent='Remove / Xóa';remove.setAttribute('aria-label',`Remove / Xóa ${l.requirement_id} ${l.test_id}`);remove.onclick=()=>{data.links.splice(i,1);render();};
+ actions.append(attest,remove);tr.append(actions);$('rows').append(tr);
+ });refresh();
+}
+function refresh(){const issues=diagnostics();$('diagnostics').textContent=issues.length?issues.join('\n'):'All claims current and passing. No linked tests executed. / Tất cả khai báo đạt và hiện hành. Chưa chạy kiểm thử liên kết.';$('json').value=JSON.stringify(data,null,2);}
+function apply(value){data=shape(value);render();message('Loaded locally / Đã tải cục bộ');}
+$('apply').onclick=()=>{try{if(new TextEncoder().encode($('json').value).length>1000000)throw Error('Limit 1 MB / Giới hạn 1 MB');apply(JSON.parse($('json').value));}catch(e){message(e.message);}};
+$('file').onchange=async()=>{try{
+ const f=$('file').files[0];if(!f)return;if(f.size>1000000)throw Error('Limit 1 MB / Giới hạn 1 MB');
+ const value=JSON.parse(await f.text());
+ if(value&&value.scenarios&&typeof value.scenarios==='object'&&!Array.isArray(value.scenarios)){
+ const entries=Object.entries(value.scenarios);if(!entries.length)throw Error('Empty bundle / Bộ mẫu rỗng');
+ const checked=Object.fromEntries(entries.map(([key,d])=>[key,shape(d)]));scenarios=checked;
+ $('scenario').replaceChildren(...entries.map(([key])=>option(key,key)));$('scenario').disabled=false;$('loadScenario').disabled=false;apply(checked[entries[0][0]]);
+ }else apply(value);
+ }catch(e){message(e.message);}};
+$('loadScenario').onclick=()=>{try{apply(scenarios[$('scenario').value]);}catch(e){message(e.message);}};
+$('testForm').onsubmit=e=>{e.preventDefault();const id=$('testId').value.trim(),text=$('testText').value.trim();if(!id||!text||data.tests.some(t=>t.id===id)){message('Empty or duplicate ID / ID rỗng hoặc trùng');return;}data.tests.push({id,text,revision:1});$('testForm').reset();render();};
+$('linkForm').onsubmit=e=>{e.preventDefault();const r=data.requirements.find(x=>x.id===$('requirement').value),t=data.tests.find(x=>x.id===$('test').value);if(!r||!t){message('Add requirement and test first / Thêm yêu cầu và kiểm thử trước');return;}if(data.links.some(x=>x.requirement_id===r.id&&x.test_id===t.id)){message('Duplicate link / Liên kết trùng');return;}data.links.push({requirement_id:r.id,test_id:t.id,requirement_revision:r.revision,test_revision:t.revision,outcome:'unverified'});render();};
+$('provenance').onchange=()=>{data.provenance=$('provenance').value;render();};
+$('export').onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='receipt.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message('Exported current applied state; CLI validation required / Đã xuất trạng thái áp dụng; cần kiểm tra bằng CLI');};
+apply(JSON.parse($('json').value));
+</script><nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body></html>

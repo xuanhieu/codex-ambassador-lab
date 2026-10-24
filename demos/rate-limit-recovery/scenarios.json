@@ -1,0 +1,58 @@
+{
+  "recover-429": {
+    "name": "Burst of 429",
+    "statuses": [
+      429,
+      429,
+      200
+    ],
+    "retry_after_ms": 0
+  },
+  "respect-retry-after": {
+    "name": "Server Retry-After",
+    "statuses": [
+      503,
+      503,
+      200
+    ],
+    "retry_after_ms": 4000
+  },
+  "invalid-credentials": {
+    "name": "Invalid credentials",
+    "statuses": [
+      401,
+      200
+    ],
+    "retry_after_ms": 0
+  },
+  "persistent-429": {
+    "name": "Persistent rate limit",
+    "statuses": [
+      429,
+      429,
+      429,
+      429,
+      429,
+      429,
+      429,
+      200
+    ],
+    "retry_after_ms": 0
+  },
+  "transient-5xx": {
+    "name": "Transient server outage",
+    "statuses": [
+      502,
+      503,
+      200
+    ],
+    "retry_after_ms": 0
+  },
+  "success": {
+    "name": "Immediate success",
+    "statuses": [
+      200
+    ],
+    "retry_after_ms": 0
+  }
+}

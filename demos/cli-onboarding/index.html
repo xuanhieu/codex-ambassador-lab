@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Codex Workshop Preflight Lab — bilingual, offline, synthetic fixture walkthrough and real CLI verification tutorial.">
+<title>Codex Builder Kit · Workshop Preflight</title>
+<style>
+:root{--bg:#0b1321;--surface:#122237;--surface-2:#172d43;--stroke:#37516b;--text:#f0f6fd;--muted:#adc3d9;--accent:#6ee2cc;--warm:#f5cd79;--bad:#ff96a5;--radius:12px;--pad:24px;--dur:180ms;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+a{color:var(--accent);text-underline-offset:3px}
+.skip{position:absolute;left:12px;top:-70px;background:#fff;color:#13283a;padding:8px 12px;z-index:20}
+.skip:focus{top:9px}
+.wrap{max-width:1296px;margin:auto;padding:0 var(--pad)}
+.top{border-bottom:1px solid var(--stroke);background:#0e1b2b}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:17px;padding-bottom:17px;flex-wrap:wrap}
+.brand{font-weight:850;letter-spacing:.12em;color:#fff;text-decoration:none}
+.brand span{color:var(--accent)}
+.top nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.navlink{font-size:13px;color:var(--muted);text-decoration:none}
+.lang{background:transparent;color:var(--text);border:1px solid var(--stroke);border-radius:9px;padding:7px 12px;font-weight:750}
+.lang[aria-pressed=true]{color:var(--accent);border-color:var(--accent)}
+.eyebrow{font-size:11px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.hero{padding:49px 0 30px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);gap:35px;align-items:end}
+h1{font-size:clamp(30px,4.3vw,57px);line-height:1.11;letter-spacing:-.048em;margin:12px 0 18px;max-width:900px}
+.lead{font-size:16px;color:var(--muted);max-width:675px;margin:0}
+.pill{display:inline-flex;border:1px solid var(--stroke);border-radius:99px;padding:5px 10px;font-size:11px;color:var(--muted);font-weight:700}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.digest{border:1px solid var(--stroke);background:var(--surface);border-radius:var(--radius);padding:22px;display:grid;gap:8px}
+.digest big{font-weight:850;font-size:40px;line-height:1;color:var(--accent)}
+.digest small{color:var(--muted);font-size:12px}
+.main-grid{display:grid;grid-template-columns:320px minmax(0,1fr);gap:19px;padding:24px 0 35px}
+.panel{background:var(--surface);border:1px solid var(--stroke);border-radius:var(--radius);min-width:0;padding:20px}
+.panel h2{font-size:18px;line-height:1.3;margin:0 0 8px}
+.panel p{color:var(--muted);font-size:13px;margin:0 0 16px}
+.scenarios{display:grid;gap:10px;margin-top:16px}
+.scenario{background:var(--surface-2);border:1px solid var(--stroke);border-radius:10px;color:var(--text);padding:15px;text-align:left;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;transition:border-color var(--dur),background var(--dur);min-height:74px}
+.scenario:hover{border-color:var(--accent)}
+.scenario[aria-pressed=true]{background:#133a45;border-color:var(--accent)}
+.scenario strong{display:block;font-size:14px}
+.scenario small{display:block;color:var(--muted);font-size:11px;max-width:190px;line-height:1.45;margin-top:4px}
+.scenario mark{color:var(--accent);background:transparent;font-size:12px}
+.mock-label{margin-top:19px;border-left:3px solid var(--warm);padding:10px 13px;background:#b9812e16;color:var(--warm);font-size:12px;line-height:1.5}
+.lab-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.lab-header p{margin-bottom:0}
+.term{background:#070e18;border:1px solid #2b4963;border-radius:11px;margin:18px 0 16px;overflow:hidden;box-shadow:0 9px 30px #0003}
+.term-head{border-bottom:1px solid #28445c;padding:12px 16px;display:flex;align-items:center;gap:10px;color:#b9d0e4;font-size:12px}
+.dots{display:flex;gap:5px}.dots i{width:8px;height:8px;border-radius:50%;background:#66869c}.dots i:first-child{background:#ff9ca5}.dots i:nth-child(2){background:#efcb7c}.dots i:nth-child(3){background:#67c7ad}
+pre{margin:0;padding:20px;min-height:220px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace;color:#e4efff}
+.cmd{color:var(--accent)}
+.statuses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.status{border:1px solid var(--stroke);border-radius:9px;padding:12px;min-width:0}
+.status small{font-size:11px;color:var(--muted);display:block}
+.status strong{font-size:12px;font-weight:800;overflow-wrap:anywhere}
+.status[data-pass=true] strong{color:var(--accent)}
+.status[data-pass=false] strong{color:var(--warm)}
+.toolbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:17px}
+.primary{background:var(--accent);color:#072025;border:0;border-radius:9px;padding:11px 16px;font-weight:800;min-height:44px}
+.secondary{background:transparent;border:1px solid var(--stroke);color:var(--text);border-radius:9px;padding:11px 16px;min-height:44px}
+.result{border:1px solid var(--stroke);background:#0c1a29;border-radius:9px;padding:14px;font-size:13px;color:var(--muted);margin-top:12px;min-height:50px}
+.result[data-ready=true]{color:var(--accent)}
+.lesson{padding:12px 0 75px}
+.section-head{display:flex;justify-content:space-between;gap:15px;align-items:baseline;flex-wrap:wrap;margin-bottom:15px}
+.section-head h2{font-size:23px;margin:0}
+.lesson-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.exercise{background:var(--surface);border:1px solid var(--stroke);border-radius:var(--radius);padding:21px}
+.exercise .count{color:var(--warm);font-size:11px;font-weight:800;letter-spacing:.13em}
+.exercise h3{font-size:17px;margin:8px 0}
+.exercise p{font-size:13px;color:var(--muted)}
+.exercise label{display:flex;align-items:flex-start;gap:11px;font-size:13px;cursor:pointer;margin-top:16px}
+.exercise input{accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;margin-top:2px}
+.meta{border-top:1px solid var(--stroke);color:var(--muted);font-size:12px;padding:20px 0 40px}
+.meta .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:850px){.hero-grid,.main-grid{grid-template-columns:1fr}.digest{display:flex;align-items:center;justify-content:space-between}.main-grid{padding-top:10px}.hero{padding-top:36px}.lesson-grid{grid-template-columns:1fr}}
+@media(max-width:530px){:root{--pad:15px}.statuses{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:16px}.hero{padding-top:30px}.term pre{padding:14px}.hero-grid{gap:16px}.top .wrap{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#lab" data-i18n="skip">Đến bài thực hành</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/dashboard/">CODEX <span>BUILDER LAB</span></a>
+    <nav aria-label="Lesson tools">
+      <a class="navlink" href="/dashboard/" data-i18n="back">← Dashboard</a>
+      <button class="lang" id="vi" type="button" aria-pressed="true">Tiếng Việt</button>
+      <button class="lang" id="en" type="button" aria-pressed="false">English</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero" aria-labelledby="headline">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow" data-i18n="eyebrow">Codex Workshop • Bài học 01</div>
+        <h1 id="headline" data-i18n="headline">Máy của bạn đã sẵn sàng xây dựng với Codex?</h1>
+        <p class="lead" data-i18n="lead">Bài thực hành song ngữ, hoàn toàn miễn phí, không cần API key. Thử 3 môi trường giả lập, hiểu cảnh báo, rồi chạy bản kiểm tra CLI thật trên máy.</p>
+        <div class="hero-tags">
+          <span class="pill" data-i18n="duration">20 phút</span>
+          <span class="pill" data-i18n="offline">Không gọi API</span>
+          <span class="pill" data-i18n="privacy">Không thu dữ liệu cá nhân</span>
+        </div>
+      </div>
+      <div class="digest" aria-label="Workshop facts">
+        <div><big>03</big><small data-i18n="scenarios">tình huống mô phỏng</small></div>
+        <div><big>04</big><small data-i18n="checks">điểm kiểm tra môi trường</small></div>
+      </div>
+    </div>
+  </section>
+  <section class="main-grid" id="lab" aria-label="Interactive synthetic diagnostic workshop">
+    <aside class="panel">
+      <div class="eyebrow" data-i18n="scenarioLabel">Chọn tình huống</div>
+      <h2 data-i18n="scenarioTitle">Bạn đang ở môi trường nào?</h2>
+      <p data-i18n="scenarioHelp">Chọn một fixture để xem kết quả minh họa, không thực thi lệnh thật trong trình duyệt.</p>
+      <div class="scenarios" id="scenarios"></div>
+      <div class="mock-label" data-i18n="mockWarning">Dữ liệu GIẢ LẬP. Không dùng để xác nhận phần mềm đã cài trên thiết bị của bạn.</div>
+    </aside>
+    <article class="panel">
+      <div class="lab-header">
+        <div><div class="eyebrow" data-i18n="previewLabel">Kết quả minh họa</div><h2 data-i18n="previewTitle">CLI preflight → Hướng xử lý</h2></div>
+        <span class="pill">JSON schema v1</span>
+      </div>
+      <div class="term">
+        <div class="term-head"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span> <span data-i18n="terminal">Terminal (synthetic fixture)</span></div>
+        <pre id="output" aria-live="polite"></pre>
+      </div>
+      <div class="statuses" id="statuses"></div>
+      <div class="result" id="result" role="status"></div>
+      <div class="toolbar">
+        <button class="primary" type="button" id="download" data-i18n="download">Tải kết quả JSON mẫu</button>
+        <button class="secondary" type="button" id="reset" data-i18n="reset">Đặt lại bài học</button>
+      </div>
+    </article>
+  </section>
+  <section class="lesson" id="exercises">
+    <div class="section-head">
+      <div><div class="eyebrow" data-i18n="lesson">Tiếp theo: học bằng thực hành</div><h2 data-i18n="exerciseTitle">3 thử thách trước khi build thật</h2></div>
+      <span class="pill" id="progress">0 / 3</span>
+    </div>
+    <div class="lesson-grid" id="lessonGrid"></div>
+  </section>
+</main>
+<footer class="meta"><div class="wrap">
+  <span data-i18n="footer">Educational demo • Không liên kết với OpenAI như một sự chứng nhận</span>
+  <a href="https://developers.openai.com/codex/" target="_blank" rel="noopener noreferrer">Official Codex docs ↗</a>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var lang="vi",selected="new-student",fixtures=null,done=[false,false,false];
+var DATA={
+vi:{
+  skip:"Đến bài thực hành",back:"← Dashboard",eyebrow:"Codex Workshop • Bài học 01",headline:"Máy của bạn đã sẵn sàng xây dựng với Codex?",
+  lead:"Bài thực hành song ngữ, miễn phí, không cần API key. Thử 3 môi trường giả lập rồi kiểm tra CLI thật trên máy.",
+  duration:"20 phút",offline:"Không gọi API",privacy:"Không thu dữ liệu cá nhân",scenarios:"tình huống mô phỏng",checks:"điểm kiểm tra môi trường",
+  scenarioLabel:"Chọn tình huống",scenarioTitle:"Bạn đang ở môi trường nào?",
+  scenarioHelp:"Chọn fixture để xem kết quả minh họa. Trang web không thực thi lệnh trên máy của bạn.",
+  mockWarning:"Dữ liệu GIẢ LẬP. Không dùng để xác nhận phần mềm đã cài trên thiết bị.",
+  previewLabel:"Kết quả minh họa",previewTitle:"CLI preflight → Hướng xử lý",terminal:"Terminal (synthetic fixture)",
+  download:"Tải JSON mẫu",reset:"Đặt lại bài học",lesson:"Tiếp theo: học bằng thực hành",exerciseTitle:"3 thử thách trước khi build thật",
+  footer:"Bản demo hướng dẫn, không phải nội dung được OpenAI chứng nhận.",
+  ready:"Sẵn sàng",notReady:"Cần chuẩn bị thêm",installed:"đã phát hiện",missing:"chưa có",
+  fixtureName:{"ready":"Máy đã sẵn sàng","new-student":"Người mới bắt đầu","restricted-device":"Máy hạn chế"},
+  fixtureDesc:{"ready":"Đủ công cụ và thư mục Git","new-student":"Có Git và Node, thiếu Codex","restricted-device":"Thiếu Node và Codex"},
+  hint:{git:"Cài Git từ tài liệu chính thức.",node:"Cài Node.js LTS từ nguồn chính thức.",codex:"Tham khảo tài liệu cài Codex chính thức.",repo:"Khởi tạo một Git repo thử nghiệm."},
+  exercises:[
+    ["Bước 01 • 5 phút","Đọc kết quả","Chọn người mới, xác định chính xác 2 mục chưa sẵn sàng.","Tôi đã chỉ ra đúng hai mục thiếu."],
+    ["Bước 02 • 7 phút","Chạy CLI thật","Trong terminal: python3 cli_onboarding.py --root . --json. Xem trường ready.","Tôi đã chạy lệnh ở repo của mình."],
+    ["Bước 03 • 8 phút","Xác thực và giải thích","Chạy python3 -m unittest discover -s . -p 'test_*.py'. Giải thích vì sao fixture khác máy thật.","Tôi đã kiểm tra test và ghi lại giới hạn."]
+  ]
+},
+en:{
+  skip:"Skip to workshop",back:"← Dashboard",eyebrow:"Codex Workshop • Lesson 01",headline:"Is your machine ready to build with Codex?",
+  lead:"A free bilingual hands-on lesson without API keys. Compare three synthetic environments, then run the real local CLI diagnostic.",
+  duration:"20 minutes",offline:"No API calls",privacy:"No personal data collected",scenarios:"synthetic scenarios",checks:"environment checks",
+  scenarioLabel:"Pick a scenario",scenarioTitle:"What environment are you in?",
+  scenarioHelp:"Select a fixture to preview diagnostic output. The website does not run commands on your machine.",
+  mockWarning:"SYNTHETIC DATA. It does not prove anything is installed on your device.",
+  previewLabel:"Synthetic diagnostic",previewTitle:"CLI preflight → Next action",terminal:"Terminal (synthetic fixture)",
+  download:"Download sample JSON",reset:"Reset exercises",lesson:"Next: learn by doing",exerciseTitle:"3 challenges before your first build",
+  footer:"Independent educational demonstration. Not an OpenAI certification.",
+  ready:"Ready",notReady:"Setup required",installed:"detected",missing:"missing",
+  fixtureName:{"ready":"Ready builder","new-student":"First-time learner","restricted-device":"Restricted computer"},
+  fixtureDesc:{"ready":"Tools and Git workspace ready","new-student":"Has Git and Node, no Codex","restricted-device":"Node and Codex missing"},
+  hint:{git:"Install official Git.",node:"Install official Node.js LTS.",codex:"Follow official Codex installation documentation.",repo:"Initialize a small example Git repository."},
+  exercises:[
+    ["Step 01 • 5 min","Read the report","Choose the first-time learner and identify two readiness blockers.","I identified both missing checks."],
+    ["Step 02 • 7 min","Run real CLI","In a terminal: python3 cli_onboarding.py --root . --json. Check the ready boolean.","I ran a local check in my repo."],
+    ["Step 03 • 8 min","Verify and explain","Run python3 -m unittest discover -s . -p 'test_*.py'. Explain why fixture output differs from your system.","I ran tests and documented the limits."]
+  ]
+}};
+function el(name){return document.getElementById(name)}
+function setLocale(target){lang=target;document.documentElement.lang=target;el("vi").setAttribute("aria-pressed",String(lang==="vi"));el("en").setAttribute("aria-pressed",String(lang==="en"))}
+function build(){
+var t=DATA[lang];
+document.querySelectorAll("[data-i18n]").forEach(function(x){var key=x.getAttribute("data-i18n");if(Object.prototype.hasOwnProperty.call(t,key)){x.textContent=t[key]}});
+el("scenarios").innerHTML="";
+Object.keys(t.fixtureName).forEach(function(key){
+ var button=document.createElement("button");button.type="button";button.className="scenario";button.setAttribute("aria-pressed",String(selected===key));
+ var title=document.createElement("span");var label=document.createElement("strong");label.textContent=t.fixtureName[key];var desc=document.createElement("small");desc.textContent=t.fixtureDesc[key];title.appendChild(label);title.appendChild(desc);
+ var mark=document.createElement("mark");mark.textContent=selected===key?"●":"○";
+ button.appendChild(title);button.appendChild(mark);
+ button.addEventListener("click",function(){selected=key;build()});
+ el("scenarios").appendChild(button);
+});
+var fixture=fixtures[selected],lines=["$ python3 cli_onboarding.py --demo "+selected+" --json",""];
+["git","node","codex","repo"].forEach(function(key){
+ var info=fixture.checks[key],ok=info.status==="ok";
+ lines.push((ok?"[OK] ":"[!!] ")+key+" : "+(ok?(info.version||t.installed):t.hint[key]));
+});
+el("output").textContent=lines.join("\n");
+el("statuses").innerHTML="";
+["git","node","codex","repo"].forEach(function(key){
+ var info=fixture.checks[key],ok=info.status==="ok",box=document.createElement("div");
+ box.className="status";box.dataset.pass=String(ok);
+ var k=document.createElement("small");k.textContent=key.toUpperCase();
+ var v=document.createElement("strong");v.textContent=ok?t.installed:t.missing;
+ box.appendChild(k);box.appendChild(v);el("statuses").appendChild(box);
+});
+el("result").dataset.ready=String(fixture.ready);
+el("result").textContent=fixture.ready?t.ready:t.notReady;
+el("lessonGrid").innerHTML="";
+t.exercises.forEach(function(item,index){
+ var wrap=document.createElement("article");wrap.className="exercise";
+ var eyebrow=document.createElement("div");eyebrow.className="count";eyebrow.textContent=item[0];
+ var heading=document.createElement("h3");heading.textContent=item[1];
+ var p=document.createElement("p");p.textContent=item[2];
+ var lab=document.createElement("label"),check=document.createElement("input");check.type="checkbox";check.checked=done[index];check.setAttribute("aria-label",item[3]);
+ check.addEventListener("change",function(){done[index]=check.checked;progress()});
+ var span=document.createElement("span");span.textContent=item[3];lab.appendChild(check);lab.appendChild(span);
+ wrap.appendChild(eyebrow);wrap.appendChild(heading);wrap.appendChild(p);wrap.appendChild(lab);el("lessonGrid").appendChild(wrap);
+});
+progress();
+}
+function progress(){el("progress").textContent=done.filter(Boolean).length+" / "+done.length}
+el("vi").addEventListener("click",function(){setLocale("vi");build()});
+el("en").addEventListener("click",function(){setLocale("en");build()});
+el("reset").addEventListener("click",function(){done=[false,false,false];selected="new-student";build()});
+el("download").addEventListener("click",function(){
+ var data=JSON.stringify(fixtures[selected],null,2);
+ var link=document.createElement("a"),blob=new Blob([data],{type:"application/json"});
+ var url=URL.createObjectURL(blob);link.href=url;link.download="codex-workshop-synthetic-"+selected+".json";document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url);
+});
+fetch("./fixtures.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("No fixture");return r.json()}).then(function(d){
+ if(!d||!d.ready||!d["new-student"]||!d["restricted-device"])throw Error("Invalid fixture data");
+ fixtures=d;build();
+}).catch(function(){
+ el("output").textContent="Could not load fixture files. Run a local HTTP server; see README.";
+ el("result").textContent="Offline fixture unavailable. Check the installation.";
+});
+})();
+</script>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body></html>

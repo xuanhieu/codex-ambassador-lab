@@ -1,0 +1,158 @@
+{
+  "schema": "docs-radar-report-v1",
+  "before": "before · synthetic snapshot (2026-10)",
+  "after": "after · synthetic snapshot (2026-10)",
+  "summary": {
+    "before": 14,
+    "after": 14,
+    "changed_events": 12,
+    "affected_documents": 10,
+    "critical_events": 5
+  },
+  "events": [
+    {
+      "id": "DOC012",
+      "title": "Policies for data access",
+      "section": "Policies",
+      "type": "removed",
+      "risk": 100,
+      "severity": "critical",
+      "critical": true,
+      "old": "https://example.org/synthetic-codex-docs/guide-012",
+      "new": "",
+      "url": "https://example.org/synthetic-codex-docs/guide-012"
+    },
+    {
+      "id": "DOC013",
+      "title": "Offline learning lessons",
+      "section": "Getting started",
+      "type": "removed",
+      "risk": 88,
+      "severity": "critical",
+      "critical": false,
+      "old": "https://example.org/synthetic-codex-docs/guide-013",
+      "new": "",
+      "url": "https://example.org/synthetic-codex-docs/guide-013"
+    },
+    {
+      "id": "DOC001",
+      "title": "Codex CLI Getting Started",
+      "section": "Getting started",
+      "type": "content_sha256",
+      "risk": 83,
+      "severity": "critical",
+      "critical": true,
+      "old": "6b20169c295559e173d19c871bdc449ebbacafe87f295aca1e02127d4ec70209",
+      "new": "85182119bbec67f1063eb86b6973117042075c9413796af8964fc63332a12f35",
+      "url": "https://example.org/synthetic-codex-docs/guide-001"
+    },
+    {
+      "id": "DOC003",
+      "title": "Agent approvals and review",
+      "section": "Security",
+      "type": "content_sha256",
+      "risk": 83,
+      "severity": "critical",
+      "critical": true,
+      "old": "465ccb92c98b587ec2caf71ff78cd5a70002718903f24bf755599f846b0e978d",
+      "new": "f65857afd69fae9ef9e444a500c44ee207f25540b56755d423ed7de2001d06b8",
+      "url": "https://example.org/synthetic-codex-docs/guide-003"
+    },
+    {
+      "id": "DOC007",
+      "title": "Sub-agent delegation",
+      "section": "Automation",
+      "type": "content_sha256",
+      "risk": 83,
+      "severity": "critical",
+      "critical": true,
+      "old": "ce51ed9f4a1ccfa6f41c9847b551446975a04c547ee12b1533d1856c04afd729",
+      "new": "08b42f6d1e508ff6d2d214b26be0536eace298554afe8886c9cbd83f18519266",
+      "url": "https://example.org/synthetic-codex-docs/guide-007"
+    },
+    {
+      "id": "DOC004",
+      "title": "Tool sandbox permissions",
+      "section": "Security",
+      "type": "url",
+      "risk": 78,
+      "severity": "high",
+      "critical": true,
+      "old": "https://example.org/synthetic-codex-docs/guide-004",
+      "new": "https://example.org/synthetic-codex-docs/policies/sandbox-permissions",
+      "url": "https://example.org/synthetic-codex-docs/policies/sandbox-permissions"
+    },
+    {
+      "id": "DOC014",
+      "title": "Local code reviews",
+      "section": "CLI",
+      "type": "content_sha256",
+      "risk": 70,
+      "severity": "high",
+      "critical": false,
+      "old": "4d210b2b75df63226bfb01510f390955da5aef2fb8b1444c121bd4a4b39267f0",
+      "new": "d0ccfdb19435f33b23ef6b8fc0b2b65ccf89c89f11999db570f7554301c619a6",
+      "url": "https://example.org/synthetic-codex-docs/guide-014"
+    },
+    {
+      "id": "DOC011",
+      "title": "API integration safety",
+      "section": "API",
+      "type": "critical",
+      "risk": 55,
+      "severity": "medium",
+      "critical": false,
+      "old": "true",
+      "new": "false",
+      "url": "https://example.org/synthetic-codex-docs/guide-011"
+    },
+    {
+      "id": "DOC007",
+      "title": "Sub-agent delegation",
+      "section": "Automation",
+      "type": "section",
+      "risk": 51,
+      "severity": "medium",
+      "critical": true,
+      "old": "Agents",
+      "new": "Automation",
+      "url": "https://example.org/synthetic-codex-docs/guide-007"
+    },
+    {
+      "id": "DOC001",
+      "title": "Codex CLI Getting Started",
+      "section": "Getting started",
+      "type": "title",
+      "risk": 45,
+      "severity": "medium",
+      "critical": true,
+      "old": "Codex CLI Quickstart",
+      "new": "Codex CLI Getting Started",
+      "url": "https://example.org/synthetic-codex-docs/guide-001"
+    },
+    {
+      "id": "DOC016",
+      "title": "Incident response exercise",
+      "section": "Security",
+      "type": "added",
+      "risk": 43,
+      "severity": "medium",
+      "critical": true,
+      "old": "",
+      "new": "https://example.org/synthetic-codex-docs/guide-016",
+      "url": "https://example.org/synthetic-codex-docs/guide-016"
+    },
+    {
+      "id": "DOC015",
+      "title": "Advanced task planning",
+      "section": "Agents",
+      "type": "added",
+      "risk": 30,
+      "severity": "low",
+      "critical": false,
+      "old": "",
+      "new": "https://example.org/synthetic-codex-docs/guide-015",
+      "url": "https://example.org/synthetic-codex-docs/guide-015"
+    }
+  ]
+}

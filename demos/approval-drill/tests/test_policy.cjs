@@ -1,0 +1,23 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),policy=require('../src/policy.js');
+const data=JSON.parse(fs.readFileSync(path.join(root,'fixtures/scenarios.json'),'utf8'));
+const get=id=>data.scenarios.find(x=>x.id===id);
+test('twelve synthetic scenarios',()=>assert.equal(data.scenarios.length,12));
+test('all scenarios bilingual Vietnamese and English',()=>assert.ok(data.scenarios.every(x=>x.title.vi&&x.title.en&&x.description.vi&&x.description.en)));
+test('safe read allowed without approvals',()=>assert.equal(policy.evaluate(get('A01'),data).verdict,'proceed'));
+test('sensitive write escalates to owner',()=>assert.deepEqual(policy.evaluate(get('A03'),data).missing,['operator']));
+test('approved write proceeds',()=>assert.equal(policy.evaluate(get('A04'),data).verdict,'proceed'));
+test('external send needs security too',()=>assert.deepEqual(policy.evaluate(get('A05'),data).missing,['security']));
+test('prompt injection content blocked',()=>assert.equal(policy.evaluate(get('A06'),data).reason,'untrusted_instruction'));
+test('delete outside scope blocked despite approvals',()=>assert.equal(policy.evaluate(get('A08'),data).verdict,'block'));
+test('deploy partial approval escalates',()=>assert.deepEqual(policy.evaluate(get('A09'),data).missing,['security']));
+test('deploy approved proceeds',()=>assert.equal(policy.evaluate(get('A10'),data).verdict,'proceed'));
+test('raw secret blocks despite security receipt',()=>assert.equal(policy.evaluate(get('A12'),data).reason,'raw_secret'));
+test('correct human decision with missing security passes',()=>assert.equal(policy.grade(get('A05'),'escalate',['security'],data).passed,true));
+test('extra approver fails',()=>assert.equal(policy.grade(get('A05'),'escalate',['security','release'],data).passed,false));
+test('unknown category fails closed',()=>assert.equal(policy.evaluate({...get('A01'),category:'unknown'},data).verdict,'block'));
+test('missing flags fail closed',()=>{const r={...get('A01')};delete r.raw_secret;assert.equal(policy.evaluate(r,data).reason,'invalid')});
+test('web only, no navigation to secrets or network in JS',()=>{
+ const s=fs.readFileSync(path.join(root,'src/app.js'),'utf8');
+ assert.ok(!/fetch\s*\(|XMLHttpRequest|sendBeacon|WebSocket|navigator\.send/.test(s));
+});

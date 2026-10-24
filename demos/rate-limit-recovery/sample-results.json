@@ -1,0 +1,232 @@
+{
+  "recover-429": {
+    "schema": "rate-limit-recovery-v1",
+    "scenario": "synthetic",
+    "config": {
+      "max_attempts": 5,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "budget": 5,
+      "seed": 7
+    },
+    "success": true,
+    "stop_reason": "success",
+    "requests": 3,
+    "elapsed_ms": 1233,
+    "events": [
+      {
+        "attempt": 1,
+        "at_ms": 0,
+        "http": 429,
+        "retry": true,
+        "delay_ms": 382,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 2,
+        "at_ms": 382,
+        "http": 429,
+        "retry": true,
+        "delay_ms": 851,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 3,
+        "at_ms": 1233,
+        "http": 200,
+        "retry": false,
+        "delay_ms": 0,
+        "reason": "success"
+      }
+    ]
+  },
+  "respect-retry-after": {
+    "schema": "rate-limit-recovery-v1",
+    "scenario": "synthetic",
+    "config": {
+      "max_attempts": 5,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "budget": 5,
+      "seed": 7
+    },
+    "success": true,
+    "stop_reason": "success",
+    "requests": 3,
+    "elapsed_ms": 8000,
+    "events": [
+      {
+        "attempt": 1,
+        "at_ms": 0,
+        "http": 503,
+        "retry": true,
+        "delay_ms": 4000,
+        "reason": "retry_after"
+      },
+      {
+        "attempt": 2,
+        "at_ms": 4000,
+        "http": 503,
+        "retry": true,
+        "delay_ms": 4000,
+        "reason": "retry_after"
+      },
+      {
+        "attempt": 3,
+        "at_ms": 8000,
+        "http": 200,
+        "retry": false,
+        "delay_ms": 0,
+        "reason": "success"
+      }
+    ]
+  },
+  "invalid-credentials": {
+    "schema": "rate-limit-recovery-v1",
+    "scenario": "synthetic",
+    "config": {
+      "max_attempts": 5,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "budget": 5,
+      "seed": 7
+    },
+    "success": false,
+    "stop_reason": "terminal_http",
+    "requests": 1,
+    "elapsed_ms": 0,
+    "events": [
+      {
+        "attempt": 1,
+        "at_ms": 0,
+        "http": 401,
+        "retry": false,
+        "delay_ms": 0,
+        "reason": "terminal_http"
+      }
+    ]
+  },
+  "persistent-429": {
+    "schema": "rate-limit-recovery-v1",
+    "scenario": "synthetic",
+    "config": {
+      "max_attempts": 5,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "budget": 5,
+      "seed": 7
+    },
+    "success": false,
+    "stop_reason": "attempt_limit",
+    "requests": 5,
+    "elapsed_ms": 6203,
+    "events": [
+      {
+        "attempt": 1,
+        "at_ms": 0,
+        "http": 429,
+        "retry": true,
+        "delay_ms": 382,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 2,
+        "at_ms": 382,
+        "http": 429,
+        "retry": true,
+        "delay_ms": 851,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 3,
+        "at_ms": 1233,
+        "http": 429,
+        "retry": true,
+        "delay_ms": 1875,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 4,
+        "at_ms": 3108,
+        "http": 429,
+        "retry": true,
+        "delay_ms": 3095,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 5,
+        "at_ms": 6203,
+        "http": 429,
+        "retry": false,
+        "delay_ms": 0,
+        "reason": "attempt_limit"
+      }
+    ]
+  },
+  "transient-5xx": {
+    "schema": "rate-limit-recovery-v1",
+    "scenario": "synthetic",
+    "config": {
+      "max_attempts": 5,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "budget": 5,
+      "seed": 7
+    },
+    "success": true,
+    "stop_reason": "success",
+    "requests": 3,
+    "elapsed_ms": 1233,
+    "events": [
+      {
+        "attempt": 1,
+        "at_ms": 0,
+        "http": 502,
+        "retry": true,
+        "delay_ms": 382,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 2,
+        "at_ms": 382,
+        "http": 503,
+        "retry": true,
+        "delay_ms": 851,
+        "reason": "exponential_backoff"
+      },
+      {
+        "attempt": 3,
+        "at_ms": 1233,
+        "http": 200,
+        "retry": false,
+        "delay_ms": 0,
+        "reason": "success"
+      }
+    ]
+  },
+  "success": {
+    "schema": "rate-limit-recovery-v1",
+    "scenario": "synthetic",
+    "config": {
+      "max_attempts": 5,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "budget": 5,
+      "seed": 7
+    },
+    "success": true,
+    "stop_reason": "success",
+    "requests": 1,
+    "elapsed_ms": 0,
+    "events": [
+      {
+        "attempt": 1,
+        "at_ms": 0,
+        "http": 200,
+        "retry": false,
+        "delay_ms": 0,
+        "reason": "success"
+      }
+    ]
+  }
+}

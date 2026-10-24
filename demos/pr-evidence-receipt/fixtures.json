@@ -1,0 +1,73 @@
+{
+  "expected_files": [
+    "app.txt"
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "Update greeting / Cập nhật lời chào",
+      "files": [
+        "app.txt"
+      ],
+      "evidence": [
+        "T1"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "T1",
+      "path": "test.log",
+      "sha256": "405d0bea95d36aec002914bf6110bf0bb34cd5426f2e38ab4637ace3c01939bc",
+      "outcome": "passed",
+      "provenance": "simulated"
+    }
+  ],
+  "demo_receipt": {
+    "schema_version": 1,
+    "provenance": "synthetic",
+    "evidence_policy": "Synthetic illustration; no test run or repository inspection. / Minh họa tổng hợp; chưa chạy kiểm thử hoặc kiểm tra kho mã.",
+    "status": "FAIL",
+    "files": [
+      {
+        "path": "app.txt",
+        "changed": true,
+        "sha256": "7b9a72466d3960eb2aacccfc848939453490db0678bd4725def3f789b891c919"
+      }
+    ],
+    "unexpected_changes": [
+      "extra.txt"
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "Update greeting / Cập nhật lời chào",
+        "files": [
+          "app.txt"
+        ],
+        "evidence": [
+          "T1"
+        ],
+        "satisfied": false
+      }
+    ],
+    "evidence": [
+      {
+        "id": "T1",
+        "path": "test.log",
+        "sha256": "405d0bea95d36aec002914bf6110bf0bb34cd5426f2e38ab4637ace3c01939bc",
+        "outcome": "passed",
+        "provenance": "simulated",
+        "actual_sha256": "405d0bea95d36aec002914bf6110bf0bb34cd5426f2e38ab4637ace3c01939bc",
+        "accepted": false,
+        "issues": [
+          "simulated evidence"
+        ]
+      }
+    ],
+    "failures": [
+      "Unexpected changes / Thay đổi ngoài dự kiến",
+      "Evidence T1: simulated evidence"
+    ]
+  }
+}
