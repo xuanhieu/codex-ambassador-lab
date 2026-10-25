@@ -7,9 +7,11 @@ window.AMB_BASE_IDEAS=[
     "audience": "Warroom/Paperclip, founder UX",
     "mvp": "approval-gated task simulation, budget, audit JSON",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "existing plan",
-    "impact": 5
+    "impact": 5,
+    "sourceUrl": "https://github.com/xuanhieu/agent-ops-clinic",
+    "publicUrl": "https://codex.xuanhieu.org/demos/agent-ops-clinic/"
   },
   {
     "id": "O002",
@@ -43,9 +45,11 @@ window.AMB_BASE_IDEAS=[
     "audience": "10+ years digital systems",
     "mvp": "novice-oriented open-source onboarding steps",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "existing plan",
-    "impact": 5
+    "impact": 5,
+    "acceptance": "Three synthetic PR fixtures, five-step issue→diff→tests→PR process and export; 10 tests plus real Chrome QA PASS",
+    "publicUrl": "https://codex.xuanhieu.org/demos/first-pr-clinic/"
   },
   {
     "id": "O005",
