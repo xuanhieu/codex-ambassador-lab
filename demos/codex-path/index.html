@@ -7,6 +7,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Codex Path — AI Learning & Career OS</title>
 <link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="./starter.css">
+<link rel="stylesheet" href="./guide.css">
 </head>
 <body>
 <a class="skip" href="#content">Bỏ qua điều hướng</a>
@@ -15,18 +17,24 @@
  <a class="brand" href="#overview" aria-label="Codex Path homepage"><span class="brand-emblem" aria-hidden="true">⌘</span><span>CODEX<span class="brand-blue">PATH</span><small>LEARNING × CAREER OS</small></span></a>
  <div class="sidebar-label"><span>WAYFINDER / 001</span><span class="status-pin" title="Local-first"></span></div>
  <nav class="sidebar-nav" aria-label="Điều hướng Codex Path">
-  <a href="#overview" data-tab="overview" class="active"><span class="nav-icon">◫</span><span data-i="overview">Tổng quan</span></a>
+  <a href="#start" data-tab="start"><span class="nav-icon">✦</span><span data-i="start">Bắt đầu tại đây</span></a>
+   <a href="#overview" data-tab="overview" class="active"><span class="nav-icon">◫</span><span data-i="overview">Tổng quan</span></a>
+  <a href="#guide" data-tab="guide"><span class="nav-icon">☷</span><span data-i="guide">Học liệu dễ hiểu</span></a>
   <a href="#path" data-tab="path"><span class="nav-icon">⌁</span><span data-i="path">Lộ trình học</span></a>
   <a href="#career" data-tab="career"><span class="nav-icon">◇</span><span data-i="career">Con đường nghề</span></a>
   <a href="#lab" data-tab="lab"><span class="nav-icon">◈</span><span data-i="lab">Practice Lab</span></a>
   <a href="#evidence" data-tab="evidence"><span class="nav-icon">▣</span><span data-i="evidence">Portfolio / Proof</span></a>
  </nav>
+ <a class="linked-item" href="https://github.com/xuanhieu/codex-learning-path" target="_blank" rel="noopener noreferrer"><span>↗</span><span>Source on GitHub</span></a>
  <div class="sidebar-rule"></div>
  <div class="sidebar-label">LINKED WORKSPACE</div>
  <div class="linked">
   <a href="../codex-academy/" class="linked-item"><span>↗</span><span>Zero-to-Hero Academy</span></a>
   <a href="../../dashboard/#workspace" class="linked-item"><span>↗</span><span>Mission Control</span></a>
   <a href="../agent-ops-clinic/" class="linked-item"><span>↗</span><span>Agent Ops Clinic</span></a>
+  <a href="../zero-token-workshop/" class="linked-item"><span>↗</span><span>Zero-Token Workshop</span></a>
+  <a href="../human-review-checklist/" class="linked-item"><span>↗</span><span>Human Review Gate</span></a>
+  <a href="../first-pr-clinic/" class="linked-item"><span>↗</span><span>First PR Clinic</span></a>
   <a href="../approval-drill/" class="linked-item"><span>↗</span><span>Approval Drill</span></a>
  </div>
  <div class="sidebar-spacer"></div>
@@ -51,7 +59,9 @@
     <h1 id="ascii-heading" data-ascii="surface">Your path to <em>AI mastery.</em></h1>
     <p id="hero-description">Từ mới bắt đầu đến builder chuyên nghiệp. Thiết kế hành trình phù hợp nghề nghiệp, giờ học và bằng chứng thực hành.</p>
     <div class="hero-cta">
+    <a class="button outline" href="#start" data-i="firstWin">Bắt đầu trong 3 phút ↗</a>
      <button class="button primary" type="button" data-action="create-plan"><span data-i="buildMyPath">Tạo lộ trình của tôi</span> <span aria-hidden="true">↗</span></button>
+     <a class="button outline" href="#guide">Hướng dẫn dễ hiểu ↗</a>
      <a class="button outline" href="../codex-academy/#paths" data-i="academyLink">Mở kho bài học ↗</a>
     </div>
    </div>
@@ -91,6 +101,9 @@
 </dialog>
 <input id="backup-import" type="file" accept=".json,application/json" hidden aria-label="Import learning backup JSON">
 <script data-cfasync="false" defer src="./engine.js"></script>
+<script data-cfasync="false" defer src="./starter-core.js"></script>
+<script data-cfasync="false" defer src="./starter-ui.js"></script>
+<script data-cfasync="false" defer src="./guide-ui.js"></script>
 <script data-cfasync="false" defer src="./app.js"></script>
 <script data-cfasync="false" type="module" src="./motion.js"></script>
 <nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body>

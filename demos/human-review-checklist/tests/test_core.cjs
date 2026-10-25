@@ -1,0 +1,15 @@
+const test=require("node:test"),assert=require("node:assert/strict"),C=require("../core.js");
+const all=()=>Object.fromEntries(C.CHECKS.map(x=>[x.id,true]));
+test("six scopes include write, send, delete, payment and deployment",()=>assert.equal(C.ACTIONS.length,6));
+test("bounded read with checks is ready for human review",()=>assert.equal(C.evaluate({action:"read",checks:all()}).status,"READY_FOR_REVIEW"));
+test("deletion with missing scope blocked",()=>{const checks=all();checks.scope=false;const r=C.evaluate({action:"delete",checks});assert.equal(r.status,"BLOCKED");assert.ok(r.blockers.includes("DELETION_SCOPE_UNCLEAR"))});
+test("sending without human approver blocked",()=>{const checks=all();checks.owner=false;assert.equal(C.evaluate({action:"send",checks}).status,"BLOCKED")});
+test("production deploy without rollback blocked",()=>{const checks=all();checks.rollback=false;assert.equal(C.evaluate({action:"deploy",checks}).status,"BLOCKED")});
+test("deploy is never marked automatically ready",()=>assert.equal(C.evaluate({action:"deploy",checks:all()}).status,"NEEDS_HUMAN_APPROVAL"));
+test("payment always needs human approval",()=>assert.equal(C.evaluate({action:"purchase",checks:all()}).status,"NEEDS_HUMAN_APPROVAL"));
+test("credentials in description halt review",()=>{let r=C.evaluate({action:"read",note:"my token is sk-abcdefghijklmno123456",checks:all()});assert.equal(r.status,"BLOCKED");assert.ok(r.flags.secret)});
+test("all missing checks lead to incomplete status",()=>assert.equal(C.evaluate({action:"edit"}).status,"REVIEW_INCOMPLETE"));
+test("external transfer raises risk for read-only task",()=>assert.equal(C.evaluate({action:"read",external:true,checks:all()}).status,"NEEDS_HUMAN_APPROVAL"));
+test("blocked requests cannot generate receipts",()=>{let r=C.evaluate({action:"delete"});assert.equal(C.receipt(r,"approve"),null)});
+test("receipt never includes source description",()=>{let r=C.evaluate({action:"send",note:"my private sample draft",checks:all()});let out=C.receipt(r,"approve");assert.equal(out.humanDecision,"approve");assert.equal(out.sideEffectsExecuted,false);assert.ok(!JSON.stringify(out).includes("private sample draft"))});
+test("decision input cannot mutate via arbitrary values",()=>{let r=C.evaluate({action:"read",checks:all()});assert.equal(C.receipt(r,"autoApprove"),null)});

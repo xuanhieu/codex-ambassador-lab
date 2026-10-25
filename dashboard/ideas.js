@@ -20,10 +20,12 @@ window.AMB_EXTRA_IDEAS=[
     "audience": "New builders",
     "mvp": "OS+git+node+Codex checker with clear error guidance",
     "priority": "Fast win",
-    "status": "tested",
+    "status": "public",
     "origin": "new",
     "impact": 2,
-    "acceptance": "Offline fixtures and read-only environment scanner unit tests pass"
+    "acceptance": "Offline fixtures and read-only environment scanner unit tests pass",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/cli-onboarding",
+    "publicUrl": "https://codex.xuanhieu.org/demos/cli-onboarding/"
   },
   {
     "id": "N003",
@@ -33,9 +35,11 @@ window.AMB_EXTRA_IDEAS=[
     "audience": "Students",
     "mvp": "No-API recorded fixtures and guided coding lessons",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "new",
-    "impact": 3
+    "impact": 3,
+    "acceptance": "20-minute offline guided lab with four steps, progress gate, safe data checks; 12 Node tests and real Chrome mobile/desktop QA PASS",
+    "publicUrl": "https://codex.xuanhieu.org/demos/zero-token-workshop/"
   },
   {
     "id": "N004",
@@ -69,9 +73,11 @@ window.AMB_EXTRA_IDEAS=[
     "audience": "Maintainers",
     "mvp": "Interactive 20-item security/reliability pre-merge review",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "new",
-    "impact": 1
+    "impact": 1,
+    "acceptance": "Local human review gate for six sensitive action types, deterministic risk analysis and sanitized receipt; 13 tests plus real Chrome QA PASS",
+    "publicUrl": "https://codex.xuanhieu.org/demos/human-review-checklist/"
   },
   {
     "id": "N007",
@@ -1137,8 +1143,9 @@ window.AMB_EXTRA_IDEAS=[
     "impact": 5,
     "localUnitTests": 23,
     "evidenceNote": "Actual local tests + Chrome viewport smoke QA; public deployment subject to release checks.",
-    "publicUrl": "https://codex-amb-xuanhieu.pages.dev/demos/requirements-trace/",
-    "verifiedAt": "2026-10-24"
+    "publicUrl": "https://codex.xuanhieu.org/demos/requirements-trace/",
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/requirements-trace"
   },
   {
     "id": "N095",
@@ -1180,8 +1187,9 @@ window.AMB_EXTRA_IDEAS=[
     "impact": 5,
     "localUnitTests": 43,
     "evidenceNote": "Actual local tests + Chrome viewport smoke QA; public deployment subject to release checks.",
-    "publicUrl": "https://codex-amb-xuanhieu.pages.dev/demos/bug-report-kit/",
-    "verifiedAt": "2026-10-24"
+    "publicUrl": "https://codex.xuanhieu.org/demos/bug-report-kit/",
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/bug-report-kit"
   },
   {
     "id": "N098",
@@ -1236,8 +1244,9 @@ window.AMB_EXTRA_IDEAS=[
     "impact": 5,
     "localUnitTests": 26,
     "evidenceNote": "Actual local tests + Chrome viewport smoke QA; public deployment subject to release checks.",
-    "publicUrl": "https://codex-amb-xuanhieu.pages.dev/demos/vn-code-glossary/",
-    "verifiedAt": "2026-10-24"
+    "publicUrl": "https://codex.xuanhieu.org/demos/vn-code-glossary/",
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/vn-code-glossary"
   },
   {
     "id": "N102",
@@ -1278,7 +1287,8 @@ window.AMB_EXTRA_IDEAS=[
     "origin": "24 Oct 2026 expansion",
     "impact": 4,
     "publicUrl": "https://codex.xuanhieu.org/demos/docs-change-radar/",
-    "verifiedAt": "2026-10-24"
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/docs-change-radar"
   },
   {
     "id": "N105",
@@ -1320,8 +1330,9 @@ window.AMB_EXTRA_IDEAS=[
     "impact": 5,
     "localUnitTests": 26,
     "evidenceNote": "Actual local tests + Chrome viewport smoke QA; public deployment subject to release checks.",
-    "publicUrl": "https://codex-amb-xuanhieu.pages.dev/demos/pr-evidence-receipt/viewer.html",
-    "verifiedAt": "2026-10-24"
+    "publicUrl": "https://codex.xuanhieu.org/demos/pr-evidence-receipt/",
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/pr-evidence-receipt"
   },
   {
     "id": "N108",
@@ -1336,7 +1347,8 @@ window.AMB_EXTRA_IDEAS=[
     "origin": "24 Oct 2026 expansion",
     "impact": 5,
     "publicUrl": "https://codex.xuanhieu.org/demos/evidence-chain/",
-    "verifiedAt": "2026-10-24"
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/evidence-chain"
   },
   {
     "id": "N109",
@@ -1365,7 +1377,8 @@ window.AMB_EXTRA_IDEAS=[
     "impact": 5,
     "localUnitTests": 38,
     "publicUrl": "https://codex.xuanhieu.org/demos/approval-drill/",
-    "verifiedAt": "2026-10-24"
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/approval-drill"
   },
   {
     "id": "N111",
@@ -1380,7 +1393,8 @@ window.AMB_EXTRA_IDEAS=[
     "origin": "24 Oct 2026 expansion",
     "impact": 5,
     "publicUrl": "https://codex.xuanhieu.org/demos/screenshot-privacy-reviewer/",
-    "verifiedAt": "2026-10-24"
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/screenshot-privacy-reviewer"
   },
   {
     "id": "N112",
@@ -1395,7 +1409,8 @@ window.AMB_EXTRA_IDEAS=[
     "origin": "24 Oct 2026 expansion",
     "impact": 5,
     "publicUrl": "https://codex.xuanhieu.org/demos/rate-limit-recovery/",
-    "verifiedAt": "2026-10-24"
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/rate-limit-recovery"
   },
   {
     "id": "N113",
@@ -1475,23 +1490,40 @@ window.AMB_EXTRA_IDEAS=[
     "origin": "2026-10-24 independent Academy project; official links + original authored lessons",
     "impact": 5,
     "localUnitTests": 56,
-    "publicUrl": "https://codex-amb-xuanhieu.pages.dev/demos/codex-academy/",
-    "verifiedAt": "2026-10-24"
+    "publicUrl": "https://codex.xuanhieu.org/demos/codex-academy/",
+    "verifiedAt": "2026-10-24",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/codex-academy"
   },
   {
     "id": "N119",
     "name": "Codex Path — AI Learning & Career OS",
     "category": "Developer education",
     "hours": 24,
-    "audience": "Newbie, Creator, Marketer, Developer, Agent Engineer, Team Lead — 6 career directions; 5 learning levels",
-    "mvp": "Original Noti-inspired VI/EN web app with six career paths, proficiency and weekly-hours assessment, 25 sourced Academy lessons, prerequisite-aware schedule, capstone, quiz, local progress and portfolio proof ledger.",
-    "acceptance": "26 deterministic Node tests; Chrome 390/768/1440, profile generation, career change, quiz gate, inline URL validation, theme/VI-EN, localStorage and public HTTPS assets. Independent study estimates, not official certification.",
+    "audience": "All audiences, 14 career/learner tracks across Zero, Beginner, Intermediate, Advanced and Pro",
+    "mvp": "Bilingual path planner, 61 exercises (25 original Academy plus 36 applied), 19 plain-language guides and 204 official indexed docs; source health 198 HTTP 200 / 6 HTTP 404; offline 3-minute onboarding and portfolios",
+    "acceptance": "95 deterministic unit tests, real Chrome local and public viewport testing at 390/768/1440px, privacy-sanitized Cloudflare deployment and exact source/GitHub evidence",
     "priority": "Portfolio flagship",
     "status": "public",
     "origin": "2026-10-24 original Codex Path software; Academy curriculum reused and ASCII Reveal MIT credited",
     "impact": 5,
-    "localUnitTests": 26,
+    "localUnitTests": 95,
     "publicUrl": "https://codex.xuanhieu.org/demos/codex-path/",
-    "verifiedAt": "2026-10-24"
+    "verifiedAt": "2026-10-25",
+    "sourceUrl": "https://github.com/xuanhieu/codex-learning-path"
+  },
+  {
+    "id": "N120",
+    "name": "Every Human Learning Passport",
+    "category": "Developer education",
+    "hours": 2,
+    "audience": "Beginners and learners moving between phones and computers",
+    "mvp": "Privacy-safe local JSON export/import of workshop progress; includes only four known step IDs and strict schema/sequence validation, no prompt text, API or account.",
+    "acceptance": "Round-trip export/import, bad schema, oversized file and out-of-order step negative tests pass; interface works inside N003 Zero-Token Workshop.",
+    "priority": "Fast win",
+    "status": "public",
+    "origin": "2026-10-25 product council gap: safe learning continuity without an account",
+    "impact": 5,
+    "publicUrl": "https://codex.xuanhieu.org/demos/zero-token-workshop/#passport-panel",
+    "verifiedAt": "2026-10-25"
   }
 ];
