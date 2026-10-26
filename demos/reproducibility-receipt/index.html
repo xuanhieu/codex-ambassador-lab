@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; worker-src 'none'">
+<title>N078 · Evidence receipt</title>
+<link rel="stylesheet" href="styles.css">
+<script src="core.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="#main">N078 <span> / EVIDENCE RECEIPT</span></a><label for="language" data-i18n="language">Ngôn ngữ</label><select id="language"><option value="vi">Tiếng Việt</option><option value="en">English</option></select></header>
+<main id="main">
+<div class="intro"><p class="eyebrow" data-i18n="eyebrow">CỤC BỘ · KHÔNG TẢI LÊN</p><h1 data-i18n="title">Bằng chứng có dấu vết.<br>Niềm tin có giới hạn.</h1><p data-i18n="intro">Tạo biên nhận cho kết quả kiểm thử tự khai báo. Tệp ở lại trong trình duyệt; công cụ không chạy lại bộ kiểm thử.</p></div>
+<div class="workspace">
+<section class="panel" aria-labelledby="load-title"><p class="eyebrow">01 / INPUT</p><h2 id="load-title" data-i18n="load">Nạp bằng chứng</h2><label class="file-label" for="evidence" data-i18n="file">Chọn tệp JSON cục bộ (tối đa 1 MiB)</label><input id="evidence" type="file" accept=".json,application/json" aria-describedby="schema-help"><p id="schema-help" class="muted" data-i18n="schema">Chỉ nhận đúng cấu trúc trong README. Tất cả trường bằng chứng đều bắt buộc.</p><button id="sample" type="button" class="secondary" data-i18n="sample">Dùng báo cáo mẫu</button><p id="status" role="status" aria-live="polite" aria-atomic="true"></p><p id="error" role="alert" aria-atomic="true"></p><div class="note" data-i18n="privacy">Không cần thông tin cá nhân. Tên tệp và nội dung đã nhập sẽ xuất hiện trong biên nhận xuất ra.</div></section>
+<section class="panel receipt" aria-labelledby="receipt-title"><div class="receipt-top"><p class="eyebrow">02 / RECEIPT</p><span class="stamp">User-attested / Tự khai báo</span></div><h2 id="receipt-title" data-i18n="receipt">Biên nhận tự kiểm thử</h2><p class="warning" data-i18n="warning">Không phải chứng nhận chính thức, xác minh độc lập hay chữ ký số.</p><p id="empty" class="empty" data-i18n="empty">Chưa có bằng chứng. Nạp tệp để tạo biên nhận.</p><div id="result" hidden><p id="badge" class="badge"></p><h3 id="artifact"></h3><p id="suite"></p><div class="counts"><div><strong id="total"></strong><span data-i18n="total">Tổng</span></div><div><strong id="passed"></strong><span data-i18n="passed">Đạt</span></div><div><strong id="failed"></strong><span data-i18n="failed">Lỗi</span></div></div><dl id="metadata"></dl><details><summary data-i18n="proof">Bằng chứng đầu vào tự khai báo</summary><dl id="proof-values"></dl></details></div><button id="export" type="button" disabled data-i18n="export">Xuất biên nhận JSON</button></section>
+</div>
+<section class="guidance" aria-labelledby="verify-title"><p class="eyebrow">03 / NEXT STEPS</p><h2 id="verify-title" data-i18n="verify">Cách xác minh độc lập</h2><ol><li data-i18n="step1">Lấy mã nguồn, dữ liệu đầu vào và môi trường từ một kênh đáng tin cậy.</li><li data-i18n="step2">Tự chạy đúng bộ kiểm thử; so sánh kết quả và lưu nhật ký thực thi.</li><li data-i18n="step3">Tính SHA-256 của tệp JSON gốc và so với biên nhận. Khớp mã băm chỉ chứng minh cùng byte, không chứng minh kết quả đúng.</li></ol><p class="muted" data-i18n="clock">Thời gian lấy từ đồng hồ thiết bị. Biên nhận xuất ra không có chữ ký số.</p></section>
+<noscript>Cần JavaScript để kiểm tra tệp và tạo biên nhận. JavaScript is required for local validation.</noscript>
+</main><footer>N078 <span data-i18n="footer">Chẩn đoán tự khai báo · Không phải bằng chứng triển khai</span></footer>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>N106 · Issue-to-Workshop Converter</title>
+<link rel="stylesheet" href="styles.css">
+<script src="core.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Đến nội dung</a>
+<header><div class="brand"><b>N106</b><span>Issue → Workshop</span></div><label class="language"><span data-i18n="language">Ngôn ngữ</span><select id="language"><option value="vi">Tiếng Việt</option><option value="en">English</option></select></label></header>
+<main id="main">
+<div class="intro"><p class="eyebrow" data-i18n="eyebrow">BÀN LÀM VIỆC CỦA NGƯỜI HƯỚNG DẪN</p><h1 data-i18n="heading">Một issue. Một buổi học 20 phút.</h1><p data-i18n="subtitle">Biến bản ghi lỗi tổng hợp thành hoạt động có bằng chứng, cho cả người mới và lập trình viên.</p></div>
+<p class="notice" id="notice"></p>
+<div class="layout">
+<section class="panel" aria-labelledby="input-title"><div class="section-head"><h2 id="input-title" data-i18n="inputTitle">01 / Chuẩn bị bản ghi</h2><span data-i18n="required">Tất cả trường đều bắt buộc</span></div>
+<div class="sample-row"><label for="scenario" data-i18n="scenario">Tình huống tổng hợp</label><div class="inline"><select id="scenario"><option value="filter" data-i18n="filter">Bộ lọc chữ hoa</option><option value="count" data-i18n="count">Bộ đếm nhiệm vụ</option><option value="focus" data-i18n="focus">Tiêu điểm hộp thoại</option></select><button type="button" id="load" data-i18n="load">Nạp mẫu</button></div></div>
+<form id="issue-form" novalidate>
+<p class="help" id="input-help" data-i18n="inputHelp">Chỉ dùng văn bản tổng hợp. Không URL; định dạng Markdown được chuyển thành văn bản thuần. Nạp mẫu sẽ thay nội dung hiện tại.</p>
+<div id="fields"></div>
+<div class="two-col"><div class="field"><label for="complexity" data-i18n="complexity">Độ phức tạp</label><select id="complexity" aria-describedby="complexity-error"><option value="low" data-i18n="low">Thấp</option><option value="medium" data-i18n="medium">Vừa</option><option value="high" data-i18n="high">Cao</option></select><span class="error" id="complexity-error"></span></div><div class="field"><label for="audience" data-i18n="audience">Nhóm tham gia</label><select id="audience" aria-describedby="audience-error"><option value="mixed" data-i18n="mixed">Hỗn hợp</option><option value="noncoder" data-i18n="noncoder">Không lập trình</option><option value="developer" data-i18n="developer">Lập trình viên</option></select><span class="error" id="audience-error"></span></div></div>
+<label class="check"><input type="checkbox" id="synthetic" aria-describedby="synthetic-error"><span data-i18n="consent">Tôi chỉ dùng dữ liệu tổng hợp và mô phỏng trên giấy.</span></label><span class="error" id="synthetic-error"></span>
+<button class="primary" type="submit" data-i18n="generate">Tạo kế hoạch 20 phút</button>
+<p id="form-status" role="status"></p>
+</form></section>
+<section class="panel output" aria-labelledby="output-title"><div class="section-head"><h2 id="output-title" tabindex="-1" data-i18n="outputTitle">02 / Kế hoạch workshop</h2><span class="time">20 min</span></div>
+<div id="empty"><div class="empty-mark">3 · 4 · 3 · 5 · 3 · 2</div><h3 data-i18n="emptyTitle">Bài học bắt đầu từ bằng chứng.</h3><p data-i18n="emptyText">Nạp một mẫu hoặc tự nhập bản ghi, xác nhận phạm vi rồi tạo kế hoạch. Bốn bài tập sẽ đi kèm trong hai giai đoạn lập kế hoạch và kiểm chứng.</p></div>
+<div id="result" hidden></div>
+<div id="exports" hidden><button id="copy" type="button" data-i18n="copy">Sao chép phiếu</button><button id="text-download" type="button" data-i18n="download">Tải phiếu .txt</button><button id="json-download" type="button" data-i18n="json">Xuất JSON</button></div>
+<p id="export-status" role="status"></p><textarea id="copy-fallback" readonly hidden aria-label="Worksheet / Phiếu workshop"></textarea>
+</section></div>
+<footer data-i18n="footer">Cục bộ trong trình duyệt • Không lưu dữ liệu sau khi tải lại • Không kết nối dịch vụ bên ngoài</footer>
+<noscript>N106 cần JavaScript cục bộ để tạo kế hoạch. N106 requires local JavaScript to generate a plan.</noscript>
+</main><nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body></html>
