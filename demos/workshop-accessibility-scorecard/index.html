@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Local weighted accessibility scorecard for workshops and meetups. Keyboard-first, bilingual Vietnamese/English, no WCAG certification claim.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Bảng điểm tiếp cận workshop và meetup</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Chuyển đến nội dung chính</a>
+  <header class="topbar">
+    <div class="brand">
+      <strong>WAS</strong>
+      <span data-i18n="title">Bảng điểm tiếp cận workshop và meetup</span>
+    </div>
+    <div class="toolbar">
+      <label for="language">
+        <span data-i18n="language">Ngôn ngữ</span>
+        <select id="language" aria-label="Language / Ngôn ngữ">
+          <option value="vi">Tiếng Việt</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+      <button type="button" id="load-sample" data-i18n="loadSample">Nạp mẫu</button>
+      <button type="button" id="reset" data-i18n="reset">Đặt lại</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero bento">
+      <div>
+        <p class="eyebrow" data-i18n="localOnly">Dữ liệu tổng hợp cục bộ • Không phải chứng nhận WCAG</p>
+        <h1 data-i18n="title">Bảng điểm tiếp cận workshop và meetup</h1>
+        <p data-i18n="subtitle">Danh sách kiểm tra có trọng số cho địa điểm, di chuyển, nghe/nhìn, từ xa, ngôn ngữ, băng thông thấp, quyền riêng tư và chi phí. Không phải chứng nhận WCAG.</p>
+      </div>
+      <div class="hero-note">
+        <p data-i18n="privacyNote">Không lưu dữ liệu sau khi tải lại. Không theo dõi. Không dịch vụ bên ngoài.</p>
+      </div>
+    </section>
+
+    <div class="layout">
+      <section class="panel" aria-labelledby="checklist-title">
+        <div class="section-head">
+          <h2 id="checklist-title" data-i18n="checklistTitle">Danh sách kiểm tra tiếp cận</h2>
+          <span class="hint" data-i18n="checklistHelp">Mỗi mục có trọng số. Chọn Có, Không, hoặc Chưa rõ. "Chưa rõ" không bị tính là lỗi, nhưng làm giảm độ tin cậy.</span>
+        </div>
+        <form id="score-form" novalidate>
+          <div id="checklist" class="checklist"></div>
+          <div class="actions">
+            <button class="primary" type="submit" data-i18n="calculate">Tính điểm</button>
+            <button type="button" id="copy-worksheet" data-i18n="copyWorksheet">Sao chép phiếu</button>
+            <button type="button" id="export-csv" data-i18n="exportCsv">Xuất CSV</button>
+            <button type="button" id="export-md" data-i18n="exportMd">Xuất Markdown</button>
+          </div>
+          <p id="form-status" role="status" aria-live="polite"></p>
+          <textarea id="copy-fallback" class="copy-fallback" readonly hidden aria-label="Worksheet fallback"></textarea>
+        </form>
+      </section>
+
+      <aside class="panel score-panel" aria-labelledby="score-title">
+        <div class="section-head">
+          <h2 id="score-title" data-i18n="scoreTitle">Điểm và giải thích</h2>
+        </div>
+        <div id="score-summary" aria-live="polite"></div>
+        <div id="score-details"></div>
+        <div id="fixes"></div>
+      </aside>
+    </div>
+
+    <section class="panel notes" aria-labelledby="notes-title">
+      <h2 id="notes-title" data-i18n="notesTitle">Giới hạn và ghi chú an toàn</h2>
+      <p data-i18n="notes">Công cụ này là danh sách kiểm tra lập kế hoạch, không phải kiểm toán hoặc chứng nhận WCAG. Mẫu chỉ là dữ liệu tổng hợp cục bộ. Không gửi dữ liệu; không lưu trữ dữ liệu người tham gia.</p>
+      <ul>
+        <li>Unknown answers are excluded from the score and reported as coverage, so they do not become false failures.</li>
+        <li>No WCAG conformance claim is made; verify with disabled participants and local requirements.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="privacyNote">Không lưu dữ liệu sau khi tải lại. Không theo dõi. Không dịch vụ bên ngoài.</span>
+  </footer>
+
+  <noscript>This scorecard needs JavaScript enabled. No network or API key is required. / Bảng điểm cần bật JavaScript. Không cần mạng hay khóa API.</noscript>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body>
+</html>
