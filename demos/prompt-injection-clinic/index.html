@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self' data:; object-src 'none'; base-uri 'none'">
+<meta name="description" content="Offline educational clinic for prompt injection defense: 4 simulated attacker-vs-document scenarios, trust boundaries, human review.">
+<title>Prompt Injection Defense Clinic</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="./app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#workspace">Skip to simulator</a>
+<div class="shell">
+<header class="topbar">
+  <a class="brand" href="#"><span class="mark">PI</span><span>DEFENSE CLINIC<small>OFFLINE · EDUCATIONAL</small></span></a>
+  <div class="actions">
+    <span class="offline" id="offlineBadge">● MÔ PHỎNG CỤC BỘ · KHÔNG MẠNG</span>
+    <label for="lang" class="sr-only">Language</label>
+    <select id="lang" aria-label="Language"><option value="vi">Tiếng Việt</option><option value="en">English</option></select>
+  </div>
+</header>
+
+<main id="workspace">
+<section class="hero">
+  <div>
+    <span class="eyebrow">SECURITY EDUCATION / PROMPT INJECTION</span>
+    <h1 id="pageTitle">Phòng khám phòng thủ Prompt Injection</h1>
+    <p id="pageDesc">4 tình huống mô phỏng tấn công tài liệu. Xác định ranh giới tin cậy, chọn quyết định và xem giải thích.</p>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <span>TRUST BOUNDARY</span>
+    <div class="viz-bars"><b></b><b></b><b></b><b></b></div>
+    <strong>DATA ≠ CONTROL</strong>
+  </div>
+</section>
+
+<section class="workspace-grid">
+  <article class="panel controls">
+    <div class="panel-head"><span class="eyebrow">01 / SCENARIO</span><h2 id="scenarioLabel">Tình huống</h2></div>
+    <label class="field"><span class="sr-only" id="scenarioLabel2">Scenario</span>
+      <select id="scenario" aria-label="Scenario"></select>
+    </label>
+    <p class="error-text" id="scenarioError" role="alert"></p>
+
+    <div class="panel-head compact"><span class="eyebrow">02 / DECISION</span><h2 id="decisionLabel">Quyết định của bạn</h2></div>
+    <div class="decision-grid" id="decisions" role="radiogroup" aria-label="Decision"></div>
+
+    <div class="panel-head compact"><span class="eyebrow">03 / CHECKS</span><h2 id="checksLabel">Kiểm tra an toàn</h2></div>
+    <div class="checks" id="checks"></div>
+
+    <div class="button-row">
+      <button id="run" class="run">Chạy mô phỏng →</button>
+      <button id="reset" class="reset">Khôi phục</button>
+    </div>
+    <p class="safe-note">Không có dữ liệu thật, không có API thật, không có tác dụng phụ.</p>
+  </article>
+
+  <article class="panel document">
+    <div class="panel-head"><span class="eyebrow">04 / DOCUMENT</span><h2 id="documentLabel">Tài liệu (không đáng tin)</h2></div>
+    <h3 id="docTitle" class="doc-title"></h3>
+    <p id="docBody" class="doc-body"></p>
+    <div class="kv"><span id="injectionLabel">Lệnh ẩn phát hiện</span><p id="injection" class="injection"></p></div>
+    <div class="kv"><span id="attackLabel">Mục tiêu tấn công</span><p id="attack"></p></div>
+    <div class="kv"><span id="defenseLabel">Phòng thủ</span><p id="defense"></p></div>
+  </article>
+
+  <article class="panel boundary">
+    <div class="panel-head"><span class="eyebrow">05 / BOUNDARY</span><h2 id="trustTitle">Ranh giới tin cậy</h2></div>
+    <svg id="boundary" class="boundary-svg" viewBox="0 0 360 220" role="img" aria-label="Trust boundary diagram">
+      <rect class="zone zone-system" x="10" y="10" width="160" height="40" rx="8"></rect>
+      <text x="90" y="35" text-anchor="middle" id="zoneSystem">Hệ thống / nhà phát triển (đáng tin)</text>
+      <rect class="zone zone-user" x="10" y="60" width="160" height="40" rx="8"></rect>
+      <text x="90" y="85" text-anchor="middle" id="zoneUser">Nhiệm vụ người dùng (đáng tin)</text>
+      <rect class="zone zone-doc untrusted" x="10" y="110" width="160" height="40" rx="8"></rect>
+      <text x="90" y="135" text-anchor="middle" id="zoneDoc">Tài liệu / email (không đáng tin)</text>
+      <rect class="zone zone-model" x="200" y="60" width="150" height="40" rx="8"></rect>
+      <text x="275" y="85" text-anchor="middle" id="zoneModel">Mô hình</text>
+      <rect class="zone zone-tools" x="200" y="110" width="150" height="40" rx="8"></rect>
+      <text x="275" y="135" text-anchor="middle" id="zoneTools">Công cụ (có cổng)</text>
+      <line class="arrow" x1="170" y1="30" x2="200" y2="70"></line>
+      <line class="arrow" x1="170" y1="80" x2="200" y2="80"></line>
+      <line class="arrow blocked" x1="170" y1="130" x2="200" y2="80"></line>
+      <line class="arrow" x1="275" y1="100" x2="275" y2="110"></line>
+    </svg>
+    <p id="boundaryCaption" class="caption" role="status"></p>
+  </article>
+
+  <article class="panel outcome-panel">
+    <div class="panel-head"><span class="eyebrow">06 / RESULT</span><h2 id="outcomeLabel">Kết quả</h2></div>
+    <div class="result-head">
+      <div class="outcome" id="outcomeStatus">—</div>
+      <div class="result-metrics">
+        <div><span id="expectedLabel">Kỳ vọng</span><strong id="outcomeExpected">—</strong></div>
+        <div><span id="humanLabel">Kết quả duyệt của người</span><strong id="outcomeHuman">—</strong></div>
+        <div><span id="missingLabel">Kiểm tra còn thiếu</span><strong id="outcomeMissing">—</strong></div>
+      </div>
+    </div>
+    <div class="kv"><span id="explanationLabel">Giải thích</span><p id="outcomeExplanation"></p></div>
+    <div class="kv"><span id="hintLabel">Gợi ý</span><p id="outcomeHint"></p></div>
+    <p class="disclaimer" id="outcomeDisclaimer"></p>
+  </article>
+
+  <article class="panel replay">
+    <div class="panel-head"><span class="eyebrow">07 / REPLAY</span><h2 id="replayLabel">Nhật ký phát lại</h2></div>
+    <div class="button-row">
+      <button id="replayLast" class="reset">Phát lại gần nhất</button>
+      <button id="clearReplay" class="reset">Xóa nhật ký</button>
+      <button id="exportReplay" class="reset">Xuất nhật ký JSON</button>
+    </div>
+    <p class="counter" id="replayCounter"></p>
+    <ol class="replay-list" id="replayList"></ol>
+  </article>
+</section>
+
+<p class="message" id="message" role="status" hidden></p>
+</main>
+
+<footer><span>Prompt Injection Defense Clinic · Independent synthetic teaching tool · no real traffic</span></footer>
+</div>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body>
+</html>

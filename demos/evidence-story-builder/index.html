@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Build an honest evidence-to-story portfolio draft. Client-side, no upload.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Evidence-to-Story Portfolio Builder</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="./core.js" defer></script>
+<script src="./app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to builder</a>
+<div class="shell">
+<header>
+  <a class="brand" href="#main"><span class="logo">ES</span><span>Evidence Story <small>PORTFOLIO BUILDER · LOCAL</small></span></a>
+  <div class="head-actions">
+    <span class="privacy">● NO UPLOAD</span>
+    <label for="lang" class="sr-only">Language</label>
+    <select id="lang"><option value="vi">Tiếng Việt</option><option value="en">English</option></select>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero">
+    <div>
+      <span class="overline">EVIDENCE · PROVENANCE · HONEST NARRATIVE</span>
+      <h1 data-i="title">Biến bằng chứng thật thành câu chuyện portfolio.</h1>
+      <p data-i="subtitle">Nhập tiêu đề, URL bằng chứng thật, kiểm thử đã chạy, giới hạn, vai trò và đối tượng. Ứng dụng tách sự thật đã kiểm chứng khỏi tuyên bố chưa kiểm chứng, cảnh báo số liệu giả và xuất Markdown/JSON ngay trên máy.</p>
+      <div class="cta">
+        <button id="sampleBtn" class="btn strong" type="button" data-i="sampleBtn">Nạp dữ liệu mẫu</button>
+        <button id="clearAll" class="btn" type="button" data-i="clearAll">Xóa toàn bộ &amp; xóa autosave</button>
+      </div>
+    </div>
+    <aside class="disclaimer">
+      <span data-i="disclaimerLabel">KHÔNG PHẢI CHỨNG NHẬN</span>
+      <strong data-i="disclaimerTitle">Tự khai báo, không xác minh độc lập.</strong>
+      <p data-i="disclaimerText">URL và kết quả kiểm thử do bạn cung cấp. Công cụ không truy cập URL, không chạy lại kiểm thử và không chứng nhận sự thật.</p>
+    </aside>
+  </div>
+
+  <div class="autosave-bar">
+    <span id="autosaveStatus" data-i="autosaveReady">Sẵn sàng. Dữ liệu chỉ lưu cục bộ.</span>
+  </div>
+
+  <section class="panel" aria-labelledby="basics-title">
+    <p class="eyebrow">01 / BASICS</p>
+    <h2 id="basics-title" data-i="basicsTitle">Thông tin dự án</h2>
+    <div class="grid two">
+      <label class="field">
+        <span data-i="titleLabel">Tiêu đề dự án *</span>
+        <input id="title" type="text" maxlength="120" autocomplete="off">
+        <small class="error" id="titleErr"></small>
+      </label>
+      <label class="field">
+        <span data-i="audienceLabel">Đối tượng *</span>
+        <select id="audience"></select>
+        <small class="error" id="audienceErr"></small>
+      </label>
+      <label class="field">
+        <span data-i="roleLabel">Vai trò của bạn *</span>
+        <input id="role" type="text" maxlength="80" autocomplete="off">
+        <small class="error" id="roleErr"></small>
+      </label>
+      <label class="field">
+        <span data-i="summaryLabel">Tóm tắt (không bắt buộc)</span>
+        <input id="summary" type="text" maxlength="500">
+        <small class="error" id="summaryErr"></small>
+      </label>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="evidence-title">
+    <p class="eyebrow">02 / EVIDENCE LEDGER</p>
+    <h2 id="evidence-title" data-i="evidenceTitle">Bảng bằng chứng có thể sắp xếp</h2>
+    <p class="muted" data-i="evidenceHint">Chỉ dùng URL thật. Nhãn provenance cho biết mức kiểm chứng. Nhấp tiêu đề cột để sắp xếp.</p>
+    <div class="grid two">
+      <label class="field">
+        <span data-i="urlLabel">URL bằng chứng *</span>
+        <input id="evUrl" type="url" placeholder="https://..." maxlength="2048">
+        <small class="error" id="evUrlErr"></small>
+      </label>
+      <label class="field">
+        <span data-i="evLabelLabel">Nhãn *</span>
+        <input id="evLabel" type="text" maxlength="120">
+        <small class="error" id="evLabelErr"></small>
+      </label>
+      <label class="field">
+        <span data-i="kindLabel">Loại</span>
+        <select id="evKind"></select>
+      </label>
+      <label class="field checkbox">
+        <input id="evVerified" type="checkbox">
+        <span data-i="verifiedToggle">URL này đã được tôi kiểm chứng độc lập</span>
+      </label>
+      <label class="field wide">
+        <span data-i="notesLabel">Ghi chú</span>
+        <input id="evNotes" type="text" maxlength="500">
+      </label>
+    </div>
+    <div class="cta">
+      <button id="addEvidence" class="btn strong" type="button" data-i="addEvidence">Thêm vào ledger</button>
+      <button id="clearEvidence" class="btn" type="button" data-i="clearEvidence">Xóa các mục đã chọn</button>
+    </div>
+    <small class="error" id="evFormErr"></small>
+    <div class="table-wrap">
+      <table id="ledgerTable">
+        <thead>
+          <tr>
+            <th><button type="button" class="sort-btn" data-sort="label" data-i="colLabel">Nhãn</button></th>
+            <th><button type="button" class="sort-btn" data-sort="kind" data-i="colKind">Loại</button></th>
+            <th><button type="button" class="sort-btn" data-sort="url" data-i="colUrl">URL</button></th>
+            <th><button type="button" class="sort-btn" data-sort="verified" data-i="colVerified">Kiểm chứng</button></th>
+            <th data-i="colProvenance">Provenance</th>
+            <th data-i="colSelect">Chọn</th>
+          </tr>
+        </thead>
+        <tbody id="ledgerBody"></tbody>
+      </table>
+    </div>
+    <p id="ledgerEmpty" class="muted" data-i="ledgerEmpty">Chưa có bằng chứng. Thêm ít nhất một URL thật.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="tests-title">
+    <p class="eyebrow">03 / TESTS</p>
+    <h2 id="tests-title" data-i="testsTitle">Kiểm thử thực sự đã chạy</h2>
+    <label class="field wide">
+      <span data-i="testsLabel">Lệnh và kết quả (mỗi dòng một mục) *</span>
+      <textarea id="tests" rows="4" maxlength="4000"></textarea>
+      <small class="error" id="testsErr"></small>
+    </label>
+  </section>
+
+  <section class="panel" aria-labelledby="facts-title">
+    <p class="eyebrow">04 / FACTS VS CLAIMS</p>
+    <h2 id="facts-title" data-i="factsTitle">Tách sự thật và tuyên bố</h2>
+    <div class="grid two">
+      <label class="field wide">
+        <span data-i="verifiedFactsLabel">Sự thật đã kiểm chứng (mỗi dòng một ý)</span>
+        <textarea id="verifiedFacts" rows="4" maxlength="4000"></textarea>
+        <small class="error" id="verifiedFactsErr"></small>
+      </label>
+      <label class="field wide">
+        <span data-i="unverifiedClaimsLabel">Tuyên bố chưa kiểm chứng (mỗi dòng một ý)</span>
+        <textarea id="unverifiedClaims" rows="4" maxlength="4000"></textarea>
+        <small class="error" id="unverifiedClaimsErr"></small>
+      </label>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="limits-title">
+    <p class="eyebrow">05 / LIMITATIONS</p>
+    <h2 id="limits-title" data-i="limitsTitle">Giới hạn và rủi ro *</h2>
+    <label class="field wide">
+      <span data-i="limitationsLabel">Mô tả điều bạn chưa chứng minh được</span>
+      <textarea id="limitations" rows="4" maxlength="4000"></textarea>
+      <small class="error" id="limitationsErr"></small>
+    </label>
+  </section>
+
+  <section class="panel" aria-labelledby="metrics-title">
+    <p class="eyebrow">06 / METRICS</p>
+    <h2 id="metrics-title" data-i="metricsTitle">Số liệu (không bắt buộc, cảnh báo)</h2>
+    <div class="warning-box" data-i="metricsWarning">Không bịa số liệu. Nếu thêm số, phải xác nhận bên dưới rằng mọi con số đều có nguồn hoặc là ước tính được gắn nhãn.</div>
+    <label class="field wide">
+      <span data-i="metricsLabel">Số liệu tự khai</span>
+      <textarea id="metrics" rows="3" maxlength="1000"></textarea>
+      <small class="error" id="metricsErr"></small>
+    </label>
+    <label class="field checkbox">
+      <input id="noFakeMetrics" type="checkbox">
+      <span data-i="noFakeMetricsLabel">Tôi xác nhận không có số liệu nào bị bịa; mọi con số đều có nguồn hoặc được gắn nhãn là ước tính.</span>
+    </label>
+  </section>
+
+  <section class="panel" aria-labelledby="export-title">
+    <p class="eyebrow">07 / EXPORT</p>
+    <h2 id="export-title" data-i="exportTitle">Xuất bản nháp</h2>
+    <div class="cta">
+      <button id="validateBtn" class="btn" type="button" data-i="validateBtn">Kiểm tra hợp lệ</button>
+      <button id="exportMd" class="btn strong" type="button" data-i="exportMd">Xuất Markdown</button>
+      <button id="exportJson" class="btn" type="button" data-i="exportJson">Xuất JSON</button>
+    </div>
+    <p id="formStatus" class="result-note" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel" aria-labelledby="preview-title">
+    <p class="eyebrow">08 / PREVIEW</p>
+    <h2 id="preview-title" data-i="previewTitle">Bản nháp bằng chứng</h2>
+    <pre id="preview" class="preview"></pre>
+  </section>
+</main>
+
+<footer>
+  <span data-i="footer">Evidence-to-Story Portfolio Builder · dữ liệu lưu cục bộ · không tải lên</span>
+  <a href="./README.md" data-i="readmeLink">README</a>
+</footer>
+</div>
+<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body>
+</html>
