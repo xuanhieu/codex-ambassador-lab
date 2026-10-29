@@ -255,10 +255,36 @@ const PIClinic = (() => {
     return { total, correct, rate: total ? Math.round((correct / total) * 100) : 0 };
   }
 
+  // Roving-focus target inside a radio group (WAI-ARIA APG radio pattern):
+  // arrows wrap around, Home/End jump to the ends, any other key returns -1.
+  function radioKeyTarget(index, key, count) {
+    if (!Number.isInteger(count) || count < 1) return -1;
+    const i = Number.isInteger(index) && index >= 0 && index < count ? index : 0;
+    if (key === "ArrowRight" || key === "ArrowDown") return (i + 1) % count;
+    if (key === "ArrowLeft" || key === "ArrowUp") return (i - 1 + count) % count;
+    if (key === "Home") return 0;
+    if (key === "End") return count - 1;
+    return -1;
+  }
+
+  // One-line screen-reader summary of an evaluation result for the aria-live region.
+  // labels: { outcome, expected, missing, none, statusLabels: { [status]: text } }.
+  function describeOutcome(result, lang, labels) {
+    if (!result || typeof result !== "object" || !labels) return "";
+    const l = lang === "en" ? "en" : "vi";
+    const status = (labels.statusLabels && labels.statusLabels[result.status]) || result.status;
+    const missing = (Array.isArray(result.missing) ? result.missing : []).map((id) => {
+      const c = CHECKS.find((x) => x.id === id);
+      return c ? c.title[l] : id;
+    });
+    return `${labels.outcome}: ${status}. ${labels.expected}: ${result.expected || "—"}. ` +
+      `${labels.missing}: ${missing.length ? missing.join(", ") : labels.none}.`;
+  }
+
   return {
     CHECKS, DECISIONS, SCENARIOS, HUMAN_OUTCOMES, DISCLAIMER, STORAGE_KEY,
     getScenario, validateScenarioId, validateDecision, validateChecks, evaluate,
-    createReplayEntry, formatReplay, scoreSummary
+    createReplayEntry, formatReplay, scoreSummary, radioKeyTarget, describeOutcome
   };
 })();
 
@@ -295,6 +321,7 @@ if (typeof document !== "undefined") {
       defense: "Phòng thủ",
       replay: "Nhật ký phát lại",
       replayCount: "mục",
+      none: "không có",
       trustTitle: "Ranh giới tin cậy",
       zoneSystem: "Hệ thống / nhà phát triển (đáng tin)",
       zoneUser: "Nhiệm vụ người dùng (đáng tin)",
@@ -342,6 +369,7 @@ if (typeof document !== "undefined") {
       defense: "Defense",
       replay: "Replay log",
       replayCount: "entries",
+      none: "none",
       trustTitle: "Trust boundary",
       zoneSystem: "System / developer (trusted)",
       zoneUser: "User task (trusted)",
@@ -427,20 +455,71 @@ if (typeof document !== "undefined") {
     }
   }
 
+  // Decision options are role="radio" buttons with aria-checked and a roving
+  // tabindex. Selecting one updates state in place so focus never leaves it.
+  function syncDecisions() {
+    const box = $("decisions");
+    if (!box) return;
+    const btns = Array.from(box.querySelectorAll("button.decision"));
+    const hasSelected = btns.some((b) => b.dataset.decision === selectedDecision);
+    btns.forEach((b, i) => {
+      const on = b.dataset.decision === selectedDecision;
+      b.classList.toggle("selected", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.tabIndex = on || (!hasSelected && i === 0) ? 0 : -1;
+    });
+  }
+
+  function chooseDecision(id) {
+    selectedDecision = id;
+    syncDecisions();
+    updateRunState();
+  }
+
   function renderDecisions() {
     const box = $("decisions");
     if (!box) return;
+    const active = document.activeElement;
+    const refocus = active && box.contains(active) ? active.dataset.decision : null;
     box.innerHTML = "";
     for (const d of C.DECISIONS) {
       const btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "decision" + (selectedDecision === d.id ? " selected" : "");
+      btn.className = "decision";
+      btn.setAttribute("role", "radio");
       btn.dataset.decision = d.id;
       btn.textContent = d.label[lang];
       btn.title = d.desc[lang];
-      btn.addEventListener("click", () => { selectedDecision = d.id; renderDecisions(); updateRunState(); });
+      btn.addEventListener("click", () => chooseDecision(d.id));
       box.appendChild(btn);
     }
+    syncDecisions();
+    if (refocus) {
+      const again = box.querySelector(`button[data-decision="${refocus}"]`);
+      if (again) again.focus();
+    }
+  }
+
+  function onDecisionKeydown(e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    const btns = Array.from($("decisions").querySelectorAll("button.decision"));
+    const idx = btns.indexOf(e.target);
+    if (idx < 0) return;
+    const next = C.radioKeyTarget(idx, e.key, btns.length);
+    if (next < 0) return;
+    e.preventDefault();
+    chooseDecision(btns[next].dataset.decision);
+    btns[next].focus();
+  }
+
+  let announceTimer = null;
+  // Clear then set on the next tick so an identical repeat result is announced again.
+  function announce(text) {
+    const el = $("resultLive");
+    if (!el) return;
+    el.textContent = "";
+    clearTimeout(announceTimer);
+    announceTimer = setTimeout(() => { el.textContent = text; }, 60);
   }
 
   function renderDocument() {
@@ -532,6 +611,10 @@ if (typeof document !== "undefined") {
     renderOutcome(result);
     updateBoundary(result);
     renderReplay();
+    announce(C.describeOutcome(result, lang, {
+      outcome: $s("outcome"), expected: $s("expected"), missing: $s("missing"),
+      none: $s("none"), statusLabels: $s("statusLabels")
+    }));
   }
 
   function renderAll() {
@@ -604,6 +687,7 @@ if (typeof document !== "undefined") {
       updateRunState();
       updateBoundary(null);
     });
+    $("decisions").addEventListener("keydown", onDecisionKeydown);
     $("run").addEventListener("click", runEvaluation);
     $("reset").addEventListener("click", reset);
     $("replayLast").addEventListener("click", () => {

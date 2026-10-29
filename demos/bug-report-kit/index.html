@@ -40,13 +40,23 @@ nav.codex-portfolio-nav .codex-portfolio-sep{opacity:.6}
 'use strict';
 const fields=['title','trace','steps'];
 const warning='Pattern-based redaction only; unknown secrets may remain. Human review required. / Chỉ che theo mẫu; có thể còn bí mật chưa nhận diện. Cần người kiểm tra.';
+// Kept in lockstep with assembler.py RULES; test_assembler.py runs the same vectors on both.
+const NAMED_KEYS='(?:api[_-]?key|access[_-]?token|auth[_-]?token|refresh[_-]?token|secret[_-]?key|client[_-]?secret)';
+const GENERIC_KEYS='(?:token|secret|password|passwd|pwd|authorization)';
 const rules=[
  ['bearer',/\bBearer[ \t]+[^\s\x00-\x1f"'<>`]+/gi],
- ['api_key',/\b(?:api[_-]?key|access[_-]?token|secret[_-]?key)[ \t]*[:=][ \t]*["']?[A-Za-z0-9_./+\-=]{8,}["']?/gi],
+ ['basic_auth',/\bBasic[ \t]+[A-Za-z0-9+/]{4,}={0,2}(?![A-Za-z0-9+/=])/g],
+ ['jwt',/\beyJ[A-Za-z0-9_-]{4,}\.[A-Za-z0-9_-]{4,}\.[A-Za-z0-9_-]*/g],
+ ['url_credentials',/(?<=:\/\/)[^\s/?#@:"'<>`\[\]]+:[^\s/?#@"'<>`]+(?=@)/g],
+ ['secret',new RegExp('(?:"(?:'+NAMED_KEYS+'|'+GENERIC_KEYS+')"|\'(?:'+NAMED_KEYS+'|'+GENERIC_KEYS+')\')[ \\t]*[:=][ \\t]*(?:"(?!\\[)[^"\\n]+"|\'(?!\\[)[^\'\\n]+\')','gi')],
+ ['api_key',new RegExp('(?<![A-Za-z0-9])'+NAMED_KEYS+'[ \\t]*[:=][ \\t]*["\']?[A-Za-z0-9_./+\\-=]{8,}["\']?','gi')],
  ['api_key',/\b(?:sk-[A-Za-z0-9_-]{16,}|ghp_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|(?:AKIA|ASIA)[A-Z0-9]{16})\b/g],
+ ['secret',new RegExp('(?<![A-Za-z0-9])'+GENERIC_KEYS+'[ \\t]*[:=][ \\t]*["\']?(?=[^\\s"\']*[0-9_/+\\-=~!@#$%^&*])[A-Za-z0-9_./+\\-=~!@#$%^&*]{8,}["\']?','gi')],
  ['email',/[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,}/g],
  ['home_path',/(?:[A-Za-z]:[\\/](?:Users|Documents and Settings)[\\/]|\/(?:Users|home)\/|\/root(?:\/|\b))[^\s\x00-\x1f"'<>`|]*/gi]
 ];
+// "Basic <b64>" only counts when it decodes to user:password, so "Basic usage" survives.
+const validators={basic_auth:m=>{try{const v=m.split(/[ \t]+/).pop().replace(/=+$/,'');return atob(v+'='.repeat((4-v.length%4)%4)).includes(':');}catch{return false;}}};
 function validV4(s){const p=s.split('.');return p.length===4&&p.every(x=>/^(0|[1-9][0-9]{0,2})$/.test(x)&&Number(x)<=255);}
 function validIP(s){
  if(!s.includes(':'))return validV4(s);
@@ -59,8 +69,8 @@ function validIP(s){
 }
 function sanitize(text){
  const counts={};text=text.replace(/\r\n?/g,'\n');
- text=text.replace(/[\x00-\x08\x0b-\x1f\x7f-\x9f\u202a-\u202e\u2066-\u2069]/g,'');
- for(const [kind,re] of rules)text=text.replace(re,()=>{counts[kind]=(counts[kind]||0)+1;return '['+kind.toUpperCase()+'_REDACTED]';});
+ text=text.replace(/[\x00-\x08\x0b-\x1f\x7f-\x9f\xad\u180e\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]/g,'');
+ for(const [kind,re] of rules)text=text.replace(re,m=>{if(validators[kind]&&!validators[kind](m))return m;counts[kind]=(counts[kind]||0)+1;return '['+kind.toUpperCase()+'_REDACTED]';});
  text=text.replace(/(?<![A-Za-z0-9_:])(?:[A-Fa-f0-9]*:){2,}[A-Fa-f0-9:.]*(?:%[A-Za-z0-9_.-]+)?|(?<![A-Za-z0-9_.])(?:[0-9]{1,3}\.){3}[0-9]{1,3}(?![A-Za-z0-9_]|\.[0-9])/g, candidate=>{
  const address=candidate.includes(':')?candidate.replace(/\.+$/,''):candidate;
  if(!validIP(address.split('%')[0]))return candidate;

@@ -13,7 +13,7 @@ python3 -m http.server 4198 --bind 127.0.0.1
 
 Or open the verified Pages URL under `https://codex.xuanhieu.org/demos/screenshot-privacy-reviewer/` after release.
 
-The first screen contains a **synthetic 1200×760 screenshot**. Click **Che email mẫu**, **Che mã mẫu**, or **Che avatar mẫu** to redact a premarked region. Try the black rectangle in the preview; click Undo or Clear all to revert locally.
+The first screen contains a **synthetic 1200×760 screenshot**. Click **Che email mẫu**, **Che mã mẫu**, or **Che avatar mẫu** to redact a premarked region. Try the black rectangle in the preview; click Undo or Clear all to revert locally. Any change to the mask set (add, Undo, Clear all) unticks the review confirmation, so export needs a fresh review.
 
 ## Real screenshot flow
 

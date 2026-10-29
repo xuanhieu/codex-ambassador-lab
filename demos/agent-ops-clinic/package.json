@@ -1,0 +1,8 @@
+{
+  "name": "agent-ops-clinic",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline bilingual workshop for human-led agent delegation",
+  "scripts": { "test": "node --test", "smoke": "node scripts/smoke.mjs" }
+}

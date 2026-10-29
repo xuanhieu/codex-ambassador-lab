@@ -40,9 +40,26 @@ python3 -m http.server 4173
 - All metrics and test results are user-attested.
 - No cryptographic signature, independent verification, or official certification.
 - Autosave uses browser `localStorage` and is cleared by the explicit button or browser data clearing.
-- Live verified public demo: https://codex.xuanhieu.org/demos/evidence-story-builder/ . Source: https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/evidence-story-builder
+- Live demo: https://codex.xuanhieu.org/demos/evidence-story-builder/ . Source: https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/evidence-story-builder
 - Accessibility and cross-browser rendering were not manually audited beyond responsive CSS.
 
 ## Test result
 
-`node --test`: 27/27 passed (see terminal output). No fabricated results.
+`node --test`: 27/27 passed on 2026-10-29, Node v24.22.1.
+
+## Try it with Codex / Thử với Codex
+
+Work on a fresh clone or a throwaway branch. Start Codex in `demos/evidence-story-builder` with `codex` and paste:
+
+```text
+Read core.js (sortEvidence) and tests/test.cjs. Add ONE new node:test case to tests/test.cjs proving that sortEvidence falls back to ascending order when the direction is neither "asc" nor "desc" (for example "sideways"), and that the input array is not mutated. Use the existing C import. Do not change core.js or any other file. Run `node --test`, then show me the diff and explain each assertion in one sentence.
+```
+
+Check it yourself from the same folder:
+
+```bash
+node --test
+git diff --stat
+```
+
+A good result: 28 tests, 28 pass, 0 fail (27 before the change); `git diff --stat` lists only `tests/test.cjs`. If Codex edits `core.js`, reject the change and ask again.

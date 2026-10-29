@@ -68,4 +68,12 @@ class PolicyTests(unittest.TestCase):
  def test_input_fixtures_are_nonsecret(self):
   s=(ROOT/'fixtures/scenarios.json').read_text()
   for secret in ('sk-proj-','-----BEGIN PRIVATE KEY-----','github_pat_'):self.assertNotIn(secret,s)
+ def test_responsive_css_regressions(self):
+  # Audit A02/U4: language label stays in the a11y tree; scenario list is one column at <=640px.
+  import re
+  css=(ROOT/'src/styles.css').read_text()
+  self.assertNotRegex(css,r'header>label>span\{[^}]*display:\s*none')
+  self.assertRegex(css,r'@media\(max-width:640px\)\{#scenario-list\{grid-template-columns:1fr\}\}')
+  self.assertNotIn('repeat(6',css)
+  self.assertIn('<label><span data-t="language">',(ROOT/'index.html').read_text())
 if __name__=='__main__':unittest.main()
