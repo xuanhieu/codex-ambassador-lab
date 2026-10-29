@@ -45,7 +45,7 @@ python3 -m http.server 4173
 
 ## Test result
 
-`node --test`: 27/27 passed on 2026-10-29, Node v24.22.1.
+`node --test`: 30/30 passed on 2026-10-29, Node v24.22.1.
 
 ## Try it with Codex / Thử với Codex
 
@@ -62,4 +62,4 @@ node --test
 git diff --stat
 ```
 
-A good result: 28 tests, 28 pass, 0 fail (27 before the change); `git diff --stat` lists only `tests/test.cjs`. If Codex edits `core.js`, reject the change and ask again.
+A good result: 31 tests, 31 pass, 0 fail (30 before the change); `git diff --stat` lists only `tests/test.cjs`. If Codex edits `core.js`, reject the change and ask again.

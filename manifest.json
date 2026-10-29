@@ -128,7 +128,7 @@
     "demos/evidence-chain/styles.css": "b618a0d383231a5854b65066d8dc10acadd2eda972adf27d6628584bc4d9b019",
     "demos/evidence-chain/tests/test_chain.py": "cec1015c69f94c1a9bb1c6f1771815bab84c86a8cd6c1153da86f940fdf640b3",
     "demos/evidence-story-builder/QA_REPORT.md": "57b5ca20ba240cf946bc1b522a5bd774163fbea361b1b7f278ff9c1ba74b556a",
-    "demos/evidence-story-builder/README.md": "a2c544728b0e5dc2fd85635dffc384dcf37ffe4f815b75927dd0c8675251ca6a",
+    "demos/evidence-story-builder/README.md": "520afc7db58a4dd17d0683a14ac997415f8027d1eabb6c8c98474dc797f40dc0",
     "demos/evidence-story-builder/app.js": "6d3b2e6d1a967d7e1b7e93d1904776ee7f870899d01a307ecd15cc22d1b5fdaf",
     "demos/evidence-story-builder/core.js": "aac403ade384c3abdd2e5097a8152adee464902eaad90f9a0f25d8fc9d291816",
     "demos/evidence-story-builder/index.html": "62980f8caad39435f5cab06c2af32074cfedf23a0636633ed718b36ccad5df4f",
@@ -158,7 +158,7 @@
     "demos/pr-evidence-receipt/test_receipt.py": "2a68d0bf31b77518db658cc0b0fda1ae1d7422367e9ba215591d57789e3c4088",
     "demos/pr-evidence-receipt/viewer.html": "f77d4ece8fe5ae661ee7d8e46b455e9400f03cc4322c8b47635816a52f01bc05",
     "demos/prompt-injection-clinic/QA_REPORT.md": "ab7a67e46cd7a8005cbcddc85a851c836ab2c0348fe71caea3f3d2b578b28e08",
-    "demos/prompt-injection-clinic/README.md": "ebfe038d221e67b2b2d11473c9bfb6df824b69d614635c00fde63f582ac5eaf7",
+    "demos/prompt-injection-clinic/README.md": "227977b2096aa1995df0d4e1665c7dbcce5b6205cee7deeeb6f8fc66ff4d5003",
     "demos/prompt-injection-clinic/app.js": "d1c9d3f019a9e9a53acef0ba6f2872d267ffd7606f3aefa59b1b9babc0cdb1c6",
     "demos/prompt-injection-clinic/index.html": "e1ecdda6f125d1d047fc7472c7d94d3765ce5aeb4dd2069e7ce717fe239a14df",
     "demos/prompt-injection-clinic/styles.css": "d282d967e541787b1b09e9c79bc45a6771b777d396cd3b71b4ff05198ce63e20",
@@ -225,5 +225,5 @@
     "index.html": "f2f7f3fcfe3f306f0a81f27992d3f37308d510de10a1efd92e6ca4bebe2cfc7a",
     "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
   },
-  "digest": "9df2551aa01f69ae81e68375c89baa6b37e3f9fa5fcacbef6a5c0ac226578947"
+  "digest": "244a467e9ec6dae8c739fdbdde6934f7d708a5dfd86575b12df4d07dee6464d8"
 }
