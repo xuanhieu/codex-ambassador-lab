@@ -202,3 +202,31 @@ test('export escapes script delimiters', () => {
 test('storage key is stable', () => {
   assert.equal(C.STORAGE_KEY, 'evidence-story-builder:v1');
 });
+
+test('invalidFieldKeys keeps page order and skips empty messages (A04 regression)', () => {
+  const order = ['title', 'audience', 'role', 'evidence', 'tests'];
+  assert.deepEqual(C.invalidFieldKeys({ tests: 'Required.', title: 'Required.', role: '  ' }, order), ['title', 'tests']);
+  assert.deepEqual(C.invalidFieldKeys({}, order), []);
+  assert.deepEqual(C.invalidFieldKeys(null, order), []);
+  assert.deepEqual(C.invalidFieldKeys({ title: 'x' }, null), []);
+});
+
+test('errorSummary names every invalid field (A04 regression)', () => {
+  assert.equal(C.errorSummary(['URL bằng chứng', 'Nhãn'], 'Chưa hợp lệ: ', 'lỗi'), 'Chưa hợp lệ: 2 lỗi — URL bằng chứng, Nhãn.');
+  assert.equal(C.errorSummary(['Title'], 'Not valid: ', 'error(s)'), 'Not valid: 1 error(s) — Title.');
+  assert.equal(C.errorSummary([], 'Not valid: ', 'error(s)'), '');
+  assert.equal(C.errorSummary(['', null], 'x', 'y'), '');
+});
+
+test('every error slot is linked to its field and announced (A04 regression)', () => {
+  const fs = require('node:fs');
+  const html = fs.readFileSync(require('node:path').join(__dirname, '..', 'index.html'), 'utf8');
+  for (const id of ['title', 'audience', 'role', 'summary', 'evUrl', 'evLabel', 'tests', 'verifiedFacts', 'unverifiedClaims', 'limitations', 'metrics']) {
+    assert.match(html, new RegExp(`id="${id}" aria-describedby="${id}Err"`), id);
+    assert.match(html, new RegExp(`id="${id}Err"`), id + 'Err');
+  }
+  assert.match(html, /id="evFormErr" role="status" aria-live="polite"/);
+  assert.match(html, /id="formStatus"[^>]*aria-live="polite"/);
+  const app = fs.readFileSync(require('node:path').join(__dirname, '..', 'app.js'), 'utf8');
+  assert.ok(app.includes("setAttribute('aria-invalid', 'true')"));
+});

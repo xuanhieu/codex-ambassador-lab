@@ -26,11 +26,13 @@ function updateControls(){
  setDisplayText("dimensions",s.width+" × "+s.height);
  $("stageState").textContent=t(s.sample?"sampleMode":"customMode");
 }
+// Any change to the mask set voids the human-review attestation (audit S1).
+function invalidateReview(){$("reviewed").checked=false}
 function safeRect(rect){return C.normalizeRect({x:rect.x,y:rect.y},{x:rect.x+rect.width,y:rect.y+rect.height},s.width,s.height)}
 function addRect(rect){
  if(s.rects.length>=100){notice(t("tooMany"),true);return false}
  if(!rect){notice(t("invalid"),true);return false}
- s.rects.push(rect);draw();updateControls();notice(t("added"));return true;
+ s.rects.push(rect);invalidateReview();draw();updateControls();notice(t("added"));return true;
 }
 function draw(){
  const canvas=$("canvas");if(!s.image)return;
@@ -138,8 +140,8 @@ $("addNumeric").addEventListener("click",()=>{
   addRect(r);
  }catch(err){notice(t("invalid"),true)}
 });
-$("undo").addEventListener("click",()=>{if(s.rects.length){s.rects.pop();draw();updateControls();notice(t("undone"))}});
-$("clear").addEventListener("click",()=>{s.rects=[];$("reviewed").checked=false;draw();updateControls();notice(t("cleared"))});
+$("undo").addEventListener("click",()=>{if(s.rects.length){s.rects.pop();invalidateReview();draw();updateControls();notice(t("undone"))}});
+$("clear").addEventListener("click",()=>{s.rects=[];invalidateReview();draw();updateControls();notice(t("cleared"))});
 $("reviewed").addEventListener("change",updateControls);
 $("download").addEventListener("click",async()=>{
  if(!$("reviewed").checked||s.rects.length===0){notice(t("needsReview"),true);return}

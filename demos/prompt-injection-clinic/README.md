@@ -55,6 +55,23 @@ node --check app.js
 - Human review is simulated; cannot authenticate real approvers.
 - Browser session memory retains replay log until cleared.
 
-## Honest completion note
+## Try it with Codex / Thử với Codex
 
-Implemented in one focused pass. Tests must be run locally; results recorded after execution. No deployment or push performed.
+Work on a fresh clone or a throwaway branch. Start Codex in `demos/prompt-injection-clinic` with `codex` and paste:
+
+```text
+Read app.js (validateChecks and evaluate) and tests/test.cjs. Add ONE new node:test case to tests/test.cjs proving that when checks is an array instead of an object, validateChecks returns error "invalid_checks" and evaluate() for scenario S1 returns status "INVALID_INPUT" with flags.invalidChecks === true. Do not change app.js or any other file. Run `node --test tests/test.cjs`, then show me the diff and explain in two sentences why strict input validation matters in a prompt-injection lesson.
+```
+
+Check it yourself from the same folder:
+
+```bash
+node --test tests/test.cjs
+git diff --stat
+```
+
+A good result: 26 tests, 26 pass, 0 fail (25 before the change); `git diff --stat` lists only `tests/test.cjs`. If Codex edits `app.js`, reject the change and ask again.
+
+## Status
+
+Live: https://codex.xuanhieu.org/demos/prompt-injection-clinic/. `node --test tests/test.cjs`: 25/25 pass (2026-10-29, Node v24.22.1).

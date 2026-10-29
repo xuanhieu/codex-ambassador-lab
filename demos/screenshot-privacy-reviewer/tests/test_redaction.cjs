@@ -67,3 +67,36 @@ test('source metadata is not reused',()=>{
  assert.match(text,/out\.toBlob\(resolve,"image\/png"\)/);
  assert.doesNotMatch(text,/localStorage|sessionStorage|FileReader\s*\(/);
 });
+// S1 regression (audit 2026-10-29): run the real app.js against a minimal DOM stub.
+// A reviewed attestation must not survive any change to the mask set (Undo, add, etc.).
+function loadApp(){
+ const vm=require('node:vm');
+ const ctx2d=new Proxy({},{get:(o,k)=>k in o?o[k]:(k==='createLinearGradient'?()=>({addColorStop(){}}):()=>{}),set:(o,k,v)=>(o[k]=v,true)});
+ const els={};
+ const el=id=>els[id]??=({id,value:'',checked:false,disabled:false,hidden:false,textContent:'',dataset:{},width:0,height:0,handlers:{},
+  classList:{toggle(){}},addEventListener(e,fn){this.handlers[e]=fn},getContext:()=>ctx2d,
+  getBoundingClientRect:()=>({left:0,top:0,width:1200,height:760}),setPointerCapture(){},releasePointerCapture(){},hasPointerCapture:()=>false});
+ const presets=['email','key','avatar'].map(k=>Object.assign(el('preset-'+k),{dataset:{sampleMask:k}}));
+ const document={documentElement:{},getElementById:el,createElement:()=>({width:0,height:0,getContext:()=>ctx2d}),
+  querySelectorAll:q=>q==='[data-sample-mask]'?presets:[],body:{append(){}}};
+ const sandbox={document,window:{PrivacyRedaction:C,addEventListener(){}},Math,Number,Error,setTimeout};
+ vm.runInNewContext(fs.readFileSync(path.join(ROOT,'app.js'),'utf8'),sandbox);
+ return {$:el,presets};
+}
+test('S1: Undo after review resets attestation and disables export',()=>{
+ const {$,presets}=loadApp();
+ presets[0].handlers.click();presets[1].handlers.click();
+ $('reviewed').checked=true;$('reviewed').handlers.change();
+ assert.equal($('download').disabled,false);
+ $('undo').handlers.click();
+ assert.equal($('reviewed').checked,false);
+ assert.equal($('download').disabled,true);
+});
+test('S1: adding a mask after review also requires re-review',()=>{
+ const {$,presets}=loadApp();
+ presets[0].handlers.click();
+ $('reviewed').checked=true;$('reviewed').handlers.change();
+ presets[1].handlers.click();
+ assert.equal($('reviewed').checked,false);
+ assert.equal($('download').disabled,true);
+});

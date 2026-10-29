@@ -19,3 +19,22 @@ test("report never embeds README",()=>assert.ok(!C.toMarkdown(C.analyze(good+"\n
 test("CSP blocks network",()=>assert.match(fs.readFileSync(require("node:path").join(__dirname,"../index.html"),"utf8"),/connect-src 'none'/));
 test("browser app has no fetch APIs",()=>assert.doesNotMatch(fs.readFileSync(require("node:path").join(__dirname,"../app.js"),"utf8"),/\bfetch\s*\(|XMLHttpRequest|sendBeacon/));
 test("export only uses derived checklist",()=>assert.match(fs.readFileSync(require("node:path").join(__dirname,"../app.js"),"utf8"),/C\.toMarkdown\(result\)/));
+// S2 regressions (audit 2026-10-29, poc_readme_linter.cjs).
+const passed=(src,id)=>C.analyze(src).checks.find(c=>c.id===id).passed;
+const T="`".repeat(3);
+test("S2: fenced code block counts as an example",()=>assert.equal(passed("# Tool\n\nUsage:\n\n"+T+"bash\nmake build && ./bin/tool --help\n"+T+"\n","example"),true));
+test("S2: tilde fence counts as an example",()=>assert.equal(passed("# Tool\n\nUsage:\n\n~~~\nmake build\n~~~\n","example"),true));
+test("S2: literal \\x60 escape text is not a fence",()=>assert.equal(passed("# Tool\n\nThe string \\x60\\x60\\x60 appears here.","example"),false));
+test("S2: commit/limit/submit is not a licence",()=>assert.equal(passed("# Tool\n\nPlease commit often and respect the rate limit when you submit.","license"),false));
+test("S2: MIT as a word is a licence",()=>assert.equal(passed("# Tool\n\nReleased as MIT for everyone.","license"),true));
+test("S2: latest/contest is not a test section",()=>assert.equal(passed("# Tool\n\nDownload the latest build for the contest.","tests"),false));
+test("S2: password is not an expected result",()=>assert.equal(passed("# Tool\n\nSet a password in the environment before you start.","expected"),false));
+test("S2: a bare issue mention is not a contributing guide",()=>assert.equal(passed("# Tool\n\nThere is a known issue with large files.","contrib"),false));
+test("S2: padded one-paragraph README is not strong",()=>{
+ const r=C.analyze("# My App\n\nWe commit to the latest release; see the issue list and demo. Private password manager output for beginners. Purpose: getting started with npm run dev. FAQ inside.");
+ assert.notEqual(r.status,"strong");assert.ok(r.score<100,String(r.score));
+});
+test("S2: keyword-stuffed single paragraph cannot be strong",()=>{
+ const r=C.analyze("# My App\n\nOverview and quickstart: npm run dev. Tests: npm test. License: MIT. Contributing via pull request. Security and privacy notes. Expected output shown. Troubleshooting FAQ. Demo screenshot. For beginners.");
+ assert.notEqual(r.status,"strong");
+});

@@ -68,6 +68,7 @@
       duplicateUrl: 'URL này đã tồn tại trong ledger.',
       validOk: 'Hợp lệ. Có thể xuất.',
       invalidForm: 'Chưa hợp lệ: ',
+      errorsUnit: 'lỗi',
       exportedMd: 'Đã tạo tệp Markdown.',
       exportedJson: 'Đã tạo tệp JSON.',
       noEvidence: 'Cần ít nhất một bằng chứng.'
@@ -129,6 +130,7 @@
       duplicateUrl: 'This URL already exists in the ledger.',
       validOk: 'Valid. Ready to export.',
       invalidForm: 'Not valid: ',
+      errorsUnit: 'error(s)',
       exportedMd: 'Markdown file created.',
       exportedJson: 'JSON file created.',
       noEvidence: 'At least one evidence item is required.'
@@ -174,9 +176,39 @@
     if (current) select.value = current;
   }
 
+  // Error slot "<field>Err" belongs to input "#<field>" (linked by aria-describedby
+  // in index.html). A message marks the field aria-invalid; clearing it unmarks it.
   function setFieldError(id, message) {
     const node = el(id);
-    if (node) node.textContent = message || '';
+    if (node) {
+      clearTimeout(announceTimers.get(node));
+      node.textContent = message || '';
+    }
+    const field = el(id.replace(/Err$/, ''));
+    if (!field || field === node) return;
+    if (message) field.setAttribute('aria-invalid', 'true');
+    else field.removeAttribute('aria-invalid');
+  }
+
+  // Visible field name taken from its label (without the required marker).
+  function fieldName(fieldId) {
+    const field = el(fieldId);
+    const span = field && field.closest('label') && field.closest('label').querySelector('[data-i]');
+    return span ? span.textContent.replace(/\s*\*\s*$/, '').trim() : fieldId;
+  }
+
+  const announceTimers = new Map();
+  // Clear, then set on the next tick so repeating the same text is announced again.
+  function announce(node, text) {
+    if (!node) return;
+    node.textContent = '';
+    clearTimeout(announceTimers.get(node));
+    announceTimers.set(node, setTimeout(() => { node.textContent = text; }, 60));
+  }
+
+  function focusField(fieldId) {
+    const field = el(fieldId);
+    if (field && typeof field.focus === 'function') field.focus();
   }
 
   function readForm() {
@@ -233,15 +265,23 @@
     setFieldError('metricsErr', errors.metrics || '');
     setFieldError('verifiedFactsErr', '');
     setFieldError('unverifiedClaimsErr', '');
+    // The ledger has no input of its own; its error shows under the add-evidence form.
+    setFieldError('evFormErr', errors.evidence || '');
 
     const status = el('formStatus');
+    status.className = 'result-note';
     if (Object.keys(errors).length === 0 && result.valid) {
-      status.textContent = t('validOk');
-      status.className = 'result-note';
+      announce(status, t('validOk'));
     } else {
-      const first = Object.values(errors)[0] || (result.errors.form || '');
-      status.textContent = t('invalidForm') + first;
-      status.className = 'result-note';
+      // Focus the first invalid field in page order and name every invalid field.
+      const keys = C.invalidFieldKeys(errors, ['title', 'audience', 'role', 'evidence', 'tests', 'limitations', 'metrics']);
+      const focusId = key => (key === 'evidence' ? 'evUrl' : key);
+      const names = keys.map(key => (key === 'evidence' ? t('evidenceTitle') : fieldName(key)));
+      const text = names.length
+        ? C.errorSummary(names, t('invalidForm'), t('errorsUnit'))
+        : t('invalidForm') + (errors.form || result.errors.form || '');
+      announce(status, text);
+      if (keys.length) focusField(focusId(keys[0]));
     }
     return result.valid && Object.keys(errors).length === 0 ? result.value : null;
   }
@@ -314,7 +354,12 @@
     if (ok && evidence.some(item => item.url === normalized)) {
       setFieldError('evUrlErr', t('duplicateUrl')); ok = false;
     }
-    if (!ok) return;
+    if (!ok) {
+      const keys = C.invalidFieldKeys({ evUrl: el('evUrlErr').textContent, evLabel: el('evLabelErr').textContent }, ['evUrl', 'evLabel']);
+      announce(el('evFormErr'), C.errorSummary(keys.map(fieldName), t('invalidForm'), t('errorsUnit')));
+      if (keys.length) focusField(keys[0]);
+      return;
+    }
     evidence.push({
       id: 'ev-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7),
       url: normalized,

@@ -197,5 +197,18 @@ class ReceiptTests(unittest.TestCase):
         self.assertEqual(demo['status'], 'FAIL')
         self.assertTrue(all(e['provenance'] == 'simulated' for e in demo['evidence']))
 
+    def test_viewer_bundles_sample_matching_fixture(self):
+        # Regression (UX audit U1/N107): viewer must offer an offline sample identical to fixtures.json.
+        import re
+        page = (Path(__file__).parent / 'viewer.html').read_text(encoding='utf-8')
+        self.assertIn('id="sample" type="button"', page)
+        self.assertIn('Load sample receipt / Tải biên nhận mẫu', page)
+        self.assertIn('id="file" type="file"', page)
+        match = re.search(r'<script type="application/json" id="sample-receipt">(.*?)</script>', page, re.S)
+        self.assertIsNotNone(match)
+        bundled = json.loads(match.group(1).replace('<\\/', '</'))
+        fixture = receipt.read_json(Path(__file__).parent / 'fixtures.json')
+        self.assertEqual(bundled, fixture['demo_receipt'])
+
 if __name__ == '__main__':
     unittest.main()

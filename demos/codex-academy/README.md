@@ -21,7 +21,7 @@ From the academy folder, run:
 
 Open http://127.0.0.1:4177/ . Opening file:// may block loading local JSON via fetch; use an HTTP server.
 
-After a confirmed public deployment, the route is https://codex-amb-xuanhieu.pages.dev/demos/codex-academy/ . Verify HTTP 200 and browser functionality before claiming it is live.
+Live: https://codex.xuanhieu.org/demos/codex-academy/ · Source: https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/codex-academy
 
 ## Keep sources current
 
@@ -64,9 +64,9 @@ Define a bounded AGENTS.md contract in a disposable Git repo, design multiple is
 - Only self-attested progress and known source/lesson IDs are stored in localStorage, never server-side. No telemetry or third-party scripts.
 - JSON import accepts only validated known IDs and boolean checks; arbitrary HTML, keys, URLs and unknown state fields are rejected.
 - All displayed official links use HTTPS allowlisted OpenAI documentation domains, opened with noopener protections.
-- Raw downloaded official-index snapshot, local tests, Git internals and private application form are not needed in the public bundle.
+- The public bundle ships `catalog.py` and `tests/`; Git internals, raw private notes and the private application form are not published.
 - Generated progress backups are personal learning history; treat them carefully.
-- An open source GitHub repo is a separate publication decision, not implied by the static web release.
+- Source is published (MIT) in `xuanhieu/codex-ambassador-lab`.
 
 ## QA commands
 
@@ -76,7 +76,7 @@ Define a bounded AGENTS.md contract in a disposable Git repo, design multiple is
     node --check app.js
     node --check logic.js
 
-Parent workspace: agents/BR-20261024-PARALLEL/qa_multi.mjs runs a real Chrome CDP test of 390/768/1440 viewports, docs search, role paths, lesson quiz gate and progress storage.
+The author's private workspace holds a Chrome CDP harness that runs a real browser test of 390/768/1440 viewports, docs search, role paths, lesson quiz gate and progress storage.
 
 ## Known limits
 

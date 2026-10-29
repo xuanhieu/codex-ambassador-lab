@@ -140,3 +140,37 @@ test("index.html has CSP connect-src none", () => {
 test("getScenario returns null for bad id", () => {
   assert.equal(C.getScenario("ZZZ"), null);
 });
+
+test("radioKeyTarget roves with wrap and Home/End (A03 regression)", () => {
+  assert.equal(C.radioKeyTarget(0, "ArrowRight", 4), 1);
+  assert.equal(C.radioKeyTarget(3, "ArrowRight", 4), 0);
+  assert.equal(C.radioKeyTarget(3, "ArrowDown", 4), 0);
+  assert.equal(C.radioKeyTarget(0, "ArrowLeft", 4), 3);
+  assert.equal(C.radioKeyTarget(2, "ArrowUp", 4), 1);
+  assert.equal(C.radioKeyTarget(2, "Home", 4), 0);
+  assert.equal(C.radioKeyTarget(1, "End", 4), 3);
+  assert.equal(C.radioKeyTarget(1, "Enter", 4), -1);
+  assert.equal(C.radioKeyTarget(1, " ", 4), -1);
+  assert.equal(C.radioKeyTarget(-5, "ArrowRight", 4), 1);
+  assert.equal(C.radioKeyTarget(0, "ArrowRight", 0), -1);
+});
+
+test("describeOutcome builds a live-region summary (A03 regression)", () => {
+  const labels = { outcome: "Outcome", expected: "Expected", missing: "Missing checks", none: "none", statusLabels: { REVIEW_INCOMPLETE: "INCOMPLETE", CORRECT: "CORRECT" } };
+  const partial = C.evaluate({ scenarioId: "S1", decision: "sanitize", checks: { untrusted_source: true } });
+  const text = C.describeOutcome(partial, "en", labels);
+  assert.match(text, /^Outcome: INCOMPLETE\. Expected: sanitize\. Missing checks: /);
+  assert.ok(text.includes("No instruction override allowed"));
+  const full = C.evaluate({ scenarioId: "S1", decision: "sanitize", checks: { untrusted_source: true, no_instruction_override: true, output_sanitized: true } });
+  assert.equal(C.describeOutcome(full, "en", labels), "Outcome: CORRECT. Expected: sanitize. Missing checks: none.");
+  assert.equal(C.describeOutcome(null, "en", labels), "");
+});
+
+test("decision markup is a labelled radiogroup with a live result region (A03 regression)", () => {
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  assert.match(html, /id="decisions" role="radiogroup" aria-labelledby="decisionLabel"/);
+  assert.match(html, /id="resultLive"[^>]*aria-live="polite"/);
+  const src = fs.readFileSync(path.join(root, "app.js"), "utf8");
+  assert.ok(src.includes('setAttribute("role", "radio")'));
+  assert.ok(src.includes('"aria-checked"'));
+});

@@ -32,7 +32,25 @@ VECTORS = [
     ('obfuscated_controls', 'qa@\x00example.invalid sk-SYNTHETIC_\u202eONLY_NOT_VALID_0000', '[EMAIL_REDACTED] [API_KEY_REDACTED]'),
     ('unicode_boundary', 'éBearer SYNTHETIC_ONLY ésk-SYNTHETIC_ONLY_NOT_VALID_0000', 'é[BEARER_REDACTED] é[API_KEY_REDACTED]'),
     ('multiple', 'qa@example.invalid\nBearer SYNTHETIC\n/home/demo-user/a\n192.0.2.23', '[EMAIL_REDACTED]\n[BEARER_REDACTED]\n[HOME_PATH_REDACTED]\n[IP_REDACTED]'),
-    ('limits', 'password=hunter-demo relative/file.py người@ví-dụ.invalid', 'password=hunter-demo relative/file.py người@ví-dụ.invalid'),
+    # password= is now a redacted key (audit S3); the other two remain intentional non-matches.
+    ('limits', 'password=hunter-demo relative/file.py người@ví-dụ.invalid', '[SECRET_REDACTED] relative/file.py người@ví-dụ.invalid'),
+    # S3 regressions (audit 2026-10-29, poc_bugkit_regex.py). All values are synthetic.
+    ('json_api_key', '{"api_key": "abcd1234efgh5678"}', '{[SECRET_REDACTED]}'),
+    ('json_keys', '{"token": "t0k3n-SYNTH", "secret":"s3", \'password\': \'hunter2\', "Authorization": "Token SYNTH1234"}',
+     '{[SECRET_REDACTED], [SECRET_REDACTED], [SECRET_REDACTED], [SECRET_REDACTED]}'),
+    ('json_bearer_once', '{"Authorization": "Bearer SYNTHETIC_ONLY"}', '{"Authorization": "[BEARER_REDACTED]"}'),
+    ('password_assign', 'password=Hunter2Hunter2 db_passwd: S3cret!value', '[SECRET_REDACTED] db_[SECRET_REDACTED]'),
+    ('token_word', 'token: 9f8e7d6c5b4a39281706', '[SECRET_REDACTED]'),
+    ('basic_auth', 'Authorization: Basic dXNlcjpwYXNzd29yZA==', 'Authorization: [BASIC_AUTH_REDACTED]'),
+    ('url_creds', 'https://admin:S3cretPass@db.example.com/x', 'https://[URL_CREDENTIALS_REDACTED]@db.example.com/x'),
+    ('jwt', 'jwt eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIn0.abcDEF123 end', 'jwt [JWT_REDACTED] end'),
+    ('zero_width', 'sk-\u200bAbCdEfGhIjKlMnOpQrSt api\u200c_key=\ufeffSYNTH_ONLY_1234 q\u2060a@example.invalid',
+     '[API_KEY_REDACTED] [API_KEY_REDACTED] [EMAIL_REDACTED]'),
+    # Ordinary prose must not be over-redacted.
+    ('no_over_redaction', 'Basic usage: run it. Basic configuration guide. token: required. Password: optional. '
+     'max_tokens=4096 secret sauce https://example.com/a@b user@ mailto:x eyJ alone a.b.c',
+     'Basic usage: run it. Basic configuration guide. token: required. Password: optional. '
+     'max_tokens=4096 secret sauce https://example.com/a@b user@ mailto:x eyJ alone a.b.c'),
     ('markdown', '```\n# forged\n</script><img src=x onerror=alert(1)>', '```\n# forged\n</script><img src=x onerror=alert(1)>'),
 ]
 

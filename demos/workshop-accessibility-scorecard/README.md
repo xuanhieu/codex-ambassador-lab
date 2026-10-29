@@ -33,6 +33,23 @@ Then open `http://localhost:4173`.
 node --test tests/test.cjs
 ```
 
+## Try it with Codex / Thử với Codex
+
+Work on a fresh clone or a throwaway branch. Start Codex in `demos/workshop-accessibility-scorecard` with `codex` and paste:
+
+```text
+Read app.js (computeScore) and tests/test.cjs. Add ONE new node:test case to tests/test.cjs proving that answering "yes" to every item in app.ITEMS gives scorePercent 100, coveragePercent 100 and an empty gaps list. Build the answers from app.ITEMS instead of hard-coding item ids. Do not change app.js or any other file. Run `node --test tests/test.cjs`, then show me the diff and explain in two sentences why a perfect score still does not prove a venue is accessible.
+```
+
+Check it yourself from the same folder:
+
+```sh
+node --test tests/test.cjs
+git diff --stat
+```
+
+A good result: 16 tests, 16 pass, 0 fail (15 before the change); `git diff --stat` lists only `tests/test.cjs`; the explanation repeats the limit stated below. If Codex edits `app.js`, reject the change and ask again.
+
 ## Honest completion note
 
 This is a planning aid, not an accessibility audit or certification. The score only reflects the answers entered by the facilitator. `Not sure` answers are excluded from the score and shown as coverage, so they do not become false failures. A high score does not mean a venue or event is accessible; verify with disabled participants, local regulations, and real event conditions.

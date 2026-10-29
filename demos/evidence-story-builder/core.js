@@ -322,6 +322,19 @@
     };
   }
 
+  // Field keys that carry a non-empty error message, in the given (DOM) order.
+  function invalidFieldKeys(errors, order) {
+    if (!errors || typeof errors !== 'object' || !Array.isArray(order)) return [];
+    return order.filter(key => typeof errors[key] === 'string' && errors[key].trim() !== '');
+  }
+
+  // Screen-reader friendly summary such as "Not valid: 2 error(s) — URL, Label."
+  function errorSummary(names, prefix, unit) {
+    const list = (Array.isArray(names) ? names : []).map(n => String(n || '').trim()).filter(Boolean);
+    if (!list.length) return '';
+    return `${prefix || ''}${list.length} ${unit || ''} — ${list.join(', ')}.`.replace(/\s+—/, ' —');
+  }
+
   const api = Object.freeze({
     STORAGE_KEY,
     MAX_ITEMS,
@@ -341,7 +354,9 @@
     exportJson: serializeExport,
     sampleProject,
     sampleData: sampleProject,
-    normalizeUrl
+    normalizeUrl,
+    invalidFieldKeys,
+    errorSummary
   });
 
   if (typeof module === 'object' && module.exports) module.exports = api;

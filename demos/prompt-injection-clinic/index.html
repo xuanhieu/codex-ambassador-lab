@@ -44,7 +44,7 @@
     <p class="error-text" id="scenarioError" role="alert"></p>
 
     <div class="panel-head compact"><span class="eyebrow">02 / DECISION</span><h2 id="decisionLabel">Quyết định của bạn</h2></div>
-    <div class="decision-grid" id="decisions" role="radiogroup" aria-label="Decision"></div>
+    <div class="decision-grid" id="decisions" role="radiogroup" aria-labelledby="decisionLabel"></div>
 
     <div class="panel-head compact"><span class="eyebrow">03 / CHECKS</span><h2 id="checksLabel">Kiểm tra an toàn</h2></div>
     <div class="checks" id="checks"></div>
@@ -99,6 +99,7 @@
     <div class="kv"><span id="explanationLabel">Giải thích</span><p id="outcomeExplanation"></p></div>
     <div class="kv"><span id="hintLabel">Gợi ý</span><p id="outcomeHint"></p></div>
     <p class="disclaimer" id="outcomeDisclaimer"></p>
+    <p id="resultLive" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
   </article>
 
   <article class="panel replay">

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Offline, synthetic-data bug report assembler. Python standard library only."""
 import argparse
+import base64
+import binascii
 import hashlib
 import ipaddress
 import json
@@ -13,24 +15,53 @@ MAX_INPUT = 200_000
 FIELDS = ('title', 'trace', 'steps')
 WARNING = ('Pattern-based redaction only; unknown secrets may remain. Human review required. '
            '/ Chỉ che theo mẫu; có thể còn bí mật chưa nhận diện. Cần người kiểm tra.')
+# Key names: NAMED_KEYS are unambiguous; GENERIC_KEYS also occur in prose, so their unquoted
+# values must contain a digit or symbol before they are redacted (avoids "token: required").
+NAMED_KEYS = r'(?:api[_-]?key|access[_-]?token|auth[_-]?token|refresh[_-]?token|secret[_-]?key|client[_-]?secret)'
+GENERIC_KEYS = r'(?:token|secret|password|passwd|pwd|authorization)'
 RULES = [
     ('bearer', re.compile(r'\bBearer[ \t]+[^\s\x00-\x1f"\'<>`]+', re.I | re.ASCII)),
-    ('api_key', re.compile(r'\b(?:api[_-]?key|access[_-]?token|secret[_-]?key)[ \t]*[:=][ \t]*["\']?[A-Za-z0-9_./+\-=]{8,}["\']?', re.I | re.ASCII)),
+    # Validated in BASIC_AUTH_VALID: must decode to "user:pass", so "Basic usage" survives.
+    ('basic_auth', re.compile(r'\bBasic[ \t]+[A-Za-z0-9+/]{4,}={0,2}(?![A-Za-z0-9+/=])', re.ASCII)),
+    ('jwt', re.compile(r'\beyJ[A-Za-z0-9_-]{4,}\.[A-Za-z0-9_-]{4,}\.[A-Za-z0-9_-]*', re.ASCII)),
+    ('url_credentials', re.compile(r'(?<=://)[^\s/?#@:"\'<>`\[\]]+:[^\s/?#@"\'<>`]+(?=@)', re.ASCII)),
+    # JSON/dict style: quoted key AND quoted value, e.g. "api_key": "..." (values already redacted are skipped).
+    ('secret', re.compile(r'(?:"(?:' + NAMED_KEYS + '|' + GENERIC_KEYS + r')"|\'(?:' + NAMED_KEYS + '|' + GENERIC_KEYS +
+                          r')\')[ \t]*[:=][ \t]*(?:"(?!\[)[^"\n]+"|\'(?!\[)[^\'\n]+\')', re.I | re.ASCII)),
+    ('api_key', re.compile(r'(?<![A-Za-z0-9])' + NAMED_KEYS + r'[ \t]*[:=][ \t]*["\']?[A-Za-z0-9_./+\-=]{8,}["\']?', re.I | re.ASCII)),
     ('api_key', re.compile(r'\b(?:sk-[A-Za-z0-9_-]{16,}|ghp_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|(?:AKIA|ASIA)[A-Z0-9]{16})\b', re.ASCII)),
+    ('secret', re.compile(r'(?<![A-Za-z0-9])' + GENERIC_KEYS + r'[ \t]*[:=][ \t]*["\']?(?=[^\s"\']*[0-9_/+\-=~!@#$%^&*])'
+                          r'[A-Za-z0-9_./+\-=~!@#$%^&*]{8,}["\']?', re.I | re.ASCII)),
     ('email', re.compile(r'[A-Za-z0-9.!#$%&\'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,}')),
     ('home_path', re.compile(r'(?:[A-Za-z]:[\\/](?:Users|Documents and Settings)[\\/]|/(?:Users|home)/|/root(?:/|\b))[^\s\x00-\x1f"\'<>`|]*', re.I | re.ASCII)),
 ]
+# Invisible characters that could split a secret and defeat the rules: C0/C1 controls, bidi
+# controls, zero-width/joiner characters (U+200B-U+200F, U+2060-U+2064), BOM, soft hyphen, U+180E.
+INVISIBLE = re.compile('[\x00-\x08\x0b-\x1f\x7f-\x9f\xad᠎​-‏‪-‮⁠-⁤⁦-⁩﻿]')
+
+
+def basic_auth_valid(match):
+    """Only count "Basic <b64>" when it decodes to user:password credentials."""
+    value = match.group().split()[-1].rstrip('=')
+    try:
+        return b':' in base64.b64decode(value + '=' * (-len(value) % 4), validate=True)
+    except (binascii.Error, ValueError):
+        return False
+
+
+VALIDATORS = {'basic_auth': basic_auth_valid}
 IP_CANDIDATE = re.compile(r'(?<![A-Za-z0-9_:])(?:[A-Fa-f0-9]*:){2,}[A-Fa-f0-9:.]*(?:%[A-Za-z0-9_.-]+)?|(?<![A-Za-z0-9_.])(?:[0-9]{1,3}\.){3}[0-9]{1,3}(?![A-Za-z0-9_]|\.[0-9])')
 
 
 def sanitize(text):
     counts = {}
     text = text.replace('\r\n', '\n').replace('\r', '\n')
-    # Remove control characters except tabs and newlines, including bidi controls.
-    text = ''.join(c for c in text if (ord(c) >= 32 or c in '\n\t') and
-                   not (127 <= ord(c) <= 159 or ord(c) in range(0x202A, 0x202F) or ord(c) in range(0x2066, 0x206A)))
+    # Remove control, bidi and zero-width characters (tabs and newlines are kept).
+    text = INVISIBLE.sub('', text)
     for kind, pattern in RULES:
-        def replace(match):
+        def replace(match, kind=kind):
+            if kind in VALIDATORS and not VALIDATORS[kind](match):
+                return match.group()
             counts[kind] = counts.get(kind, 0) + 1
             return '[' + kind.upper() + '_REDACTED]'
         text = pattern.sub(replace, text)
