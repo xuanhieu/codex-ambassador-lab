@@ -1,0 +1,2955 @@
+{
+  "schema": 1,
+  "source": {
+    "generated_by": "human-reviewed editorial curriculum",
+    "snapshot": "2026-10-24",
+    "disclaimer": "Independent original training content based on linked official resources; links are not proof of current feature availability"
+  },
+  "lessons": [
+    {
+      "id": "L26",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Tôi chưa biết bắt đầu từ đâu",
+        "purpose": "Làm tờ hướng dẫn đầu tiên có ví dụ minh họa và bước kiểm tra.",
+        "outcome": "Làm tờ hướng dẫn đầu tiên có ví dụ minh họa và bước kiểm tra.",
+        "exercise": [
+          "Chọn việc nhỏ hàng ngày: lên lịch, soạn thư hoặc lập danh sách.",
+          "Dùng nội dung giả để hỏi ChatGPT cách thực hiện theo ba bước.",
+          "Đọc lại đầu ra, đánh dấu điều chưa rõ và sửa một lần."
+        ],
+        "checklist": [
+          "Dùng nội dung giả để hỏi ChatGPT cách thực hiện theo ba bước.",
+          "Đọc lại đầu ra, đánh dấu điều chưa rõ và sửa một lần."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Tôi chưa biết bắt đầu từ đâu”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Làm tờ hướng dẫn đầu tiên có ví dụ minh họa và bước kiểm tra. Sau đó kiểm tra: Đọc lại đầu ra, đánh dấu điều chưa rõ và sửa một lần."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Làm tờ hướng dẫn đầu tiên có ví dụ minh họa và bước kiểm tra. Giai đoạn kiểm tra: Đọc lại đầu ra, đánh dấu điều chưa rõ và sửa một lần."
+        }
+      },
+      "en": {
+        "title": "I have never used AI",
+        "purpose": "Produce a one-page beginner guide with examples and review steps.",
+        "outcome": "Produce a one-page beginner guide with examples and review steps.",
+        "exercise": [
+          "Pick one daily task: scheduling, drafting or making a list.",
+          "Ask ChatGPT using fictional details and request three steps.",
+          "Review, flag uncertainty and revise one part."
+        ],
+        "checklist": [
+          "Ask ChatGPT using fictional details and request three steps.",
+          "Review, flag uncertainty and revise one part."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “I have never used AI”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Produce a one-page beginner guide with examples and review steps. Verify: Review, flag uncertainty and revise one part."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Produce a one-page beginner guide with examples and review steps. Review step: Review, flag uncertainty and revise one part."
+        }
+      }
+    },
+    {
+      "id": "L27",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L26"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Phân biệt ChatGPT, Work và Codex",
+        "purpose": "Lập bảng chọn công cụ cho ba loại công việc.",
+        "outcome": "Lập bảng chọn công cụ cho ba loại công việc.",
+        "exercise": [
+          "Viết ba việc: hỏi thông tin, xử lý nhiều tệp, sửa một website.",
+          "Đánh dấu sản phẩm phù hợp theo hướng dẫn nguồn gốc.",
+          "Giải thích vì sao không dùng Codex cho một câu hỏi đơn giản."
+        ],
+        "checklist": [
+          "Đánh dấu sản phẩm phù hợp theo hướng dẫn nguồn gốc.",
+          "Giải thích vì sao không dùng Codex cho một câu hỏi đơn giản."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Phân biệt ChatGPT, Work và Codex”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Lập bảng chọn công cụ cho ba loại công việc. Sau đó kiểm tra: Giải thích vì sao không dùng Codex cho một câu hỏi đơn giản.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Lập bảng chọn công cụ cho ba loại công việc. Giai đoạn kiểm tra: Giải thích vì sao không dùng Codex cho một câu hỏi đơn giản."
+        }
+      },
+      "en": {
+        "title": "Choose ChatGPT, Work or Codex",
+        "purpose": "Make a simple tool-choice chart for three common tasks.",
+        "outcome": "Make a simple tool-choice chart for three common tasks.",
+        "exercise": [
+          "List three tasks: quick question, multi-file work, edit a website.",
+          "Map each task to the appropriate experience from official guidance.",
+          "Explain why Codex is not required for a simple question."
+        ],
+        "checklist": [
+          "Map each task to the appropriate experience from official guidance.",
+          "Explain why Codex is not required for a simple question."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Choose ChatGPT, Work or Codex”?",
+          "options": [
+            "Deliverable: Make a simple tool-choice chart for three common tasks. Verify: Explain why Codex is not required for a simple question.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Make a simple tool-choice chart for three common tasks. Review step: Explain why Codex is not required for a simple question."
+        }
+      }
+    },
+    {
+      "id": "L28",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L26"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Từ ý tưởng thành yêu cầu rõ ràng",
+        "purpose": "Tạo yêu cầu 6 dòng với đầu ra và tiêu chí thành công.",
+        "outcome": "Tạo yêu cầu 6 dòng với đầu ra và tiêu chí thành công.",
+        "exercise": [
+          "Nêu người dùng, mục đích và điều không được làm.",
+          "Nêu dữ liệu mẫu và định dạng kết quả mong muốn.",
+          "Yêu cầu AI hỏi lại khi thiếu thông tin và tự kiểm tra đáp án."
+        ],
+        "checklist": [
+          "Nêu dữ liệu mẫu và định dạng kết quả mong muốn.",
+          "Yêu cầu AI hỏi lại khi thiếu thông tin và tự kiểm tra đáp án."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Từ ý tưởng thành yêu cầu rõ ràng”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Tạo yêu cầu 6 dòng với đầu ra và tiêu chí thành công. Sau đó kiểm tra: Yêu cầu AI hỏi lại khi thiếu thông tin và tự kiểm tra đáp án.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Tạo yêu cầu 6 dòng với đầu ra và tiêu chí thành công. Giai đoạn kiểm tra: Yêu cầu AI hỏi lại khi thiếu thông tin và tự kiểm tra đáp án."
+        }
+      },
+      "en": {
+        "title": "Turn an idea into a clear brief",
+        "purpose": "Create a six-line brief with output and acceptance criteria.",
+        "outcome": "Create a six-line brief with output and acceptance criteria.",
+        "exercise": [
+          "State the audience, goal and what not to do.",
+          "Provide synthetic inputs and a desired output format.",
+          "Ask the assistant to flag gaps and review its answer."
+        ],
+        "checklist": [
+          "Provide synthetic inputs and a desired output format.",
+          "Ask the assistant to flag gaps and review its answer."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Turn an idea into a clear brief”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Create a six-line brief with output and acceptance criteria. Verify: Ask the assistant to flag gaps and review its answer.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Create a six-line brief with output and acceptance criteria. Review step: Ask the assistant to flag gaps and review its answer."
+        }
+      }
+    },
+    {
+      "id": "L29",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L26"
+      ],
+      "sources": [
+        "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan"
+      ],
+      "vi": {
+        "title": "Giữ bí mật cá nhân khi dùng AI",
+        "purpose": "Tạo checklist trước khi chia sẻ màn hình hoặc tệp.",
+        "outcome": "Tạo checklist trước khi chia sẻ màn hình hoặc tệp.",
+        "exercise": [
+          "Nhận diện ba ví dụ dữ liệu nhạy cảm trong ảnh mô phỏng.",
+          "Thay email, token và địa chỉ bằng dữ liệu giả.",
+          "Kiểm tra đầu ra không còn chi tiết cá nhân."
+        ],
+        "checklist": [
+          "Thay email, token và địa chỉ bằng dữ liệu giả.",
+          "Kiểm tra đầu ra không còn chi tiết cá nhân."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Giữ bí mật cá nhân khi dùng AI”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Tạo checklist trước khi chia sẻ màn hình hoặc tệp. Sau đó kiểm tra: Kiểm tra đầu ra không còn chi tiết cá nhân."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Tạo checklist trước khi chia sẻ màn hình hoặc tệp. Giai đoạn kiểm tra: Kiểm tra đầu ra không còn chi tiết cá nhân."
+        }
+      },
+      "en": {
+        "title": "Keep personal details private",
+        "purpose": "Create a privacy checklist before sharing screenshots or documents.",
+        "outcome": "Create a privacy checklist before sharing screenshots or documents.",
+        "exercise": [
+          "Identify three sensitive fields in a synthetic screenshot.",
+          "Replace email, tokens and addresses with fictional placeholders.",
+          "Check the output contains no private details."
+        ],
+        "checklist": [
+          "Replace email, tokens and addresses with fictional placeholders.",
+          "Check the output contains no private details."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Keep personal details private”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Create a privacy checklist before sharing screenshots or documents. Verify: Check the output contains no private details."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Create a privacy checklist before sharing screenshots or documents. Review step: Check the output contains no private details."
+        }
+      }
+    },
+    {
+      "id": "L30",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L28"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Đọc câu trả lời mà không tin mù quáng",
+        "purpose": "Viết phiếu tự kiểm chứng 3 bước.",
+        "outcome": "Viết phiếu tự kiểm chứng 3 bước.",
+        "exercise": [
+          "Chọn một phát biểu giả lập có ngày tháng và số liệu.",
+          "Phân loại thông tin kiểm được và chưa kiểm được.",
+          "Ghi cách tra nguồn chính thức và ngày xác minh."
+        ],
+        "checklist": [
+          "Phân loại thông tin kiểm được và chưa kiểm được.",
+          "Ghi cách tra nguồn chính thức và ngày xác minh."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Đọc câu trả lời mà không tin mù quáng”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Viết phiếu tự kiểm chứng 3 bước. Sau đó kiểm tra: Ghi cách tra nguồn chính thức và ngày xác minh.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Viết phiếu tự kiểm chứng 3 bước. Giai đoạn kiểm tra: Ghi cách tra nguồn chính thức và ngày xác minh."
+        }
+      },
+      "en": {
+        "title": "Verify answers before trusting",
+        "purpose": "Create a three-step self-verification card.",
+        "outcome": "Create a three-step self-verification card.",
+        "exercise": [
+          "Pick a sample claim with a date or number.",
+          "Mark verified vs unverified information.",
+          "Record how to check an authoritative source and its date."
+        ],
+        "checklist": [
+          "Mark verified vs unverified information.",
+          "Record how to check an authoritative source and its date."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Verify answers before trusting”?",
+          "options": [
+            "Deliverable: Create a three-step self-verification card. Verify: Record how to check an authoritative source and its date.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Create a three-step self-verification card. Review step: Record how to check an authoritative source and its date."
+        }
+      }
+    },
+    {
+      "id": "L31",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L26"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Lập kế hoạch học mỗi ngày 10 phút",
+        "purpose": "Lập lịch 7 ngày gồm 1 bài và 1 sản phẩm nhỏ.",
+        "outcome": "Lập lịch 7 ngày gồm 1 bài và 1 sản phẩm nhỏ.",
+        "exercise": [
+          "Chọn ba kỹ năng muốn học tuần này.",
+          "Chia thành bảy nhiệm vụ nhỏ, mỗi việc mười phút.",
+          "Tạo quy tắc nếu bỏ lỡ một ngày thì tiếp tục mà không reset."
+        ],
+        "checklist": [
+          "Chia thành bảy nhiệm vụ nhỏ, mỗi việc mười phút.",
+          "Tạo quy tắc nếu bỏ lỡ một ngày thì tiếp tục mà không reset."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Lập kế hoạch học mỗi ngày 10 phút”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Lập lịch 7 ngày gồm 1 bài và 1 sản phẩm nhỏ. Sau đó kiểm tra: Tạo quy tắc nếu bỏ lỡ một ngày thì tiếp tục mà không reset.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Lập lịch 7 ngày gồm 1 bài và 1 sản phẩm nhỏ. Giai đoạn kiểm tra: Tạo quy tắc nếu bỏ lỡ một ngày thì tiếp tục mà không reset."
+        }
+      },
+      "en": {
+        "title": "A ten-minute daily learning habit",
+        "purpose": "Create a seven-day microlearning plan with a daily output.",
+        "outcome": "Create a seven-day microlearning plan with a daily output.",
+        "exercise": [
+          "Pick three skills to practice this week.",
+          "Break them into seven ten-minute tasks with a deliverable.",
+          "Add a missed-day recovery rule instead of restarting."
+        ],
+        "checklist": [
+          "Break them into seven ten-minute tasks with a deliverable.",
+          "Add a missed-day recovery rule instead of restarting."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “A ten-minute daily learning habit”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Create a seven-day microlearning plan with a daily output. Verify: Add a missed-day recovery rule instead of restarting.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Create a seven-day microlearning plan with a daily output. Review step: Add a missed-day recovery rule instead of restarting."
+        }
+      }
+    },
+    {
+      "id": "L32",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L26"
+      ],
+      "sources": [
+        "https://developers.openai.com/learn"
+      ],
+      "vi": {
+        "title": "Diễn giải thuật ngữ công nghệ bằng tiếng dễ hiểu",
+        "purpose": "Tạo từ điển cá nhân 10 thuật ngữ bằng ví dụ thường ngày.",
+        "outcome": "Tạo từ điển cá nhân 10 thuật ngữ bằng ví dụ thường ngày.",
+        "exercise": [
+          "Ghi từ Git, commit, prompt, repository, CLI.",
+          "Yêu cầu ví dụ đời thường mà học sinh có thể hiểu.",
+          "Viết lại hai định nghĩa bằng lời của chính mình."
+        ],
+        "checklist": [
+          "Yêu cầu ví dụ đời thường mà học sinh có thể hiểu.",
+          "Viết lại hai định nghĩa bằng lời của chính mình."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Diễn giải thuật ngữ công nghệ bằng tiếng dễ hiểu”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Tạo từ điển cá nhân 10 thuật ngữ bằng ví dụ thường ngày. Sau đó kiểm tra: Viết lại hai định nghĩa bằng lời của chính mình."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Tạo từ điển cá nhân 10 thuật ngữ bằng ví dụ thường ngày. Giai đoạn kiểm tra: Viết lại hai định nghĩa bằng lời của chính mình."
+        }
+      },
+      "en": {
+        "title": "Decode tech words without jargon",
+        "purpose": "Build a ten-term glossary with everyday examples.",
+        "outcome": "Build a ten-term glossary with everyday examples.",
+        "exercise": [
+          "Write down terms like Git, commit, prompt, repo, CLI.",
+          "Request everyday analogies a young learner could understand.",
+          "Rephrase two definitions in your own words."
+        ],
+        "checklist": [
+          "Request everyday analogies a young learner could understand.",
+          "Rephrase two definitions in your own words."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Decode tech words without jargon”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Build a ten-term glossary with everyday examples. Verify: Rephrase two definitions in your own words."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Build a ten-term glossary with everyday examples. Review step: Rephrase two definitions in your own words."
+        }
+      }
+    },
+    {
+      "id": "L33",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L28"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Chọn mục tiêu không cần biết code",
+        "purpose": "Biến một công việc thủ công thành bản demo đơn giản.",
+        "outcome": "Biến một công việc thủ công thành bản demo đơn giản.",
+        "exercise": [
+          "Chọn thao tác lặp lại của bản thân hoặc gia đình.",
+          "Phác ba màn hình đầu vào, xử lý và kết quả.",
+          "Đánh dấu nơi con người phải kiểm tra trước khi hành động."
+        ],
+        "checklist": [
+          "Phác ba màn hình đầu vào, xử lý và kết quả.",
+          "Đánh dấu nơi con người phải kiểm tra trước khi hành động."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Chọn mục tiêu không cần biết code”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Biến một công việc thủ công thành bản demo đơn giản. Sau đó kiểm tra: Đánh dấu nơi con người phải kiểm tra trước khi hành động.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Biến một công việc thủ công thành bản demo đơn giản. Giai đoạn kiểm tra: Đánh dấu nơi con người phải kiểm tra trước khi hành động."
+        }
+      },
+      "en": {
+        "title": "Choose a no-code outcome",
+        "purpose": "Turn one manual chore into a paper prototype.",
+        "outcome": "Turn one manual chore into a paper prototype.",
+        "exercise": [
+          "Pick a repeated personal or family task.",
+          "Sketch three screens: input, processing and outcome.",
+          "Mark every step that requires human review."
+        ],
+        "checklist": [
+          "Sketch three screens: input, processing and outcome.",
+          "Mark every step that requires human review."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Choose a no-code outcome”?",
+          "options": [
+            "Deliverable: Turn one manual chore into a paper prototype. Verify: Mark every step that requires human review.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Turn one manual chore into a paper prototype. Review step: Mark every step that requires human review."
+        }
+      }
+    },
+    {
+      "id": "L34",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L26"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Thử một câu hỏi an toàn trong 3 phút",
+        "purpose": "Có một prompt dùng được, không cần đăng ký API.",
+        "outcome": "Có một prompt dùng được, không cần đăng ký API.",
+        "exercise": [
+          "Chọn thẻ gợi ý học tập hoặc công việc từ trình hướng dẫn.",
+          "Thay các phần trong ngoặc bằng dữ liệu giả.",
+          "Sao chép prompt, thử trong công cụ mình có rồi tự đánh giá."
+        ],
+        "checklist": [
+          "Thay các phần trong ngoặc bằng dữ liệu giả.",
+          "Sao chép prompt, thử trong công cụ mình có rồi tự đánh giá."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Thử một câu hỏi an toàn trong 3 phút”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có một prompt dùng được, không cần đăng ký API. Sau đó kiểm tra: Sao chép prompt, thử trong công cụ mình có rồi tự đánh giá.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có một prompt dùng được, không cần đăng ký API. Giai đoạn kiểm tra: Sao chép prompt, thử trong công cụ mình có rồi tự đánh giá."
+        }
+      },
+      "en": {
+        "title": "Three-minute safe first win",
+        "purpose": "Finish one usable prompt without an API key.",
+        "outcome": "Finish one usable prompt without an API key.",
+        "exercise": [
+          "Choose a learning or work starter card.",
+          "Replace bracketed slots with imaginary details.",
+          "Copy the prompt into a tool you already use and assess the result."
+        ],
+        "checklist": [
+          "Replace bracketed slots with imaginary details.",
+          "Copy the prompt into a tool you already use and assess the result."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Three-minute safe first win”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Finish one usable prompt without an API key. Verify: Copy the prompt into a tool you already use and assess the result.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Finish one usable prompt without an API key. Review step: Copy the prompt into a tool you already use and assess the result."
+        }
+      }
+    },
+    {
+      "id": "L35",
+      "level": "Zero",
+      "duration": 15,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L29"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Biết khi nào phải dừng agent",
+        "purpose": "Tạo thẻ đỏ cho gửi dữ liệu, xóa file và thanh toán.",
+        "outcome": "Tạo thẻ đỏ cho gửi dữ liệu, xóa file và thanh toán.",
+        "exercise": [
+          "Viết ba hành động tiềm ẩn rủi ro.",
+          "Xác định ai có quyền duyệt từng hành động.",
+          "Mô phỏng việc từ chối thao tác nếu chưa có phê duyệt."
+        ],
+        "checklist": [
+          "Xác định ai có quyền duyệt từng hành động.",
+          "Mô phỏng việc từ chối thao tác nếu chưa có phê duyệt."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Biết khi nào phải dừng agent”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Tạo thẻ đỏ cho gửi dữ liệu, xóa file và thanh toán. Sau đó kiểm tra: Mô phỏng việc từ chối thao tác nếu chưa có phê duyệt."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Tạo thẻ đỏ cho gửi dữ liệu, xóa file và thanh toán. Giai đoạn kiểm tra: Mô phỏng việc từ chối thao tác nếu chưa có phê duyệt."
+        }
+      },
+      "en": {
+        "title": "Know when an agent must stop",
+        "purpose": "Write three stop conditions for sensitive actions.",
+        "outcome": "Write three stop conditions for sensitive actions.",
+        "exercise": [
+          "List three risky operations.",
+          "Decide who may authorize each one.",
+          "Simulate refusal until a human approves."
+        ],
+        "checklist": [
+          "Decide who may authorize each one.",
+          "Simulate refusal until a human approves."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Know when an agent must stop”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Write three stop conditions for sensitive actions. Verify: Simulate refusal until a human approves."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Write three stop conditions for sensitive actions. Review step: Simulate refusal until a human approves."
+        }
+      }
+    },
+    {
+      "id": "L36",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L28"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Biến cuộc họp giả thành việc cần làm",
+        "purpose": "Tạo bảng giao việc có người phụ trách và thời hạn giả lập.",
+        "outcome": "Tạo bảng giao việc có người phụ trách và thời hạn giả lập.",
+        "exercise": [
+          "Viết năm gạch đầu dòng của cuộc họp giả.",
+          "Yêu cầu nhóm việc theo người chịu trách nhiệm và thời hạn.",
+          "Kiểm xem có việc nào thiếu chủ sở hữu hoặc ngày dự kiến."
+        ],
+        "checklist": [
+          "Yêu cầu nhóm việc theo người chịu trách nhiệm và thời hạn.",
+          "Kiểm xem có việc nào thiếu chủ sở hữu hoặc ngày dự kiến."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Biến cuộc họp giả thành việc cần làm”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Tạo bảng giao việc có người phụ trách và thời hạn giả lập. Sau đó kiểm tra: Kiểm xem có việc nào thiếu chủ sở hữu hoặc ngày dự kiến.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Tạo bảng giao việc có người phụ trách và thời hạn giả lập. Giai đoạn kiểm tra: Kiểm xem có việc nào thiếu chủ sở hữu hoặc ngày dự kiến."
+        }
+      },
+      "en": {
+        "title": "Meeting notes into tasks",
+        "purpose": "Create an action table from fictional meeting notes.",
+        "outcome": "Create an action table from fictional meeting notes.",
+        "exercise": [
+          "Draft five fictional meeting bullets.",
+          "Group actions by owner and expected date.",
+          "Flag missing owners and ambiguous deadlines."
+        ],
+        "checklist": [
+          "Group actions by owner and expected date.",
+          "Flag missing owners and ambiguous deadlines."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Meeting notes into tasks”?",
+          "options": [
+            "Deliverable: Create an action table from fictional meeting notes. Verify: Flag missing owners and ambiguous deadlines.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Create an action table from fictional meeting notes. Review step: Flag missing owners and ambiguous deadlines."
+        }
+      }
+    },
+    {
+      "id": "L37",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L33"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Tạo trang giới thiệu một cửa hàng giả",
+        "purpose": "Có bản wireframe cùng nội dung mẫu cho trang bán hàng.",
+        "outcome": "Có bản wireframe cùng nội dung mẫu cho trang bán hàng.",
+        "exercise": [
+          "Dùng tên và sản phẩm tưởng tượng.",
+          "Viết ba phần: giới thiệu, lợi ích, cách liên hệ giả.",
+          "Yêu cầu tạo HTML đơn giản và kiểm tra trên trình duyệt, không thu thập dữ liệu thật."
+        ],
+        "checklist": [
+          "Viết ba phần: giới thiệu, lợi ích, cách liên hệ giả.",
+          "Yêu cầu tạo HTML đơn giản và kiểm tra trên trình duyệt, không thu thập dữ liệu thật."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Tạo trang giới thiệu một cửa hàng giả”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có bản wireframe cùng nội dung mẫu cho trang bán hàng. Sau đó kiểm tra: Yêu cầu tạo HTML đơn giản và kiểm tra trên trình duyệt, không thu thập dữ liệu thật.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có bản wireframe cùng nội dung mẫu cho trang bán hàng. Giai đoạn kiểm tra: Yêu cầu tạo HTML đơn giản và kiểm tra trên trình duyệt, không thu thập dữ liệu thật."
+        }
+      },
+      "en": {
+        "title": "Draft a no-code shop landing page",
+        "purpose": "Create a shop landing wireframe and draft copy.",
+        "outcome": "Create a shop landing wireframe and draft copy.",
+        "exercise": [
+          "Use an imaginary brand and fictional product.",
+          "Draft a hero, benefits and fake contact section.",
+          "Request simple HTML and review locally without collecting real data."
+        ],
+        "checklist": [
+          "Draft a hero, benefits and fake contact section.",
+          "Request simple HTML and review locally without collecting real data."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Draft a no-code shop landing page”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Create a shop landing wireframe and draft copy. Verify: Request simple HTML and review locally without collecting real data.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Create a shop landing wireframe and draft copy. Review step: Request simple HTML and review locally without collecting real data."
+        }
+      }
+    },
+    {
+      "id": "L38",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L30"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Bảng chi tiêu gia đình bằng dữ liệu mẫu",
+        "purpose": "Có bảng thu chi và giải thích các phép tính.",
+        "outcome": "Có bảng thu chi và giải thích các phép tính.",
+        "exercise": [
+          "Tạo mười khoản chi bằng số liệu tự nghĩ.",
+          "Yêu cầu nhóm theo danh mục và tính tổng.",
+          "Tự cộng lại ba dòng để phát hiện lỗi."
+        ],
+        "checklist": [
+          "Yêu cầu nhóm theo danh mục và tính tổng.",
+          "Tự cộng lại ba dòng để phát hiện lỗi."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Bảng chi tiêu gia đình bằng dữ liệu mẫu”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Có bảng thu chi và giải thích các phép tính. Sau đó kiểm tra: Tự cộng lại ba dòng để phát hiện lỗi."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Có bảng thu chi và giải thích các phép tính. Giai đoạn kiểm tra: Tự cộng lại ba dòng để phát hiện lỗi."
+        }
+      },
+      "en": {
+        "title": "Make a sample household budget",
+        "purpose": "Create a budget table with checks on calculations.",
+        "outcome": "Create a budget table with checks on calculations.",
+        "exercise": [
+          "Create ten fictional spending entries.",
+          "Group categories and calculate totals.",
+          "Manually recalculate three entries to catch mistakes."
+        ],
+        "checklist": [
+          "Group categories and calculate totals.",
+          "Manually recalculate three entries to catch mistakes."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Make a sample household budget”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Create a budget table with checks on calculations. Verify: Manually recalculate three entries to catch mistakes."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Create a budget table with checks on calculations. Review step: Manually recalculate three entries to catch mistakes."
+        }
+      }
+    },
+    {
+      "id": "L39",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L28"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Lên bài học cho học sinh dễ hiểu",
+        "purpose": "Tạo kế hoạch học 20 phút và câu hỏi tự kiểm tra.",
+        "outcome": "Tạo kế hoạch học 20 phút và câu hỏi tự kiểm tra.",
+        "exercise": [
+          "Chọn bài học giả lập và lứa tuổi người học.",
+          "Tạo mục tiêu, hoạt động 5-10-5 phút.",
+          "Thêm ba câu hỏi cùng đáp án và kiểm tra ngôn ngữ phù hợp."
+        ],
+        "checklist": [
+          "Tạo mục tiêu, hoạt động 5-10-5 phút.",
+          "Thêm ba câu hỏi cùng đáp án và kiểm tra ngôn ngữ phù hợp."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Lên bài học cho học sinh dễ hiểu”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Tạo kế hoạch học 20 phút và câu hỏi tự kiểm tra. Sau đó kiểm tra: Thêm ba câu hỏi cùng đáp án và kiểm tra ngôn ngữ phù hợp.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Tạo kế hoạch học 20 phút và câu hỏi tự kiểm tra. Giai đoạn kiểm tra: Thêm ba câu hỏi cùng đáp án và kiểm tra ngôn ngữ phù hợp."
+        }
+      },
+      "en": {
+        "title": "Build a student-friendly lesson",
+        "purpose": "Write a 20-minute lesson plan with a comprehension check.",
+        "outcome": "Write a 20-minute lesson plan with a comprehension check.",
+        "exercise": [
+          "Pick an imaginary topic and age group.",
+          "Create goals and a 5-10-5 minute lesson sequence.",
+          "Add three questions with answers, then review age-appropriate wording."
+        ],
+        "checklist": [
+          "Create goals and a 5-10-5 minute lesson sequence.",
+          "Add three questions with answers, then review age-appropriate wording."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Build a student-friendly lesson”?",
+          "options": [
+            "Deliverable: Write a 20-minute lesson plan with a comprehension check. Verify: Add three questions with answers, then review age-appropriate wording.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Write a 20-minute lesson plan with a comprehension check. Review step: Add three questions with answers, then review age-appropriate wording."
+        }
+      }
+    },
+    {
+      "id": "L40",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L29"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Chuẩn bị CV không đưa thông tin nhạy cảm",
+        "purpose": "Có CV một trang với thành tựu minh họa và checklist.",
+        "outcome": "Có CV một trang với thành tựu minh họa và checklist.",
+        "exercise": [
+          "Dùng kinh nghiệm công việc hoàn toàn giả.",
+          "Viết ba thành tựu với số liệu được gắn nhãn minh họa.",
+          "Kiểm chính tả, định dạng và xóa thông tin không cần chia sẻ."
+        ],
+        "checklist": [
+          "Viết ba thành tựu với số liệu được gắn nhãn minh họa.",
+          "Kiểm chính tả, định dạng và xóa thông tin không cần chia sẻ."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Chuẩn bị CV không đưa thông tin nhạy cảm”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có CV một trang với thành tựu minh họa và checklist. Sau đó kiểm tra: Kiểm chính tả, định dạng và xóa thông tin không cần chia sẻ.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có CV một trang với thành tựu minh họa và checklist. Giai đoạn kiểm tra: Kiểm chính tả, định dạng và xóa thông tin không cần chia sẻ."
+        }
+      },
+      "en": {
+        "title": "Review a fictional CV",
+        "purpose": "Produce a sample resume with an evidence checklist.",
+        "outcome": "Produce a sample resume with an evidence checklist.",
+        "exercise": [
+          "Use entirely invented work history.",
+          "Write three achievement statements labeled illustrative.",
+          "Check clarity, formatting and unnecessary personal information."
+        ],
+        "checklist": [
+          "Write three achievement statements labeled illustrative.",
+          "Check clarity, formatting and unnecessary personal information."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Review a fictional CV”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Produce a sample resume with an evidence checklist. Verify: Check clarity, formatting and unnecessary personal information.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Produce a sample resume with an evidence checklist. Review step: Check clarity, formatting and unnecessary personal information."
+        }
+      }
+    },
+    {
+      "id": "L41",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L27",
+        "L33"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Dựng một website không cần hiểu thuật ngữ",
+        "purpose": "Chạy thử một trang HTML giả lập và ghi 3 cách kiểm tra.",
+        "outcome": "Chạy thử một trang HTML giả lập và ghi 3 cách kiểm tra.",
+        "exercise": [
+          "Mô tả trang cần làm bằng ngôn ngữ bình thường.",
+          "Dùng Codex trên thư mục thử nghiệm khi có quyền, yêu cầu kế hoạch trước khi sửa.",
+          "Mở trang, kiểm trên điện thoại và lưu điều cần sửa."
+        ],
+        "checklist": [
+          "Dùng Codex trên thư mục thử nghiệm khi có quyền, yêu cầu kế hoạch trước khi sửa.",
+          "Mở trang, kiểm trên điện thoại và lưu điều cần sửa."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Dựng một website không cần hiểu thuật ngữ”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Chạy thử một trang HTML giả lập và ghi 3 cách kiểm tra. Sau đó kiểm tra: Mở trang, kiểm trên điện thoại và lưu điều cần sửa."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Chạy thử một trang HTML giả lập và ghi 3 cách kiểm tra. Giai đoạn kiểm tra: Mở trang, kiểm trên điện thoại và lưu điều cần sửa."
+        }
+      },
+      "en": {
+        "title": "Your first website with Codex assistance",
+        "purpose": "Preview a local HTML page with three checks.",
+        "outcome": "Preview a local HTML page with three checks.",
+        "exercise": [
+          "Describe a page in plain language.",
+          "Use Codex in a sandboxed project when authorized; request a plan before edits.",
+          "Open, review mobile layout and list improvements."
+        ],
+        "checklist": [
+          "Use Codex in a sandboxed project when authorized; request a plan before edits.",
+          "Open, review mobile layout and list improvements."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Your first website with Codex assistance”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Preview a local HTML page with three checks. Verify: Open, review mobile layout and list improvements."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Preview a local HTML page with three checks. Review step: Open, review mobile layout and list improvements."
+        }
+      }
+    },
+    {
+      "id": "L42",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L41"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Hiểu sửa đổi và hoàn tác",
+        "purpose": "Tạo bản ghi trước/sau cho một thay đổi an toàn.",
+        "outcome": "Tạo bản ghi trước/sau cho một thay đổi an toàn.",
+        "exercise": [
+          "Sao chép dữ liệu ví dụ vào thư mục thử nghiệm.",
+          "Yêu cầu giải thích những dòng được sửa và lý do.",
+          "Nêu cách khôi phục và xác minh trạng thái ban đầu."
+        ],
+        "checklist": [
+          "Yêu cầu giải thích những dòng được sửa và lý do.",
+          "Nêu cách khôi phục và xác minh trạng thái ban đầu."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Hiểu sửa đổi và hoàn tác”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Tạo bản ghi trước/sau cho một thay đổi an toàn. Sau đó kiểm tra: Nêu cách khôi phục và xác minh trạng thái ban đầu.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Tạo bản ghi trước/sau cho một thay đổi an toàn. Giai đoạn kiểm tra: Nêu cách khôi phục và xác minh trạng thái ban đầu."
+        }
+      },
+      "en": {
+        "title": "Understand diffs and undo",
+        "purpose": "Create a before/after change log with rollback steps.",
+        "outcome": "Create a before/after change log with rollback steps.",
+        "exercise": [
+          "Copy example files into a sandbox folder.",
+          "Ask for explanations of changed lines and reasons.",
+          "Document how to restore and verify the initial version."
+        ],
+        "checklist": [
+          "Ask for explanations of changed lines and reasons.",
+          "Document how to restore and verify the initial version."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Understand diffs and undo”?",
+          "options": [
+            "Deliverable: Create a before/after change log with rollback steps. Verify: Document how to restore and verify the initial version.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Create a before/after change log with rollback steps. Review step: Document how to restore and verify the initial version."
+        }
+      }
+    },
+    {
+      "id": "L43",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L42"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Lập bảng kiểm thử dễ hiểu",
+        "purpose": "Có năm test case gồm thao tác, mong đợi và kết quả.",
+        "outcome": "Có năm test case gồm thao tác, mong đợi và kết quả.",
+        "exercise": [
+          "Chọn một trang web giả lập.",
+          "Viết năm trường hợp: bình thường, rỗng, lỗi, điện thoại, quay lại.",
+          "Tự chạy từng trường hợp và ghi pass/fail."
+        ],
+        "checklist": [
+          "Viết năm trường hợp: bình thường, rỗng, lỗi, điện thoại, quay lại.",
+          "Tự chạy từng trường hợp và ghi pass/fail."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Lập bảng kiểm thử dễ hiểu”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có năm test case gồm thao tác, mong đợi và kết quả. Sau đó kiểm tra: Tự chạy từng trường hợp và ghi pass/fail.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có năm test case gồm thao tác, mong đợi và kết quả. Giai đoạn kiểm tra: Tự chạy từng trường hợp và ghi pass/fail."
+        }
+      },
+      "en": {
+        "title": "Create an everyday test checklist",
+        "purpose": "Produce five test cases with steps and expected results.",
+        "outcome": "Produce five test cases with steps and expected results.",
+        "exercise": [
+          "Choose a sample page.",
+          "Write five scenarios: normal, empty, invalid, mobile, undo.",
+          "Execute each case and record pass/fail."
+        ],
+        "checklist": [
+          "Write five scenarios: normal, empty, invalid, mobile, undo.",
+          "Execute each case and record pass/fail."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Create an everyday test checklist”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Produce five test cases with steps and expected results. Verify: Execute each case and record pass/fail.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Produce five test cases with steps and expected results. Review step: Execute each case and record pass/fail."
+        }
+      }
+    },
+    {
+      "id": "L44",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L41"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Giao nhiệm vụ cho Codex bằng câu đơn giản",
+        "purpose": "Viết prompt xác định mục tiêu, phạm vi, test và điều cấm.",
+        "outcome": "Viết prompt xác định mục tiêu, phạm vi, test và điều cấm.",
+        "exercise": [
+          "Nêu mục tiêu chỉ sửa một trang thử nghiệm.",
+          "Ghi không deploy, không đọc bí mật và không xóa ngoài thư mục.",
+          "Yêu cầu Codex trình bày diff và test trước khi nhận kết quả."
+        ],
+        "checklist": [
+          "Ghi không deploy, không đọc bí mật và không xóa ngoài thư mục.",
+          "Yêu cầu Codex trình bày diff và test trước khi nhận kết quả."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Giao nhiệm vụ cho Codex bằng câu đơn giản”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Viết prompt xác định mục tiêu, phạm vi, test và điều cấm. Sau đó kiểm tra: Yêu cầu Codex trình bày diff và test trước khi nhận kết quả."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Viết prompt xác định mục tiêu, phạm vi, test và điều cấm. Giai đoạn kiểm tra: Yêu cầu Codex trình bày diff và test trước khi nhận kết quả."
+        }
+      },
+      "en": {
+        "title": "Brief a coding agent safely",
+        "purpose": "Write a bounded prompt with test and forbidden actions.",
+        "outcome": "Write a bounded prompt with test and forbidden actions.",
+        "exercise": [
+          "Scope a change to one sample page.",
+          "Forbid production deploy, secret access and deleting other folders.",
+          "Request a diff and tests before accepting the work."
+        ],
+        "checklist": [
+          "Forbid production deploy, secret access and deleting other folders.",
+          "Request a diff and tests before accepting the work."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Brief a coding agent safely”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Write a bounded prompt with test and forbidden actions. Verify: Request a diff and tests before accepting the work."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Write a bounded prompt with test and forbidden actions. Review step: Request a diff and tests before accepting the work."
+        }
+      }
+    },
+    {
+      "id": "L45",
+      "level": "Beginner",
+      "duration": 25,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L43"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Đọc kết quả thử nghiệm bằng mắt thường",
+        "purpose": "Có phiếu đánh giá giao diện, chức năng và quyền riêng tư.",
+        "outcome": "Có phiếu đánh giá giao diện, chức năng và quyền riêng tư.",
+        "exercise": [
+          "Mở demo giả trên desktop lẫn điện thoại.",
+          "Thử ít nhất ba nút và một input sai định dạng.",
+          "Ghi hai vấn đề, kèm bước tái hiện và mong muốn sửa."
+        ],
+        "checklist": [
+          "Thử ít nhất ba nút và một input sai định dạng.",
+          "Ghi hai vấn đề, kèm bước tái hiện và mong muốn sửa."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Đọc kết quả thử nghiệm bằng mắt thường”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Có phiếu đánh giá giao diện, chức năng và quyền riêng tư. Sau đó kiểm tra: Ghi hai vấn đề, kèm bước tái hiện và mong muốn sửa.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Có phiếu đánh giá giao diện, chức năng và quyền riêng tư. Giai đoạn kiểm tra: Ghi hai vấn đề, kèm bước tái hiện và mong muốn sửa."
+        }
+      },
+      "en": {
+        "title": "Review a demo as a non-developer",
+        "purpose": "Create a simple UI/functionality/privacy acceptance sheet.",
+        "outcome": "Create a simple UI/functionality/privacy acceptance sheet.",
+        "exercise": [
+          "Open the sample on desktop and phone.",
+          "Try three controls and one invalid input.",
+          "Log two issues with reproduction steps and expected fixes."
+        ],
+        "checklist": [
+          "Try three controls and one invalid input.",
+          "Log two issues with reproduction steps and expected fixes."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Review a demo as a non-developer”?",
+          "options": [
+            "Deliverable: Create a simple UI/functionality/privacy acceptance sheet. Verify: Log two issues with reproduction steps and expected fixes.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Create a simple UI/functionality/privacy acceptance sheet. Review step: Log two issues with reproduction steps and expected fixes."
+        }
+      }
+    },
+    {
+      "id": "L46",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L35",
+        "L43"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Tự động hóa việc lặp lại có kiểm soát",
+        "purpose": "Vẽ workflow có dữ liệu vào, phê duyệt và kết quả.",
+        "outcome": "Vẽ workflow có dữ liệu vào, phê duyệt và kết quả.",
+        "exercise": [
+          "Chọn quy trình giả lập có ba bước lặp lại.",
+          "Phân biệt bước đọc, bước ghi và bước gửi ra ngoài.",
+          "Tạo bảng ai duyệt và khi nào phải dừng."
+        ],
+        "checklist": [
+          "Phân biệt bước đọc, bước ghi và bước gửi ra ngoài.",
+          "Tạo bảng ai duyệt và khi nào phải dừng."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Tự động hóa việc lặp lại có kiểm soát”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Vẽ workflow có dữ liệu vào, phê duyệt và kết quả. Sau đó kiểm tra: Tạo bảng ai duyệt và khi nào phải dừng.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Vẽ workflow có dữ liệu vào, phê duyệt và kết quả. Giai đoạn kiểm tra: Tạo bảng ai duyệt và khi nào phải dừng."
+        }
+      },
+      "en": {
+        "title": "Automate repeated work safely",
+        "purpose": "Draw a workflow with input, approval and output.",
+        "outcome": "Draw a workflow with input, approval and output.",
+        "exercise": [
+          "Select a synthetic three-step repeated process.",
+          "Separate reading, writing and external sends.",
+          "Create an approval chart and stop rules."
+        ],
+        "checklist": [
+          "Separate reading, writing and external sends.",
+          "Create an approval chart and stop rules."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Automate repeated work safely”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Draw a workflow with input, approval and output. Verify: Create an approval chart and stop rules.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Draw a workflow with input, approval and output. Review step: Create an approval chart and stop rules."
+        }
+      }
+    },
+    {
+      "id": "L47",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L30"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Quản lý nguồn dẫn và dữ kiện",
+        "purpose": "Tạo bảng nhận định, link nguồn, ngày kiểm và trạng thái.",
+        "outcome": "Tạo bảng nhận định, link nguồn, ngày kiểm và trạng thái.",
+        "exercise": [
+          "Chọn năm dữ kiện minh họa trong một tài liệu giả.",
+          "Ghi nguồn, thời gian kiểm chứng và độ chắc chắn.",
+          "Đánh dấu phần chưa xác minh, không đăng dưới dạng sự thật."
+        ],
+        "checklist": [
+          "Ghi nguồn, thời gian kiểm chứng và độ chắc chắn.",
+          "Đánh dấu phần chưa xác minh, không đăng dưới dạng sự thật."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Quản lý nguồn dẫn và dữ kiện”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Tạo bảng nhận định, link nguồn, ngày kiểm và trạng thái. Sau đó kiểm tra: Đánh dấu phần chưa xác minh, không đăng dưới dạng sự thật."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Tạo bảng nhận định, link nguồn, ngày kiểm và trạng thái. Giai đoạn kiểm tra: Đánh dấu phần chưa xác minh, không đăng dưới dạng sự thật."
+        }
+      },
+      "en": {
+        "title": "Trace sources and changing claims",
+        "purpose": "Make a source tracker with links, dates and claim status.",
+        "outcome": "Make a source tracker with links, dates and claim status.",
+        "exercise": [
+          "Extract five sample claims from a fictional document.",
+          "Record source, verification date and confidence.",
+          "Mark uncertain statements and withhold them from publication."
+        ],
+        "checklist": [
+          "Record source, verification date and confidence.",
+          "Mark uncertain statements and withhold them from publication."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Trace sources and changing claims”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Make a source tracker with links, dates and claim status. Verify: Mark uncertain statements and withhold them from publication."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Make a source tracker with links, dates and claim status. Review step: Mark uncertain statements and withhold them from publication."
+        }
+      }
+    },
+    {
+      "id": "L48",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L45"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Tạo checklist tiếp cận cho mọi người",
+        "purpose": "Xuất checklist dễ đọc, điều khiển bàn phím và ngôn ngữ đơn giản.",
+        "outcome": "Xuất checklist dễ đọc, điều khiển bàn phím và ngôn ngữ đơn giản.",
+        "exercise": [
+          "Chọn một giao diện thử nghiệm có nút và biểu mẫu.",
+          "Dùng bàn phím qua các nút, kiểm thứ tự focus.",
+          "Viết lại ba nhãn phức tạp và ghi phần cần người kiểm tra thêm."
+        ],
+        "checklist": [
+          "Dùng bàn phím qua các nút, kiểm thứ tự focus.",
+          "Viết lại ba nhãn phức tạp và ghi phần cần người kiểm tra thêm."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Tạo checklist tiếp cận cho mọi người”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Xuất checklist dễ đọc, điều khiển bàn phím và ngôn ngữ đơn giản. Sau đó kiểm tra: Viết lại ba nhãn phức tạp và ghi phần cần người kiểm tra thêm.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Xuất checklist dễ đọc, điều khiển bàn phím và ngôn ngữ đơn giản. Giai đoạn kiểm tra: Viết lại ba nhãn phức tạp và ghi phần cần người kiểm tra thêm."
+        }
+      },
+      "en": {
+        "title": "Make accessible content",
+        "purpose": "Produce an accessibility review checklist.",
+        "outcome": "Produce an accessibility review checklist.",
+        "exercise": [
+          "Pick a sample interface with buttons and forms.",
+          "Test all controls by keyboard and check focus order.",
+          "Simplify three labels and record issues requiring human review."
+        ],
+        "checklist": [
+          "Test all controls by keyboard and check focus order.",
+          "Simplify three labels and record issues requiring human review."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Make accessible content”?",
+          "options": [
+            "Deliverable: Produce an accessibility review checklist. Verify: Simplify three labels and record issues requiring human review.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Produce an accessibility review checklist. Review step: Simplify three labels and record issues requiring human review."
+        }
+      }
+    },
+    {
+      "id": "L49",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L39",
+        "L43"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Viết hướng dẫn từng bước cho người khác",
+        "purpose": "Có giáo án 20 phút, ví dụ và bài kiểm thử.",
+        "outcome": "Có giáo án 20 phút, ví dụ và bài kiểm thử.",
+        "exercise": [
+          "Chọn một workflow đã thử và có bằng chứng.",
+          "Chia thành mở đầu, demo, tự thực hành và kiểm tra.",
+          "Để người mới thử theo, ghi điểm bị vướng và sửa hướng dẫn."
+        ],
+        "checklist": [
+          "Chia thành mở đầu, demo, tự thực hành và kiểm tra.",
+          "Để người mới thử theo, ghi điểm bị vướng và sửa hướng dẫn."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Viết hướng dẫn từng bước cho người khác”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có giáo án 20 phút, ví dụ và bài kiểm thử. Sau đó kiểm tra: Để người mới thử theo, ghi điểm bị vướng và sửa hướng dẫn.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có giáo án 20 phút, ví dụ và bài kiểm thử. Giai đoạn kiểm tra: Để người mới thử theo, ghi điểm bị vướng và sửa hướng dẫn."
+        }
+      },
+      "en": {
+        "title": "Teach a workflow through a mini workshop",
+        "purpose": "Produce a short workshop, example and comprehension test.",
+        "outcome": "Produce a short workshop, example and comprehension test.",
+        "exercise": [
+          "Choose a previously tested workflow with evidence.",
+          "Split into orientation, demo, practice and review.",
+          "Ask a newcomer to follow it; record friction and revise."
+        ],
+        "checklist": [
+          "Split into orientation, demo, practice and review.",
+          "Ask a newcomer to follow it; record friction and revise."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Teach a workflow through a mini workshop”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Produce a short workshop, example and comprehension test. Verify: Ask a newcomer to follow it; record friction and revise.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Produce a short workshop, example and comprehension test. Review step: Ask a newcomer to follow it; record friction and revise."
+        }
+      }
+    },
+    {
+      "id": "L50",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L29",
+        "L46"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Thiết kế kho kiến thức có quyền rõ ràng",
+        "purpose": "Có sơ đồ tài liệu theo mức truy cập và người duyệt.",
+        "outcome": "Có sơ đồ tài liệu theo mức truy cập và người duyệt.",
+        "exercise": [
+          "Tạo mười tài liệu hoàn toàn giả lập.",
+          "Phân loại public, nội bộ và bí mật.",
+          "Thiết kế câu hỏi kiểm tra trước khi chia sẻ hoặc cho agent đọc."
+        ],
+        "checklist": [
+          "Phân loại public, nội bộ và bí mật.",
+          "Thiết kế câu hỏi kiểm tra trước khi chia sẻ hoặc cho agent đọc."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Thiết kế kho kiến thức có quyền rõ ràng”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Có sơ đồ tài liệu theo mức truy cập và người duyệt. Sau đó kiểm tra: Thiết kế câu hỏi kiểm tra trước khi chia sẻ hoặc cho agent đọc."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Có sơ đồ tài liệu theo mức truy cập và người duyệt. Giai đoạn kiểm tra: Thiết kế câu hỏi kiểm tra trước khi chia sẻ hoặc cho agent đọc."
+        }
+      },
+      "en": {
+        "title": "Organize a safe knowledge base",
+        "purpose": "Create a knowledge map with access levels and reviewers.",
+        "outcome": "Create a knowledge map with access levels and reviewers.",
+        "exercise": [
+          "Create ten fully fictional documents.",
+          "Classify public, internal and secret.",
+          "Design checks before sharing or agent ingestion."
+        ],
+        "checklist": [
+          "Classify public, internal and secret.",
+          "Design checks before sharing or agent ingestion."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Organize a safe knowledge base”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Create a knowledge map with access levels and reviewers. Verify: Design checks before sharing or agent ingestion."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Create a knowledge map with access levels and reviewers. Review step: Design checks before sharing or agent ingestion."
+        }
+      }
+    },
+    {
+      "id": "L51",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L46"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Đo thời gian tiết kiệm mà không phóng đại",
+        "purpose": "Có bảng trước/sau và giả định được ghi rõ.",
+        "outcome": "Có bảng trước/sau và giả định được ghi rõ.",
+        "exercise": [
+          "Đo ba lượt thao tác giả định trước và sau workflow.",
+          "Ghi cùng phạm vi đầu vào và tiêu chí chất lượng.",
+          "Nêu sai số, chi phí kiểm tra và trường hợp không hiệu quả."
+        ],
+        "checklist": [
+          "Ghi cùng phạm vi đầu vào và tiêu chí chất lượng.",
+          "Nêu sai số, chi phí kiểm tra và trường hợp không hiệu quả."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Đo thời gian tiết kiệm mà không phóng đại”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Có bảng trước/sau và giả định được ghi rõ. Sau đó kiểm tra: Nêu sai số, chi phí kiểm tra và trường hợp không hiệu quả.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Có bảng trước/sau và giả định được ghi rõ. Giai đoạn kiểm tra: Nêu sai số, chi phí kiểm tra và trường hợp không hiệu quả."
+        }
+      },
+      "en": {
+        "title": "Measure time saved responsibly",
+        "purpose": "Create a before/after effort sheet with assumptions.",
+        "outcome": "Create a before/after effort sheet with assumptions.",
+        "exercise": [
+          "Time three illustrative runs before and after a workflow.",
+          "Use the same inputs and quality criteria.",
+          "Record uncertainty, review overhead and cases without gain."
+        ],
+        "checklist": [
+          "Use the same inputs and quality criteria.",
+          "Record uncertainty, review overhead and cases without gain."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Measure time saved responsibly”?",
+          "options": [
+            "Deliverable: Create a before/after effort sheet with assumptions. Verify: Record uncertainty, review overhead and cases without gain.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Create a before/after effort sheet with assumptions. Review step: Record uncertainty, review overhead and cases without gain."
+        }
+      }
+    },
+    {
+      "id": "L52",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L35",
+        "L46"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Phác thảo bộ kiểm soát hành động agent",
+        "purpose": "Có sơ đồ ba trạng thái: được làm, chờ duyệt, từ chối.",
+        "outcome": "Có sơ đồ ba trạng thái: được làm, chờ duyệt, từ chối.",
+        "exercise": [
+          "Liệt kê việc đọc, ghi file và công bố public.",
+          "Gán quyền người duyệt với từng hành động.",
+          "Mô phỏng yêu cầu ngoài phạm vi, đảm bảo phải từ chối."
+        ],
+        "checklist": [
+          "Gán quyền người duyệt với từng hành động.",
+          "Mô phỏng yêu cầu ngoài phạm vi, đảm bảo phải từ chối."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Phác thảo bộ kiểm soát hành động agent”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có sơ đồ ba trạng thái: được làm, chờ duyệt, từ chối. Sau đó kiểm tra: Mô phỏng yêu cầu ngoài phạm vi, đảm bảo phải từ chối.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có sơ đồ ba trạng thái: được làm, chờ duyệt, từ chối. Giai đoạn kiểm tra: Mô phỏng yêu cầu ngoài phạm vi, đảm bảo phải từ chối."
+        }
+      },
+      "en": {
+        "title": "Model approval states",
+        "purpose": "Create a three-state approval model.",
+        "outcome": "Create a three-state approval model.",
+        "exercise": [
+          "List read, file write and public publishing actions.",
+          "Assign a human approver to each action.",
+          "Simulate an out-of-scope request and verify denial."
+        ],
+        "checklist": [
+          "Assign a human approver to each action.",
+          "Simulate an out-of-scope request and verify denial."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Model approval states”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Create a three-state approval model. Verify: Simulate an out-of-scope request and verify denial.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Create a three-state approval model. Review step: Simulate an out-of-scope request and verify denial."
+        }
+      }
+    },
+    {
+      "id": "L53",
+      "level": "Intermediate",
+      "duration": 35,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L43",
+        "L48"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Khắc phục lỗi bằng báo cáo tái hiện",
+        "purpose": "Tạo bug report có screenshot đã che và test sau sửa.",
+        "outcome": "Tạo bug report có screenshot đã che và test sau sửa.",
+        "exercise": [
+          "Thử một mẫu form giả lập thiếu nhãn lỗi.",
+          "Ghi bước tái hiện và kết quả mong đợi.",
+          "Che thông tin cá nhân trên screenshot rồi ghi test hồi quy."
+        ],
+        "checklist": [
+          "Ghi bước tái hiện và kết quả mong đợi.",
+          "Che thông tin cá nhân trên screenshot rồi ghi test hồi quy."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Khắc phục lỗi bằng báo cáo tái hiện”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Tạo bug report có screenshot đã che và test sau sửa. Sau đó kiểm tra: Che thông tin cá nhân trên screenshot rồi ghi test hồi quy."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Tạo bug report có screenshot đã che và test sau sửa. Giai đoạn kiểm tra: Che thông tin cá nhân trên screenshot rồi ghi test hồi quy."
+        }
+      },
+      "en": {
+        "title": "Reproduce and report a bug",
+        "purpose": "Write a reproducible bug report with sanitized screenshots.",
+        "outcome": "Write a reproducible bug report with sanitized screenshots.",
+        "exercise": [
+          "Test a fictional form with missing error labels.",
+          "Record reproduction and expected behavior.",
+          "Sanitize screenshots and add a regression test."
+        ],
+        "checklist": [
+          "Record reproduction and expected behavior.",
+          "Sanitize screenshots and add a regression test."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Reproduce and report a bug”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Write a reproducible bug report with sanitized screenshots. Verify: Sanitize screenshots and add a regression test."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Write a reproducible bug report with sanitized screenshots. Review step: Sanitize screenshots and add a regression test."
+        }
+      }
+    },
+    {
+      "id": "L54",
+      "level": "Advanced",
+      "duration": 45,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L46",
+        "L52"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Thiết kế quy trình người phê duyệt",
+        "purpose": "Có ma trận quyền và hướng dẫn xử lý xung đột.",
+        "outcome": "Có ma trận quyền và hướng dẫn xử lý xung đột.",
+        "exercise": [
+          "Chọn quy trình giả có xóa file và gửi email.",
+          "Phân vai requester, builder, reviewer độc lập.",
+          "Mô phỏng reviewer từ chối và xác nhận không có hành động xảy ra."
+        ],
+        "checklist": [
+          "Phân vai requester, builder, reviewer độc lập.",
+          "Mô phỏng reviewer từ chối và xác nhận không có hành động xảy ra."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Thiết kế quy trình người phê duyệt”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Có ma trận quyền và hướng dẫn xử lý xung đột. Sau đó kiểm tra: Mô phỏng reviewer từ chối và xác nhận không có hành động xảy ra.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Có ma trận quyền và hướng dẫn xử lý xung đột. Giai đoạn kiểm tra: Mô phỏng reviewer từ chối và xác nhận không có hành động xảy ra."
+        }
+      },
+      "en": {
+        "title": "Review high-impact actions",
+        "purpose": "Build an approval matrix and conflict-handling guide.",
+        "outcome": "Build an approval matrix and conflict-handling guide.",
+        "exercise": [
+          "Choose a fictional workflow with deletion and sending messages.",
+          "Assign requester, builder and independent reviewer.",
+          "Simulate review rejection and verify no action occurs."
+        ],
+        "checklist": [
+          "Assign requester, builder and independent reviewer.",
+          "Simulate review rejection and verify no action occurs."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Review high-impact actions”?",
+          "options": [
+            "Deliverable: Build an approval matrix and conflict-handling guide. Verify: Simulate review rejection and verify no action occurs.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Build an approval matrix and conflict-handling guide. Review step: Simulate review rejection and verify no action occurs."
+        }
+      }
+    },
+    {
+      "id": "L55",
+      "level": "Advanced",
+      "duration": 45,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L43",
+        "L46"
+      ],
+      "sources": [
+        "https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex"
+      ],
+      "vi": {
+        "title": "Phối hợp đội xây sản phẩm AI nhỏ",
+        "purpose": "Có brief sản phẩm, kế hoạch test và checklist bàn giao.",
+        "outcome": "Có brief sản phẩm, kế hoạch test và checklist bàn giao.",
+        "exercise": [
+          "Giao việc cho ba vai trò trong cùng dự án giả lập.",
+          "Định nghĩa output cùng tiêu chí nghiệm thu cho từng vai.",
+          "Kiểm tra tích hợp bằng một hành trình người dùng cuối."
+        ],
+        "checklist": [
+          "Định nghĩa output cùng tiêu chí nghiệm thu cho từng vai.",
+          "Kiểm tra tích hợp bằng một hành trình người dùng cuối."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Phối hợp đội xây sản phẩm AI nhỏ”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có brief sản phẩm, kế hoạch test và checklist bàn giao. Sau đó kiểm tra: Kiểm tra tích hợp bằng một hành trình người dùng cuối.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có brief sản phẩm, kế hoạch test và checklist bàn giao. Giai đoạn kiểm tra: Kiểm tra tích hợp bằng một hành trình người dùng cuối."
+        }
+      },
+      "en": {
+        "title": "Coordinate a small product team",
+        "purpose": "Create a product brief, test plan and handoff checklist.",
+        "outcome": "Create a product brief, test plan and handoff checklist.",
+        "exercise": [
+          "Assign a fictional project to three roles.",
+          "Define a deliverable and acceptance test for each.",
+          "Run one end-to-end user flow across handoffs."
+        ],
+        "checklist": [
+          "Define a deliverable and acceptance test for each.",
+          "Run one end-to-end user flow across handoffs."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Coordinate a small product team”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Create a product brief, test plan and handoff checklist. Verify: Run one end-to-end user flow across handoffs.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Create a product brief, test plan and handoff checklist. Review step: Run one end-to-end user flow across handoffs."
+        }
+      }
+    },
+    {
+      "id": "L56",
+      "level": "Advanced",
+      "duration": 45,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L53",
+        "L54"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Đánh giá rủi ro trước khi public",
+        "purpose": "Có release checklist gồm privacy, nguồn, accessibility, rollback.",
+        "outcome": "Có release checklist gồm privacy, nguồn, accessibility, rollback.",
+        "exercise": [
+          "Dùng demo giả lập và tạo hai tình huống có lỗi.",
+          "Viết điều kiện phải chặn phát hành và cách sửa.",
+          "Chạy lại test sau sửa rồi ghi bằng chứng."
+        ],
+        "checklist": [
+          "Viết điều kiện phải chặn phát hành và cách sửa.",
+          "Chạy lại test sau sửa rồi ghi bằng chứng."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Đánh giá rủi ro trước khi public”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Có release checklist gồm privacy, nguồn, accessibility, rollback. Sau đó kiểm tra: Chạy lại test sau sửa rồi ghi bằng chứng."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Có release checklist gồm privacy, nguồn, accessibility, rollback. Giai đoạn kiểm tra: Chạy lại test sau sửa rồi ghi bằng chứng."
+        }
+      },
+      "en": {
+        "title": "Check risk before publishing",
+        "purpose": "Create a release gate checklist covering privacy, sources, accessibility and rollback.",
+        "outcome": "Create a release gate checklist covering privacy, sources, accessibility and rollback.",
+        "exercise": [
+          "Use a synthetic demo and introduce two test failures.",
+          "Define release-blocking conditions and remediations.",
+          "Re-run verification after repairs and record evidence."
+        ],
+        "checklist": [
+          "Define release-blocking conditions and remediations.",
+          "Re-run verification after repairs and record evidence."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Check risk before publishing”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Create a release gate checklist covering privacy, sources, accessibility and rollback. Verify: Re-run verification after repairs and record evidence."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Create a release gate checklist covering privacy, sources, accessibility and rollback. Review step: Re-run verification after repairs and record evidence."
+        }
+      }
+    },
+    {
+      "id": "L57",
+      "level": "Advanced",
+      "duration": 45,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L52",
+        "L55"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Quản trị agent nhiều bên liên quan",
+        "purpose": "Có hợp đồng input/output, quyền và ngân sách thử nghiệm.",
+        "outcome": "Có hợp đồng input/output, quyền và ngân sách thử nghiệm.",
+        "exercise": [
+          "Chọn hai nhóm giả lập chia sẻ workflow.",
+          "Định nghĩa dữ liệu được phép truyền giữa họ.",
+          "Kiểm thử tình huống thiếu quyền hoặc vượt ngân sách."
+        ],
+        "checklist": [
+          "Định nghĩa dữ liệu được phép truyền giữa họ.",
+          "Kiểm thử tình huống thiếu quyền hoặc vượt ngân sách."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Quản trị agent nhiều bên liên quan”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Có hợp đồng input/output, quyền và ngân sách thử nghiệm. Sau đó kiểm tra: Kiểm thử tình huống thiếu quyền hoặc vượt ngân sách.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Có hợp đồng input/output, quyền và ngân sách thử nghiệm. Giai đoạn kiểm tra: Kiểm thử tình huống thiếu quyền hoặc vượt ngân sách."
+        }
+      },
+      "en": {
+        "title": "Govern cross-team agents",
+        "purpose": "Write input/output contracts, approvals and a request budget.",
+        "outcome": "Write input/output contracts, approvals and a request budget.",
+        "exercise": [
+          "Select two fictional teams sharing a workflow.",
+          "Define which data crosses their boundary.",
+          "Test missing permission and over-budget requests."
+        ],
+        "checklist": [
+          "Define which data crosses their boundary.",
+          "Test missing permission and over-budget requests."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Govern cross-team agents”?",
+          "options": [
+            "Deliverable: Write input/output contracts, approvals and a request budget. Verify: Test missing permission and over-budget requests.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Write input/output contracts, approvals and a request budget. Review step: Test missing permission and over-budget requests."
+        }
+      }
+    },
+    {
+      "id": "L58",
+      "level": "Pro",
+      "duration": 55,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L56",
+        "L57"
+      ],
+      "sources": [
+        "https://developers.openai.com/blog/codex-as-a-platform"
+      ],
+      "vi": {
+        "title": "Đưa một quy trình vào vận hành an toàn",
+        "purpose": "Có gói bàn giao giả lập với test, giám sát và rollback.",
+        "outcome": "Có gói bàn giao giả lập với test, giám sát và rollback.",
+        "exercise": [
+          "Tạo version, changelog và test report từ dữ liệu giả.",
+          "Nêu quyền, người duyệt và ngân sách vận hành.",
+          "Mô phỏng rollback, xác minh trạng thái trở về trước."
+        ],
+        "checklist": [
+          "Nêu quyền, người duyệt và ngân sách vận hành.",
+          "Mô phỏng rollback, xác minh trạng thái trở về trước."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Đưa một quy trình vào vận hành an toàn”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có gói bàn giao giả lập với test, giám sát và rollback. Sau đó kiểm tra: Mô phỏng rollback, xác minh trạng thái trở về trước.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có gói bàn giao giả lập với test, giám sát và rollback. Giai đoạn kiểm tra: Mô phỏng rollback, xác minh trạng thái trở về trước."
+        }
+      },
+      "en": {
+        "title": "Ship a governed workflow",
+        "purpose": "Produce a synthetic deployment kit with tests, monitoring and rollback.",
+        "outcome": "Produce a synthetic deployment kit with tests, monitoring and rollback.",
+        "exercise": [
+          "Create a version, changelog and test report from sample data.",
+          "Describe permissions, human approval and operating budget.",
+          "Simulate rollback and verify restored state."
+        ],
+        "checklist": [
+          "Describe permissions, human approval and operating budget.",
+          "Simulate rollback and verify restored state."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Ship a governed workflow”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Produce a synthetic deployment kit with tests, monitoring and rollback. Verify: Simulate rollback and verify restored state.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Produce a synthetic deployment kit with tests, monitoring and rollback. Review step: Simulate rollback and verify restored state."
+        }
+      }
+    },
+    {
+      "id": "L59",
+      "level": "Pro",
+      "duration": 55,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L54",
+        "L56"
+      ],
+      "sources": [
+        "https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex"
+      ],
+      "vi": {
+        "title": "Đánh giá chất lượng agent có số liệu",
+        "purpose": "Có bộ câu hỏi eval và báo cáo false positive/negative.",
+        "outcome": "Có bộ câu hỏi eval và báo cáo false positive/negative.",
+        "exercise": [
+          "Xây mười case giả lập gồm tốt, sai và rủi ro.",
+          "Đặt tiêu chí pass/fail và cách tái hiện.",
+          "Chạy đánh giá định kỳ rồi sửa ít nhất một quy tắc."
+        ],
+        "checklist": [
+          "Đặt tiêu chí pass/fail và cách tái hiện.",
+          "Chạy đánh giá định kỳ rồi sửa ít nhất một quy tắc."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Đánh giá chất lượng agent có số liệu”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra.",
+            "Có đầu ra: Có bộ câu hỏi eval và báo cáo false positive/negative. Sau đó kiểm tra: Chạy đánh giá định kỳ rồi sửa ít nhất một quy tắc."
+          ],
+          "answer": 2,
+          "explanation": "Bài này cần tự tạo: Có bộ câu hỏi eval và báo cáo false positive/negative. Giai đoạn kiểm tra: Chạy đánh giá định kỳ rồi sửa ít nhất một quy tắc."
+        }
+      },
+      "en": {
+        "title": "Measure agent quality with evidence",
+        "purpose": "Write a small evaluation set and error review.",
+        "outcome": "Write a small evaluation set and error review.",
+        "exercise": [
+          "Create ten synthetic good, bad and risky cases.",
+          "Define pass/fail acceptance and reproducible inputs.",
+          "Run the eval and improve one measured rule."
+        ],
+        "checklist": [
+          "Define pass/fail acceptance and reproducible inputs.",
+          "Run the eval and improve one measured rule."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Measure agent quality with evidence”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification.",
+            "Deliverable: Write a small evaluation set and error review. Verify: Run the eval and improve one measured rule."
+          ],
+          "answer": 2,
+          "explanation": "This lesson requires: Write a small evaluation set and error review. Review step: Run the eval and improve one measured rule."
+        }
+      }
+    },
+    {
+      "id": "L60",
+      "level": "Pro",
+      "duration": 55,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L49",
+        "L55"
+      ],
+      "sources": [
+        "https://developers.openai.com/training"
+      ],
+      "vi": {
+        "title": "Xây chương trình đào tạo ai cũng dùng được",
+        "purpose": "Có lộ trình theo trình độ, role và kiểm tra thực hành.",
+        "outcome": "Có lộ trình theo trình độ, role và kiểm tra thực hành.",
+        "exercise": [
+          "Phỏng vấn giả lập ba người chưa biết AI.",
+          "Tạo tuyến học từ Zero đến Pro theo đầu ra.",
+          "Đo người mới tự hoàn thành bài đầu và cải thiện hướng dẫn."
+        ],
+        "checklist": [
+          "Tạo tuyến học từ Zero đến Pro theo đầu ra.",
+          "Đo người mới tự hoàn thành bài đầu và cải thiện hướng dẫn."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Xây chương trình đào tạo ai cũng dùng được”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Có đầu ra: Có lộ trình theo trình độ, role và kiểm tra thực hành. Sau đó kiểm tra: Đo người mới tự hoàn thành bài đầu và cải thiện hướng dẫn.",
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 0,
+          "explanation": "Bài này cần tự tạo: Có lộ trình theo trình độ, role và kiểm tra thực hành. Giai đoạn kiểm tra: Đo người mới tự hoàn thành bài đầu và cải thiện hướng dẫn."
+        }
+      },
+      "en": {
+        "title": "Design an inclusive AI learning program",
+        "purpose": "Build a level- and audience-aware curriculum with real exercises.",
+        "outcome": "Build a level- and audience-aware curriculum with real exercises.",
+        "exercise": [
+          "Interview three fictional personas new to AI.",
+          "Create a Zero-to-Pro pathway with tangible outputs.",
+          "Measure simulated first-task completion and refine the guidance."
+        ],
+        "checklist": [
+          "Create a Zero-to-Pro pathway with tangible outputs.",
+          "Measure simulated first-task completion and refine the guidance."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Design an inclusive AI learning program”?",
+          "options": [
+            "Deliverable: Build a level- and audience-aware curriculum with real exercises. Verify: Measure simulated first-task completion and refine the guidance.",
+            "Read the draft and mark done without trying the steps.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 0,
+          "explanation": "This lesson requires: Build a level- and audience-aware curriculum with real exercises. Review step: Measure simulated first-task completion and refine the guidance."
+        }
+      }
+    },
+    {
+      "id": "L61",
+      "level": "Pro",
+      "duration": 55,
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Developer",
+        "Marketer",
+        "Team Lead",
+        "Pro"
+      ],
+      "prerequisites": [
+        "L56",
+        "L59"
+      ],
+      "sources": [
+        "https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex"
+      ],
+      "vi": {
+        "title": "Chứng minh sản phẩm đáng tin trước khi giới thiệu",
+        "purpose": "Có bộ chứng cứ source, test, demo và hạn chế đã công bố.",
+        "outcome": "Có bộ chứng cứ source, test, demo và hạn chế đã công bố.",
+        "exercise": [
+          "Chọn một sản phẩm có source và demo giả lập.",
+          "Đính kèm hướng dẫn chạy và kết quả test thực tế.",
+          "Liệt kê giới hạn, quyền riêng tư và phần chưa được kiểm chứng."
+        ],
+        "checklist": [
+          "Đính kèm hướng dẫn chạy và kết quả test thực tế.",
+          "Liệt kê giới hạn, quyền riêng tư và phần chưa được kiểm chứng."
+        ],
+        "quiz": {
+          "question": "Để hoàn thành thực chất bài “Chứng minh sản phẩm đáng tin trước khi giới thiệu”, bạn cần minh chứng điều nào?",
+          "options": [
+            "Chỉ đọc bản nháp và tuyên bố hoàn thành dù chưa thử thao tác.",
+            "Có đầu ra: Có bộ chứng cứ source, test, demo và hạn chế đã công bố. Sau đó kiểm tra: Liệt kê giới hạn, quyền riêng tư và phần chưa được kiểm chứng.",
+            "Nhập dữ liệu riêng tư chưa có quyền và bỏ qua bước kiểm tra."
+          ],
+          "answer": 1,
+          "explanation": "Bài này cần tự tạo: Có bộ chứng cứ source, test, demo và hạn chế đã công bố. Giai đoạn kiểm tra: Liệt kê giới hạn, quyền riêng tư và phần chưa được kiểm chứng."
+        }
+      },
+      "en": {
+        "title": "Assemble trustworthy project evidence",
+        "purpose": "Assemble source, tests, demo and limitations in an evidence pack.",
+        "outcome": "Assemble source, tests, demo and limitations in an evidence pack.",
+        "exercise": [
+          "Choose a synthetic source-backed product.",
+          "Attach reproducible setup and observed test results.",
+          "Publish limitations, privacy caveats and unverified aspects."
+        ],
+        "checklist": [
+          "Attach reproducible setup and observed test results.",
+          "Publish limitations, privacy caveats and unverified aspects."
+        ],
+        "quiz": {
+          "question": "What demonstrates real completion of “Assemble trustworthy project evidence”?",
+          "options": [
+            "Read the draft and mark done without trying the steps.",
+            "Deliverable: Assemble source, tests, demo and limitations in an evidence pack. Verify: Publish limitations, privacy caveats and unverified aspects.",
+            "Use unauthorized private data and skip verification."
+          ],
+          "answer": 1,
+          "explanation": "This lesson requires: Assemble source, tests, demo and limitations in an evidence pack. Review step: Publish limitations, privacy caveats and unverified aspects."
+        }
+      }
+    }
+  ],
+  "careers": [
+    {
+      "id": "everyday",
+      "name": {
+        "vi": "AI cho mọi người / Không cần code",
+        "en": "AI for everyday life"
+      },
+      "tagline": {
+        "vi": "Đầu tiên làm việc hữu ích, không cần biết lập trình.",
+        "en": "Useful tasks before learning to code."
+      },
+      "family": "Everyday",
+      "role": "Newbie",
+      "icon": "✦",
+      "accent": "#74efd5",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Đặt câu hỏi rõ",
+        "Kiểm chứng",
+        "An toàn dữ liệu",
+        "Sắp việc",
+        "Tự đánh giá"
+      ],
+      "starter": [
+        "L26",
+        "L27",
+        "L28",
+        "L29",
+        "L30",
+        "L31",
+        "L32",
+        "L33",
+        "L34",
+        "L35",
+        "L36",
+        "L38",
+        "L45"
+      ],
+      "growth": [
+        "L46",
+        "L47",
+        "L48",
+        "L51"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Tạo bộ trợ lý đời sống giả lập: lịch tuần, danh sách mua sắm, kiểm tra dữ kiện và bảng quyền riêng tư.",
+        "en": "Create a safe fictional life assistant pack with weekly plan, checklist and privacy guard."
+      },
+      "evidence": [
+        "Bản kế hoạch 7 ngày",
+        "Bảng kiểm nguồn",
+        "3 ví dụ minh họa",
+        "Lưu ý quyền riêng tư"
+      ],
+      "seniority": [
+        "AI cho mọi người / Không cần code",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    },
+    {
+      "id": "student",
+      "name": {
+        "vi": "Học sinh / Sinh viên",
+        "en": "Student & lifelong learner"
+      },
+      "tagline": {
+        "vi": "Học hiểu, tự kiểm tra, không phụ thuộc AI.",
+        "en": "Learn with understanding and self-checks."
+      },
+      "family": "Learning",
+      "role": "Newbie",
+      "icon": "🎓",
+      "accent": "#a9cafa",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Tự học",
+        "Quản lý thời gian",
+        "Dẫn nguồn",
+        "Thuyết trình",
+        "Tư duy phản biện"
+      ],
+      "starter": [
+        "L26",
+        "L28",
+        "L29",
+        "L30",
+        "L31",
+        "L32",
+        "L34",
+        "L39",
+        "L43",
+        "L47",
+        "L48"
+      ],
+      "growth": [
+        "L49",
+        "L51",
+        "L60"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Dựng bộ tài liệu ôn tập giả lập có 3 bài nhỏ, câu hỏi tự kiểm tra và các nguồn cần xác minh.",
+        "en": "Make a fictional study kit with three lessons, quizzes and source checks."
+      },
+      "evidence": [
+        "Kế hoạch học",
+        "Bộ câu hỏi",
+        "Đáp án tự kiểm",
+        "Phiếu nguồn"
+      ],
+      "seniority": [
+        "Học sinh / Sinh viên",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    },
+    {
+      "id": "teacher",
+      "name": {
+        "vi": "Giáo viên / Người đào tạo",
+        "en": "Teacher & educator"
+      },
+      "tagline": {
+        "vi": "Tạo nội dung có kiểm chứng, phù hợp mọi học sinh.",
+        "en": "Create verified and accessible educational materials."
+      },
+      "family": "Education",
+      "role": "Creator",
+      "icon": "📚",
+      "accent": "#f9d99a",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Soạn giáo án",
+        "Đánh giá",
+        "Cá nhân hóa",
+        "Tiếp cận",
+        "Quyền riêng tư"
+      ],
+      "starter": [
+        "L26",
+        "L28",
+        "L29",
+        "L30",
+        "L39",
+        "L43",
+        "L48",
+        "L49",
+        "L53"
+      ],
+      "growth": [
+        "L55",
+        "L60",
+        "L61"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Thiết kế workshop giả 20 phút có giáo án, ví dụ không định danh, quiz và vòng phản hồi.",
+        "en": "Create a 20-minute synthetic workshop with handout, safe examples, quiz and feedback."
+      },
+      "evidence": [
+        "Giáo án",
+        "Worksheet",
+        "Rubric",
+        "Đánh giá bạn học"
+      ],
+      "seniority": [
+        "Giáo viên / Người đào tạo",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    },
+    {
+      "id": "office",
+      "name": {
+        "vi": "Nhân viên văn phòng",
+        "en": "Office professional"
+      },
+      "tagline": {
+        "vi": "Làm việc với email, cuộc họp và bảng tính mẫu.",
+        "en": "Handle drafts, meetings and sample spreadsheets."
+      },
+      "family": "Productivity",
+      "role": "Newbie",
+      "icon": "▦",
+      "accent": "#a0e3cc",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Viết báo cáo",
+        "Bảng tính",
+        "Họp nhóm",
+        "Kiểm tra",
+        "Quy trình"
+      ],
+      "starter": [
+        "L26",
+        "L28",
+        "L29",
+        "L30",
+        "L32",
+        "L36",
+        "L38",
+        "L43",
+        "L44",
+        "L45"
+      ],
+      "growth": [
+        "L46",
+        "L47",
+        "L50",
+        "L51",
+        "L55"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Mô phỏng bộ báo cáo tuần gồm meeting notes, checklist, tiến độ và tài liệu nguồn.",
+        "en": "Produce a synthetic weekly report with meeting actions, checklist and references."
+      },
+      "evidence": [
+        "Bảng giao việc",
+        "Báo cáo tuần",
+        "Dữ liệu mẫu",
+        "Kiểm thử"
+      ],
+      "seniority": [
+        "Nhân viên văn phòng",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    },
+    {
+      "id": "smallbiz",
+      "name": {
+        "vi": "Chủ cửa hàng / Hộ kinh doanh",
+        "en": "Small business owner"
+      },
+      "tagline": {
+        "vi": "Từ ý tưởng đến demo không cần thuê lập trình ngay.",
+        "en": "From idea to a safe product prototype."
+      },
+      "family": "Entrepreneurship",
+      "role": "Creator",
+      "icon": "⌂",
+      "accent": "#f9bda4",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Khách hàng",
+        "Landing page",
+        "Bán hàng",
+        "Đo lường",
+        "Rủi ro"
+      ],
+      "starter": [
+        "L26",
+        "L28",
+        "L29",
+        "L30",
+        "L33",
+        "L34",
+        "L37",
+        "L38",
+        "L43",
+        "L45"
+      ],
+      "growth": [
+        "L46",
+        "L47",
+        "L51",
+        "L56",
+        "L61"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Làm demo giới thiệu sản phẩm giả gồm web đơn giản, bảng giá minh họa và phiếu kiểm tra bảo mật.",
+        "en": "Build a fictional storefront demo with placeholder products, sample prices and safety review."
+      },
+      "evidence": [
+        "Wireframe",
+        "HTML local",
+        "Bảng thông tin mẫu",
+        "Checklist kiểm"
+      ],
+      "seniority": [
+        "Chủ cửa hàng / Hộ kinh doanh",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    },
+    {
+      "id": "jobseeker",
+      "name": {
+        "vi": "Người chuyển nghề / Tìm việc",
+        "en": "Career explorer / job seeker"
+      },
+      "tagline": {
+        "vi": "Học từ bài đầu đến portfolio mà không cần giả kinh nghiệm.",
+        "en": "Build evidence without inventing experience."
+      },
+      "family": "Career",
+      "role": "Newbie",
+      "icon": "↗",
+      "accent": "#bcb6fb",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Định hướng",
+        "Hồ sơ",
+        "Giao tiếp",
+        "Kiểm chứng",
+        "Portfolio"
+      ],
+      "starter": [
+        "L26",
+        "L27",
+        "L28",
+        "L29",
+        "L30",
+        "L31",
+        "L32",
+        "L34",
+        "L40",
+        "L43",
+        "L45"
+      ],
+      "growth": [
+        "L49",
+        "L53",
+        "L55",
+        "L61"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Tạo portfolio học tập gồm 2 bài thực hành, một CV hoàn toàn giả lập và nhật ký tự đánh giá.",
+        "en": "Create a learning portfolio with two exercises, a fictional resume and reflection log."
+      },
+      "evidence": [
+        "Mục tiêu nghề",
+        "Bài học có kết quả",
+        "Bảng chứng cứ",
+        "Hạn chế"
+      ],
+      "seniority": [
+        "Người chuyển nghề / Tìm việc",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    },
+    {
+      "id": "designer",
+      "name": {
+        "vi": "Designer / Người sáng tạo",
+        "en": "Designer & creative maker"
+      },
+      "tagline": {
+        "vi": "Từ bản mô tả đến prototype và kiểm thử trải nghiệm.",
+        "en": "Translate briefs into prototypes and user checks."
+      },
+      "family": "Design",
+      "role": "Creator",
+      "icon": "◩",
+      "accent": "#f3a7d6",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Storytelling",
+        "Wireframe",
+        "UI",
+        "Accessibility",
+        "QA"
+      ],
+      "starter": [
+        "L26",
+        "L28",
+        "L29",
+        "L30",
+        "L32",
+        "L33",
+        "L37",
+        "L41",
+        "L43",
+        "L45",
+        "L48"
+      ],
+      "growth": [
+        "L49",
+        "L53",
+        "L55",
+        "L56",
+        "L61"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Thiết kế prototype 3 màn hình có bản mobile, checklist điều hướng bàn phím và video demo.",
+        "en": "Design a 3-screen prototype with mobile view, keyboard checklist and demo."
+      },
+      "evidence": [
+        "Screen map",
+        "Prototype",
+        "User flow",
+        "QA screenshots"
+      ],
+      "seniority": [
+        "Designer / Người sáng tạo",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    },
+    {
+      "id": "community",
+      "name": {
+        "vi": "Cộng đồng / Tình nguyện",
+        "en": "Community organizer / volunteer"
+      },
+      "tagline": {
+        "vi": "Xây chương trình cộng đồng với nguồn rõ và dữ liệu an toàn.",
+        "en": "Plan community work with verified sources and privacy."
+      },
+      "family": "Community",
+      "role": "Newbie",
+      "icon": "❤",
+      "accent": "#9bd7d6",
+      "audiences": [
+        "Newbie",
+        "Creator",
+        "Marketer",
+        "Team Lead",
+        "Developer",
+        "Pro"
+      ],
+      "skills": [
+        "Tổ chức sự kiện",
+        "Truyền thông",
+        "Tình nguyện",
+        "Dữ liệu an toàn",
+        "Feedback"
+      ],
+      "starter": [
+        "L26",
+        "L28",
+        "L29",
+        "L30",
+        "L31",
+        "L33",
+        "L34",
+        "L36",
+        "L39",
+        "L43"
+      ],
+      "growth": [
+        "L47",
+        "L48",
+        "L49",
+        "L51",
+        "L60"
+      ],
+      "proofMode": "private",
+      "capstone": {
+        "vi": "Tạo kế hoạch sự kiện cộng đồng giả lập: lịch, checklist, phân công và form khảo sát không định danh.",
+        "en": "Design a synthetic community event kit with schedule, responsibilities and anonymous feedback."
+      },
+      "evidence": [
+        "Kế hoạch",
+        "Bảng phân công",
+        "Checklist",
+        "Câu hỏi khảo sát"
+      ],
+      "seniority": [
+        "Cộng đồng / Tình nguyện",
+        "Tự học có bằng chứng / Evidence-based learner",
+        "Hướng dẫn người khác / Community mentor"
+      ]
+    }
+  ]
+}

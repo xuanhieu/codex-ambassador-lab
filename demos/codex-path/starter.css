@@ -1,0 +1,60 @@
+/* Codex Path Every Human — compact, accessible starter flow */
+html[data-entry="start"] .page-intro{min-height:105px;padding:12px 18px;margin-bottom:10px;grid-template-columns:1fr 120px}
+html[data-entry="start"] .page-intro h1{font-size:clamp(21px,2.2vw,30px);margin:3px 0 5px}
+html[data-entry="start"] .page-intro p{font-size:11px}
+html[data-entry="start"] .hero-graphic{min-height:84px;transform:scale(.6)}
+html[data-entry="start"] .hero-cta{margin-top:8px}
+html[data-entry="start"] .hero-cta .button{padding:5px 9px;min-height:28px;font-size:10px}
+html[data-entry="start"] .config-panel{padding:12px 14px}
+html[data-entry="start"] #main{padding-top:10px}
+.starter-screen{display:grid;gap:9px;min-width:0}
+.starter-heading{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.starter-heading h2{font-size:clamp(20px,1.9vw,27px);letter-spacing:-.05em;margin:3px 0;line-height:1.13}
+.starter-heading p{color:var(--muted);font-size:11px;line-height:1.5;margin:0}
+.starter-privacy{font-size:10px;color:var(--good);font-weight:750;white-space:nowrap;border:1px solid var(--line);border-radius:8px;padding:6px 8px}
+.starter-progress{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.starter-progress span{border-top:2px solid var(--blue);background:var(--surface2);border-radius:5px;padding:6px 7px;font-size:9px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.starter-block,.starter-diagnostic,.starter-knowledge>div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-width:0}
+.starter-block-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.starter-block-heading h3{margin:0;font-size:13px}
+.starter-block-heading>span{font-size:10px;color:var(--muted)}
+.starter-personas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.starter-persona{display:flex;align-items:center;gap:8px;min-width:0;text-align:left;min-height:55px;border:1px solid var(--line);border-radius:8px;padding:7px;background:var(--surface2);color:var(--text);cursor:pointer}
+.starter-persona.selected,.starter-task.selected{border-color:var(--blue);background:#008de919}
+.starter-persona>span:last-child{min-width:0}
+.starter-persona strong,.starter-persona small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.starter-persona strong{font-size:10px}.starter-persona small{font-size:9px;color:var(--muted)}
+.starter-icon{width:28px;height:29px;border-radius:7px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;color:var(--cyan);font-size:17px;flex:none}
+.starter-more{margin-top:7px}
+.starter-more summary{color:var(--cyan);font-size:10px;cursor:pointer;font-weight:800}
+.starter-more .starter-personas{margin-top:7px}
+.starter-tasks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.starter-task{display:flex;align-items:center;gap:7px;padding:8px;text-align:left;background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:8px;min-height:39px;font-size:10px;font-weight:760}
+.starter-task-check{font-size:16px;font-weight:900;color:var(--cyan)}
+.starter-columns,.starter-knowledge{display:grid;grid-template-columns:1fr .83fr;gap:9px}
+.starter-prompt,.starter-example{border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:10px;min-width:0}
+.starter-prompt h4,.starter-example h4,.starter-knowledge h4{margin:0 0 7px;font-size:11px}
+.starter-prompt textarea{width:100%;min-height:110px;height:115px;resize:vertical;background:var(--surface);color:var(--text);border:1px solid var(--line-strong);border-radius:7px;padding:8px;font:11px/1.5 inherit}
+.starter-inline-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.starter-inline-actions .button,.starter-next .button{padding:6px 10px;min-height:29px;font-size:10px}
+.starter-subnote,.starter-example>p,.starter-knowledge p,.starter-level-note{font-size:10px;color:var(--muted);line-height:1.55;margin:6px 0 0}
+.starter-example ol{padding-left:18px;display:grid;gap:8px;margin:4px 0}
+.starter-example li{font-size:11px;color:var(--text-soft)}
+.starter-review{margin-top:9px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface2);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.starter-review>label{font-size:10px;color:var(--text-soft);display:flex;align-items:center;gap:6px;flex:1 1 250px}
+.starter-review input,.starter-answers input{accent-color:var(--blue)}
+.starter-next{display:flex;gap:7px;flex-wrap:wrap}
+#starter-message{margin:0;width:100%;font-size:10px;color:var(--muted)}
+.starter-diagnostic summary{cursor:pointer;color:var(--cyan);font-size:12px;font-weight:800;display:flex;justify-content:space-between}
+.starter-diagnostic>p{font-size:11px;color:var(--muted)}
+.starter-question{border:1px solid var(--line);border-radius:8px;margin:8px 0;padding:10px}
+.starter-question legend{font-size:11px;font-weight:750}
+.starter-answers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.starter-answers label{display:flex;align-items:center;gap:6px;font-size:10px}
+.starter-diagnostic-footer{display:flex;gap:12px;align-items:center;margin-top:10px;font-size:11px}
+.starter-diagnostic-footer strong{color:var(--good)}
+.starter-knowledge{grid-template-columns:1fr 1fr}
+.starter-knowledge a{font-size:10px;color:var(--cyan)}
+@media(max-width:1290px){.starter-personas{grid-template-columns:repeat(2,minmax(0,1fr))}.starter-privacy{display:none}.starter-columns{grid-template-columns:1fr}}
+@media(max-width:900px){html[data-entry="start"] .page-intro{grid-template-columns:1fr}.starter-personas{grid-template-columns:repeat(4,minmax(0,1fr))}.starter-columns{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.starter-personas{grid-template-columns:repeat(2,minmax(0,1fr))}.starter-tasks,.starter-columns,.starter-knowledge,.starter-answers{grid-template-columns:1fr}.starter-review{flex-direction:column;align-items:stretch}.starter-next>.button{flex:1}.starter-progress{grid-template-columns:1fr}.starter-progress span{white-space:normal}html[data-entry="start"] .page-intro{padding:12px}html[data-entry="start"] .hero-graphic{display:none}}

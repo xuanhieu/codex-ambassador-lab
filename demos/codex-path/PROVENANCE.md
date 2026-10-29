@@ -12,3 +12,10 @@ Date: 2026-10-24. Workspace: <local project checkout>/codexpro-amb.
 8. Contribution distinction: original Codex Path software is a separate product; the Academy underlying content and upstream ASCII component are attributed rather than misrepresented as all-original.
 
 Agent note: previous Codex CLI threads were unable to continue due exhausted workspace credits; fallback work in this turn was authored by ChatGPT and executed through deterministic local processes. Do not claim those old agents completed the new product.
+
+
+## 2026-10-24 — Every Human extension
+
+The original 25 Academy exercises and six professional paths were preserved. The new editorial `data/every-human-extension.json` supplies **36 original bilingual synthetic lessons** plus eight nontechnical learning routes. `builders_curriculum.py` deterministically merges both sources into one 61-lesson, 14-track dataset. The addition of educational content does not imply endorsement, certification, permission to modify a user repository, or automatic completion.
+
+The onboarding screens are original JS/CSS components (`starter-core.js`, `starter-ui.js`, `starter.css`) with no AI calls. Samples in the guided walkthrough are explicitly **illustrations**. Placement quiz results suggest a starting point but do not verify competence.

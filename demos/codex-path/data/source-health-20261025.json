@@ -1,0 +1,2623 @@
+{
+  "schema": "public-official-source-health-v1",
+  "catalogSnapshot": "2026-10-24",
+  "checkedAt": "2026-10-25",
+  "total": 204,
+  "counts": {
+    "reachable": 198,
+    "unavailable": 6
+  },
+  "limits": "Reachable means HTTP 200 on check date only. Not a proof that content, features or instructions are current. The official docs own the text; no article body is copied.",
+  "documents": [
+    {
+      "id": "src-475519df88ba",
+      "url": "https://learn.chatgpt.com/docs/llms-full.txt",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2cede26ef16ce58543a820886dfcd26a8fe57f931c3ad15f71967d0f3b7f6cdf",
+      "headings": [
+        "Codex — full documentation",
+        "Administration",
+        "Agent approvals & security"
+      ]
+    },
+    {
+      "id": "src-fd92e4296401",
+      "url": "https://learn.chatgpt.com/docs/codex-manual.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "efe9e6917feb57d0581ddef3cb74ca23ad41659390849c699766ce5d9fbe441a",
+      "headings": [
+        "Find By Topic",
+        "Surfaces and experiences",
+        "ChatGPT on the web"
+      ]
+    },
+    {
+      "id": "src-4ad3796df1e6",
+      "url": "https://learn.chatgpt.com/use-cases/llms.txt",
+      "status": "unavailable",
+      "http": 404,
+      "checkedAt": "2026-10-25",
+      "sha256": "",
+      "headings": []
+    },
+    {
+      "id": "src-08825629d583",
+      "url": "https://learn.chatgpt.com/docs/administration.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a6110c9eb9bf2ae910d73b872ff1968ec01cc478d87c3181e83bdf877ec2d925",
+      "headings": [
+        "Administration"
+      ]
+    },
+    {
+      "id": "src-b7af4e0dbfe6",
+      "url": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "595db3a5a3276996071dcc2442e2cfcfef2c11c50cf46fccfd1de4a869a82017",
+      "headings": [
+        "Agent approvals & security",
+        "Migrate from the retired `untrusted` approval policy",
+        "Sandbox and approvals"
+      ]
+    },
+    {
+      "id": "src-94f17e3de1ca",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "9d1f87a2d1cb55b4782b95abe710692b35b9659789c2db31a22c7074a3383e8e",
+      "headings": [
+        "Custom instructions with AGENTS.md",
+        "How Codex discovers guidance",
+        "Create global guidance"
+      ]
+    },
+    {
+      "id": "src-6c7aa55b479f",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/rules.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "4ecdfe26ece03895220808a7aa4f05c91d837492300262baf5a5df35c3f44ce7",
+      "headings": [
+        "Rules",
+        "Create a rules file",
+        "Understand rule fields"
+      ]
+    },
+    {
+      "id": "src-55cdea3737e3",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/speed.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e965b9526b3df51923c175012e3860106e8e3a3599b49efd7d934245bd5cd85b",
+      "headings": [
+        "Speed",
+        "Fast mode",
+        "Ultrafast mode"
+      ]
+    },
+    {
+      "id": "src-731168d993ec",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e7469d41c5a18a4ee66ee40ca4a9a2617a697e42554a0198ac4481e1e597357f",
+      "headings": [
+        "Subagents",
+        "Availability",
+        "Why subagent workflows help"
+      ]
+    },
+    {
+      "id": "src-fc9fbba758a5",
+      "url": "https://learn.chatgpt.com/docs/amazon-bedrock.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a4c692f2b0e3b9f40a8e3986429e2c2058a7a061bf85aeec421130781facb3f6",
+      "headings": [
+        "Use ChatGPT Work and Codex with Amazon Bedrock",
+        "How it works",
+        "Before you start"
+      ]
+    },
+    {
+      "id": "src-04a85e845544",
+      "url": "https://learn.chatgpt.com/docs/annotations-extensibility.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "bb1e13578875f448001d69ec3febd7a7ac90042482cd734a40b479eb5128700f",
+      "headings": [
+        "Annotations Extensibility",
+        "Choose what to customize",
+        "Customize selection targets"
+      ]
+    },
+    {
+      "id": "src-d6f4398aa465",
+      "url": "https://learn.chatgpt.com/docs/app.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "078985b0a2fedec6e187a68284122033a95ae39cd976fbbfd7537e1684c54a1e",
+      "headings": [
+        "ChatGPT desktop app",
+        "ChatGPT desktop app",
+        "Why use the desktop app"
+      ]
+    },
+    {
+      "id": "src-dd7bb821828a",
+      "url": "https://learn.chatgpt.com/docs/reference/commands.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "03e14392312eb606bbe9df8a6202a4aeafc66758938cf8c135aec36b3bcd987a",
+      "headings": [
+        "Commands",
+        "Keyboard shortcuts",
+        "macOS"
+      ]
+    },
+    {
+      "id": "src-ce14d03dc374",
+      "url": "https://learn.chatgpt.com/docs/windows/windows-app.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "5bbae21f535849b2ab51ec9472d43e2f1ade4f954b3d5241bcec4674e7761ad7",
+      "headings": [
+        "ChatGPT desktop app for Windows",
+        "Download the ChatGPT desktop app",
+        "Native sandbox"
+      ]
+    },
+    {
+      "id": "src-1e04f0e46956",
+      "url": "https://learn.chatgpt.com/docs/reference/settings.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b66dc62c6718eb2e48aaaaf76f98b1e3ebd2ef5f8bb5979e2f8a2f6fb4e973e0",
+      "headings": [
+        "Settings",
+        "General",
+        "Profile"
+      ]
+    },
+    {
+      "id": "src-341246db376e",
+      "url": "https://learn.chatgpt.com/docs/app-server.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "f879715bb0d440db60b71e7a5bfe1258d045520feabe3fc6b11847100c8d064b",
+      "headings": [
+        "Codex App Server",
+        "Connect the CLI terminal UI",
+        "Connect a remote Code Mode host"
+      ]
+    },
+    {
+      "id": "src-c302b8efa03e",
+      "url": "https://learn.chatgpt.com/docs/appshots.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a541048923cd2daf6e785d418d92dfed2d5cfabdc9f35910c7dce602bac4319e",
+      "headings": [
+        "Appshots",
+        "What appshots capture",
+        "When to use appshots"
+      ]
+    },
+    {
+      "id": "src-1186da4cb8c2",
+      "url": "https://learn.chatgpt.com/docs/artifacts-viewer.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "91f2b8597741b2da21dd8fcba0a1c4ea5991edf7928dfa6d04a0c8be60f5ca9c",
+      "headings": [
+        "Work with files",
+        "Create files for review",
+        "Refine files with annotations"
+      ]
+    },
+    {
+      "id": "src-1454a3aad1fa",
+      "url": "https://learn.chatgpt.com/docs/auth.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ef2f4e55abe70a66783a34be97778df35d29ad23fb7f6d68eb2610be51a61644",
+      "headings": [
+        "Authentication",
+        "OpenAI authentication",
+        "Sign in with ChatGPT"
+      ]
+    },
+    {
+      "id": "src-b5406e60cbfa",
+      "url": "https://learn.chatgpt.com/docs/automations.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "cd6ad46c3c8304a56fa64657492ce2585afda5212ba3fe0562d59cc9be9596db",
+      "headings": [
+        "Scheduled tasks",
+        "Manage scheduled tasks on the web",
+        "Trigger tasks from app events"
+      ]
+    },
+    {
+      "id": "src-a7de5b39bd26",
+      "url": "https://learn.chatgpt.com/docs/browser.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "8558ece2cd53b9a3e2fe110b87258630575c6146e10db559df7ea082c93b8210",
+      "headings": [
+        "Browser",
+        "Arrange tabs and chat",
+        "Search from the address bar"
+      ]
+    },
+    {
+      "id": "src-0d81218eacd2",
+      "url": "https://learn.chatgpt.com/docs/build-plugins.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "727cd6c97e479b78a7c4fda175e6cd5cd76ae9ae4ac6f3efe798c327cb557a7d",
+      "headings": [
+        "Build plugins",
+        "What is a plugin?",
+        "Before you start"
+      ]
+    },
+    {
+      "id": "src-575ba4762ea6",
+      "url": "https://learn.chatgpt.com/docs/build-skills.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ed6e324f747d47adf6f60ee1fca13ba469b3671f55f58c3a78f35947af6919d5",
+      "headings": [
+        "Build skills",
+        "How ChatGPT and Codex use skills",
+        "Create a skill"
+      ]
+    },
+    {
+      "id": "src-a74595707768",
+      "url": "https://learn.chatgpt.com/docs/chrome-extension.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3783565d3bf8c2a1671afed0fe8d833d0cd213ed83ef627c1c5f6c857e3c59f1",
+      "headings": [
+        "Browser extension",
+        "Use side chat in your browser",
+        "Bring tabs and selected text into a chat"
+      ]
+    },
+    {
+      "id": "src-24d888be8e5f",
+      "url": "https://learn.chatgpt.com/docs/codex/cli.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "36066e8647cfa5f6b8ff08678267e256e3434ccfff8eac6532c5ac0ed4daffdd",
+      "headings": [
+        "Codex CLI",
+        "Inspect, edit, and run code from your terminal",
+        "Start here"
+      ]
+    },
+    {
+      "id": "src-cf38bd5054be",
+      "url": "https://learn.chatgpt.com/docs/developer-commands.md?surface=cli",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "1347b0eb55a085c4d6bdb53b5825935e6479fe368518a23a914d08c7235a3567",
+      "headings": [
+        "Developer commands",
+        "How to read this reference",
+        "Global flags"
+      ]
+    },
+    {
+      "id": "src-2a01a9d34cde",
+      "url": "https://learn.chatgpt.com/docs/cli-customization.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "7f59bf08264c63061b59a6a0050376c4633d22c9e96915ec1d565e85a032b382",
+      "headings": [
+        "CLI customization",
+        "Syntax highlighting and themes",
+        "Shell completions"
+      ]
+    },
+    {
+      "id": "src-c302e8415c7f",
+      "url": "https://learn.chatgpt.com/docs/cloud.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "6d4e5f7c3078e670d85ce5927ffa5a7bf930ecc6e81b90f1b6771271dc49ead6",
+      "headings": [
+        "Codex Cloud",
+        "Run coding tasks in the cloud",
+        "Start here"
+      ]
+    },
+    {
+      "id": "src-b99b352f5f4f",
+      "url": "https://learn.chatgpt.com/docs/cloud/internet-access.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "5af493d05e5da1a56212d6a77845728eab70e1ce3b7b0f948b9f4294b4978338",
+      "headings": [
+        "Codex Cloud (Legacy): internet access",
+        "Risks of agent internet access",
+        "Configuring agent internet access"
+      ]
+    },
+    {
+      "id": "src-47b0440a51c2",
+      "url": "https://learn.chatgpt.com/docs/code-review.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c18b2fe184104facf5d044631ee151b2394baab1c44218be8b9d60c7dbd33020",
+      "headings": [
+        "Code review",
+        "Pull request reviews",
+        "View a pull request"
+      ]
+    },
+    {
+      "id": "src-e3c5173f4c4c",
+      "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c3436a3de96a7bd71dfe529d63df8149e27d172b952497d3a5d46b5192751589",
+      "headings": [
+        "Codex SDK",
+        "TypeScript library",
+        "Installation"
+      ]
+    },
+    {
+      "id": "src-304dc43b0d04",
+      "url": "https://developers.openai.com/community/codex-for-oss",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a257d30ab86754c1ae02007205d24f42226f112bf67c82f62f96b4235da0477b",
+      "headings": [
+        "Search developer resources",
+        "Suggested",
+        "Suggested"
+      ]
+    },
+    {
+      "id": "src-7be3f970bd43",
+      "url": "https://learn.chatgpt.com/docs/computer-use.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c0e4f883aa2abc1198ee40e5ce59cea130b055b97c48e9abf7a0e8d75277c819",
+      "headings": [
+        "Computer Use",
+        "Set up Computer Use",
+        "When to use Computer Use"
+      ]
+    },
+    {
+      "id": "src-b011aa51b331",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-advanced.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "6180e9e23da85dd2db17d47f59c719787c2bdf20fa95a9b41479183ab9337a3e",
+      "headings": [
+        "Advanced Configuration",
+        "Applying these examples to Local computer access with Work Cloud",
+        "Profiles"
+      ]
+    },
+    {
+      "id": "src-d684e38d0094",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-basic.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "4f0275f5289e27d9d8b90857389fe94cefade24d9e42a394dffeb832301b91d4",
+      "headings": [
+        "Config basics",
+        "Codex configuration file",
+        "Configuration precedence"
+      ]
+    },
+    {
+      "id": "src-c2332644faa1",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "fe48af085a53345cf171cf492f3147eb2bb297b8ab28f83e67b8e9e62f715a21",
+      "headings": [
+        "Configuration Reference",
+        "Settings for Local computer access with Work Cloud",
+        "Agent Security requirements for Local computer access with Work Cloud"
+      ]
+    },
+    {
+      "id": "src-22d54b5578c4",
+      "url": "https://learn.chatgpt.com/docs/config-file/environment-variables.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "af767b8d7892d11d0554d9ea5c0d60d7bb463cb64b2a3a51e2ba0efadbc86ba8",
+      "headings": [
+        "Environment variables",
+        "Core locations",
+        "Installer variables"
+      ]
+    },
+    {
+      "id": "src-f52101a0e133",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-sample.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "626f16aed15a7c4906b5cfee22ec6f04d38fd5455f358a03b5f30342cf505d44",
+      "headings": [
+        "Sample Configuration"
+      ]
+    },
+    {
+      "id": "src-f05fc21d24fe",
+      "url": "https://learn.chatgpt.com/docs/configuration.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c034411d817d6cc5bc12c75526a0e9c15bcfcae9d6429a630363fa710db00f6a",
+      "headings": [
+        "Configuration"
+      ]
+    },
+    {
+      "id": "src-81a2fac530c8",
+      "url": "https://learn.chatgpt.com/docs/custom-prompts.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "d6f7cf8dd9f31d2faf5604ef3a6f8322132a7b66fa50823109cb681e372a0fa9",
+      "headings": [
+        "Custom Prompts",
+        "Add metadata and arguments",
+        "Invoke and manage custom commands"
+      ]
+    },
+    {
+      "id": "src-f3a0216fc3d2",
+      "url": "https://learn.chatgpt.com/docs/customization/computer-history.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "46e7b7a51804f93c059872efa9d2dadbe657e5f7188f3c501ac13c9338ce1b03",
+      "headings": [
+        "Computer History",
+        "How Computer History helps",
+        "Pick up where you left off"
+      ]
+    },
+    {
+      "id": "src-2645e597941a",
+      "url": "https://learn.chatgpt.com/docs/customization/overview.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e4f466bb13521bc8d4e193962192c45319d5abc0cb58875d4a7eed2a9f9a20d6",
+      "headings": [
+        "Customization",
+        "AGENTS Guidance",
+        "When to update `AGENTS.md`"
+      ]
+    },
+    {
+      "id": "src-7ea5a1f5cc6a",
+      "url": "https://learn.chatgpt.com/docs/customization/memories.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "7412a5b573d678dbad5ea5ba162005a9e1d8b216e824238e53307333260a52f8",
+      "headings": [
+        "Memories",
+        "How local Codex memories work",
+        "Local memory storage"
+      ]
+    },
+    {
+      "id": "src-04f6dcc4a4fe",
+      "url": "https://learn.chatgpt.com/docs/cyber-safety.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "bb0024ac81bd00f9a2b17b6142a2f4c68d42b626827df1522e8466a8b98b03b9",
+      "headings": [
+        "Models and Trusted Access",
+        "Choose the right model",
+        "Trusted Access for Cyber"
+      ]
+    },
+    {
+      "id": "src-b74b7c76c711",
+      "url": "https://learn.chatgpt.com/docs/cyber-safety/recommended-configuration.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "484f48b696445ed7b7dc25e120c9d24dcfebea183492d800172396c7798e9884",
+      "headings": [
+        "Recommended configuration",
+        "Isolate the environment",
+        "Define and enforce approved boundaries"
+      ]
+    },
+    {
+      "id": "src-e65d1fa4c1e1",
+      "url": "https://learn.chatgpt.com/docs/developers.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "17d4539c5eafa82798d8bea51b8e465d3b0113105b3a63bd09b19c248de60f67",
+      "headings": [
+        "Developers"
+      ]
+    },
+    {
+      "id": "src-1323ad886101",
+      "url": "https://learn.chatgpt.com/docs/dots.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "8b8679c14277478ea111b9b0d2f3441690082660f831f66316cb0fc931b108d5",
+      "headings": [
+        "Meet dots",
+        "Make it your own",
+        "Message or call your dot"
+      ]
+    },
+    {
+      "id": "src-6e39401d1f47",
+      "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "0b71214666f05bf7d4f438da5a2efd2ba2ccbd92196858ec83308e3cf4a6e537",
+      "headings": [
+        "Connect computers and apps to your dot",
+        "Use the cloud computer",
+        "Cloud threads"
+      ]
+    },
+    {
+      "id": "src-e13354c6b025",
+      "url": "https://learn.chatgpt.com/docs/dots/controls.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "23c3fecb31c1ff821b280429756fad06968f6b68234f84de80a9d53c9e0f61dc",
+      "headings": [
+        "Control your dot",
+        "Review work",
+        "How action review works"
+      ]
+    },
+    {
+      "id": "src-7c8e52e0c73f",
+      "url": "https://learn.chatgpt.com/docs/dots/getting-started.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ff1b70cb17c66a5488b0bbc7ed173a8776cee446eb38e409a239a87a0b83efc0",
+      "headings": [
+        "Get started with your dot",
+        "Create your dot",
+        "Set up on mobile or desktop"
+      ]
+    },
+    {
+      "id": "src-4b4aabd54f9e",
+      "url": "https://learn.chatgpt.com/docs/dots/channels.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "16e45855328b76c9072f7355cc9069a5fcdcf7ce4c0f7fcc0365945308dd929d",
+      "headings": [
+        "Message your dot",
+        "ChatGPT and voice",
+        "Slack and Teams"
+      ]
+    },
+    {
+      "id": "src-9ffa6664dba7",
+      "url": "https://learn.chatgpt.com/docs/dots/tasks-and-memory.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "fd821476b6faf69d921ef305d46d15cc1892fb1bebf5ca70b23a91763efcb9da",
+      "headings": [
+        "Tasks and memory",
+        "Assigned work",
+        "Recurring tasks"
+      ]
+    },
+    {
+      "id": "src-f5bc151215cd",
+      "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "bd5b1821bc59ec534504caa8ed5960cd649425527f67680ba39a9aa389cec95a",
+      "headings": [
+        "Access tokens",
+        "How access tokens work",
+        "Enable access token creation"
+      ]
+    },
+    {
+      "id": "src-811aa7aeaf6b",
+      "url": "https://learn.chatgpt.com/docs/enterprise/admin-setup.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "7a16f330d74bec86a81f22b1864aeac30eb1d4e747a85423fd70cce891a5e653",
+      "headings": [
+        "Admin rollout guide",
+        "Step 1: Assign owners and choose a rollout",
+        "Step 2: Configure workspace access and identity"
+      ]
+    },
+    {
+      "id": "src-dccd5924f08b",
+      "url": "https://learn.chatgpt.com/docs/enterprise/agent-security.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a5328459ce803f3df819cc969c151eb528935ea7724b1fa915288103f3d7dda6",
+      "headings": [
+        "Agent Security",
+        "Where settings apply",
+        "Set a baseline and add environment settings"
+      ]
+    },
+    {
+      "id": "src-88b1ced5fbcc",
+      "url": "https://learn.chatgpt.com/docs/enterprise/analytics-api.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "5776492239cdcf5918e7c3bd0dd132b6452ee79b40817bd76e4bda933c5d71d2",
+      "headings": [
+        "Analytics API",
+        "When to use the Analytics API",
+        "Confirm the administration boundaries"
+      ]
+    },
+    {
+      "id": "src-886686d95c82",
+      "url": "https://learn.chatgpt.com/docs/enterprise/bedrock-through-litellm.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e47fb3251e713440f13b67599a3047ea66170bfbb9e4099ad6e9ea7bbe2b3cd5",
+      "headings": [
+        "Bedrock through LiteLLM",
+        "Connect to an existing gateway",
+        "Prepare a gateway"
+      ]
+    },
+    {
+      "id": "src-d5021d01af0b",
+      "url": "https://learn.chatgpt.com/docs/enterprise/higher-education-roles-and-permissions.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b09a82058c4b2c47b73a5041e25ee3946df17e6470a96da31a95b3a2904a8295",
+      "headings": [
+        "Best practices for ChatGPT Edu workspace configuration in higher education",
+        "Choose the recommended roles",
+        "Apply the matrix"
+      ]
+    },
+    {
+      "id": "src-48de7f90f273",
+      "url": "https://learn.chatgpt.com/docs/enterprise/usage-limits.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2850ea8890bf1ab86c653f54e92fc78bedc98a419da95b767bd255c469fa2cbb",
+      "headings": [
+        "ChatGPT usage limits and spend controls",
+        "Know when these controls apply",
+        "Ultrafast mode"
+      ]
+    },
+    {
+      "id": "src-b498643ba7f3",
+      "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c48dbeb65da8c10cbe9ed1e0b60afe7944b964e76414829cef3db1a1f9102e3c",
+      "headings": [
+        "ChatGPT Work admin FAQ",
+        "Work across devices",
+        "What does Local computer access with Work Cloud enable?"
+      ]
+    },
+    {
+      "id": "src-eea2edbcef58",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "4bf7decc9ee9e996926461df25e87b3754aba51fd3ba3c849b0b7683d0aa6461",
+      "headings": [
+        "ChatGPT Work cloud security",
+        "Security at a glance",
+        "Where cloud tasks run"
+      ]
+    },
+    {
+      "id": "src-54e559ed4245",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3a9f93c18fa2575b770467a7a7fc1ddad673cce0eaebecad971379696e713ec3",
+      "headings": [
+        "ChatGPT Work local security",
+        "Security at a glance",
+        "Where local tasks run"
+      ]
+    },
+    {
+      "id": "src-18ad336d66dd",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "1b0b494425398350649b21101252ef13f81c3939ac5b1a78c9d5b69d41660e1b",
+      "headings": [
+        "ChatGPT Work Overview",
+        "Execution isolation, files, and device access",
+        "Local Work"
+      ]
+    },
+    {
+      "id": "src-ba100f6664b7",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a06a690623cdd69d59d8da12ed637326ea83309e7f7769016b0fab2a882846c7",
+      "headings": [
+        "ChatGPT Work: usage and cost",
+        "Usage and cost at a glance",
+        "Why Work uses credits"
+      ]
+    },
+    {
+      "id": "src-649ffe457194",
+      "url": "https://learn.chatgpt.com/docs/enterprise/security-cookbook.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "533934686daa7046c7c8ed723b4d92007488974dd63fe8368845cc6b80f8e035",
+      "headings": [
+        "Codex security cookbook",
+        "Choose your starting point",
+        "Start here"
+      ]
+    },
+    {
+      "id": "src-9d54fab7ad72",
+      "url": "https://learn.chatgpt.com/docs/enterprise/compliance-api.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "8aeb1cc32e45a6ea537cddfd67590134109481a20c364b4a906cb48a896fbd71",
+      "headings": [
+        "Compliance API and audit events",
+        "When to use the Compliance API",
+        "Get started"
+      ]
+    },
+    {
+      "id": "src-3a9100c32164",
+      "url": "https://learn.chatgpt.com/docs/enterprise/windows-deployment.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "20127f101c7662c2b642a308053863430d45b3369f88bb70528803cd01214eaf",
+      "headings": [
+        "Deploy the Windows app and Codex CLI",
+        "Deploy the Windows app",
+        "Deploy through Microsoft Store"
+      ]
+    },
+    {
+      "id": "src-83d4edfaf8cd",
+      "url": "https://learn.chatgpt.com/docs/enterprise/dynamic-groups.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ec55e950b22d02bb658d09df2d1f269659b7e939b486e9023b903734345c80cd",
+      "headings": [
+        "Dynamic groups",
+        "Before you begin",
+        "Create a dynamic group"
+      ]
+    },
+    {
+      "id": "src-e9de2a6a736d",
+      "url": "https://learn.chatgpt.com/docs/enterprise/gateway-compatibility.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "01c10c34a6563a4eb4661bc22ed46f7de0b77e83093907377f1245dce57c7462",
+      "headings": [
+        "Gateway compatibility requirements",
+        "Requests and endpoints",
+        "Streaming"
+      ]
+    },
+    {
+      "id": "src-05f8d80ccc7b",
+      "url": "https://learn.chatgpt.com/docs/enterprise/governance.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "1ad0b8a214d728454cfd63b31ad317899dd86655e86f5de6e2f5b27c030861dd",
+      "headings": [
+        "Governance",
+        "Open the administration surfaces",
+        "Analytics dashboard"
+      ]
+    },
+    {
+      "id": "src-517f08511f57",
+      "url": "https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "36dac3a2ea80d593c5e83fb91211001325d25f007ee5cbb45f80be316024d7e3",
+      "headings": [
+        "GPTs and Sharing",
+        "Sharing",
+        "Connected apps and actions"
+      ]
+    },
+    {
+      "id": "src-10dd8667120a",
+      "url": "https://learn.chatgpt.com/docs/enterprise/groups-and-provisioning.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "06dd8e6c171ed8d1ee140dce5f13fce30ff5363085d261004056d93d97c5ba13",
+      "headings": [
+        "Groups and provisioning",
+        "Compare membership sources",
+        "Create a group for a shared access need"
+      ]
+    },
+    {
+      "id": "src-d50d47c21e8f",
+      "url": "https://learn.chatgpt.com/docs/enterprise/cloud-local-access.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "d176cfc3089b48f3e9b07a700dc2961c0519ab3bf94076d7e32832980f722bd2",
+      "headings": [
+        "Local computer access for Work Cloud and dots",
+        "Benefits of local computer access",
+        "Work"
+      ]
+    },
+    {
+      "id": "src-24c62848a332",
+      "url": "https://learn.chatgpt.com/docs/enterprise/manage-app-updates.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "d287f362a6808ce7d9fd01a9c3df52a801aef99dc32992f0cde9562e6bbeed29",
+      "headings": [
+        "Manage app updates",
+        "Before you begin",
+        "Turn off in-app updates"
+      ]
+    },
+    {
+      "id": "src-315e17f0f4b9",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-space.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "fbc12e51beae84b56f7c61950071ee9cdc898bd82d6d535974865820be7482bc",
+      "headings": [
+        "Manage ChatGPT Space, pages, and slides",
+        "What is ChatGPT Space?",
+        "Enterprise sharing controls"
+      ]
+    },
+    {
+      "id": "src-8b62a89b49b8",
+      "url": "https://learn.chatgpt.com/docs/enterprise/dots-admin-guide.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "024123002e2289252ed22241a3508c724159db9247b70e95d9a012f683dd6541",
+      "headings": [
+        "Manage dots permissions and capabilities",
+        "Find what you need",
+        "Set up dots for work"
+      ]
+    },
+    {
+      "id": "src-77481efb12a6",
+      "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "77c8ccd68cd9a1c59bc050184ce4026369225ff618efb56af929f386d13d50e3",
+      "headings": [
+        "Managed configuration",
+        "Configure a policy in Agent security",
+        "Copy or reuse a configuration"
+      ]
+    },
+    {
+      "id": "src-20bc98306a44",
+      "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "be98a2cc076e034c010b1ed98b604bd4f9848ce56df311902dacddc61c7bcef7",
+      "headings": [
+        "Plugin controls",
+        "Understand the capability chain",
+        "Step 1: Enable plugin availability"
+      ]
+    },
+    {
+      "id": "src-ab115ea47731",
+      "url": "https://learn.chatgpt.com/docs/enterprise/plugin-management.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "72dde5c337b1b622c95816dbb40b3a88ba9893cd235f65d9fb7a4bf6222565c6",
+      "headings": [
+        "Plugin management",
+        "Before you begin",
+        "Configure a marketplace sync"
+      ]
+    },
+    {
+      "id": "src-c369cec5f3b8",
+      "url": "https://learn.chatgpt.com/docs/enterprise/prisma-airs.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "16f6c8a3fcc34cf70f5fd77e17b186517f27cc66be494f35850331c679a6a0b2",
+      "headings": [
+        "Prisma AIRS",
+        "Before you begin",
+        "Connect Prisma AIRS"
+      ]
+    },
+    {
+      "id": "src-a292ca32ae05",
+      "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "52fc0aa30649e2e18cd138826e8bcee155a64c9cd9b821fcfea5637eb4d306a0",
+      "headings": [
+        "Roles and workspace permissions",
+        "Understand the control boundaries",
+        "Assign workspace access"
+      ]
+    },
+    {
+      "id": "src-d8c21044e817",
+      "url": "https://learn.chatgpt.com/docs/enterprise/roll-out-a-gateway.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "cde8b239f9f1f0afd5e2ac4f7cb072bd174ab36ecb2b2b4a06fab4cc224ea9d0",
+      "headings": [
+        "Roll out a gateway",
+        "Prerequisites",
+        "Gateway requirements"
+      ]
+    },
+    {
+      "id": "src-7a5e03044e16",
+      "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2418e02ccae67c129d348312333fff0b2e493e93295bb8e73f971e1677848d94",
+      "headings": [
+        "Service accounts",
+        "Create and set up a service account",
+        "Connect a plugin"
+      ]
+    },
+    {
+      "id": "src-6be952b78a5d",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-slack-and-teams.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "8e8481480a5dd87cbe0b64605c20c573890af6a60eb41dac979e896051f00d14",
+      "headings": [
+        "Set up and manage @ChatGPT in Slack and Microsoft Teams",
+        "How access works",
+        "Before you begin"
+      ]
+    },
+    {
+      "id": "src-81de09346a07",
+      "url": "https://learn.chatgpt.com/docs/enterprise/teams.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b2858b699c2f5661e1d7ae44c0689514b89767e41c1e74dbcf07442b27551dc4",
+      "headings": [
+        "Set up and manage teams and Team Tasks",
+        "How teams and Team Tasks work",
+        "Before you begin"
+      ]
+    },
+    {
+      "id": "src-e25dfff3918f",
+      "url": "https://learn.chatgpt.com/docs/enterprise/sign-in-with-chatgpt-through-a-gateway.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a4aeecb3b0241f879e18b71f4441b674d3eea84f2ce84c378d2dd12b25456cda",
+      "headings": [
+        "Sign in with ChatGPT through a gateway",
+        "Why you would want this",
+        "How to set it up"
+      ]
+    },
+    {
+      "id": "src-e62c8f8bdac9",
+      "url": "https://learn.chatgpt.com/docs/enterprise/sites.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "384d6c83c49c09823efe6bac540e711e02f28ec12eed588296c984617f035f64",
+      "headings": [
+        "Sites administration",
+        "Before you begin",
+        "How sites work"
+      ]
+    },
+    {
+      "id": "src-160e62101398",
+      "url": "https://learn.chatgpt.com/docs/enterprise/skills.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "cea03f3708d47495b2a59949f516e9e9ab6575407c4ad1c4db38c3e4dd5125ee",
+      "headings": [
+        "Skill controls",
+        "Skill distribution and administration",
+        "Owning controls"
+      ]
+    },
+    {
+      "id": "src-354f957358f4",
+      "url": "https://learn.chatgpt.com/docs/enterprise/education-plans.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "53c167dc9e744436607e12248c657e7eb2e524255f3bc1c64785cd924c78af42",
+      "headings": [
+        "Understand ChatGPT education plans",
+        "Compare plans",
+        "Use multiple workspaces"
+      ]
+    },
+    {
+      "id": "src-474523711974",
+      "url": "https://learn.chatgpt.com/docs/enterprise/usage-insights.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "305f36e4113d2c41c646bf3fb1d01b98c34da8ba8b12ffd36ed9748412cffe84",
+      "headings": [
+        "Usage Insights for ChatGPT Work in Codex",
+        "Analytics views",
+        "Open Insights"
+      ]
+    },
+    {
+      "id": "src-5d0a94de49bd",
+      "url": "https://learn.chatgpt.com/docs/enterprise/connect-to-a-gateway.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3a0e2bac86f84deca7b03765100b120bc8d30f41714c350b729369f488236b74",
+      "headings": [
+        "Use API/provider credentials through a gateway",
+        "Check for an existing configuration",
+        "Get your gateway connection details"
+      ]
+    },
+    {
+      "id": "src-16cf27f48eb0",
+      "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "4093067ec08c0b32562037ed8ffb541a9dc1057cbde2093e010045b8ad8df58d",
+      "headings": [
+        "User lifecycle management",
+        "Verify prerequisites and assign owners",
+        "Choose how employees join the workspace"
+      ]
+    },
+    {
+      "id": "src-f094a985d5b8",
+      "url": "https://learn.chatgpt.com/docs/enterprise/admin-plugin.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "eb35f224c7c5835f181c44155a534a75e7a8cd40116fba57750014740f16a2af",
+      "headings": [
+        "Using the Admin plugin in ChatGPT Work",
+        "1. Understand what the Admin plugin is for",
+        "What the Admin plugin is designed to solve"
+      ]
+    },
+    {
+      "id": "src-e8a44d8693c2",
+      "url": "https://learn.chatgpt.com/docs/enterprise/workspace-analytics.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "554430da87c7faa3d6e5d7154545c49d3b3b3b3480327f74ae0f411cbadaf289",
+      "headings": [
+        "Workspace analytics",
+        "Choose a reporting surface",
+        "Review ChatGPT workspace analytics"
+      ]
+    },
+    {
+      "id": "src-d409bf3c6a23",
+      "url": "https://learn.chatgpt.com/docs/enterprise/shared-connections.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "31025b8b8f90099cd6dc6ed644bd3faa4ccb57155c15436ec8d4f4ba0c7fa059",
+      "headings": [
+        "Workspace connections",
+        "How it works",
+        "Set up a connection"
+      ]
+    },
+    {
+      "id": "src-7d04f9ab1f4a",
+      "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "f6953cfa20733df40db5679aee7cf92277b61031b3c41d5645eae341722ca567",
+      "headings": [
+        "Workspace model availability",
+        "Identify the model boundary",
+        "Set a clear starting experience for employees"
+      ]
+    },
+    {
+      "id": "src-7ac5ae1c18e0",
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environments.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ebef40103abcbec4aedeb5db76f188831d869d6f92d2205ab7667aad29fb922b",
+      "headings": [
+        "Cloud environments",
+        "Start a task in Codex Cloud",
+        "Create and publish an environment"
+      ]
+    },
+    {
+      "id": "src-73011d6801bc",
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environment.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "9a798f89ae50cdb9eebd126458fca1230ec38ab052e67c0b8682d9d8bd88b293",
+      "headings": [
+        "Codex Cloud (Legacy)",
+        "How Codex cloud chats run",
+        "Default universal image"
+      ]
+    },
+    {
+      "id": "src-275a09b4f863",
+      "url": "https://learn.chatgpt.com/docs/environments/modes.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "64d4650883e84046be1dd727c0af6605be3dc9391006ce920114f68d15e470a8",
+      "headings": [
+        "Codex environments"
+      ]
+    },
+    {
+      "id": "src-86cde8be2e24",
+      "url": "https://learn.chatgpt.com/docs/environments/local-environment.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "be1d914a3e59fb5a17f8b2c8247ff864236d12dc2c50b2b4cc58137a636b6e29",
+      "headings": [
+        "Local environments",
+        "Setup scripts",
+        "Actions"
+      ]
+    },
+    {
+      "id": "src-d955137d94c4",
+      "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a664bda957392d9128c5fc58b661b1c5cc7a5d034838552ca95bf4b18f6875b5",
+      "headings": [
+        "Worktrees",
+        "What's a worktree",
+        "Terminology"
+      ]
+    },
+    {
+      "id": "src-dd3c07a3ae6a",
+      "url": "https://learn.chatgpt.com/docs/extend/mcp.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "5e87f831d27e68f5c156438d710231d3052aa69fab8e57e3cf2b0ceda9f8530a",
+      "headings": [
+        "Model Context Protocol",
+        "Build an MCP plugin with Plugin Creator and Sites",
+        "Before you start"
+      ]
+    },
+    {
+      "id": "src-2c6e218368c0",
+      "url": "https://learn.chatgpt.com/docs/extend/record-and-replay.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "36f40000558f2bf2d52fb7b24bf75b1daf2f94d58d7ec2e3a384403814cbe757",
+      "headings": [
+        "Record & Replay",
+        "Before you start",
+        "Start a recording"
+      ]
+    },
+    {
+      "id": "src-d303113c34a6",
+      "url": "https://learn.chatgpt.com/docs/feature-maturity.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "9b773769ae13afc594c3c5fd28327009667f0a8fade51e261ead9c02c3109e6e",
+      "headings": [
+        "Feature Maturity"
+      ]
+    },
+    {
+      "id": "src-f449586d4612",
+      "url": "https://learn.chatgpt.com/docs/features.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3da71a384f6b1e363d9094b03ddd77a79a887d2a42bb525d9965a77704bf82fd",
+      "headings": [
+        "Features"
+      ]
+    },
+    {
+      "id": "src-3b6d55bd0132",
+      "url": "https://learn.chatgpt.com/docs/features/voice.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b331ff43e76771168055f4fe88d656cea976a14dfc88d201435805e40195737a",
+      "headings": [
+        "ChatGPT Voice",
+        "Start talking",
+        "Have a conversation"
+      ]
+    },
+    {
+      "id": "src-0169dfa5d4e3",
+      "url": "https://learn.chatgpt.com/docs/features/codex-micro.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "5324ce0987446a9e0861374eaeca44d388445dea7cde46f9c0b329bef4f70ec4",
+      "headings": [
+        "Codex Micro",
+        "Set up Codex Micro",
+        "Pair with Bluetooth"
+      ]
+    },
+    {
+      "id": "src-acc8cb67be71",
+      "url": "https://learn.chatgpt.com/docs/features/composer-predictions.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e07a3bdcfbea86f7be4f5bf742b607939ac0813bbfca47094cf5350dabb55aba",
+      "headings": [
+        "Composer Predictions",
+        "Tab to accept",
+        "How predictions use context"
+      ]
+    },
+    {
+      "id": "src-2c7688c996bc",
+      "url": "https://learn.chatgpt.com/docs/get-started-with-work.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "98b032a4c12a8d38a5f5cf95b3af2ceaf542db6483e9e2e6dbeb8ed434b19577",
+      "headings": [
+        "Get started with ChatGPT Work",
+        "Introducing ChatGPT Work",
+        "What to try first"
+      ]
+    },
+    {
+      "id": "src-30fdd98f8c3a",
+      "url": "https://learn.chatgpt.com/docs/github-action.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3c3a244ef87fffb064114e388f4c7827b3ddc55b712f5aec50f2719a3cf1bc6a",
+      "headings": [
+        "Codex GitHub Action",
+        "Prerequisites",
+        "Example workflow"
+      ]
+    },
+    {
+      "id": "src-694ea1470b4c",
+      "url": "https://learn.chatgpt.com/docs/glossary.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "d3b77d2f9de4bf735c12d91f4e5a95d0ab5ba5f16e0819e96806e9166ef83837",
+      "headings": [
+        "Glossary"
+      ]
+    },
+    {
+      "id": "src-ebab3fcbd80b",
+      "url": "https://learn.chatgpt.com/guides/build-ai-native-engineering-team.md",
+      "status": "unavailable",
+      "http": 404,
+      "checkedAt": "2026-10-25",
+      "sha256": "",
+      "headings": []
+    },
+    {
+      "id": "src-0aecdb1ef0ce",
+      "url": "https://learn.chatgpt.com/docs/hooks.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "57166ef03e7059732dd90925d5c42dd4d187eb2625d66cc154d0fbd2edb65f92",
+      "headings": [
+        "Hooks",
+        "Where Codex looks for hooks",
+        "Review and trust hooks"
+      ]
+    },
+    {
+      "id": "src-c7af5bbd5710",
+      "url": "https://learn.chatgpt.com/docs/codex/ide.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "bbecaad17ae60f9e3ca79ef1e1323da89b71d9f46150aeba25fb0fb84ca5fa63",
+      "headings": [
+        "Codex IDE extension",
+        "Build with the context already in your editor",
+        "Start here"
+      ]
+    },
+    {
+      "id": "src-bb9b0fb8d058",
+      "url": "https://learn.chatgpt.com/docs/developer-commands.md?surface=ide",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e462f3c7246edfcb6a8a23116cb2e2e56e5741d985010aed7afb6617c516fe24",
+      "headings": [
+        "Developer commands",
+        "Assign a key binding",
+        "Extension commands"
+      ]
+    },
+    {
+      "id": "src-b24c4cceb411",
+      "url": "https://learn.chatgpt.com/docs/developer-settings.md?surface=ide",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a4c52f032ce8de051ef4b40d8d8fc0f29da1a9d457732f59052ddcdfeb2fa2ef",
+      "headings": [
+        "Developer settings",
+        "Open Codex settings",
+        "Change an editor setting"
+      ]
+    },
+    {
+      "id": "src-6e5b50840145",
+      "url": "https://learn.chatgpt.com/docs/image-generation.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "0eedfcaca1d6cb8ed0a39b6e1b0b2dedc06e2f9b9d2bcff5c5dfffa5f6360daa",
+      "headings": [
+        "Image generation",
+        "Review and edit generated images",
+        "Generate or edit an image"
+      ]
+    },
+    {
+      "id": "src-b64a9457088d",
+      "url": "https://learn.chatgpt.com/docs/image-inputs.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "252e1571e2cb0f933d04846f52023861bd6d6168a7ab279a421787db287bd3d3",
+      "headings": [
+        "Image inputs",
+        "Write the prompt around the image",
+        "Use the right image feature"
+      ]
+    },
+    {
+      "id": "src-2b09a0f3c867",
+      "url": "https://learn.chatgpt.com/docs/import.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "34893c4daf7be033d4313dc188b3b0e5b89c11f2899d5a3e3cdbe8108f31fac7",
+      "headings": [
+        "Import from another agent",
+        "Start an import",
+        "Import in the desktop app"
+      ]
+    },
+    {
+      "id": "src-3903992afce0",
+      "url": "https://learn.chatgpt.com/docs/integrated-terminal.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3cc29632b2e735164939f14a834a2aea6a1fd249ce33dab738246b2d108b1f81",
+      "headings": [
+        "Integrated terminal",
+        "Run and validate your project",
+        "Create reusable actions"
+      ]
+    },
+    {
+      "id": "src-67a7ce1fea36",
+      "url": "https://learn.chatgpt.com/guides/best-practices.md",
+      "status": "unavailable",
+      "http": 404,
+      "checkedAt": "2026-10-25",
+      "sha256": "",
+      "headings": []
+    },
+    {
+      "id": "src-8701a8c2ceb3",
+      "url": "https://learn.chatgpt.com/docs/linux/linux-app.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "82b5e912a89b1e11e428ec021fd11e67f93024f5095ecf34044a7bf208f48105",
+      "headings": [
+        "ChatGPT desktop app for Linux",
+        "Supported distributions and architectures",
+        "Download the right package"
+      ]
+    },
+    {
+      "id": "src-916e12c5bba5",
+      "url": "https://learn.chatgpt.com/docs/long-running-work.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "14bba6e57c9bae8bf37b289ef369a4c59863c07f95037fe3d37143b14057246b",
+      "headings": [
+        "Long-running work",
+        "Start a goal",
+        "Define what done means"
+      ]
+    },
+    {
+      "id": "src-b9429ef95fab",
+      "url": "https://learn.chatgpt.com/docs/mcp-server.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "9fe223993523b4e6d991fd229888ecb1a770a3df3aa7bea946ae6674f8af32da",
+      "headings": [
+        "Codex MCP server removal",
+        "Use the Codex app server",
+        "Connect Codex to MCP tools"
+      ]
+    },
+    {
+      "id": "src-866d18fe9ed3",
+      "url": "https://learn.chatgpt.com/docs/migrate-custom-gpts.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b2a3ffc9666930886ff7a050cb2e983bd8c9c49e08cad11c2a41d09ed8007267",
+      "headings": [
+        "Moving your custom GPT workflows to plugins",
+        "Understand the change",
+        "What can a plugin do compared with a custom GPT?"
+      ]
+    },
+    {
+      "id": "src-e49d01f23299",
+      "url": "https://learn.chatgpt.com/docs/mobile.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "18748906f1404a2e6ce1544525a766060739589607d70707331b5dc15780dd5c",
+      "headings": [
+        "Codex on mobile",
+        "Start, guide, and review tasks from your phone",
+        "Start here"
+      ]
+    },
+    {
+      "id": "src-0e488ebbf8af",
+      "url": "https://learn.chatgpt.com/docs/model-catalogs.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "79141da68edd38b5421f67306c8b12919fa851b068683e7f982b09f6e521c0df",
+      "headings": [
+        "Implementing model catalogs for gateways and clouds",
+        "Implement the catalog endpoint",
+        "Match the client's schema"
+      ]
+    },
+    {
+      "id": "src-088c850cc2af",
+      "url": "https://learn.chatgpt.com/docs/model-selection.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ea2148e897ff67348bf99c44d81c52ccf841f4931852143f17f5491b7676b072",
+      "headings": [
+        "Model selection",
+        "Meet the models",
+        "Find the right model for your workflow"
+      ]
+    },
+    {
+      "id": "src-ae24d057324a",
+      "url": "https://learn.chatgpt.com/docs/models.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "77779d7adf13e05df5bf7fa82088ebbaa647d16682a91cea5cd3cad043474f8e",
+      "headings": [
+        "Models",
+        "GPT-5.5 retirement",
+        "Choose a model"
+      ]
+    },
+    {
+      "id": "src-8e570f2a8916",
+      "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b4bc8dbe1c39f6e5454db89d764813d82c0c1003f7caca6c8adf0532e1e76684",
+      "headings": [
+        "Non-interactive mode",
+        "When to use `codex exec`",
+        "Basic usage"
+      ]
+    },
+    {
+      "id": "src-30bc4c999399",
+      "url": "https://learn.chatgpt.com/docs/notifications.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3574fbb5669fd40e44364681b4fbda7dcf7f8ef932bc5b57eeade2381a759fb2",
+      "headings": [
+        "Notifications",
+        "Configure desktop notifications",
+        "Follow chats in Activity view"
+      ]
+    },
+    {
+      "id": "src-79239d17dd17",
+      "url": "https://learn.chatgpt.com/docs/open-source.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "77829a35d1067456117a2a6ae6236960dcf4c1b6c94bc7e25e12d63966a7eba3",
+      "headings": [
+        "Open Source",
+        "Open-source components",
+        "Where to report issues and request features"
+      ]
+    },
+    {
+      "id": "src-10a780b90cf4",
+      "url": "https://learn.chatgpt.com/docs.md",
+      "status": "unavailable",
+      "http": 404,
+      "checkedAt": "2026-10-25",
+      "sha256": "",
+      "headings": []
+    },
+    {
+      "id": "src-907da152b649",
+      "url": "https://learn.chatgpt.com/docs/permission-modes.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "755f4d11d20f3f04311fab977e785164a152d5fbff48eb34a16a0f222e043550",
+      "headings": [
+        "Permissions",
+        "Permission modes",
+        "Choose a mode"
+      ]
+    },
+    {
+      "id": "src-4d7a5dc78b3c",
+      "url": "https://learn.chatgpt.com/docs/permissions.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "1af24fb0126aba2d5eb43f8a1094bcf9e465e21c94ffeae78ba7dad874466318",
+      "headings": [
+        "Permissions",
+        "Define and select a profile",
+        "Extend a profile"
+      ]
+    },
+    {
+      "id": "src-b81d7ecf0390",
+      "url": "https://learn.chatgpt.com/docs/personalize.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "628a63ceec399c21bf089266c111353b282428300e95c68b5529b86360198273",
+      "headings": [
+        "Personalize ChatGPT",
+        "Choose a personality on the web",
+        "Add custom instructions"
+      ]
+    },
+    {
+      "id": "src-74fe1167725e",
+      "url": "https://learn.chatgpt.com/docs/pets.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b6cee933a7d2a784622d48d8fac87a72aa0c30eeb70cd844481b1c2bac08d292",
+      "headings": [
+        "Pets",
+        "Use a floating pet",
+        "Choose and wake a pet"
+      ]
+    },
+    {
+      "id": "src-dea5d8982f04",
+      "url": "https://learn.chatgpt.com/docs/plugins.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "612ebfed2779c4aa5c412d8b069ed723e8c2ea264a140ebed5ad52a0853d4db0",
+      "headings": [
+        "Plugins",
+        "Overview",
+        "Use plugins from a supported surface"
+      ]
+    },
+    {
+      "id": "src-24e0a6ab1e90",
+      "url": "https://learn.chatgpt.com/docs/pricing.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e3e0a5ac79441fac79cf1e50d31c0bdbd8d27e0f30452a8307f87ab64495bdf3",
+      "headings": [
+        "Pricing",
+        "Invite friends and coworkers",
+        "Frequently asked questions"
+      ]
+    },
+    {
+      "id": "src-3353f8f8f4d9",
+      "url": "https://learn.chatgpt.com/docs/projects.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2492a9886d932e82999f827b963558927dbf952e06494344a3ff329526dc7007",
+      "headings": [
+        "Projects and chats",
+        "Choose a project or start without one",
+        "Choose a project or chat without one"
+      ]
+    },
+    {
+      "id": "src-0310706ee861",
+      "url": "https://learn.chatgpt.com/docs/prompting.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c43142cb5c847afb5a2292abe9260667e9001563dceb4e48c0550809e10306f2",
+      "headings": [
+        "Prompting",
+        "Prompting overview",
+        "Describe the result you need"
+      ]
+    },
+    {
+      "id": "src-b90e41678b02",
+      "url": "https://learn.chatgpt.com/docs/quickstart.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3c8dd42ab655bec9e68e6ca3919e9d5c18bfeb526024d531262bfc459dcba237",
+      "headings": [
+        "Quickstart",
+        "Where to use ChatGPT",
+        "Setup"
+      ]
+    },
+    {
+      "id": "src-11ef3e151227",
+      "url": "https://learn.chatgpt.com/docs/reference/troubleshooting.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3a3db459876eca2722c150308e80a43545ac43b552e7379a64c4fb4a516dc564",
+      "headings": [
+        "Troubleshooting",
+        "Frequently Asked Questions",
+        "Files appear in the side panel that Codex didn't edit"
+      ]
+    },
+    {
+      "id": "src-171fdaa74f75",
+      "url": "https://learn.chatgpt.com/docs/remote-connections.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c3f151748b855a0301fda938acd6a1af57bd0d8c7599a1ca294b8649f742e527",
+      "headings": [
+        "Remote connections",
+        "Local computer access with Work Cloud and Remote connections",
+        "What you can do remotely"
+      ]
+    },
+    {
+      "id": "src-84bbfccbaea9",
+      "url": "https://learn.chatgpt.com/resources.md",
+      "status": "unavailable",
+      "http": 404,
+      "checkedAt": "2026-10-25",
+      "sha256": "",
+      "headings": []
+    },
+    {
+      "id": "src-668fd2258559",
+      "url": "https://learn.chatgpt.com/docs/sandboxing.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "4702d8590236260ca3e7e47b34f0402951153d9575b3d9b53df50116f2d3a8eb",
+      "headings": [
+        "Sandbox",
+        "What the sandbox does",
+        "Why it matters"
+      ]
+    },
+    {
+      "id": "src-f464374c0d89",
+      "url": "https://learn.chatgpt.com/docs/sandboxing/auto-review.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a16ccf51cff77ee1dad89abeaf2608c2ea89cc2cd070d5e4793a746ac1bbe373",
+      "headings": [
+        "Auto-review",
+        "Select automatic review",
+        "How auto-review works"
+      ]
+    },
+    {
+      "id": "src-d5a186b7366e",
+      "url": "https://learn.chatgpt.com/docs/security.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "17e8fe44f75071a762aac8e60556f76c905c03b38cd2f77c6c7a85b1b96a06eb",
+      "headings": [
+        "Codex Security",
+        "Choose where to start",
+        "Choose the next task"
+      ]
+    },
+    {
+      "id": "src-8d926b82884d",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "23931dcec389d9b73c9e447a263d032fb1bb8b8cc1fe9cee28c9b0518969a837",
+      "headings": [
+        "Codex Security CI/CD overview",
+        "Prepare the workflow",
+        "Use an approved Daybreak model"
+      ]
+    },
+    {
+      "id": "src-d4672d2ba61d",
+      "url": "https://learn.chatgpt.com/docs/security/cli/faq.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "705574d3218ceddd872d0861baac22d581081493666b92fd7d97782b39ca5894",
+      "headings": [
+        "Codex Security CLI FAQ",
+        "Repository scans",
+        "Why does a scan use an API key after sign-in"
+      ]
+    },
+    {
+      "id": "src-1716f9f1a07b",
+      "url": "https://learn.chatgpt.com/docs/security/cli.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "43d993cc94cfaa4e01359778a8957fade79d0a2852aa141f3bf363f5c4b28e39",
+      "headings": [
+        "Codex Security CLI quickstart",
+        "Check the prerequisites",
+        "Set up and verify the CLI"
+      ]
+    },
+    {
+      "id": "src-909fb3f27618",
+      "url": "https://learn.chatgpt.com/docs/security/cli/reference.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "f90c3b43df3ead49cad58bdf4fb87ce35821b08a88bd63ca18fe9c0230b09a09",
+      "headings": [
+        "Codex Security CLI reference",
+        "Command overview",
+        "Discover commands and connect agents"
+      ]
+    },
+    {
+      "id": "src-2d8d28cbaa95",
+      "url": "https://learn.chatgpt.com/docs/security/faq.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "1463f40e5e16a26a157260c990f393079c60013e1d47bb1d499fe1c3064780d3",
+      "headings": [
+        "Codex Security Cloud FAQ",
+        "Billing",
+        "How are Cloud scans billed?"
+      ]
+    },
+    {
+      "id": "src-10cdc56de639",
+      "url": "https://learn.chatgpt.com/docs/security/setup.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e11917a10b7025b9da311d3890d682d3e11223fe0d63ab9b1d12a6babcf12010",
+      "headings": [
+        "Codex Security Cloud setup",
+        "Before you start",
+        "1. Install and open the plugin"
+      ]
+    },
+    {
+      "id": "src-796d8353993f",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/changelog.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2ce0909340d44faf2be4d70ad403a9b54e0cd11088db7a6e6571599deef8ec60",
+      "headings": [
+        "Codex Security plugin changelog",
+        "0.1.30 (September 24, 2026)",
+        "0.1.25 (September 23, 2026)"
+      ]
+    },
+    {
+      "id": "src-bec1e26cb654",
+      "url": "https://learn.chatgpt.com/docs/security/plugin.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "fc66ad0e949542a4d9ab897a1cd02282bb19479c58bbbfc66d917673a1a73683",
+      "headings": [
+        "Codex Security plugin quickstart",
+        "Install the plugin",
+        "Run your first scan"
+      ]
+    },
+    {
+      "id": "src-13b97f7316a6",
+      "url": "https://learn.chatgpt.com/docs/security/sdk.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a58fa7c9b424b41e20ba9135f17f29ef8f85ad073117574b1e7c9edff68901e2",
+      "headings": [
+        "Codex Security TypeScript SDK",
+        "Set up the SDK",
+        "Run a scan"
+      ]
+    },
+    {
+      "id": "src-2908d6b44ee0",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/export-findings.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ad360fcd81879fb1a3fc1f10986e867de2010139f3d41d38b237cb48b67f1f66",
+      "headings": [
+        "Export and track security findings",
+        "Export a portable artifact",
+        "Track selected findings"
+      ]
+    },
+    {
+      "id": "src-44471eb3eae1",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/fix-findings.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "7e4baf387b78ece72ea03c8af1173e4702be7d0c6a08e8b4dba73afef1369a59",
+      "headings": [
+        "Fix and verify security findings",
+        "Fix a finding in the UI",
+        "Fix a finding in a conversation"
+      ]
+    },
+    {
+      "id": "src-0c53ef518880",
+      "url": "https://learn.chatgpt.com/docs/security/threat-model.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b9066071e4473a119bdfc0b599a8691e52affa943b657238e01ca45b6060e545",
+      "headings": [
+        "Improve the Cloud threat model",
+        "What a threat model is",
+        "Edit the threat model"
+      ]
+    },
+    {
+      "id": "src-24294757e701",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/security-hardening.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c6d60850694af94e42dd32b706a8e7b86a05746f4ddaa6e22a0ffa8b833144c1",
+      "headings": [
+        "Propose security hardening",
+        "Prepare the evidence",
+        "Run the workflow"
+      ]
+    },
+    {
+      "id": "src-06694345b687",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/code-changes.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "6940bbecd253051935593eb2689ff5ad61dc404c2b4fa727c301bf4a2406a314",
+      "headings": [
+        "Review code changes for security",
+        "Run a manual review",
+        "Confirm the change in setup"
+      ]
+    },
+    {
+      "id": "src-52ffdad46ad2",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/scans.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2ebaf809f04edce13b4bd28c4b29bc8200b27ffceedf1aa94b607b28632d9228",
+      "headings": [
+        "Run a Codex Security scan",
+        "Choose the scan area",
+        "Configure the scan"
+      ]
+    },
+    {
+      "id": "src-03d337741f71",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/deep-scans.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3edcac8668309c6b75203cfb195d15225869b6b8d932049531c372d0daabdf21",
+      "headings": [
+        "Run a deep security scan",
+        "Choose between standard and deep scans",
+        "Start the deep scan"
+      ]
+    },
+    {
+      "id": "src-0462b3e29101",
+      "url": "https://learn.chatgpt.com/docs/security/cli/bulk-scans.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "d07c26160903aa9e97f59cd8efdebe4030ae6c765b2b4a0f71b4e48b067fba14",
+      "headings": [
+        "Run bulk security scans",
+        "Choose a repository source",
+        "Discover GitHub repositories"
+      ]
+    },
+    {
+      "id": "src-cb94fa07f6e7",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci/github.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a48b9f1d69109fbc62d4bd714fc7f71178d87a342abd3fd54d20ecbe70ee412e",
+      "headings": [
+        "Run Codex Security in GitHub Actions",
+        "Prepare the workflow",
+        "Add the GitHub Actions workflow"
+      ]
+    },
+    {
+      "id": "src-0c31a6fce966",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci/gitlab.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "092b8cc92308361d288a7fc6423bcf476bdc17ca72da903b7279f02a487a0d06",
+      "headings": [
+        "Run Codex Security in GitLab CI/CD",
+        "Before you begin",
+        "Start with a scan-only pipeline"
+      ]
+    },
+    {
+      "id": "src-862c857e0358",
+      "url": "https://learn.chatgpt.com/docs/security/security-review.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2df1dc936b7e22bbc0db819c4f3774604b601e130dda9cf397c7e0520ed3b5a3",
+      "headings": [
+        "Security Review",
+        "Before you start",
+        "Configure Codex Security Review"
+      ]
+    },
+    {
+      "id": "src-3623d131a0f2",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/triage-backlog.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "68da08936077bf3022ac364eba6b05544dae9ead7edecd0e713846cab9c00527",
+      "headings": [
+        "Triage a backlog",
+        "Choose the findings to triage",
+        "Run read-only triage"
+      ]
+    },
+    {
+      "id": "src-8486fe00c240",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/workbench.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "2f90053b15a0195a88a72a651cbfe574c5f52f750e7de88b740ed3cb496986f6",
+      "headings": [
+        "Use the Codex Security workbench",
+        "Start a scan",
+        "Follow scan progress"
+      ]
+    },
+    {
+      "id": "src-6afd18fb00f3",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/vulnerability-reports.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "13ff30f585373f38977b2a9387ca1ca17510210f9af1872150b1d9284b013017",
+      "headings": [
+        "Write vulnerability reports",
+        "Prepare the evidence",
+        "Run the workflow"
+      ]
+    },
+    {
+      "id": "src-f08ff2349b47",
+      "url": "https://learn.chatgpt.com/docs/security-administration.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "8642d3acd49b76e815757caa08b8aadf6da458b15bd6a10a3904bcf7eab4a158",
+      "headings": [
+        "Security"
+      ]
+    },
+    {
+      "id": "src-60fa4628ebb9",
+      "url": "https://learn.chatgpt.com/docs/sign-in-with-chatgpt.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "6e1d173c2eed6f108d249301689c713f4e9a0c6df6e3f0bfaefd4a6a13e7e028",
+      "headings": [
+        "Sign in with ChatGPT",
+        "Partners",
+        "Sign in with ChatGPT"
+      ]
+    },
+    {
+      "id": "src-3c6726ad6416",
+      "url": "https://learn.chatgpt.com/docs/sites.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b3392ad65a36a213fb22ecdc55cfdd7aa9b3cfa2b5639e1033b8ef5fe9d69555",
+      "headings": [
+        "Sites",
+        "Explore ways to use sites",
+        "Resource hub"
+      ]
+    },
+    {
+      "id": "src-56e8c36f028e",
+      "url": "https://learn.chatgpt.com/docs/sites/creating-a-site.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e95103bf4c308fb3f73c89d8641d693abecb54e058c26d897c5129caf09bbfda",
+      "headings": [
+        "Create a site",
+        "Get started with sites",
+        "Save records and progress"
+      ]
+    },
+    {
+      "id": "src-e0f092cc9829",
+      "url": "https://learn.chatgpt.com/docs/sites/data-and-connections.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c227fb1de89ea905d84c623981affc551427c319ca1fc2279b0f4108aeb95bc2",
+      "headings": [
+        "Data and connections",
+        "Choose storage and sign-in features",
+        "Add Sign in with ChatGPT"
+      ]
+    },
+    {
+      "id": "src-8063f9ed486d",
+      "url": "https://learn.chatgpt.com/docs/sites/managing-a-site.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "0c18436140993fa3a2b71e32e727dc145aeb4d27668641dca9f260dfc97908e8",
+      "headings": [
+        "Manage a site",
+        "Review site analytics",
+        "Change a site URL"
+      ]
+    },
+    {
+      "id": "src-fc9cd7880ec6",
+      "url": "https://learn.chatgpt.com/docs/sites/publishing-and-sharing.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "0d6e7dbf615bcfd91597e264241fe05eca0ee85418f5a9fe34c3e9dc9decb4f6",
+      "headings": [
+        "Publish and share",
+        "Review before you share",
+        "Publish an update"
+      ]
+    },
+    {
+      "id": "src-f06621b97709",
+      "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "39aa27568d3b43caa874ddb3be384787ad57c83814d87723d3b1b8cde49ae153",
+      "headings": [
+        "Skills & Plugins",
+        "Use skills for repeatable work",
+        "Build skills"
+      ]
+    },
+    {
+      "id": "src-9eaf251f273c",
+      "url": "https://learn.chatgpt.com/docs/space.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ece0ff41f13e3cd0dc4bf4fad7af26e95e56b5abad830827f4a76fc6a5b7f182",
+      "headings": [
+        "ChatGPT Space",
+        "Workspaces and spaces",
+        "Pages and other content"
+      ]
+    },
+    {
+      "id": "src-418e37616592",
+      "url": "https://learn.chatgpt.com/docs/space/collaboration.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "4c13f214acdbe8c045e2698d32f1ed3d16e0ca2676a9b4fb9a39274a883cc188",
+      "headings": [
+        "Collaborate in Space",
+        "Choose an access level",
+        "Share a page or Space"
+      ]
+    },
+    {
+      "id": "src-71293722d815",
+      "url": "https://learn.chatgpt.com/docs/space/getting-started.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b626bd339f5b53d8a68741ac0c7f324e12ae6b6fe8f81cb3d88d9f343abe5800",
+      "headings": [
+        "Get started with ChatGPT Space",
+        "Open Space",
+        "Draft your first page"
+      ]
+    },
+    {
+      "id": "src-2d083870d670",
+      "url": "https://learn.chatgpt.com/docs/space/agents.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "15228a37860f428cab2c71d8f82365e6d8c78ef7af1d296c19cdbd7e421775c7",
+      "headings": [
+        "Work with agents in Space",
+        "Choose how to ask for help",
+        "Use slash commands"
+      ]
+    },
+    {
+      "id": "src-c7393fbab700",
+      "url": "https://learn.chatgpt.com/docs/space/pages.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "50a41e858830871c7f133d207b00891868e6f7f645d706ee01e8eaa184cd796f",
+      "headings": [
+        "Work with pages",
+        "Create a page",
+        "Add content with the insert menu"
+      ]
+    },
+    {
+      "id": "src-ba7354e17482",
+      "url": "https://learn.chatgpt.com/docs/third-party/github.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "1ab502138a121ac571faa37f161bf79224e1e23cdc0e70f7a0be835f2c2d3c9f",
+      "headings": [
+        "Review GitHub pull requests with Codex",
+        "Before you start",
+        "Set up Codex code review"
+      ]
+    },
+    {
+      "id": "src-e0c9ac1b89dd",
+      "url": "https://learn.chatgpt.com/docs/third-party/gitlab.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "fed924146abc455eb95808f4e4c30051f28f3bc71128e08dc4bba38dafffefa5",
+      "headings": [
+        "Review GitLab merge requests with Codex",
+        "Before you start",
+        "Set up Codex code review"
+      ]
+    },
+    {
+      "id": "src-345f9e63361a",
+      "url": "https://learn.chatgpt.com/docs/third-party/slack.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ba61aa94fe5a68eddc8518b0d542c936a72ffda5a4bb629353224b47bd553dea",
+      "headings": [
+        "Use ChatGPT in Slack",
+        "Set up the Slack app",
+        "Connect your account when prompted"
+      ]
+    },
+    {
+      "id": "src-434ee24ee096",
+      "url": "https://learn.chatgpt.com/docs/third-party/linear.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "a8c693a1f59d65737b2a32437d8c5227488fe57843ee76dc41a18e02a058dda1",
+      "headings": [
+        "Use Codex in Linear",
+        "Set up the Linear integration",
+        "Delegate work to Codex"
+      ]
+    },
+    {
+      "id": "src-d6b5aa6a43ce",
+      "url": "https://learn.chatgpt.com/docs/use-chatgpt.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "53cc375d4167155c9c915f755ba2325be231dffb90f714d3e5670536eec69a8c",
+      "headings": [
+        "Use ChatGPT",
+        "Go from idea to useful result",
+        "Choose how you want to work"
+      ]
+    },
+    {
+      "id": "src-154ca14e1ab7",
+      "url": "https://learn.chatgpt.com/videos.md",
+      "status": "unavailable",
+      "http": 404,
+      "checkedAt": "2026-10-25",
+      "sha256": "",
+      "headings": []
+    },
+    {
+      "id": "src-989576428b61",
+      "url": "https://learn.chatgpt.com/docs/visualizations.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "eb3be57fae1a603b1ea48340c2eb660316a1b1a53f24271ef47a71b56a94838d",
+      "headings": [
+        "Visualizations",
+        "Check availability",
+        "Choose when a visualization helps"
+      ]
+    },
+    {
+      "id": "src-7eb60a7a820b",
+      "url": "https://learn.chatgpt.com/docs/web.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "e9de770510f127b62192adf00dc734bae52c75c87a9cb1e6aea2f3df295f97d3",
+      "headings": [
+        "ChatGPT on the web",
+        "Research, analyze, and create in your browser",
+        "Start here"
+      ]
+    },
+    {
+      "id": "src-eb9462608041",
+      "url": "https://learn.chatgpt.com/docs/web-search.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b05fedecab43b239fec88b7fe5fb3ced3d44317785b389ee25c62cc415f8ad26",
+      "headings": [
+        "Web search",
+        "Research a topic in Work",
+        "Research a topic in Work"
+      ]
+    },
+    {
+      "id": "src-d8e7ab2e8f18",
+      "url": "https://learn.chatgpt.com/docs/webmcp.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "88c15d3fe55658f3ec291b80880e919ccdba0045fd9147c68087e855546b32f8",
+      "headings": [
+        "Site tools",
+        "WebMCP vs. MCP",
+        "How it works in the browser"
+      ]
+    },
+    {
+      "id": "src-135e664cbdfe",
+      "url": "https://learn.chatgpt.com/docs/whats-new.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "b250b91542c15a0e8733d8f5a7ce2d33a6729f6a725663cebf8af331f6074c16",
+      "headings": [
+        "What's new",
+        "October 12–16, 2026",
+        "Open your dot from iOS widgets and Shortcuts"
+      ]
+    },
+    {
+      "id": "src-b1af804010bc",
+      "url": "https://learn.chatgpt.com/docs/whats-new/dots-october-9-2026.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "bee933faab729de858818956e85afab5b6d680be6691c7330e16b463c0a076ab",
+      "headings": [
+        "Create your dot in the ChatGPT mobile app",
+        "Bring your dot into your Codex work",
+        "Other improvements"
+      ]
+    },
+    {
+      "id": "src-f45de159970e",
+      "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "8480a034e5853adfd37085a90e03f641c66609e59bf5fd3529e93e39bcd84bba",
+      "headings": [
+        "DevDay 2026",
+        "ChatGPT",
+        "Meet your dot"
+      ]
+    },
+    {
+      "id": "src-e50abb55fbf8",
+      "url": "https://learn.chatgpt.com/docs/whats-new/october-5-9-2026.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "328c7139612f326a0e53ae03394198cb6a757359cc63ce7ad4b1e8d35d3108a4",
+      "headings": [
+        "October 5–9, 2026",
+        "[Create your dot in the ChatGPT mobile app](https://learn.chatgpt.com/docs/whats-new/dots-october-9-2026)",
+        "Use GPT-6.1 Sol with Ultrafast mode"
+      ]
+    },
+    {
+      "id": "src-b9b242960e22",
+      "url": "https://learn.chatgpt.com/docs/whats-new/september-28-october-2-2026.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "4bb49ce26492a01291dc9fadec611d62cbf64be00202753eeb299409562d2bca",
+      "headings": [
+        "September 28–October 2, 2026",
+        "Choose GPT-6.1 Sol for complex work",
+        "Delegate ongoing work to your dot"
+      ]
+    },
+    {
+      "id": "src-d86b339c4d76",
+      "url": "https://learn.chatgpt.com/docs/windows/windows-sandbox.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "9ed22a1312fa2ff878979758a52b057324be4778619c276f607023ec0bd0a290",
+      "headings": [
+        "Windows sandbox",
+        "Configure the Windows sandbox",
+        "Enable MXC"
+      ]
+    },
+    {
+      "id": "src-b77766a43009",
+      "url": "https://learn.chatgpt.com/docs/windows/wsl.md",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "7bc7cabfbe456741e7c93ec7fb1e006e82176e052446a66f87926602114bd59e",
+      "headings": [
+        "WSL",
+        "Launch VS Code from inside WSL",
+        "Prerequisites"
+      ]
+    },
+    {
+      "id": "src-9bf3380dbfdf",
+      "url": "https://developers.openai.com/training",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "c127902fb0719669d7c34865a5a4e01cc4d4f5f11bd5706d350b04118dfecdab",
+      "headings": [
+        "Search the docs",
+        "Suggested",
+        "Suggested"
+      ]
+    },
+    {
+      "id": "src-d17597ae7fe9",
+      "url": "https://developers.openai.com/learn/codex",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "ac7c49828a5410dd6e89e86451fceb7bc018af14028ba09661ea550a5b0f4c54",
+      "headings": [
+        "Search developer resources",
+        "Suggested",
+        "Suggested"
+      ]
+    },
+    {
+      "id": "src-31ba1639da48",
+      "url": "https://developers.openai.com/learn/docs-mcp",
+      "status": "reachable",
+      "http": 200,
+      "checkedAt": "2026-10-25",
+      "sha256": "3c6e517c99762f73e1d535da448412ac4e1397ce4bfadef8670b458e9668c86c",
+      "headings": [
+        "Search developer resources",
+        "Suggested",
+        "Suggested"
+      ]
+    }
+  ]
+}

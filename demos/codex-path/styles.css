@@ -302,3 +302,16 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}
  html{scroll-behavior:auto}
  *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* Guided-practice checklist v1.2 — published as part of Codex Path. */
+.practice-hint{font-size:12px;color:var(--muted);margin:6px 0 9px}
+.practice-checklist{display:grid;gap:7px;list-style:none;margin:10px 0;padding:0}
+.practice-checklist li{margin:0;padding:0}
+.practice-checklist .confirm-row{background:var(--surface2);border:1px solid var(--line);border-radius:9px;padding:9px;display:flex;align-items:start;gap:10px}
+.practice-checklist input{accent-color:var(--blue);margin:3px 0 0;flex:none}
+.practice-prompt{margin:15px 0;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface2)}
+.practice-prompt summary{font-size:12px;font-weight:800;cursor:pointer}
+.practice-prompt p{font-size:11px;color:var(--muted)}
+.practice-prompt pre{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.6 ui-monospace,monospace;padding:10px;border:1px solid var(--line);border-radius:8px;max-height:250px;overflow:auto}
+/* Collapsed mobile menu leaves the tab order until opened. */
+@media(max-width:650px){.sidebar:not(.open){visibility:hidden;transition:transform .22s var(--spring),visibility 0s .22s}.sidebar.open{visibility:visible}}

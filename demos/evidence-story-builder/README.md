@@ -40,7 +40,7 @@ python3 -m http.server 4173
 - All metrics and test results are user-attested.
 - No cryptographic signature, independent verification, or official certification.
 - Autosave uses browser `localStorage` and is cleared by the explicit button or browser data clearing.
-- Live verified public demo: https://codex.xuanhieu.org/demos/evidence-story-builder/ . Standalone public GitHub repo not yet published.
+- Live verified public demo: https://codex.xuanhieu.org/demos/evidence-story-builder/ . Source: https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/evidence-story-builder
 - Accessibility and cross-browser rendering were not manually audited beyond responsive CSS.
 
 ## Test result

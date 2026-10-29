@@ -1,0 +1,56 @@
+/* Codex-inspired independent teaching visuals and restrained graphite/umber highlights.
+   No OpenAI proprietary logos, wordmark or third-party screenshots copied. */
+:root,html[data-theme="light"]{
+ --blue:#9c5138;--cyan:#9c5138;--accent-soft:#f4eae4;--accent-line:#d5b09e;
+ --good:#166b4e;--focus:#9c5138;
+ --hero-bg:#eae9e5;--hero-border:#dcddd8;--hero-copy:#171817;
+}
+html[data-theme="dark"]{
+ --blue:#edab8b;--cyan:#edab8b;--accent-soft:#382c28;--accent-line:#805342;
+ --good:#9bd0a8;--focus:#edab8b;--hero-bg:#2a2b2b;--hero-border:#414242;
+}
+.sidebar-nav a.active{box-shadow:inset 2px 0 0 var(--cyan)}
+.brand-emblem{background:var(--button-fill);color:var(--button-text)}
+.status-pin,.local-dot{background:var(--good)}
+.starter-progress span{border-color:var(--cyan)}
+.guide-tier.selected{box-shadow:inset 0 0 0 1px var(--cyan)}
+.guide-hero{background:var(--hero-bg);border-color:var(--hero-border)}
+.guide-hero-stats{background:var(--surface)}
+.visual-figure{margin:13px 0;border:1px solid var(--line);border-radius:12px;
+ background:var(--surface);padding:12px 14px;color:var(--text);max-width:100%}
+.visual-figure figcaption{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;margin:0 0 12px}
+.visual-kicker{font-size:9px;letter-spacing:.13em;font-weight:820;color:var(--cyan)}
+.visual-title{font-size:11px;font-weight:700;color:var(--text-soft)}
+.visual-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.visual-step{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+ position:relative;text-align:center;min-width:0;background:var(--surface2);border:1px solid var(--line);border-radius:10px;
+ min-height:116px;padding:12px 9px}
+.visual-step:not(:last-child)::after{content:"→";font-size:19px;font-weight:800;position:absolute;right:-15px;top:calc(50% - 14px);color:var(--cyan);z-index:1}
+.visual-symbol{color:var(--cyan);display:grid;place-items:center;min-height:36px}
+.visual-index{font:750 10px/1 ui-monospace,SFMono-Regular,monospace;letter-spacing:.08em;color:var(--muted)}
+.visual-step strong{font-size:11px;line-height:1.35;font-weight:700;overflow-wrap:anywhere;max-width:100%}
+.visual-caption{font-size:10px;color:var(--muted);line-height:1.5;margin:9px 1px 0}
+.visual-lesson{margin:12px 0 16px}
+.visual-lesson .visual-step{min-height:120px}
+.visual-lesson .visual-step strong{text-wrap:pretty}
+.guide-card:not([open]) .visual-figure{display:none}
+@media(max-width:620px){
+ .visual-figure{padding:11px}
+ .visual-steps{grid-template-columns:1fr;gap:14px}
+ .visual-step{min-height:66px;display:grid;grid-template-columns:34px 27px minmax(0,1fr);text-align:left;gap:10px}
+ .visual-step:not(:last-child)::after{content:"↓";right:calc(50% - 7px);bottom:-20px;top:auto;font-size:16px}
+ .visual-pictogram{width:30px;height:30px}
+ .visual-title{max-width:100%}
+ .visual-step strong{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.visual-step,.visual-figure{transition:none!important}}
+
+/* Compact infographic on the first viewport, not hidden below lesson accordions. */
+.guide-hero{grid-template-columns:minmax(0,1fr) 170px}
+.guide-preview{border:1px solid var(--line);background:var(--surface);padding:10px;border-radius:11px;color:var(--text)}
+.guide-preview-step{display:flex;align-items:center;gap:9px;padding:3px 7px;border-radius:7px;font-size:11px;font-weight:750}
+.guide-preview-step b{font:800 10px ui-monospace,SFMono-Regular,monospace;color:var(--cyan)}
+.guide-preview-arrow{color:var(--cyan);padding-left:13px;font-size:11px;line-height:1}
+.guide-preview small{display:block;text-align:center;font-size:9px;color:var(--muted);border-top:1px solid var(--line);margin-top:7px;padding-top:7px}
+@media(max-width:680px){.guide-hero{grid-template-columns:1fr}.guide-preview{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center}
+.guide-preview-arrow{padding:0;transform:rotate(-90deg);text-align:center}.guide-preview small{grid-column:1/-1}}

@@ -1,4 +1,4 @@
-/* Curated Codex education and app ideas; human release review required. */
+/* Public idea catalog, statuses require verified release. */
 window.AMB_EXTRA_IDEAS=[
   {
     "id": "N001",
@@ -783,9 +783,12 @@ window.AMB_EXTRA_IDEAS=[
     "audience": "OSS maintainers",
     "mvp": "README section completeness scoring and fixes",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "new",
-    "impact": 5
+    "impact": 5,
+    "acceptance": "18 Node checks and 18 Chrome real interactions (390/768/1440), plus live HTTPS 200/TLS 0; all input local.",
+    "publicUrl": "https://codex.xuanhieu.org/demos/readme-quality-linter/",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/readme-quality-linter"
   },
   {
     "id": "N066",
@@ -891,9 +894,12 @@ window.AMB_EXTRA_IDEAS=[
     "audience": "Ambassadors",
     "mvp": "Six month learning map with templates and retrospectives",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "new",
-    "impact": 4
+    "impact": 4,
+    "acceptance": "15/15 unit tests; all 72 audience×topic×duration combinations conserve time; 18 Chrome interactions at mobile/tablet/desktop, live HTTP 200 TLS verified.",
+    "publicUrl": "https://codex.xuanhieu.org/demos/workshop-curriculum-planner/",
+    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/workshop-curriculum-planner"
   },
   {
     "id": "N075",
@@ -939,9 +945,11 @@ window.AMB_EXTRA_IDEAS=[
     "audience": "Open-source makers",
     "mvp": "run tests summary JSON and a clear not-certified badge",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "new",
-    "impact": 3
+    "impact": 3,
+    "publicUrl": "https://codex.xuanhieu.org/demos/reproducibility-receipt/",
+    "acceptance": "Unit tests and independent Chrome browser QA at 390px, 768px and 1440px PASS; educational self-assessment only."
   },
   {
     "id": "N079",
@@ -1310,11 +1318,12 @@ window.AMB_EXTRA_IDEAS=[
     "hours": 4,
     "audience": "OSS mentors",
     "mvp": "Convert a sanitized sample issue into hypothesis, guided fix, unit test and debrief",
-    "acceptance": "One learner can rerun failing test, fix cause and pass test with review checklist",
+    "acceptance": "Unit tests and independent Chrome browser QA at 390px, 768px and 1440px PASS; educational self-assessment only.",
     "priority": "Fast win",
-    "status": "backlog",
+    "status": "public",
     "origin": "24 Oct 2026 expansion",
-    "impact": 5
+    "impact": 5,
+    "publicUrl": "https://codex.xuanhieu.org/demos/issue-to-workshop/"
   },
   {
     "id": "N107",

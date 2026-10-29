@@ -8,7 +8,7 @@ window.AMB_DATA={
     "targetEnd": "2026-10-30T13:00:00Z",
     "application": "https://openai.com/form/codex-ambassadors/",
     "program": "https://developers.openai.com/community/codex-ambassadors",
-    "calendar": "https://www.google.com/calendar/event?eid=anQwcHRnbGM1bGJxdW9ncDg5MWJjcWllbWcgeHVhbmhpZXUudnNwQG0",
+    "calendar": "",
     "publicBuild": true
   },
   "fields": [
@@ -281,39 +281,42 @@ window.AMB_DATA={
       "day": "24/10",
       "label": "Curate code & sanitize public version",
       "group": "Product",
-      "done": false
+      "done": true,
+      "proof": "releases/agent-ops-clinic-PUBLIC-SOURCE-REVIEW-2026-10-24.zip"
     },
     {
       "id": "m4",
       "day": "25/10",
       "label": "Publish isolated GitHub demo",
       "group": "Product",
-      "done": false
+      "done": true,
+      "proof": "https://github.com/xuanhieu/agent-ops-clinic"
     },
     {
       "id": "m5",
       "day": "25/10",
       "label": "Publish runnable tutorial VN/EN",
       "group": "Community",
-      "done": false
+      "done": true,
+      "proof": "https://github.com/xuanhieu/codex-learning-path"
     },
     {
       "id": "m6",
-      "day": "26/10",
+      "day": "29/10",
       "label": "Record ~30s authentic intro",
       "group": "Video",
       "done": false
     },
     {
       "id": "m7",
-      "day": "27/10",
+      "day": "29/10",
       "label": "Upload unlisted video; check incognito",
       "group": "Video",
       "done": false
     },
     {
       "id": "m8",
-      "day": "28/10",
+      "day": "29/10",
       "label": "First community learning contribution",
       "group": "Community",
       "done": false

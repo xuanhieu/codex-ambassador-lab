@@ -7,15 +7,16 @@
  "use strict";
  const TIERS=["Zero","Beginner","Intermediate","Advanced","Pro"];
  const SAFE_URL=/^https:\/\/[A-Za-z0-9.-]+(?::443)?(?:\/[^\s]*)?$/i;
- const ALLOWED_ROLES=["automation","growth","developer","agents","creator","lead"];
- const HOUR_OPTIONS=[2,4,6,8,10,15,20];
- const defaults=()=>({career:"developer",level:"Zero",hours:6,goalWeeks:8,locale:"vi"});
+ const ALLOWED_ROLES=["automation","growth","developer","agents","creator","lead",
+  "everyday","student","teacher","office","smallbiz","jobseeker","designer","community"];
+ const HOUR_OPTIONS=[1,2,4,6,8,10,15,20];
+ const defaults=()=>({career:"everyday",level:"Zero",hours:2,goalWeeks:8,locale:"vi"});
  function clamp(n,low,high){return Math.max(low,Math.min(high,n))}
  function normalizePrefs(input){
   const data=input&&typeof input==="object"&&!Array.isArray(input)?input:{};
-  const career=ALLOWED_ROLES.includes(data.career)?data.career:"developer";
+  const career=ALLOWED_ROLES.includes(data.career)?data.career:"everyday";
   const level=TIERS.includes(data.level)?data.level:"Zero";
-  const hours=HOUR_OPTIONS.includes(Number(data.hours))?Number(data.hours):6;
+  const hours=HOUR_OPTIONS.includes(Number(data.hours))?Number(data.hours):2;
   const goalWeeks=Number.isInteger(Number(data.goalWeeks))?clamp(Number(data.goalWeeks),2,32):8;
   const locale=data.locale==="en"?"en":"vi";
   return {career,level,hours,goalWeeks,locale};
@@ -66,11 +67,12 @@
   });
   if(selected.length<3)selected=[...career.starter,...career.growth].slice(-5);
   const lessonRows=expandAndSort(selected,data.lessons);
-  const capstoneMinutes=180;
+  const capstoneMinutes=career.proofMode==="private"?90:180;
+  const capstoneStepMinutes=capstoneMinutes/3;
   const totalMinutes=lessonRows.reduce((x,y)=>x+y.duration,capstoneMinutes);
   // Target weeks affect the actual distribution, capped by available weekly hours.
   // Add headroom for indivisible lessons; this is a plan, not a hard deadline.
-  const longest=Math.max(...lessonRows.map(x=>x.duration),60);
+  const longest=Math.max(...lessonRows.map(x=>x.duration),capstoneStepMinutes);
   const weeklyGoal=Math.ceil(totalMinutes/prefs.goalWeeks*1.14);
   const weekLimit=Math.min(prefs.hours*60,Math.max(longest,weeklyGoal));
   let week=1,used=0;
@@ -84,7 +86,7 @@
   });
   const capstoneSteps=[];
   for(let index=1;index<=3;index++){
-   const stepMinutes=60;
+   const stepMinutes=capstoneStepMinutes;
    if(used+stepMinutes>weekLimit&&used>0){week+=1;used=0}
    capstoneSteps.push({index,week,minutes:stepMinutes});
    used+=stepMinutes;
@@ -117,7 +119,8 @@
    return {level,total:lessons.length,done:lessons.filter(l=>completed.includes(l.id)).length};
   }).filter(x=>x.total);
   const artifacts=state.artifacts&&typeof state.artifacts==="object"?state.artifacts:{};
-  const evidence=Object.values(artifacts).filter(v=>safeUrl(v)).length;
+  const evidence=Object.values(artifacts).filter(v=>safeUrl(v)).length+
+    (plan.career.proofMode==="private" && typeof state.privateProof==="string"&&state.privateProof.trim().length>=35?1:0);
   return {completed:completed.length,total:plan.lessons.length,percent,next,
     remainingMinutes:plan.lessons.filter(l=>!completed.includes(l.id)).reduce((a,b)=>a+b.duration,0),
     stage,evidence};
@@ -136,10 +139,17 @@
   if(values.artifacts&&typeof values.artifacts==="object"&&!Array.isArray(values.artifacts))
    for(const [key,value] of Object.entries(values.artifacts))
     if((lessons.has(key)||key==="capstone")&&safeUrl(value))artifacts[key]=value.slice(0,2048);
-  return {schema:1,prefs,done,notes,artifacts,capstoneConfirmed:values.capstoneConfirmed===true,
+  const steps={};
+  if(values.steps&&typeof values.steps==="object"&&!Array.isArray(values.steps))
+   for(const [id,indices] of Object.entries(values.steps)){
+    if(!lessons.has(id)||!Array.isArray(indices))continue;
+    steps[id]=[...new Set(indices.filter(n=>Number.isInteger(n)&&n>=0&&n<15))].slice(0,15);
+   }
+  return {schema:1,prefs,done,notes,artifacts,steps,privateProof:typeof values.privateProof==="string"?values.privateProof.slice(0,500):"",
+          capstoneConfirmed:values.capstoneConfirmed===true,
           lastUpdated:typeof values.lastUpdated==="string"?values.lastUpdated.slice(0,60):""};
  }
- function initialState(prefs){return {schema:1,prefs:normalizePrefs(prefs),done:[],notes:{},artifacts:{},capstoneConfirmed:false,lastUpdated:""}}
+ function initialState(prefs){return {schema:1,prefs:normalizePrefs(prefs),done:[],notes:{},artifacts:{},steps:{},privateProof:"",capstoneConfirmed:false,lastUpdated:""}}
  function canMarkComplete(plan,state,id){
   const lesson=plan.lessons.find(l=>l.id===id);
   if(!lesson)return {allowed:false,missing:[]};
@@ -151,7 +161,9 @@
   const gaps=[];
   if(p.completed<p.total)gaps.push("lessons_pending");
   if(!state.capstoneConfirmed)gaps.push("capstone_not_confirmed");
-  if(!safeUrl(state.artifacts?.capstone))gaps.push("capstone_evidence_missing");
+  if(plan.career.proofMode==="private"){
+   if(typeof state.privateProof!=="string"||state.privateProof.trim().length<35)gaps.push("private_evidence_missing");
+  }else if(!safeUrl(state.artifacts?.capstone))gaps.push("capstone_evidence_missing");
   return {ready:gaps.length===0,gaps,completed:p.completed,total:p.total,
     note:"Local self-attestation only. Evidence links are syntactically checked but not independently verified."};
  }
@@ -160,7 +172,7 @@
   const lines=[
     "# Codex Path — "+plan.career.name.en,
     "Independent study plan | "+plan.prefs.level+" | "+plan.prefs.hours+" h/week",
-    "Estimated "+plan.estimatedWeeks+" week(s), "+plan.totalMinutes+" min (includes 180 min capstone)",
+    "Estimated "+plan.estimatedWeeks+" week(s), "+plan.totalMinutes+" min (includes "+plan.capstoneMinutes+" min capstone)",
     "Progress: "+p.completed+"/"+p.total+" lessons; human self-reported",
     "",
     "## Weekly roadmap"];

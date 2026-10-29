@@ -7,12 +7,12 @@ const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
 const text=(id,t)=>{if($(id))$(id).textContent=String(t??"")};
 const tl={
- vi:{overview:"Tổng quan",path:"Lộ trình học",career:"Con đường nghề",lab:"Practice Lab",evidence:"Portfolio / Proof",
+ vi:{start:"Bắt đầu tại đây",firstWin:"Bắt đầu trong 3 phút ↗",overview:"Tổng quan",path:"Lộ trình học",career:"Con đường nghề",lab:"Practice Lab",evidence:"Portfolio / Proof",
   privacyMini:"Dữ liệu chỉ trên trình duyệt",portfolioLink:"Portfolio ↗",backup:"Backup",
   buildMyPath:"Tạo lộ trình của tôi",academyLink:"Mở kho bài học ↗",
-  careerLabel:"Hướng nghề nghiệp",levelLabel:"Trình độ hiện tại",hoursLabel:"Giờ học / tuần",
+  careerLabel:"Tôi muốn làm gì?",levelLabel:"Trình độ hiện tại",hoursLabel:"Giờ học / tuần",
   goalLabel:"Mục tiêu hoàn thành",generate:"Thiết kế roadmap",
-  hero:"Your path to <em>AI mastery.</em>",heroDesc:"Từ mới bắt đầu đến builder chuyên nghiệp. Chọn hướng nghề, thời gian và mục tiêu để học có đầu ra kiểm chứng.",
+  hero:"Start with a task.<em> Grow with every build.</em>",heroDesc:"Một bài học hữu ích, một việc làm được, một bước tiến rõ ràng. Chọn lộ trình từ Zero đến Pro — không cần biết code để bắt đầu.",
   profileTitle:"Xác định điểm xuất phát",profileDesc:"Điều chỉnh thông tin để lên roadmap. Không cần tài khoản.",
   weeks:"tuần",hours:"giờ",valid:"Lựa chọn hợp lệ — có thể tạo kế hoạch.",
   progress:"Tiến độ học",estimated:"Thời lượng dự kiến",lessonCount:"Bài học có nguồn",target:"Mục tiêu học",notGuaranteed:"Dự báo thời gian mang tính ước tính, không cam kết việc làm.",
@@ -30,9 +30,9 @@ const tl={
   evidenceGate:"Tình trạng tự đánh giá",evidenceDisclaimer:"Không có cơ chế chấm tự động hay cấp chứng chỉ. Kiểm tra repo/demo và kết quả test bằng người thật.",
   confirmCapstone:"Tôi đã tự kiểm tra capstone, test và khả năng truy cập bằng chứng.",
   exportMd:"Xuất roadmap Markdown",exportJson:"Xuất backup JSON",importJson:"Nhập backup",academyImport:"Nhập tiến độ Academy",
-  careerExplain:"6 nghề tham khảo — không phải dự báo tuyển dụng hay đảm bảo thu nhập.",careerStages:"Các cấp bậc phát triển",
+  careerExplain:"14 lộ trình học theo mục đích, trong đó 8 tuyến không cần code. Đây không phải cam kết việc làm hay thu nhập.",careerStages:"Các cấp bậc phát triển",
   selectCareer:"Chọn hướng này",selected:"Đang chọn",careerTrack:"Lộ trình phù hợp",minSkill:"Nhóm kỹ năng",
-  practiceSub:"25 bài học song ngữ từ Academy, có quiz, bài tập và tài liệu gốc. Không tự chạy code hoặc truy cập file máy bạn.",
+  practiceSub:"61 bài học song ngữ với quiz, bài tập và tài liệu gốc. Không tự chạy code hoặc truy cập file máy bạn.",
   search:"Tìm bài học, kỹ năng, cấp độ…",filterAll:"Tất cả trình độ",reset:"Xóa dữ liệu",resetConfirm:"Xóa toàn bộ tiến độ Codex Path trên trình duyệt này?",
   resume:"Tiếp tục bài đang học",empty:"Không có kết quả; thử bộ lọc khác.",
   noPlan:"Chọn lộ trình ở cột trái để bắt đầu.",completed:"Hoàn thành",level:"Cấp độ",week:"Tuần",
@@ -43,12 +43,12 @@ const tl={
   locked:"Chưa thể đánh dấu vì thiếu bài tiên quyết hoặc quiz.",note:"Ghi chú riêng (tối đa 600 ký tự)",
   proofReady:"Bản tự đánh giá đã đủ điều kiện nội bộ",proofNotReady:"Cần bổ sung trước khi tuyên bố hoàn thiện",
   proofWarning:"Ngay cả trạng thái đủ điều kiện vẫn cần người xem đánh giá source, video và trách nhiệm an toàn." },
- en:{overview:"Overview",path:"Learning Path",career:"Career Tracks",lab:"Practice Lab",evidence:"Portfolio / Proof",
+ en:{start:"Start here",firstWin:"Your first win in 3 minutes ↗",overview:"Overview",path:"Learning Path",career:"Career Tracks",lab:"Practice Lab",evidence:"Portfolio / Proof",
   privacyMini:"Progress stays in this browser",portfolioLink:"Portfolio ↗",backup:"Backup",
   buildMyPath:"Build my path",academyLink:"Open Academy ↗",
-  careerLabel:"Career direction",levelLabel:"Current level",hoursLabel:"Hours per week",
+  careerLabel:"What do you want to do?",levelLabel:"Current level",hoursLabel:"Hours per week",
   goalLabel:"Target duration",generate:"Generate roadmap",
-  hero:"Your path to <em>AI mastery.</em>",heroDesc:"From first task to confident builder. Choose a career direction, study time and demonstrable outcomes.",
+  hero:"Start with a task.<em> Grow with every build.</em>",heroDesc:"One useful lesson, one small finished task, one real step forward. Choose a path from Zero to Pro — no coding experience needed to begin.",
   profileTitle:"Choose your starting point",profileDesc:"Adjust your inputs to build a realistic plan. No account required.",
   weeks:"weeks",hours:"hours",valid:"Valid selection — ready to generate your roadmap.",
   progress:"Learning progress",estimated:"Estimated duration",lessonCount:"Traceable lessons",target:"Learning target",notGuaranteed:"Study estimates only, no job guarantee.",
@@ -66,9 +66,9 @@ const tl={
   evidenceGate:"Self-reported readiness",evidenceDisclaimer:"No automatic grading or certification. Have a reviewer inspect the repository/demo and real test logs.",
   confirmCapstone:"I reviewed my capstone, tests and proof access manually.",
   exportMd:"Export Markdown roadmap",exportJson:"Export JSON backup",importJson:"Import backup",academyImport:"Import Academy progress",
-  careerExplain:"Six illustrative careers, not hiring forecasts or income promises.",careerStages:"Career progression",
+  careerExplain:"Fourteen purpose-based paths, including eight that need no code. No job or income guarantee.",careerStages:"Career progression",
   selectCareer:"Choose this track",selected:"Selected",careerTrack:"My career",minSkill:"Skill groups",
-  practiceSub:"25 bilingual practical lessons from Academy, with quizzes, exercises and official links. The site never runs code or accesses your device.",
+  practiceSub:"61 bilingual hands-on lessons, including 25 from Academy, with quizzes, exercises and official links. The site never runs code or accesses your device.",
   search:"Find lesson, skill, level…",filterAll:"All levels",reset:"Reset progress",resetConfirm:"Delete all Codex Path progress in this browser?",
   resume:"Continue learning",empty:"No matching lesson. Try another filter.",
   noPlan:"Choose a route in the left panel to begin.",completed:"Completed",level:"Level",week:"Week",
@@ -240,18 +240,23 @@ function showLab(){
 }
 function showEvidence(){
  const p=C.progress(plan,state),report=C.readiness(plan,state),c=plan.career;
+ const isPrivate=c.proofMode==="private";
  const url=state.artifacts.capstone||"";
  const valid=C.safeUrl(url);
  return section(t("evidenceTitle"),t("evidenceSub"),"06 / PROOF LEDGER",
   button("export-json",t("exportJson"),"tiny"))
  +'<div class="capstone-card"><div class="eyebrow">'+t("capstone")+'</div><h3>'+esc(pick(c.name))+' · 01</h3><p>'+esc(pick(c.capstone))+'</p>'
  +'<ul class="checklist">'+c.evidence.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>'
- +'<div class="evidence-layout" style="margin-top:13px"><div class="surface-card"><h3>'+t("evidenceUrl")+'</h3><p>'+t("evidenceDisclaimer")+'</p>'
- +'<label for="capstone-url" class="eyebrow">'+t("evidenceUrl")+'</label>'
+ +'<div class="evidence-layout" style="margin-top:13px"><div class="surface-card"><h3>'+(isPrivate?(locale==="vi"?"Bằng chứng thực hành riêng tư":"Private practice evidence"):t("evidenceUrl"))+'</h3><p>'+t("evidenceDisclaimer")+'</p>'
+ +(isPrivate?
+ '<label for="private-proof" class="eyebrow">'+(locale==="vi"?"Mô tả bài thực hành (tối thiểu 35 ký tự)":"Describe your practice (at least 35 characters)")+'</label>'
+ +'<textarea class="evidence-input" id="private-proof" rows="4" maxlength="500" placeholder="'+(locale==="vi"?"Ví dụ: Tôi đã tạo checklist từ dữ liệu giả, tự kiểm tra 3 bước, ghi điều cần sửa…":"Example: I built a synthetic checklist, reviewed three steps, and recorded one revision…")+'">'+esc(state.privateProof||"")+'</textarea>'
+ +'<div id="private-proof-status" class="field-feedback '+((state.privateProof||"").trim().length>=35?"valid":"invalid")+'" role="status">'+(locale==="vi"?"Chỉ lưu trong trình duyệt. Không bắt buộc GitHub hay công bố dữ liệu cá nhân.":"Saved only in this browser. No GitHub account or public personal data required.")+'</div>'
+ :
+ '<label for="capstone-url" class="eyebrow">'+t("evidenceUrl")+'</label>'
  +'<input class="evidence-input" id="capstone-url" type="url" inputmode="url" placeholder="https://github.com/..." value="'+esc(url)+'" aria-describedby="url-validation">'
- +'<div class="field-feedback '+(valid?"valid":"invalid")+'" id="url-validation" role="status">'+(valid?t("evidenceValid"):url?t("evidenceInvalid"):t("evidenceMissing"))+'</div>'
- +'<label class="confirm-row"><input type="checkbox" id="capstone-confirm" '+(state.capstoneConfirmed?"checked":"")+'><span>'+t("confirmCapstone")+'</span></label></div>'
- +'<div class="surface-card"><h3>'+t("evidenceGate")+'</h3><div class="progress-line"><i style="width:'+p.percent+'%"></i></div>'
+ +'<div class="field-feedback '+(valid?"valid":"invalid")+'" id="url-validation" role="status">'+(valid?t("evidenceValid"):url?t("evidenceInvalid"):t("evidenceMissing"))+'</div>')
+ +'<label class="confirm-row"><input type="checkbox" id="capstone-confirm" '+(state.capstoneConfirmed?"checked":"")+'><span>'+t("confirmCapstone")+'</span></label></div>'  +'<div class="surface-card"><h3>'+t("evidenceGate")+'</h3><div class="progress-line"><i style="width:'+p.percent+'%"></i></div>'
  +'<strong style="font-size:18px">'+(report.ready?t("proofReady"):t("proofNotReady"))+'</strong><p>'+p.completed+'/'+p.total+' '+t("completed")+'</p>'
  +'<div class="skill-cloud">'+report.gaps.map(x=>'<span class="tag warn">'+esc(x.replaceAll("_"," "))+'</span>').join("")+'</div><p>'+t("proofWarning")+'</p>'
  +'<div class="card-actions">'+button("export-md",t("exportMd"),"tiny")+button("import-json",t("importJson"),"tiny")+'</div></div></div>'
@@ -259,16 +264,19 @@ function showEvidence(){
  +'<p>'+t("startedNote")+'</p><div class="card-actions">'+button("academy-import",t("academyImport"),"tiny")
  +button("export-json",t("exportJson"),"tiny")+button("reset",t("reset"),"tiny")+'</div></div>';
 }
-const views={overview:showOverview,path:showPath,career:showCareer,lab:showLab,evidence:showEvidence};
+const views={start:()=>window.CodexStartScreen.render(locale),guide:()=>window.CodexGuideScreen.render(locale),overview:showOverview,path:showPath,career:showCareer,lab:showLab,evidence:showEvidence};
 function render(){
  if(!data||!plan)return;
- const requested=(location.hash||"#overview").slice(1).split("?")[0];
- route=Object.hasOwn(views,requested)?requested:"overview";
+ const requested=(location.hash||"#start").slice(1).split("?")[0];
+ route=Object.hasOwn(views,requested)?requested:"start";
+ document.documentElement.dataset.entry=route;
  document.querySelectorAll("[data-tab]").forEach(a=>{
   if(a.closest("nav")){a.classList.toggle("active",a.dataset.tab===route);a.setAttribute("aria-current",a.dataset.tab===route?"page":"false");}
  });
  text("current-tab",t(route));
  const view=$( "content");view.innerHTML=views[route]();
+ if(route==="start")window.CodexStartScreen.mount(locale);
+ if(route==="guide")window.CodexGuideScreen.mount(locale);
  renderStats();
  window.dispatchEvent(new CustomEvent("codexpath:reveal",{detail:{target:"content"}}));
  if(requested==="path"&&location.hash.includes("?lesson=")){
@@ -283,12 +291,24 @@ function openLesson(id){
  text("lesson-code",id+" / "+lesson.level+" / "+lesson.duration+" min");
  text("lesson-modal-title",obj.title);
  const completed=state.done.includes(id),existingNote=state.notes[id]||"";
- const prereq=p?C.canMarkComplete(plan,state,id):{allowed:false,missing:[]};
+ const prereq=p?C.canMarkComplete(plan,state,id):
+  {allowed:lesson.prerequisites.every(x=>state.done.includes(x)),
+   missing:lesson.prerequisites.filter(x=>!state.done.includes(x))};
  const chosen=lastQuiz[id];
  const quiz=obj.quiz;
  let html='<div class="tag">'+esc(lesson.level)+' · '+esc(lesson.duration)+' min</div>'
   +'<h3>'+t("target")+'</h3><p>'+esc(obj.outcome)+'</p>'
-  +'<h3>'+t("checklist")+'</h3><ol>'+obj.exercise.map(v=>'<li>'+esc(v)+'</li>').join("")+'</ol>'
+  +(window.CodexVisuals?window.CodexVisuals.lesson(lesson,locale):'')
+  +'<h3>'+t("checklist")+'</h3><p class="practice-hint">'+(locale==="vi"?"Làm từng bước, đánh dấu sau khi tự kiểm tra kết quả.":"Complete each step and check it after reviewing your result.")+'</p>'
+  +'<ol class="practice-checklist">'+obj.exercise.map((v,i)=>'<li><label class="confirm-row"><input type="checkbox" data-lesson-step="'+esc(id)+'" data-step-index="'+i+'" '+((state.steps?.[id]||[]).includes(i)?"checked":"")+'><span>'+esc(v)+'</span></label></li>').join("")+'</ol>'
+  +'<div class="field-feedback" id="steps-feedback" role="status">'+(state.steps?.[id]||[]).length+'/'+obj.exercise.length+' '+(locale==="vi"?"bước hoàn thành":"steps complete")+'</div>'
+  +'<details class="practice-prompt"><summary>'+(locale==="vi"?"Prompt mẫu để thực hành với Codex/ChatGPT":"Practice prompt for Codex/ChatGPT")+'</summary>'
+  +'<p>'+(locale==="vi"?"Chỉ dùng dữ liệu giả; tự đánh giá kết quả, không cấp quyền sửa/xóa/deploy khi chưa xác nhận.":"Use synthetic data; review all changes, never approve writes/deletions/deploys without authorization.")+'</p>'
+  +'<pre id="practice-prompt">'+esc((locale==="vi"?"Hãy hướng dẫn tôi hoàn thành bài tập với dữ liệu GIẢ LẬP, không truy cập tài khoản hay bí mật thực.":"Guide me through this exercise with SYNTHETIC data, not real accounts or secrets.")
+     +'\n'+obj.title+'\n'+obj.purpose+'\n'+obj.exercise.map((x,i)=>(i+1)+'. '+x).join('\n')
+     +'\n'+(locale==="vi"?"Đầu ra mong muốn: ":"Expected outcome: ")+obj.outcome
+     +'\n'+(locale==="vi"?"Giải thích từng bước, yêu cầu kiểm tra, điểm rủi ro, và kết quả cần tự xác minh.":"Explain the steps, test assertions, risks, and which outputs I must verify myself."))+'</pre>'
+  +'<button type="button" class="button tiny" data-copy-practice="'+esc(id)+'">'+(locale==="vi"?"Sao chép prompt ↗":"Copy prompt ↗")+'</button></details>'
   +'<h3>'+t("quiz")+'</h3><p>'+esc(quiz.question)+'</p>'
   +'<div class="lesson-list">'+quiz.options.map((option,i)=>
     '<label class="confirm-row" style="padding:9px;background:var(--surface2);border-radius:8px;border:1px solid var(--line)">'
@@ -313,9 +333,15 @@ function completeLesson(id){
   state.done=state.done.filter(x=>x!==id);
   save(true);closeDialog();render();return;
  }
- const allowed=C.canMarkComplete(plan,state,id);
- if(!allowed.allowed||lastQuiz[id]!==lesson[locale].quiz.answer||
-    !$("lesson-confirm")?.checked){note(t("locked")+(allowed.missing.join(", ")));return}
+ const allowed=plan.lessons.some(x=>x.id===id)?C.canMarkComplete(plan,state,id):
+  {allowed:lesson.prerequisites.every(x=>state.done.includes(x)),
+   missing:lesson.prerequisites.filter(x=>!state.done.includes(x))};
+ const stepsDone=new Set(state.steps?.[id]||[]);
+ if(!allowed.allowed||stepsDone.size!==lesson[locale].exercise.length||
+    lastQuiz[id]!==lesson[locale].quiz.answer||!$("lesson-confirm")?.checked){
+  note((locale==="vi"?"Cần hoàn thành các bước thực hành, quiz và xác nhận. ":"Complete practice steps, quiz and confirmation. ")+
+       (allowed.missing.join(", ")));return;
+ }
  state.done=[...new Set([...state.done,id])];
  save(true);closeDialog();render();
 }
@@ -337,7 +363,7 @@ async function importBackup(file){
  syncSelectors();save();
  render();note(t("imported"));
 }
-function toggleTheme(){theme=theme==="dark"?"light":"dark";document.documentElement.dataset.theme=theme;prefSave();note(t("saved"))}
+function toggleTheme(){theme=theme==="dark"?"light":"dark";document.documentElement.dataset.theme=theme;$("theme-toggle").textContent=theme==="dark"?"☼":"◐";$("theme-toggle").setAttribute("aria-label",theme==="dark"?"Switch to light theme":"Switch to dark theme");prefSave();note(t("saved"))}
 function prefSave(){try{localStorage.setItem("codex-path-ui-v1",JSON.stringify({theme,locale}))}catch{}}
 function bind(){
  document.addEventListener("click",e=>{
@@ -350,6 +376,15 @@ function bind(){
   if(lesson){openLesson(lesson.dataset.lesson);return}
   const career=e.target.closest("[data-career]");
   if(career){replan({...state.prefs,career:career.dataset.career});return}
+  const copy=e.target.closest("[data-copy-practice]");
+  if(copy){
+    const sample=$("practice-prompt")?.textContent||"";
+    if(navigator.clipboard&&sample)navigator.clipboard.writeText(sample)
+      .then(()=>note(locale==="vi"?"Đã sao chép prompt mẫu.":"Practice prompt copied."))
+      .catch(()=>note(locale==="vi"?"Chọn nội dung prompt rồi sao chép thủ công.":"Select and copy the prompt manually."));
+    else note(locale==="vi"?"Chọn nội dung prompt rồi sao chép thủ công.":"Select and copy the prompt manually.");
+    return;
+  }
   const quiz=e.target.closest("[data-quiz-check]");
   if(quiz){
    const checked=document.querySelector('input[name="quiz-answer"]:checked');
@@ -409,8 +444,27 @@ function bind(){
  document.addEventListener("input",e=>{
   if(e.target?.id==="lab-search"){filters.q=e.target.value;const cursor=e.target.selectionStart;render();const el=$("lab-search");el?.focus();try{el?.setSelectionRange(cursor,cursor)}catch{}}
   if(e.target?.id==="capstone-url")updateEvidence();
+  if(e.target?.id==="private-proof"){
+    const text=e.target.value.slice(0,500);
+    state.privateProof=text;
+    const feedback=$("private-proof-status");
+    if(feedback){feedback.classList.toggle("valid",text.trim().length>=35);feedback.classList.toggle("invalid",text.trim().length<35);}
+    save();
+  }
  });
  document.addEventListener("change",e=>{
+  if(e.target?.dataset?.lessonStep){
+    const id=e.target.dataset.lessonStep,ix=Number(e.target.dataset.stepIndex);
+    const l=data.lessons.find(x=>x.id===id);
+    if(l&&Number.isInteger(ix)&&ix>=0&&ix<l[locale].exercise.length){
+      state.steps||={};
+      const before=new Set(state.steps[id]||[]);
+      if(e.target.checked)before.add(ix);else before.delete(ix);
+      state.steps[id]=[...before].sort((a,b)=>a-b);save();
+      text("steps-feedback",before.size+"/"+l[locale].exercise.length+" "+(locale==="vi"?"bước hoàn thành":"steps complete"));
+    }
+    return;
+  }
   if(e.target?.id==="lab-level"){filters.level=e.target.value;render()}
   if(e.target?.id==="capstone-confirm"){state.capstoneConfirmed=e.target.checked;save();render()}
   if(e.target?.dataset?.lessonNote){const id=e.target.dataset.lessonNote;state.notes[id]=e.target.value.slice(0,600);save(true)}
@@ -431,6 +485,19 @@ async function bootstrap(){
   const obj=await r.json();
   C.validateCatalog(obj);data=obj;
   const backup=lsRead(KEY);state=backup?C.validateState(backup,data):C.initialState(C.defaults());
+     window.CodexStartScreen.configure({onApplyPath:({career,level})=>{
+     replan({...state.prefs,career,level});
+     location.hash="#path";
+   }});
+   window.CodexGuideScreen.configure({
+   openLesson:id=>openLesson(id),
+   start:()=>{location.hash="#start"},
+   roadmap:()=>{location.hash="#path"}
+  });
+  // Mapping the dated official index must never block the core learning path.
+  window.CodexGuideScreen.load()
+   .then(()=>{if((location.hash||"").startsWith("#guide"))render()})
+   .catch(err=>console.warn("Reference index not available:",String(err.message).slice(0,150)));
   const savedUI=lsRead("codex-path-ui-v1")||{};
   locale=savedUI.locale==="en"?"en":state.prefs.locale;
   theme=savedUI.theme==="light"?"light":"dark";

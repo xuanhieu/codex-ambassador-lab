@@ -2,19 +2,21 @@
 <html lang="vi" data-theme="dark">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#081629">
+<meta name="theme-color" content="#171819">
 <meta name="description" content="Codex Path — independent AI learning and career roadmap from Zero to Pro, powered by verified lessons and career outcomes.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Codex Path — AI Learning & Career OS</title>
+<title>Codex Path — Learn by Building, Zero to Pro</title>
 <link rel="stylesheet" href="./styles.css">
 <link rel="stylesheet" href="./starter.css">
 <link rel="stylesheet" href="./guide.css">
-</head>
+<link rel="stylesheet" href="./codex-theme.css">
+<link rel="stylesheet" href="./visuals.css">
+<link rel="stylesheet" href="../../assets/portfolio-nav.css"></head>
 <body>
 <a class="skip" href="#content">Bỏ qua điều hướng</a>
 <div class="app-shell">
 <aside class="sidebar" id="sidebar">
- <a class="brand" href="#overview" aria-label="Codex Path homepage"><span class="brand-emblem" aria-hidden="true">⌘</span><span>CODEX<span class="brand-blue">PATH</span><small>LEARNING × CAREER OS</small></span></a>
+ <a class="brand" href="#overview" aria-label="Codex Path homepage"><span class="brand-emblem" aria-hidden="true">◈</span><span>CODEX<span class="brand-blue">PATH</span><small>LEARNING × CAREER OS</small></span></a>
  <div class="sidebar-label"><span>WAYFINDER / 001</span><span class="status-pin" title="Local-first"></span></div>
  <nav class="sidebar-nav" aria-label="Điều hướng Codex Path">
   <a href="#start" data-tab="start"><span class="nav-icon">✦</span><span data-i="start">Bắt đầu tại đây</span></a>
@@ -32,9 +34,6 @@
   <a href="../codex-academy/" class="linked-item"><span>↗</span><span>Zero-to-Hero Academy</span></a>
   <a href="../../dashboard/#workspace" class="linked-item"><span>↗</span><span>Mission Control</span></a>
   <a href="../agent-ops-clinic/" class="linked-item"><span>↗</span><span>Agent Ops Clinic</span></a>
-  <a href="../zero-token-workshop/" class="linked-item"><span>↗</span><span>Zero-Token Workshop</span></a>
-  <a href="../human-review-checklist/" class="linked-item"><span>↗</span><span>Human Review Gate</span></a>
-  <a href="../first-pr-clinic/" class="linked-item"><span>↗</span><span>First PR Clinic</span></a>
   <a href="../approval-drill/" class="linked-item"><span>↗</span><span>Approval Drill</span></a>
  </div>
  <div class="sidebar-spacer"></div>
@@ -55,8 +54,8 @@
  <main id="main">
   <div class="page-intro">
    <div class="hero-copy">
-    <div class="eyebrow"><span class="eyebrow-line"></span><span>THE NEXT CHAPTER IS BUILT</span><span class="hero-spark">✧</span></div>
-    <h1 id="ascii-heading" data-ascii="surface">Your path to <em>AI mastery.</em></h1>
+    <div class="eyebrow"><span class="eyebrow-line"></span><span>INDEPENDENT LEARNING WORKSPACE</span><span class="hero-spark">●</span></div>
+    <h1 id="ascii-heading" lang="en" data-ascii="surface">Your path to <em>AI mastery.</em></h1>
     <p id="hero-description">Từ mới bắt đầu đến builder chuyên nghiệp. Thiết kế hành trình phù hợp nghề nghiệp, giờ học và bằng chứng thực hành.</p>
     <div class="hero-cta">
     <a class="button outline" href="#start" data-i="firstWin">Bắt đầu trong 3 phút ↗</a>
@@ -66,9 +65,14 @@
     </div>
    </div>
    <div class="hero-graphic" aria-hidden="true">
-    <div class="orbit orbit-outer"></div><div class="orbit orbit-mid"></div><div class="orbit orbit-inner"></div>
-    <div class="orbit-center">⌘</div><span class="orbit-label left">ZERO</span><span class="orbit-label right">PRO</span>
-    <div class="hero-graphic-foot">LEARN <span>/</span> BUILD <span>/</span> PROVE</div>
+    <div class="codex-preview">
+      <div class="codex-preview-top"><span class="codex-preview-dots"><i></i><i></i><i></i></span><span>workspace / first-task</span></div>
+      <div class="codex-preview-body">
+        <span class="codex-preview-caption">Make something useful.</span>
+        <div class="codex-preview-chat"><span>Describe what you'd like to make…</span><span class="codex-preview-send">↗</span></div>
+        <div class="codex-preview-tags"><span>Learn</span><span>Try it</span><span>Review</span></div>
+      </div>
+    </div>
    </div>
   </div>
   <div class="workspace">
@@ -103,8 +107,9 @@
 <script data-cfasync="false" defer src="./engine.js"></script>
 <script data-cfasync="false" defer src="./starter-core.js"></script>
 <script data-cfasync="false" defer src="./starter-ui.js"></script>
+<script data-cfasync="false" defer src="./visuals.js"></script>
 <script data-cfasync="false" defer src="./guide-ui.js"></script>
 <script data-cfasync="false" defer src="./app.js"></script>
 <script data-cfasync="false" type="module" src="./motion.js"></script>
-<nav aria-label="Portfolio navigation" style="position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui;box-shadow:0 4px 20px #0007"><a style="color:#7fe3d7;text-decoration:none" href="../../dashboard/#workspace">← Project Map</a><span style="opacity:.6;margin:0 8px">|</span><a style="color:#7fe3d7;text-decoration:none" href="../codex-academy/">Academy ↗</a></nav></body>
+<nav class="codex-portfolio-nav" aria-label="Portfolio navigation"><a href="../../dashboard/#workspace">← Project Map</a><span class="codex-portfolio-sep" aria-hidden="true">|</span><a href="../codex-academy/">Academy ↗</a></nav></body>
 </html>

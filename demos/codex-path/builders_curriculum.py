@@ -69,24 +69,32 @@ CERT=[
 {"level":"Pro","theme":{"vi":"Production discipline","en":"Production discipline"},"checkpoint":{"vi":"Nộp source reproducible với release notes và evidence.","en":"Publish a reproducible source package and release evidence."}}
 ]
 def make():
- lessons=json.loads((ACADEMY/"lessons.json").read_text())
+ snapshot=ACADEMY/"lessons.json"
+ if not snapshot.exists():snapshot=ROOT/"data/academy-base-20261024.json"
+ lessons=json.loads(snapshot.read_text())
  assert len(lessons)==25 and len({x["id"] for x in lessons})==25
+ extension=json.loads((ROOT/"data/every-human-extension.json").read_text())
+ assert extension["schema"]==1
+ assert len(extension["lessons"])==36 and len(extension["careers"])==8
+ lessons=lessons+extension["lessons"]
+ careers=CAREERS+extension["careers"]
+ assert len({l["id"] for l in lessons})==len(lessons)
  for l in lessons:
   assert all(str(u).startswith(("https://learn.chatgpt.com/","https://developers.openai.com/","https://platform.openai.com/","https://help.openai.com/")) for u in l["sources"])
   assert l["level"] in [c["level"] for c in CERT]
   assert isinstance(l["duration"],int) and 5<=l["duration"]<=180
- for career in CAREERS:
+ for career in careers:
   ids=set(career['starter']+career['growth'])
   assert len(ids)==len(career['starter']+career['growth'])
   assert ids.issubset({x["id"] for x in lessons})
  obj={"schema":1,"kind":"independent-learning-guidance",
       "academy":"../codex-academy/","academySource":"../codex-academy/lessons.json",
       "sourceSnapshot":"2026-10-24","authorship":"Independent educational plan; no job-placement guarantee or official OpenAI certification",
-      "levels":CERT,"careers":CAREERS,"lessons":lessons}
+      "levels":CERT,"careers":careers,"lessons":lessons}
  payload=json.dumps(obj,ensure_ascii=False,indent=2)+"\n"
  (ROOT/"data").mkdir(parents=True,exist_ok=True)
  (ROOT/"data/codex-path.json").write_text(payload)
- print(json.dumps({"worker":"curriculum","status":"pass","careerPaths":len(CAREERS),
+ print(json.dumps({"worker":"curriculum","status":"pass","careerPaths":len(careers),
                    "sourceLessons":len(lessons),"sourceURLs":len(set(u for x in lessons for u in x["sources"])),
                    "digest":hashlib.sha256(payload.encode()).hexdigest()}))
 if __name__=="__main__":make()

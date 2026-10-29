@@ -1,0 +1,5294 @@
+{
+  "schema": "human-learning-map-v1",
+  "sourceIndex": {
+    "snapshot": "2026-10-24",
+    "officialUrls": 204,
+    "codex": 45,
+    "chatgpt": 158,
+    "platform": 1,
+    "quality": "All 204 indexed links were checked via HTTP on 2026-10-25; HTTP 200 is evidence of reachability only, not of current semantic correctness. No full text mirrored.",
+    "healthCheckedAt": "2026-10-25",
+    "httpReachable": 198,
+    "httpUnavailable": 6,
+    "catalog": "../codex-academy/catalog.json"
+  },
+  "guides": [
+    {
+      "id": "first-task",
+      "tier": "Zero",
+      "topic": "first",
+      "lessons": [
+        "L26",
+        "L34",
+        "L01"
+      ],
+      "vi": {
+        "title": "AI giúp được việc gì?",
+        "simple": "AI là công cụ giúp bạn phác thảo, giải thích và sắp xếp việc. Bạn quyết định mục tiêu, tự đọc và kiểm tra kết quả trước khi dùng.",
+        "analogy": "Giống bạn nhờ một người hỗ trợ viết nháp: bản nháp không thay thế quyết định của bạn.",
+        "example": "Ví dụ: yêu cầu tạo lịch học giả lập 7 ngày, mỗi ngày 10 phút, sau đó tự chỉnh thời gian cho phù hợp.",
+        "pitfall": "Đọc như sự thật chắc chắn; đưa số thẻ, mật khẩu hoặc thông tin riêng tư vào ví dụ.",
+        "challenge": "Lập một danh sách 3 việc nhỏ, chọn 1 việc và tạo bản nháp có ghi ‘cần xác minh’."
+      },
+      "en": {
+        "title": "What can AI do for me?",
+        "simple": "AI helps you draft, explain and organize tasks. You decide the goal and review the result before using it.",
+        "analogy": "Like asking a helper for a first draft: the draft does not make decisions for you.",
+        "example": "Example: ask for a fictional seven-day, ten-minute study plan, then adjust it yourself.",
+        "pitfall": "Treating plausible text as verified truth; entering secrets or private details.",
+        "challenge": "List three small tasks, choose one and make a draft marked 'needs verification'."
+      },
+      "references": [
+        {
+          "id": "src-b90e41678b02",
+          "url": "https://learn.chatgpt.com/docs/quickstart.md",
+          "title": "Quickstart"
+        },
+        {
+          "id": "src-d6b5aa6a43ce",
+          "url": "https://learn.chatgpt.com/docs/use-chatgpt.md",
+          "title": "Use ChatGPT"
+        },
+        {
+          "id": "src-9bf3380dbfdf",
+          "url": "https://developers.openai.com/training",
+          "title": "OpenAI training"
+        }
+      ]
+    },
+    {
+      "id": "tool-choice",
+      "tier": "Zero",
+      "topic": "choice",
+      "lessons": [
+        "L27",
+        "L05",
+        "L02"
+      ],
+      "vi": {
+        "title": "Chọn ChatGPT, Work hay Codex?",
+        "simple": "ChatGPT phù hợp hỏi đáp, giải thích hoặc soạn nháp. Work dành cho công việc nhiều bước tạo đầu ra hoàn chỉnh. Codex tập trung đọc, sửa, kiểm thử dự án phần mềm; quyền sử dụng và tính năng phụ thuộc tài khoản.",
+        "analogy": "Chọn dụng cụ đúng việc: viết nháp không cần mở xưởng lập trình.",
+        "example": "Cần soạn lời mời? Bắt đầu bằng ChatGPT. Cần làm việc qua nhiều tệp? Cân nhắc Work. Cần sửa nút web và chạy test? Dùng Codex khi đã cấp quyền.",
+        "pitfall": "Nhầm mọi tính năng AI đều yêu cầu API key hoặc biết lập trình.",
+        "challenge": "Ghi 5 việc thường ngày và chọn đúng công cụ cho từng việc; giải thích vì sao."
+      },
+      "en": {
+        "title": "ChatGPT, Work or Codex?",
+        "simple": "ChatGPT suits explanations and drafting. Work handles multi-step deliverables. Codex works on software projects, reviews changes and tests; access depends on your account.",
+        "analogy": "Pick the right tool: writing a draft does not require a software workshop.",
+        "example": "Drafting an invitation? Start with ChatGPT. Multi-file deliverables? Consider Work. Fixing code and running tests? Use Codex with permission.",
+        "pitfall": "Assuming every AI task requires an API key or programming skill.",
+        "challenge": "List five everyday tasks and choose a tool for each with a reason."
+      },
+      "references": [
+        {
+          "id": "src-2c7688c996bc",
+          "url": "https://learn.chatgpt.com/docs/get-started-with-work.md",
+          "title": "Get started with ChatGPT Work"
+        },
+        {
+          "id": "src-fd92e4296401",
+          "url": "https://learn.chatgpt.com/docs/codex-manual.md",
+          "title": "Codex manual (Markdown)"
+        },
+        {
+          "id": "src-b90e41678b02",
+          "url": "https://learn.chatgpt.com/docs/quickstart.md",
+          "title": "Quickstart"
+        }
+      ]
+    },
+    {
+      "id": "good-request",
+      "tier": "Zero",
+      "topic": "prompt",
+      "lessons": [
+        "L28",
+        "L03",
+        "L34"
+      ],
+      "vi": {
+        "title": "Đặt câu hỏi sao cho AI hiểu",
+        "simple": "Một yêu cầu tốt có bốn phần: việc muốn làm, đối tượng nhận kết quả, dữ liệu mẫu, tiêu chí để tự kiểm tra. Không cần từ ngữ chuyên môn.",
+        "analogy": "Giống viết giấy giao việc: nói rõ việc, giới hạn và khi nào xong.",
+        "example": "‘Hãy viết 5 ý tưởng trò chơi cho học sinh lớp 6, mỗi ý 1 câu, không yêu cầu thiết bị đắt tiền; ghi điều cần kiểm tra trước khi tổ chức.’",
+        "pitfall": "Chỉ viết ‘làm cho hay’, rồi xem câu trả lời mơ hồ là lỗi của hệ thống.",
+        "challenge": "Soạn một prompt 4 phần, thử với dữ liệu giả và sửa ít nhất một điều chưa rõ."
+      },
+      "en": {
+        "title": "How to write a clear request",
+        "simple": "A good request gives the task, audience, safe example input and review criteria. No special jargon is needed.",
+        "analogy": "Like a short work order: state the goal, constraints and definition of done.",
+        "example": "'Give five games for middle-school students, one sentence each, no expensive equipment; flag safety checks before use.'",
+        "pitfall": "Writing only 'make it better' and expecting a precise outcome.",
+        "challenge": "Write a four-part prompt, try it with fictional details and revise one ambiguous point."
+      },
+      "references": [
+        {
+          "id": "src-0310706ee861",
+          "url": "https://learn.chatgpt.com/docs/prompting.md",
+          "title": "Prompting"
+        },
+        {
+          "id": "src-81a2fac530c8",
+          "url": "https://learn.chatgpt.com/docs/custom-prompts.md",
+          "title": "Custom Prompts"
+        }
+      ]
+    },
+    {
+      "id": "privacy-basics",
+      "tier": "Zero",
+      "topic": "privacy",
+      "lessons": [
+        "L29",
+        "L35",
+        "L04"
+      ],
+      "vi": {
+        "title": "Biết chia sẻ gì và không chia sẻ gì",
+        "simple": "Đừng đưa mật khẩu, API key, ảnh định danh hoặc dữ liệu của người khác vào bài tập công khai. Dùng ví dụ hư cấu để luyện tập, và xin phép trước hành động gửi/xóa/mua.",
+        "analogy": "Như gửi bưu thiếp: thứ đã gửi đi có thể bị sao chép, nên hãy kiểm tra trước.",
+        "example": "Thay địa chỉ thật bằng ‘Khu phố Ví Dụ’, email bằng example.invalid, token bằng SAMPLE_ONLY.",
+        "pitfall": "Nghĩ rằng che mờ nhẹ hoặc xóa dòng trong phần preview là đủ để bảo vệ file gốc.",
+        "challenge": "Đọc một ảnh demo và tìm 5 vị trí có thể chứa dữ liệu nhạy cảm."
+      },
+      "en": {
+        "title": "Protect your private information",
+        "simple": "Never put passwords, API keys, identifying images or other people's private data in public lessons. Practice with fictional examples and approve high-impact actions first.",
+        "analogy": "Like mailing a postcard: once shared it can be copied, so inspect it first.",
+        "example": "Replace a real address with 'Example Street', an email with example.invalid and a token with SAMPLE_ONLY.",
+        "pitfall": "Assuming a small blur or a hidden UI element fully protects original files.",
+        "challenge": "Review a demo screenshot and identify five spots that might expose private details."
+      },
+      "references": [
+        {
+          "id": "src-907da152b649",
+          "url": "https://learn.chatgpt.com/docs/permission-modes.md",
+          "title": "Permissions"
+        },
+        {
+          "id": "src-04f6dcc4a4fe",
+          "url": "https://learn.chatgpt.com/docs/cyber-safety.md",
+          "title": "Models and Trusted Access"
+        },
+        {
+          "id": "src-b7af4e0dbfe6",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+          "title": "Agent approvals & security"
+        }
+      ]
+    },
+    {
+      "id": "checking-answers",
+      "tier": "Zero",
+      "topic": "verify",
+      "lessons": [
+        "L30",
+        "L47",
+        "L01"
+      ],
+      "vi": {
+        "title": "AI có thể sai. Kiểm tra thế nào?",
+        "simple": "Văn bản tự nhiên không phải bằng chứng. Tách câu trả lời thành điều kiểm tra được, điều cần nguồn chính thức và ý kiến mang tính gợi ý.",
+        "analogy": "Giống kiểm tra bài toán: đáp số có đẹp cũng phải thử lại phép tính.",
+        "example": "Một bài nói 'phần mềm miễn phí cho mọi người' có thể đã lỗi thời; hãy đọc trang gói dịch vụ hiện tại trước khi khẳng định.",
+        "pitfall": "Sao chép nội dung mà không kiểm nguồn, ngày hoặc những giới hạn chưa biết.",
+        "challenge": "Phân loại 3 mệnh đề giả lập thành Đúng nguồn / Chưa kiểm / Ý kiến."
+      },
+      "en": {
+        "title": "AI can be wrong. How do I check?",
+        "simple": "Fluent text is not evidence. Separate verifiable claims, those requiring official sources, and suggestions.",
+        "analogy": "Like checking a math result: a neat answer still needs verification.",
+        "example": "A claim that a service is free for everyone may have changed; check the current plan page before repeating it.",
+        "pitfall": "Copying results without checking references, date or limitations.",
+        "challenge": "Classify three fictional claims as sourced / unverified / opinion."
+      },
+      "references": [
+        {
+          "id": "src-eb9462608041",
+          "url": "https://learn.chatgpt.com/docs/web-search.md",
+          "title": "Web search"
+        },
+        {
+          "id": "src-b90e41678b02",
+          "url": "https://learn.chatgpt.com/docs/quickstart.md",
+          "title": "Quickstart"
+        }
+      ]
+    },
+    {
+      "id": "codex-begin",
+      "tier": "Beginner",
+      "topic": "cli",
+      "lessons": [
+        "L41",
+        "L06",
+        "L44"
+      ],
+      "vi": {
+        "title": "Làm quen Codex mà không sợ terminal",
+        "simple": "Codex là trợ lý lập trình làm việc trong phạm vi dự án. Bạn có thể bắt đầu từ giao diện có sẵn; trước khi giao sửa code, hãy nói rõ folder thử nghiệm, mục tiêu, điều cấm và cách kiểm chứng.",
+        "analogy": "Giống mời thợ sửa một chiếc ghế: chỉ được sửa chiếc ghế bạn cho phép.",
+        "example": "‘Trong thư mục demo, sửa nhãn nút Tìm kiếm. Không xóa, không deploy. Cho xem diff, kiểm tra mobile và chỉ báo PASS nếu thử thật.’",
+        "pitfall": "Cho agent toàn quyền ở thư mục cá nhân hoặc public khi chưa đọc diff.",
+        "challenge": "Tạo một brief thay đổi giả lập có đường dẫn thử nghiệm, 3 test và hướng hoàn tác."
+      },
+      "en": {
+        "title": "Your first safe Codex task",
+        "simple": "Codex works on software tasks within a project. Start in an available client; before edits, specify a sandbox folder, goal, forbidden actions and verification.",
+        "analogy": "Like hiring help for one chair: access should not extend to the rest of the house.",
+        "example": "'In the demo folder, fix the Search button label. Do not delete or deploy. Show a diff and mobile checks; report PASS only after running them.'",
+        "pitfall": "Granting broad permissions to private folders or publishing without reviewing the diff.",
+        "challenge": "Write a fictional change brief with sandbox scope, three tests and rollback."
+      },
+      "references": [
+        {
+          "id": "src-24d888be8e5f",
+          "url": "https://learn.chatgpt.com/docs/codex/cli.md",
+          "title": "Codex CLI"
+        },
+        {
+          "id": "src-c7af5bbd5710",
+          "url": "https://learn.chatgpt.com/docs/codex/ide.md",
+          "title": "Codex IDE extension"
+        },
+        {
+          "id": "src-d17597ae7fe9",
+          "url": "https://developers.openai.com/learn/codex",
+          "title": "Learn Codex"
+        },
+        {
+          "id": "src-fd92e4296401",
+          "url": "https://learn.chatgpt.com/docs/codex-manual.md",
+          "title": "Codex manual (Markdown)"
+        }
+      ]
+    },
+    {
+      "id": "git-and-diffs",
+      "tier": "Beginner",
+      "topic": "git",
+      "lessons": [
+        "L08",
+        "L42",
+        "L07"
+      ],
+      "vi": {
+        "title": "Git, repo, commit, diff là gì?",
+        "simple": "Repo là thư mục dự án có lịch sử. Commit là mốc lưu thay đổi. Diff cho biết dòng nào đã thay. Biết đọc ba thứ này giúp không mất công việc cũ.",
+        "analogy": "Giống quyển vở có các bản chụp sau mỗi lần sửa bài.",
+        "example": "Thay tiêu đề 'Xin chào' thành 'Chào bạn' trong file demo, rồi nhìn hai dòng trước/sau.",
+        "pitfall": "Tin rằng bấm Save là đã tạo mốc commit hoặc bản backup.",
+        "challenge": "Tạo bảng 3 cột: trước, sau, vì sao thay đổi; ghi cách hoàn tác."
+      },
+      "en": {
+        "title": "What are Git, repos, commits and diffs?",
+        "simple": "A repo tracks project history. A commit is a saved milestone. A diff shows changes. Understanding these prevents accidental loss.",
+        "analogy": "Like a notebook photographed after each revision.",
+        "example": "Change 'Hello' to 'Welcome' in a sample file and compare the before/after diff.",
+        "pitfall": "Believing pressing Save automatically creates a Git commit or backup.",
+        "challenge": "Create a three-column before/after/reason table with rollback."
+      },
+      "references": [
+        {
+          "id": "src-d955137d94c4",
+          "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+          "title": "Worktrees"
+        },
+        {
+          "id": "src-ba7354e17482",
+          "url": "https://learn.chatgpt.com/docs/third-party/github.md",
+          "title": "Review GitHub pull requests with Codex"
+        },
+        {
+          "id": "src-47b0440a51c2",
+          "url": "https://learn.chatgpt.com/docs/code-review.md",
+          "title": "Code review"
+        }
+      ]
+    },
+    {
+      "id": "review-tests",
+      "tier": "Beginner",
+      "topic": "tests",
+      "lessons": [
+        "L43",
+        "L45",
+        "L09"
+      ],
+      "vi": {
+        "title": "Biết sản phẩm chạy đúng hay chưa",
+        "simple": "Test là hành động thử với kết quả mong đợi trước. Cần thử trường hợp bình thường, nhập sai, thiết bị nhỏ và hoàn tác — không chỉ nhìn giao diện.",
+        "analogy": "Như thử khóa cửa: phải kéo cửa thật chứ không chỉ nhìn chìa khóa.",
+        "example": "Form nhập email phải hiện thông báo khi bỏ trống, sai định dạng và hợp lệ.",
+        "pitfall": "Thấy trang đẹp và ghi 100% hoàn thành dù chưa bấm các nút.",
+        "challenge": "Viết 5 test case có 'Thao tác → Mong đợi → Kết quả thật'."
+      },
+      "en": {
+        "title": "How to tell whether a change works",
+        "simple": "A test compares observed results against expectations. Cover normal, invalid input, small screens and undo, not just appearance.",
+        "analogy": "Like checking a lock: actually test the door, not only the key.",
+        "example": "An email form should clearly handle empty, invalid and valid input.",
+        "pitfall": "Calling a visually attractive page fully tested without exercising it.",
+        "challenge": "Write five test cases: 'Action → Expected → Observed'."
+      },
+      "references": [
+        {
+          "id": "src-47b0440a51c2",
+          "url": "https://learn.chatgpt.com/docs/code-review.md",
+          "title": "Code review"
+        },
+        {
+          "id": "src-ba7354e17482",
+          "url": "https://learn.chatgpt.com/docs/third-party/github.md",
+          "title": "Review GitHub pull requests with Codex"
+        }
+      ]
+    },
+    {
+      "id": "mini-site",
+      "tier": "Beginner",
+      "topic": "site",
+      "lessons": [
+        "L37",
+        "L41",
+        "L44"
+      ],
+      "vi": {
+        "title": "Từ ý tưởng thành website mẫu",
+        "simple": "Bắt đầu bằng một trang với tiêu đề, nội dung, nút thử và thông báo lỗi. Dùng dữ liệu mẫu, chưa thu email khách hàng và chưa nối thanh toán.",
+        "analogy": "Như làm mô hình nhà giấy trước khi xây thật.",
+        "example": "Trang cửa hàng bánh giả có 3 sản phẩm, bảng giá minh họa và một nút 'Xem chi tiết'.",
+        "pitfall": "Đưa landing demo lên public với form lấy dữ liệu thật trước khi kiểm quyền riêng tư.",
+        "challenge": "Viết wireframe 3 khối và checklist mobile/người mới."
+      },
+      "en": {
+        "title": "Turn an idea into a sample website",
+        "simple": "Start with one page: title, content, demo button and error state. Use sample data without collecting customer emails or payments.",
+        "analogy": "Like a paper house model before construction.",
+        "example": "A fictional bakery page with three sample products, indicative prices and a View details button.",
+        "pitfall": "Publishing a data-collecting form before a privacy review.",
+        "challenge": "Sketch three sections and a mobile and novice acceptance checklist."
+      },
+      "references": [
+        {
+          "id": "src-56e8c36f028e",
+          "url": "https://learn.chatgpt.com/docs/sites/creating-a-site.md",
+          "title": "Create a site"
+        },
+        {
+          "id": "src-3c6726ad6416",
+          "url": "https://learn.chatgpt.com/docs/sites.md",
+          "title": "Sites"
+        },
+        {
+          "id": "src-fc9cd7880ec6",
+          "url": "https://learn.chatgpt.com/docs/sites/publishing-and-sharing.md",
+          "title": "Publish and share"
+        }
+      ]
+    },
+    {
+      "id": "instructions",
+      "tier": "Intermediate",
+      "topic": "agents",
+      "lessons": [
+        "L11",
+        "L44",
+        "L49"
+      ],
+      "vi": {
+        "title": "Vì sao agent cần hướng dẫn rõ?",
+        "simple": "AGENTS.md có thể mô tả quy tắc của dự án và lệnh kiểm tra. Hãy giữ hướng dẫn ngắn, đúng phạm vi, phân biệt việc được làm và việc phải xin duyệt.",
+        "analogy": "Giống nội quy phòng thực hành: ai cũng biết chỗ nào được đụng vào.",
+        "example": "AGENTS.md mẫu: 'Chỉ sửa src/demo; chạy npm test; không đọc .env; không push production'.",
+        "pitfall": "Viết nội quy quá dài, mâu thuẫn nhau hoặc cấm những thứ hệ thống phải làm.",
+        "challenge": "Tạo bản AGENTS.md 6 dòng cho một dự án giả lập."
+      },
+      "en": {
+        "title": "Why do agents need bounded instructions?",
+        "simple": "AGENTS.md can hold project-specific instructions and test commands. Keep them brief, scoped and explicit about required approvals.",
+        "analogy": "Like lab rules: everyone knows what equipment they may use.",
+        "example": "Example AGENTS.md: 'Edit src/demo only; run npm test; never read .env; don't deploy production'.",
+        "pitfall": "Writing huge or contradictory rules that block necessary work.",
+        "challenge": "Draft a six-line AGENTS.md for a sample project."
+      },
+      "references": [
+        {
+          "id": "src-94f17e3de1ca",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+          "title": "Custom instructions with AGENTS.md"
+        },
+        {
+          "id": "src-6c7aa55b479f",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/rules.md",
+          "title": "Rules"
+        },
+        {
+          "id": "src-d684e38d0094",
+          "url": "https://learn.chatgpt.com/docs/config-file/config-basic.md",
+          "title": "Config basics"
+        }
+      ]
+    },
+    {
+      "id": "reusable-skills",
+      "tier": "Intermediate",
+      "topic": "skills",
+      "lessons": [
+        "L12",
+        "L49",
+        "L46"
+      ],
+      "vi": {
+        "title": "Đóng gói quy trình để dùng lại",
+        "simple": "Một kỹ năng dùng lại cần biết mục tiêu, dữ liệu đầu vào, thao tác, giới hạn và cách kiểm tra. Bắt đầu từ tác vụ đã làm thủ công thành công.",
+        "analogy": "Giống công thức nấu ăn: có nguyên liệu, bước làm và cách nhận biết món chín.",
+        "example": "Skill 'review form': input HTML mẫu, chạy 5 test, báo lỗi với ảnh, không sửa production.",
+        "pitfall": "Nhặt 50 script trên mạng rồi tin rằng script nào cũng an toàn.",
+        "challenge": "Viết template mục tiêu, đầu vào, đầu ra, giới hạn và 3 test."
+      },
+      "en": {
+        "title": "Package a reusable workflow",
+        "simple": "A reusable skill needs a goal, input, steps, constraints and an acceptance test. Start with a manual task you've already validated.",
+        "analogy": "Like a recipe: ingredients, steps and a doneness check.",
+        "example": "Sample 'review form' skill: input a sample HTML file, run five tests, report issues with screenshots, no production edits.",
+        "pitfall": "Collecting dozens of unknown scripts and trusting them without inspection.",
+        "challenge": "Write a template for goal, input, output, limits and three tests."
+      },
+      "references": [
+        {
+          "id": "src-575ba4762ea6",
+          "url": "https://learn.chatgpt.com/docs/build-skills.md",
+          "title": "Build skills"
+        },
+        {
+          "id": "src-f06621b97709",
+          "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+          "title": "Skills & Plugins"
+        },
+        {
+          "id": "src-0d81218eacd2",
+          "url": "https://learn.chatgpt.com/docs/build-plugins.md",
+          "title": "Build plugins"
+        }
+      ]
+    },
+    {
+      "id": "parallel-work",
+      "tier": "Intermediate",
+      "topic": "worktrees",
+      "lessons": [
+        "L14",
+        "L55",
+        "L17"
+      ],
+      "vi": {
+        "title": "Làm nhiều nhánh mà không đạp lên nhau",
+        "simple": "Worktree là thư mục làm việc riêng gắn với nhánh Git. Chia rõ nhiệm vụ, chủ sở hữu file và cách tích hợp trước khi giao nhiều agent.",
+        "analogy": "Giống chia nhóm sửa các phòng khác nhau, không cùng lúc thay một bức tường.",
+        "example": "Agent A viết test, Agent B làm UI, reviewer kiểm tra nhánh đã gộp và ghi lỗi.",
+        "pitfall": "Cho nhiều agent ghi chung một thư mục production hoặc cùng sửa file không phối hợp.",
+        "challenge": "Vẽ sơ đồ 3 vai trò, 3 folder và một bước merge có test."
+      },
+      "en": {
+        "title": "Parallel work without merge collisions",
+        "simple": "A Git worktree is a separate working folder for a branch. Define tasks, file ownership and integration before using multiple agents.",
+        "analogy": "Like teams renovating separate rooms, not editing the same wall concurrently.",
+        "example": "Agent A writes tests, Agent B builds UI, a reviewer checks the merged branch and records issues.",
+        "pitfall": "Letting multiple agents edit the same production folder or file without coordination.",
+        "challenge": "Sketch three roles, three folders and a tested merge step."
+      },
+      "references": [
+        {
+          "id": "src-d955137d94c4",
+          "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+          "title": "Worktrees"
+        },
+        {
+          "id": "src-731168d993ec",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+          "title": "Subagents"
+        },
+        {
+          "id": "src-275a09b4f863",
+          "url": "https://learn.chatgpt.com/docs/environments/modes.md",
+          "title": "Codex environments"
+        }
+      ]
+    },
+    {
+      "id": "safe-connections",
+      "tier": "Intermediate",
+      "topic": "mcp",
+      "lessons": [
+        "L13",
+        "L50",
+        "L47"
+      ],
+      "vi": {
+        "title": "Kết nối dữ liệu và phân quyền tối thiểu",
+        "simple": "Một kết nối bên ngoài có thể đọc hoặc thay đổi dữ liệu; chỉ cấp quyền cần thiết, thử quyền đọc trước và ngắt kết nối khi không dùng.",
+        "analogy": "Giống cho khách mượn một chìa khóa phòng, không phải chìa khóa toàn nhà.",
+        "example": "Kết nối kho tài liệu giả lập chỉ đọc, xuất một danh sách và xác nhận không có chức năng xóa.",
+        "pitfall": "Đưa API token toàn quyền vào code public hoặc cho agent đọc mọi tệp.",
+        "challenge": "Lập bảng: dịch vụ → quyền tối thiểu → người duyệt → cách thu hồi."
+      },
+      "en": {
+        "title": "Connecting tools with least privilege",
+        "simple": "External connections may read or modify data; grant only necessary permissions, prefer read-only trials and disconnect unused integrations.",
+        "analogy": "Like lending a key to one room, not the entire building.",
+        "example": "Connect a synthetic read-only document source, list files and verify no delete action is available.",
+        "pitfall": "Publishing an all-access API token in code or granting access to every file.",
+        "challenge": "Build a table: integration → minimal permission → approver → revocation."
+      },
+      "references": [
+        {
+          "id": "src-dd3c07a3ae6a",
+          "url": "https://learn.chatgpt.com/docs/extend/mcp.md",
+          "title": "Model Context Protocol"
+        },
+        {
+          "id": "src-31ba1639da48",
+          "url": "https://developers.openai.com/learn/docs-mcp",
+          "title": "Documentation MCP"
+        },
+        {
+          "id": "src-22d54b5578c4",
+          "url": "https://learn.chatgpt.com/docs/config-file/environment-variables.md",
+          "title": "Environment variables"
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "tier": "Advanced",
+      "topic": "approval",
+      "lessons": [
+        "L16",
+        "L52",
+        "L54"
+      ],
+      "vi": {
+        "title": "Chặn hành động lớn trước khi xảy ra",
+        "simple": "Đọc file và sửa file là hai mức quyền khác nhau. Xóa, gửi dữ liệu hay thanh toán cần người có thẩm quyền chấp thuận.",
+        "analogy": "Giống kho hàng cần chữ ký người quản lý trước khi xuất hàng.",
+        "example": "Agent đề nghị gửi email thật: chuyển sang chờ duyệt, ghi người duyệt, chỉ tiếp tục nếu được cho phép.",
+        "pitfall": "Nhầm 'agent tự quyết' với quyền bỏ qua chính sách.",
+        "challenge": "Mô phỏng một quyết định Cho phép/Chờ/Dừng cho 5 tình huống."
+      },
+      "en": {
+        "title": "Pause before high-impact actions",
+        "simple": "Reading and modifying files are different privileges. Deletions, data sends and purchases need authorized approval.",
+        "analogy": "Like a warehouse requiring a manager's sign-off before dispatch.",
+        "example": "An agent requests to send an email: pause, record an approver and continue only if authorized.",
+        "pitfall": "Confusing agent autonomy with the right to override permissions.",
+        "challenge": "Simulate Allow/Review/Stop decisions for five scenarios."
+      },
+      "references": [
+        {
+          "id": "src-b7af4e0dbfe6",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+          "title": "Agent approvals & security"
+        },
+        {
+          "id": "src-668fd2258559",
+          "url": "https://learn.chatgpt.com/docs/sandboxing.md",
+          "title": "Sandbox"
+        },
+        {
+          "id": "src-f464374c0d89",
+          "url": "https://learn.chatgpt.com/docs/sandboxing/auto-review.md",
+          "title": "Auto-review"
+        }
+      ]
+    },
+    {
+      "id": "multi-agents",
+      "tier": "Advanced",
+      "topic": "agents",
+      "lessons": [
+        "L17",
+        "L55",
+        "L57"
+      ],
+      "vi": {
+        "title": "Nhiều agent: giao rõ trách nhiệm",
+        "simple": "Nhiều agent chỉ tốt khi có việc độc lập, ranh giới file và một reviewer kiểm tra chứng cứ. Không cần nhiều agent cho công việc nhỏ.",
+        "analogy": "Như ekip quay phim: đạo diễn, quay, dựng và người duyệt có vai trò khác nhau.",
+        "example": "Planner viết đề bài; Builder sửa sandbox; QA chạy test độc lập; chỉ merge khi đủ bằng chứng.",
+        "pitfall": "Đếm số agent như KPI và bỏ qua việc có ai chịu trách nhiệm sản phẩm cuối.",
+        "challenge": "Viết sơ đồ trách nhiệm và bảng bằng chứng từ 3 vai trò."
+      },
+      "en": {
+        "title": "Multi-agent work with clear ownership",
+        "simple": "Multiple agents help when tasks are separable, with file boundaries and evidence review. A small task may be better with one agent.",
+        "analogy": "Like a film crew: direction, recording, editing and review need distinct owners.",
+        "example": "Planner briefs, Builder changes a sandbox, QA independently tests; merge only with evidence.",
+        "pitfall": "Counting agents as the KPI without final accountability.",
+        "challenge": "Write a responsibility map and evidence table for three roles."
+      },
+      "references": [
+        {
+          "id": "src-731168d993ec",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+          "title": "Subagents"
+        },
+        {
+          "id": "src-d955137d94c4",
+          "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+          "title": "Worktrees"
+        },
+        {
+          "id": "src-b7af4e0dbfe6",
+          "url": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+          "title": "Agent approvals & security"
+        }
+      ]
+    },
+    {
+      "id": "release-review",
+      "tier": "Advanced",
+      "topic": "ci",
+      "lessons": [
+        "L18",
+        "L23",
+        "L56"
+      ],
+      "vi": {
+        "title": "Đưa code lên web mà không làm hỏng bản đang chạy",
+        "simple": "Một release gate kiểm tra test, dữ liệu cá nhân, nội dung và rollback trước khi publish. Bản đang chạy phải có cách trở lại.",
+        "analogy": "Giống kiểm tra máy bay trước cất cánh: bỏ qua một mục quan trọng thì chưa bay.",
+        "example": "Nếu file chứa token giả định, gate phải báo FAIL và không upload.",
+        "pitfall": "Chỉ kiểm npm build PASS mà không thử giao diện hoặc quyền riêng tư.",
+        "challenge": "Viết 8 điều kiện PASS/FAIL và kiểm thử một tình huống phải chặn."
+      },
+      "en": {
+        "title": "Ship updates without breaking production",
+        "simple": "A release gate checks tests, private data, content and rollback before publishing. Production needs a way back.",
+        "analogy": "Like a preflight checklist: missing a critical item blocks takeoff.",
+        "example": "If a file contains an obvious token, the gate must FAIL and avoid upload.",
+        "pitfall": "Checking build success alone without user flows or privacy.",
+        "challenge": "Write eight PASS/FAIL checks and test one blocking failure."
+      },
+      "references": [
+        {
+          "id": "src-30fdd98f8c3a",
+          "url": "https://learn.chatgpt.com/docs/github-action.md",
+          "title": "Codex GitHub Action"
+        },
+        {
+          "id": "src-8d926b82884d",
+          "url": "https://learn.chatgpt.com/docs/security/cli/ci.md",
+          "title": "Codex Security CI/CD overview"
+        },
+        {
+          "id": "src-649ffe457194",
+          "url": "https://learn.chatgpt.com/docs/enterprise/security-cookbook.md",
+          "title": "Codex security cookbook"
+        }
+      ]
+    },
+    {
+      "id": "agent-platform",
+      "tier": "Pro",
+      "topic": "sdk",
+      "lessons": [
+        "L21",
+        "L22",
+        "L58"
+      ],
+      "vi": {
+        "title": "Ứng dụng tích hợp agent phải có vòng đời rõ",
+        "simple": "Ứng dụng có agent cần biết trạng thái chạy, quyền, dữ liệu nào được gửi, cách hủy và cách phục hồi. SDK không tự giải quyết governance.",
+        "analogy": "Như điều khiển robot: nút dừng và nhật ký quan trọng không kém nút chạy.",
+        "example": "Thiết kế giao diện có trạng thái Queued, Running, Needs approval, Failed, Completed.",
+        "pitfall": "Chỉ vẽ spinner rồi gọi đó là hệ thống sản xuất.",
+        "challenge": "Lập sơ đồ trạng thái, timeout và cảnh báo khi tác vụ vượt phạm vi."
+      },
+      "en": {
+        "title": "Agent integrations need an explicit lifecycle",
+        "simple": "Agent apps need run state, permissions, transmitted data, cancel handling and recovery. An SDK does not replace governance.",
+        "analogy": "Like operating a robot: stop controls and logs matter as much as Start.",
+        "example": "Design a UI with Queued, Running, Needs approval, Failed and Completed states.",
+        "pitfall": "Adding a spinner and calling the system production-ready.",
+        "challenge": "Model run states, timeouts and an out-of-scope alert."
+      },
+      "references": [
+        {
+          "id": "src-e3c5173f4c4c",
+          "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
+          "title": "Codex SDK"
+        },
+        {
+          "id": "src-341246db376e",
+          "url": "https://learn.chatgpt.com/docs/app-server.md",
+          "title": "Codex App Server"
+        },
+        {
+          "id": "src-13b97f7316a6",
+          "url": "https://learn.chatgpt.com/docs/security/sdk.md",
+          "title": "Codex Security TypeScript SDK"
+        }
+      ]
+    },
+    {
+      "id": "evals",
+      "tier": "Pro",
+      "topic": "eval",
+      "lessons": [
+        "L25",
+        "L59",
+        "L61"
+      ],
+      "vi": {
+        "title": "Đánh giá agent bằng trường hợp thật và lỗi thật",
+        "simple": "Đo chất lượng bằng bộ ví dụ có đầu vào, kỳ vọng và kết quả. Đếm cả lỗi bỏ sót và lỗi cảnh báo nhầm; không biến thành công ở demo thành tỷ lệ toàn cục.",
+        "analogy": "Giống đề kiểm tra có đáp án và thang điểm cố định.",
+        "example": "Chạy 10 tình huống giả, ghi PASS/FAIL và phân tích 2 ca sai.",
+        "pitfall": "Tuyên bố 'chính xác 99%' từ một vài câu hỏi đã chọn trước.",
+        "challenge": "Tạo bộ 10 case đa dạng và ghi bản báo cáo sai số."
+      },
+      "en": {
+        "title": "Evaluate agents with reproducible cases",
+        "simple": "Measure quality using reproducible inputs, expected results and observed outputs. Count missed errors and false alarms; do not extrapolate from a demo.",
+        "analogy": "Like a test with an answer key and an agreed rubric.",
+        "example": "Run ten synthetic scenarios, record PASS/FAIL and inspect two errors.",
+        "pitfall": "Claiming 99% accuracy from a few handpicked prompts.",
+        "challenge": "Create ten varied cases and a brief error review."
+      },
+      "references": [
+        {
+          "id": "src-474523711974",
+          "url": "https://learn.chatgpt.com/docs/enterprise/usage-insights.md",
+          "title": "Usage Insights for ChatGPT Work in Codex"
+        },
+        {
+          "id": "src-649ffe457194",
+          "url": "https://learn.chatgpt.com/docs/enterprise/security-cookbook.md",
+          "title": "Codex security cookbook"
+        },
+        {
+          "id": "src-88b1ced5fbcc",
+          "url": "https://learn.chatgpt.com/docs/enterprise/analytics-api.md",
+          "title": "Analytics API"
+        }
+      ]
+    },
+    {
+      "id": "team-governance",
+      "tier": "Pro",
+      "topic": "enterprise",
+      "lessons": [
+        "L24",
+        "L60",
+        "L57"
+      ],
+      "vi": {
+        "title": "Dạy đội nhóm dùng AI bền vững",
+        "simple": "Muốn nhiều người dùng AI cần đào tạo theo trình độ, quy tắc dữ liệu, người phê duyệt, phương pháp đo hiệu quả và cách phản hồi sự cố.",
+        "analogy": "Giống tập huấn an toàn lao động: ai cũng cần biết khi nào được làm và gọi ai.",
+        "example": "Lập chương trình 30 ngày cho 6 người giả, phân vai và đặt một ngày review mỗi tuần.",
+        "pitfall": "Chạy công cụ hàng loạt vì xu hướng mà không hỏi giá trị thực hoặc rủi ro.",
+        "challenge": "Xây bảng năng lực ban đầu, lịch học, bảng quyền và cách đánh giá sau 30 ngày."
+      },
+      "en": {
+        "title": "Roll out AI responsibly across a team",
+        "simple": "A team AI rollout needs tiered training, data rules, approvers, honest measurement and incident escalation.",
+        "analogy": "Like workplace safety training: know when to act and whom to call.",
+        "example": "Design a thirty-day training plan for six fictional colleagues with a weekly review.",
+        "pitfall": "Rolling tools out for novelty without measuring value or risk.",
+        "challenge": "Create a skills baseline, lessons, permission matrix and 30-day review."
+      },
+      "references": [
+        {
+          "id": "src-05f8d80ccc7b",
+          "url": "https://learn.chatgpt.com/docs/enterprise/governance.md",
+          "title": "Governance"
+        },
+        {
+          "id": "src-a292ca32ae05",
+          "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions.md",
+          "title": "Roles and workspace permissions"
+        },
+        {
+          "id": "src-18ad336d66dd",
+          "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview.md",
+          "title": "ChatGPT Work Overview"
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "src-475519df88ba",
+      "title": "Combined ChatGPT docs",
+      "url": "https://learn.chatgpt.com/docs/llms-full.txt",
+      "product": "ChatGPT",
+      "category": [
+        "Documentation sets"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex — full documentation",
+        "Administration"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-fd92e4296401",
+      "title": "Codex manual (Markdown)",
+      "url": "https://learn.chatgpt.com/docs/codex-manual.md",
+      "product": "Codex",
+      "category": [
+        "Documentation sets"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Find By Topic",
+        "Surfaces and experiences"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-4ad3796df1e6",
+      "title": "ChatGPT use cases",
+      "url": "https://learn.chatgpt.com/use-cases/llms.txt",
+      "product": "ChatGPT",
+      "category": [
+        "Documentation sets"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": false,
+      "sourceHttp": 404,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [],
+      "legacy": false
+    },
+    {
+      "id": "src-08825629d583",
+      "title": "Administration",
+      "url": "https://learn.chatgpt.com/docs/administration.md",
+      "product": "ChatGPT",
+      "category": [
+        "Administration"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Administration"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b7af4e0dbfe6",
+      "title": "Agent approvals & security",
+      "url": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+      "product": "ChatGPT",
+      "category": [
+        "Agent Approvals Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Agent approvals & security",
+        "Migrate from the retired `untrusted` approval policy"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-94f17e3de1ca",
+      "title": "Custom instructions with AGENTS.md",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+      "product": "ChatGPT",
+      "category": [
+        "Agent Configuration"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Custom instructions with AGENTS.md",
+        "How Codex discovers guidance"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6c7aa55b479f",
+      "title": "Rules",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/rules.md",
+      "product": "ChatGPT",
+      "category": [
+        "Agent Configuration"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Rules",
+        "Create a rules file"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-55cdea3737e3",
+      "title": "Speed",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/speed.md",
+      "product": "ChatGPT",
+      "category": [
+        "Agent Configuration"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Speed",
+        "Fast mode"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-731168d993ec",
+      "title": "Subagents",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+      "product": "ChatGPT",
+      "category": [
+        "Agent Configuration"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "multi-agents",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Subagents",
+        "Availability"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-fc9fbba758a5",
+      "title": "Use ChatGPT Work and Codex with Amazon Bedrock",
+      "url": "https://learn.chatgpt.com/docs/amazon-bedrock.md",
+      "product": "Codex",
+      "category": [
+        "Amazon Bedrock"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "tool-choice",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Use ChatGPT Work and Codex with Amazon Bedrock",
+        "How it works"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-04a85e845544",
+      "title": "Annotations Extensibility",
+      "url": "https://learn.chatgpt.com/docs/annotations-extensibility.md",
+      "product": "ChatGPT",
+      "category": [
+        "Annotations Extensibility"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Annotations Extensibility",
+        "Choose what to customize"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d6f4398aa465",
+      "title": "ChatGPT desktop app",
+      "url": "https://learn.chatgpt.com/docs/app.md",
+      "product": "ChatGPT",
+      "category": [
+        "App"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT desktop app",
+        "ChatGPT desktop app"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dd7bb821828a",
+      "title": "ChatGPT desktop app commands",
+      "url": "https://learn.chatgpt.com/docs/reference/commands.md",
+      "product": "ChatGPT",
+      "category": [
+        "App"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Commands",
+        "Keyboard shortcuts"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ce14d03dc374",
+      "title": "ChatGPT desktop app for Windows",
+      "url": "https://learn.chatgpt.com/docs/windows/windows-app.md",
+      "product": "ChatGPT",
+      "category": [
+        "App",
+        "Windows"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT desktop app for Windows",
+        "Download the ChatGPT desktop app"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1e04f0e46956",
+      "title": "ChatGPT desktop app settings",
+      "url": "https://learn.chatgpt.com/docs/reference/settings.md",
+      "product": "ChatGPT",
+      "category": [
+        "App"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Settings",
+        "General"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-341246db376e",
+      "title": "Codex App Server",
+      "url": "https://learn.chatgpt.com/docs/app-server.md",
+      "product": "Codex",
+      "category": [
+        "App Server"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "agent-platform",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex App Server",
+        "Connect the CLI terminal UI"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c302b8efa03e",
+      "title": "Appshots",
+      "url": "https://learn.chatgpt.com/docs/appshots.md",
+      "product": "ChatGPT",
+      "category": [
+        "Appshots"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Appshots",
+        "What appshots capture"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1186da4cb8c2",
+      "title": "Work with files",
+      "url": "https://learn.chatgpt.com/docs/artifacts-viewer.md",
+      "product": "ChatGPT",
+      "category": [
+        "Artifacts Viewer"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Work with files",
+        "Create files for review"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1454a3aad1fa",
+      "title": "Authentication",
+      "url": "https://learn.chatgpt.com/docs/auth.md",
+      "product": "ChatGPT",
+      "category": [
+        "Auth"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Authentication",
+        "OpenAI authentication"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b5406e60cbfa",
+      "title": "Scheduled tasks",
+      "url": "https://learn.chatgpt.com/docs/automations.md",
+      "product": "ChatGPT",
+      "category": [
+        "Automations"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Scheduled tasks",
+        "Manage scheduled tasks on the web"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-a7de5b39bd26",
+      "title": "Browser",
+      "url": "https://learn.chatgpt.com/docs/browser.md",
+      "product": "ChatGPT",
+      "category": [
+        "Browser"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Browser",
+        "Arrange tabs and chat"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0d81218eacd2",
+      "title": "Build plugins",
+      "url": "https://learn.chatgpt.com/docs/build-plugins.md",
+      "product": "ChatGPT",
+      "category": [
+        "Build Plugins"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "reusable-skills",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Build plugins",
+        "What is a plugin?"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-575ba4762ea6",
+      "title": "Build skills",
+      "url": "https://learn.chatgpt.com/docs/build-skills.md",
+      "product": "ChatGPT",
+      "category": [
+        "Build Skills"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "reusable-skills",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Build skills",
+        "How ChatGPT and Codex use skills"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-a74595707768",
+      "title": "Browser extension",
+      "url": "https://learn.chatgpt.com/docs/chrome-extension.md",
+      "product": "ChatGPT",
+      "category": [
+        "Chrome Extension"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Browser extension",
+        "Use side chat in your browser"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24d888be8e5f",
+      "title": "Codex CLI",
+      "url": "https://learn.chatgpt.com/docs/codex/cli.md",
+      "product": "Codex",
+      "category": [
+        "Cli"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex CLI",
+        "Inspect, edit, and run code from your terminal"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-cf38bd5054be",
+      "title": "Command line options",
+      "url": "https://learn.chatgpt.com/docs/developer-commands.md?surface=cli",
+      "product": "Codex",
+      "category": [
+        "Cli"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Developer commands",
+        "How to read this reference"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2a01a9d34cde",
+      "title": "CLI customization",
+      "url": "https://learn.chatgpt.com/docs/cli-customization.md",
+      "product": "Codex",
+      "category": [
+        "Cli Customization"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "CLI customization",
+        "Syntax highlighting and themes"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c302e8415c7f",
+      "title": "Codex Cloud",
+      "url": "https://learn.chatgpt.com/docs/cloud.md",
+      "product": "Codex",
+      "category": [
+        "Cloud"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Cloud",
+        "Run coding tasks in the cloud"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b99b352f5f4f",
+      "title": "Codex Cloud (Legacy): internet access",
+      "url": "https://learn.chatgpt.com/docs/cloud/internet-access.md",
+      "product": "Codex",
+      "category": [
+        "Cloud"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Cloud (Legacy): internet access",
+        "Risks of agent internet access"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-47b0440a51c2",
+      "title": "Code review",
+      "url": "https://learn.chatgpt.com/docs/code-review.md",
+      "product": "ChatGPT",
+      "category": [
+        "Code Review"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "review-tests",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Code review",
+        "Pull request reviews"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e3c5173f4c4c",
+      "title": "Codex SDK",
+      "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
+      "product": "Codex",
+      "category": [
+        "Codex Sdk"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Pro",
+      "guide": "agent-platform",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex SDK",
+        "TypeScript library"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-304dc43b0d04",
+      "title": "Codex for Open Source",
+      "url": "https://developers.openai.com/community/codex-for-oss",
+      "product": "Codex",
+      "category": [
+        "Community"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Search developer resources",
+        "Suggested"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7be3f970bd43",
+      "title": "Computer Use",
+      "url": "https://learn.chatgpt.com/docs/computer-use.md",
+      "product": "ChatGPT",
+      "category": [
+        "Computer Use"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Computer Use",
+        "Set up Computer Use"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b011aa51b331",
+      "title": "Advanced Configuration",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-advanced.md",
+      "product": "ChatGPT",
+      "category": [
+        "Config File"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Advanced Configuration",
+        "Applying these examples to Local computer access with Work Cloud"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d684e38d0094",
+      "title": "Config basics",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-basic.md",
+      "product": "ChatGPT",
+      "category": [
+        "Config File"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Config basics",
+        "Codex configuration file"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c2332644faa1",
+      "title": "Configuration Reference",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference.md",
+      "product": "ChatGPT",
+      "category": [
+        "Config File"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Configuration Reference",
+        "Settings for Local computer access with Work Cloud"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-22d54b5578c4",
+      "title": "Environment variables",
+      "url": "https://learn.chatgpt.com/docs/config-file/environment-variables.md",
+      "product": "ChatGPT",
+      "category": [
+        "Config File"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "safe-connections",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Environment variables",
+        "Core locations"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f52101a0e133",
+      "title": "Sample Configuration",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-sample.md",
+      "product": "ChatGPT",
+      "category": [
+        "Config File"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Sample Configuration"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f05fc21d24fe",
+      "title": "Configuration",
+      "url": "https://learn.chatgpt.com/docs/configuration.md",
+      "product": "ChatGPT",
+      "category": [
+        "Configuration"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Configuration"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-81a2fac530c8",
+      "title": "Custom Prompts",
+      "url": "https://learn.chatgpt.com/docs/custom-prompts.md",
+      "product": "ChatGPT",
+      "category": [
+        "Custom Prompts"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Custom Prompts",
+        "Add metadata and arguments"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-f3a0216fc3d2",
+      "title": "Computer History",
+      "url": "https://learn.chatgpt.com/docs/customization/computer-history.md",
+      "product": "ChatGPT",
+      "category": [
+        "Customization"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Computer History",
+        "How Computer History helps"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2645e597941a",
+      "title": "Customization",
+      "url": "https://learn.chatgpt.com/docs/customization/overview.md",
+      "product": "ChatGPT",
+      "category": [
+        "Customization"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "first-task",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Customization",
+        "AGENTS Guidance"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7ea5a1f5cc6a",
+      "title": "Memories",
+      "url": "https://learn.chatgpt.com/docs/customization/memories.md",
+      "product": "ChatGPT",
+      "category": [
+        "Customization"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Memories",
+        "How local Codex memories work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-04f6dcc4a4fe",
+      "title": "Models and Trusted Access",
+      "url": "https://learn.chatgpt.com/docs/cyber-safety.md",
+      "product": "ChatGPT",
+      "category": [
+        "Cyber Safety"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Models and Trusted Access",
+        "Choose the right model"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b74b7c76c711",
+      "title": "Recommended configuration",
+      "url": "https://learn.chatgpt.com/docs/cyber-safety/recommended-configuration.md",
+      "product": "ChatGPT",
+      "category": [
+        "Cyber Safety"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Recommended configuration",
+        "Isolate the environment"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e65d1fa4c1e1",
+      "title": "Developers",
+      "url": "https://learn.chatgpt.com/docs/developers.md",
+      "product": "ChatGPT",
+      "category": [
+        "Developers"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Developers"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1323ad886101",
+      "title": "Meet dots",
+      "url": "https://learn.chatgpt.com/docs/dots.md",
+      "product": "ChatGPT",
+      "category": [
+        "Dots"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Meet dots",
+        "Make it your own"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6e39401d1f47",
+      "title": "Connect computers and apps to your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps.md",
+      "product": "ChatGPT",
+      "category": [
+        "Dots"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Connect computers and apps to your dot",
+        "Use the cloud computer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e13354c6b025",
+      "title": "Control your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/controls.md",
+      "product": "ChatGPT",
+      "category": [
+        "Dots"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Control your dot",
+        "Review work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7c8e52e0c73f",
+      "title": "Get started with your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/getting-started.md",
+      "product": "ChatGPT",
+      "category": [
+        "Dots"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "first-task",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Get started with your dot",
+        "Create your dot"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-4b4aabd54f9e",
+      "title": "Message your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/channels.md",
+      "product": "ChatGPT",
+      "category": [
+        "Dots"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Message your dot",
+        "ChatGPT and voice"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9ffa6664dba7",
+      "title": "Tasks and memory",
+      "url": "https://learn.chatgpt.com/docs/dots/tasks-and-memory.md",
+      "product": "ChatGPT",
+      "category": [
+        "Dots"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Tasks and memory",
+        "Assigned work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f5bc151215cd",
+      "title": "Access tokens",
+      "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Access tokens",
+        "How access tokens work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-811aa7aeaf6b",
+      "title": "Admin rollout guide",
+      "url": "https://learn.chatgpt.com/docs/enterprise/admin-setup.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Admin rollout guide",
+        "Step 1: Assign owners and choose a rollout"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dccd5924f08b",
+      "title": "Agent Security",
+      "url": "https://learn.chatgpt.com/docs/enterprise/agent-security.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Agent Security",
+        "Where settings apply"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-88b1ced5fbcc",
+      "title": "Analytics API",
+      "url": "https://learn.chatgpt.com/docs/enterprise/analytics-api.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "agent-platform",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Analytics API",
+        "When to use the Analytics API"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-886686d95c82",
+      "title": "Bedrock through LiteLLM",
+      "url": "https://learn.chatgpt.com/docs/enterprise/bedrock-through-litellm.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Bedrock through LiteLLM",
+        "Connect to an existing gateway"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d5021d01af0b",
+      "title": "Best practices for ChatGPT Edu workspace configuration in higher education",
+      "url": "https://learn.chatgpt.com/docs/enterprise/higher-education-roles-and-permissions.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Best practices for ChatGPT Edu workspace configuration in higher education",
+        "Choose the recommended roles"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-48de7f90f273",
+      "title": "ChatGPT usage limits and spend controls",
+      "url": "https://learn.chatgpt.com/docs/enterprise/usage-limits.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "evals",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT usage limits and spend controls",
+        "Know when these controls apply"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b498643ba7f3",
+      "title": "ChatGPT Work admin FAQ",
+      "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT Work admin FAQ",
+        "Work across devices"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-eea2edbcef58",
+      "title": "ChatGPT Work cloud security",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT Work cloud security",
+        "Security at a glance"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-54e559ed4245",
+      "title": "ChatGPT Work local security",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT Work local security",
+        "Security at a glance"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-18ad336d66dd",
+      "title": "ChatGPT Work Overview",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT Work Overview",
+        "Execution isolation, files, and device access"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ba100f6664b7",
+      "title": "ChatGPT Work: usage and cost",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "evals",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT Work: usage and cost",
+        "Usage and cost at a glance"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-649ffe457194",
+      "title": "Codex security cookbook",
+      "url": "https://learn.chatgpt.com/docs/enterprise/security-cookbook.md",
+      "product": "Codex",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "evals",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex security cookbook",
+        "Choose your starting point"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9d54fab7ad72",
+      "title": "Compliance API and audit events",
+      "url": "https://learn.chatgpt.com/docs/enterprise/compliance-api.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "agent-platform",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Compliance API and audit events",
+        "When to use the Compliance API"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3a9100c32164",
+      "title": "Deploy the Windows app and Codex CLI",
+      "url": "https://learn.chatgpt.com/docs/enterprise/windows-deployment.md",
+      "product": "Codex",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Deploy the Windows app and Codex CLI",
+        "Deploy the Windows app"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-83d4edfaf8cd",
+      "title": "Dynamic groups",
+      "url": "https://learn.chatgpt.com/docs/enterprise/dynamic-groups.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Dynamic groups",
+        "Before you begin"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e9de2a6a736d",
+      "title": "Gateway compatibility requirements",
+      "url": "https://learn.chatgpt.com/docs/enterprise/gateway-compatibility.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Gateway compatibility requirements",
+        "Requests and endpoints"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-05f8d80ccc7b",
+      "title": "Governance",
+      "url": "https://learn.chatgpt.com/docs/enterprise/governance.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Governance",
+        "Open the administration surfaces"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-517f08511f57",
+      "title": "GPTs and Sharing",
+      "url": "https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "GPTs and Sharing",
+        "Sharing"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-10dd8667120a",
+      "title": "Groups and provisioning",
+      "url": "https://learn.chatgpt.com/docs/enterprise/groups-and-provisioning.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Groups and provisioning",
+        "Compare membership sources"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d50d47c21e8f",
+      "title": "Local computer access for Work Cloud and dots",
+      "url": "https://learn.chatgpt.com/docs/enterprise/cloud-local-access.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Local computer access for Work Cloud and dots",
+        "Benefits of local computer access"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24c62848a332",
+      "title": "Manage app updates",
+      "url": "https://learn.chatgpt.com/docs/enterprise/manage-app-updates.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Manage app updates",
+        "Before you begin"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-315e17f0f4b9",
+      "title": "Manage ChatGPT Space, pages, and slides",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-space.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Manage ChatGPT Space, pages, and slides",
+        "What is ChatGPT Space?"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8b62a89b49b8",
+      "title": "Manage dots permissions and capabilities",
+      "url": "https://learn.chatgpt.com/docs/enterprise/dots-admin-guide.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Manage dots permissions and capabilities",
+        "Find what you need"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-77481efb12a6",
+      "title": "Managed configuration",
+      "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Managed configuration",
+        "Configure a policy in Agent security"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-20bc98306a44",
+      "title": "Plugin controls",
+      "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Plugin controls",
+        "Understand the capability chain"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ab115ea47731",
+      "title": "Plugin management",
+      "url": "https://learn.chatgpt.com/docs/enterprise/plugin-management.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Plugin management",
+        "Before you begin"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c369cec5f3b8",
+      "title": "Prisma AIRS",
+      "url": "https://learn.chatgpt.com/docs/enterprise/prisma-airs.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Prisma AIRS",
+        "Before you begin"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-a292ca32ae05",
+      "title": "Roles and workspace permissions",
+      "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Roles and workspace permissions",
+        "Understand the control boundaries"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d8c21044e817",
+      "title": "Roll out a gateway",
+      "url": "https://learn.chatgpt.com/docs/enterprise/roll-out-a-gateway.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Roll out a gateway",
+        "Prerequisites"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7a5e03044e16",
+      "title": "Service accounts",
+      "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Service accounts",
+        "Create and set up a service account"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6be952b78a5d",
+      "title": "Set up and manage @ChatGPT in Slack and Microsoft Teams",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-slack-and-teams.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Set up and manage @ChatGPT in Slack and Microsoft Teams",
+        "How access works"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-81de09346a07",
+      "title": "Set up and manage teams and Team Tasks",
+      "url": "https://learn.chatgpt.com/docs/enterprise/teams.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Set up and manage teams and Team Tasks",
+        "How teams and Team Tasks work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e25dfff3918f",
+      "title": "Sign in with ChatGPT through a gateway",
+      "url": "https://learn.chatgpt.com/docs/enterprise/sign-in-with-chatgpt-through-a-gateway.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Sign in with ChatGPT through a gateway",
+        "Why you would want this"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e62c8f8bdac9",
+      "title": "Sites administration",
+      "url": "https://learn.chatgpt.com/docs/enterprise/sites.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Sites administration",
+        "Before you begin"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-160e62101398",
+      "title": "Skill controls",
+      "url": "https://learn.chatgpt.com/docs/enterprise/skills.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Skill controls",
+        "Skill distribution and administration"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-354f957358f4",
+      "title": "Understand ChatGPT education plans",
+      "url": "https://learn.chatgpt.com/docs/enterprise/education-plans.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Understand ChatGPT education plans",
+        "Compare plans"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-474523711974",
+      "title": "Usage Insights for ChatGPT Work in Codex",
+      "url": "https://learn.chatgpt.com/docs/enterprise/usage-insights.md",
+      "product": "Codex",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "evals",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Usage Insights for ChatGPT Work in Codex",
+        "Analytics views"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-5d0a94de49bd",
+      "title": "Use API/provider credentials through a gateway",
+      "url": "https://learn.chatgpt.com/docs/enterprise/connect-to-a-gateway.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "agent-platform",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Use API/provider credentials through a gateway",
+        "Check for an existing configuration"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-16cf27f48eb0",
+      "title": "User lifecycle management",
+      "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "User lifecycle management",
+        "Verify prerequisites and assign owners"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f094a985d5b8",
+      "title": "Using the Admin plugin in ChatGPT Work",
+      "url": "https://learn.chatgpt.com/docs/enterprise/admin-plugin.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Using the Admin plugin in ChatGPT Work",
+        "1. Understand what the Admin plugin is for"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e8a44d8693c2",
+      "title": "Workspace analytics",
+      "url": "https://learn.chatgpt.com/docs/enterprise/workspace-analytics.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Workspace analytics",
+        "Choose a reporting surface"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d409bf3c6a23",
+      "title": "Workspace connections",
+      "url": "https://learn.chatgpt.com/docs/enterprise/shared-connections.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Workspace connections",
+        "How it works"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7d04f9ab1f4a",
+      "title": "Workspace model availability",
+      "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability.md",
+      "product": "ChatGPT",
+      "category": [
+        "Enterprise"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Workspace model availability",
+        "Identify the model boundary"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7ac5ae1c18e0",
+      "title": "Cloud environments",
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environments.md",
+      "product": "ChatGPT",
+      "category": [
+        "Environments"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Cloud environments",
+        "Start a task in Codex Cloud"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-73011d6801bc",
+      "title": "Codex Cloud (Legacy)",
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environment.md",
+      "product": "Codex",
+      "category": [
+        "Environments"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Cloud (Legacy)",
+        "How Codex cloud chats run"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-275a09b4f863",
+      "title": "Codex environments",
+      "url": "https://learn.chatgpt.com/docs/environments/modes.md",
+      "product": "Codex",
+      "category": [
+        "Environments"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex environments"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-86cde8be2e24",
+      "title": "Local environments",
+      "url": "https://learn.chatgpt.com/docs/environments/local-environment.md",
+      "product": "ChatGPT",
+      "category": [
+        "Environments"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Local environments",
+        "Setup scripts"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d955137d94c4",
+      "title": "Worktrees",
+      "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+      "product": "Codex",
+      "category": [
+        "Environments"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "git-and-diffs",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Worktrees",
+        "What's a worktree"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dd3c07a3ae6a",
+      "title": "Model Context Protocol",
+      "url": "https://learn.chatgpt.com/docs/extend/mcp.md",
+      "product": "ChatGPT",
+      "category": [
+        "Extend"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Model Context Protocol",
+        "Build an MCP plugin with Plugin Creator and Sites"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2c6e218368c0",
+      "title": "Record & Replay",
+      "url": "https://learn.chatgpt.com/docs/extend/record-and-replay.md",
+      "product": "ChatGPT",
+      "category": [
+        "Extend"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Record & Replay",
+        "Before you start"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d303113c34a6",
+      "title": "Feature Maturity",
+      "url": "https://learn.chatgpt.com/docs/feature-maturity.md",
+      "product": "ChatGPT",
+      "category": [
+        "Feature Maturity"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Feature Maturity"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f449586d4612",
+      "title": "Features",
+      "url": "https://learn.chatgpt.com/docs/features.md",
+      "product": "ChatGPT",
+      "category": [
+        "Features"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Features"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3b6d55bd0132",
+      "title": "ChatGPT Voice",
+      "url": "https://learn.chatgpt.com/docs/features/voice.md",
+      "product": "ChatGPT",
+      "category": [
+        "Features"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT Voice",
+        "Start talking"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0169dfa5d4e3",
+      "title": "Codex Micro",
+      "url": "https://learn.chatgpt.com/docs/features/codex-micro.md",
+      "product": "Codex",
+      "category": [
+        "Features"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Micro",
+        "Set up Codex Micro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-acc8cb67be71",
+      "title": "Composer Predictions",
+      "url": "https://learn.chatgpt.com/docs/features/composer-predictions.md",
+      "product": "ChatGPT",
+      "category": [
+        "Features"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Composer Predictions",
+        "Tab to accept"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2c7688c996bc",
+      "title": "Get started with ChatGPT Work",
+      "url": "https://learn.chatgpt.com/docs/get-started-with-work.md",
+      "product": "ChatGPT",
+      "category": [
+        "Get Started With Work"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "tool-choice",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Get started with ChatGPT Work",
+        "Introducing ChatGPT Work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-30fdd98f8c3a",
+      "title": "Codex GitHub Action",
+      "url": "https://learn.chatgpt.com/docs/github-action.md",
+      "product": "Codex",
+      "category": [
+        "Github Action"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex GitHub Action",
+        "Prerequisites"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-694ea1470b4c",
+      "title": "Glossary",
+      "url": "https://learn.chatgpt.com/docs/glossary.md",
+      "product": "ChatGPT",
+      "category": [
+        "Glossary"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Glossary"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ebab3fcbd80b",
+      "title": "Building an AI-Native Engineering Team",
+      "url": "https://learn.chatgpt.com/guides/build-ai-native-engineering-team.md",
+      "product": "ChatGPT",
+      "category": [
+        "Guides"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "mini-site",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": false,
+      "sourceHttp": 404,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [],
+      "legacy": false
+    },
+    {
+      "id": "src-0aecdb1ef0ce",
+      "title": "Hooks",
+      "url": "https://learn.chatgpt.com/docs/hooks.md",
+      "product": "ChatGPT",
+      "category": [
+        "Hooks"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Hooks",
+        "Where Codex looks for hooks"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c7af5bbd5710",
+      "title": "Codex IDE extension",
+      "url": "https://learn.chatgpt.com/docs/codex/ide.md",
+      "product": "Codex",
+      "category": [
+        "Ide"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex IDE extension",
+        "Build with the context already in your editor"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-bb9b0fb8d058",
+      "title": "Codex IDE extension commands",
+      "url": "https://learn.chatgpt.com/docs/developer-commands.md?surface=ide",
+      "product": "Codex",
+      "category": [
+        "Ide"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Developer commands",
+        "Assign a key binding"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b24c4cceb411",
+      "title": "Codex IDE extension settings",
+      "url": "https://learn.chatgpt.com/docs/developer-settings.md?surface=ide",
+      "product": "Codex",
+      "category": [
+        "Ide"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Developer settings",
+        "Open Codex settings"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6e5b50840145",
+      "title": "Image generation",
+      "url": "https://learn.chatgpt.com/docs/image-generation.md",
+      "product": "ChatGPT",
+      "category": [
+        "Image Generation"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Image generation",
+        "Review and edit generated images"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b64a9457088d",
+      "title": "Image inputs",
+      "url": "https://learn.chatgpt.com/docs/image-inputs.md",
+      "product": "ChatGPT",
+      "category": [
+        "Image Inputs"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Image inputs",
+        "Write the prompt around the image"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2b09a0f3c867",
+      "title": "Import from another agent",
+      "url": "https://learn.chatgpt.com/docs/import.md",
+      "product": "ChatGPT",
+      "category": [
+        "Import"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Import from another agent",
+        "Start an import"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3903992afce0",
+      "title": "Integrated terminal",
+      "url": "https://learn.chatgpt.com/docs/integrated-terminal.md",
+      "product": "ChatGPT",
+      "category": [
+        "Integrated Terminal"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Integrated terminal",
+        "Run and validate your project"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-67a7ce1fea36",
+      "title": "Best practices",
+      "url": "https://learn.chatgpt.com/guides/best-practices.md",
+      "product": "ChatGPT",
+      "category": [
+        "Learn"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": false,
+      "sourceHttp": 404,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [],
+      "legacy": false
+    },
+    {
+      "id": "src-8701a8c2ceb3",
+      "title": "ChatGPT desktop app for Linux",
+      "url": "https://learn.chatgpt.com/docs/linux/linux-app.md",
+      "product": "ChatGPT",
+      "category": [
+        "Linux"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT desktop app for Linux",
+        "Supported distributions and architectures"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-916e12c5bba5",
+      "title": "Long-running work",
+      "url": "https://learn.chatgpt.com/docs/long-running-work.md",
+      "product": "ChatGPT",
+      "category": [
+        "Long Running Work"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Long-running work",
+        "Start a goal"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b9429ef95fab",
+      "title": "Codex MCP server removal",
+      "url": "https://learn.chatgpt.com/docs/mcp-server.md",
+      "product": "Codex",
+      "category": [
+        "Mcp Server"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex MCP server removal",
+        "Use the Codex app server"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-866d18fe9ed3",
+      "title": "Moving your custom GPT workflows to plugins",
+      "url": "https://learn.chatgpt.com/docs/migrate-custom-gpts.md",
+      "product": "ChatGPT",
+      "category": [
+        "Migrate Custom Gpts"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "reusable-skills",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Moving your custom GPT workflows to plugins",
+        "Understand the change"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e49d01f23299",
+      "title": "Codex on mobile",
+      "url": "https://learn.chatgpt.com/docs/mobile.md",
+      "product": "Codex",
+      "category": [
+        "Mobile"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex on mobile",
+        "Start, guide, and review tasks from your phone"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0e488ebbf8af",
+      "title": "Implementing model catalogs for gateways and clouds",
+      "url": "https://learn.chatgpt.com/docs/model-catalogs.md",
+      "product": "ChatGPT",
+      "category": [
+        "Model Catalogs"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Implementing model catalogs for gateways and clouds",
+        "Implement the catalog endpoint"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-088c850cc2af",
+      "title": "Model selection",
+      "url": "https://learn.chatgpt.com/docs/model-selection.md",
+      "product": "ChatGPT",
+      "category": [
+        "Model Selection"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Model selection",
+        "Meet the models"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ae24d057324a",
+      "title": "Models",
+      "url": "https://learn.chatgpt.com/docs/models.md",
+      "product": "ChatGPT",
+      "category": [
+        "Models"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Models",
+        "GPT-5.5 retirement"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8e570f2a8916",
+      "title": "Non-interactive mode",
+      "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
+      "product": "ChatGPT",
+      "category": [
+        "Non Interactive Mode"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Non-interactive mode",
+        "When to use `codex exec`"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-30bc4c999399",
+      "title": "Notifications",
+      "url": "https://learn.chatgpt.com/docs/notifications.md",
+      "product": "ChatGPT",
+      "category": [
+        "Notifications"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Notifications",
+        "Configure desktop notifications"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-79239d17dd17",
+      "title": "Open Source",
+      "url": "https://learn.chatgpt.com/docs/open-source.md",
+      "product": "ChatGPT",
+      "category": [
+        "Open Source"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Open Source",
+        "Open-source components"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-10a780b90cf4",
+      "title": "ChatGPT",
+      "url": "https://learn.chatgpt.com/docs.md",
+      "product": "ChatGPT",
+      "category": [
+        "Overview"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "first-task",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": false,
+      "sourceHttp": 404,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [],
+      "legacy": false
+    },
+    {
+      "id": "src-907da152b649",
+      "title": "Permissions",
+      "url": "https://learn.chatgpt.com/docs/permission-modes.md",
+      "product": "ChatGPT",
+      "category": [
+        "Permission Modes"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Permissions",
+        "Permission modes"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-4d7a5dc78b3c",
+      "title": "Permissions",
+      "url": "https://learn.chatgpt.com/docs/permissions.md",
+      "product": "ChatGPT",
+      "category": [
+        "Permissions"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Permissions",
+        "Define and select a profile"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b81d7ecf0390",
+      "title": "Personalize ChatGPT",
+      "url": "https://learn.chatgpt.com/docs/personalize.md",
+      "product": "ChatGPT",
+      "category": [
+        "Personalize"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Personalize ChatGPT",
+        "Choose a personality on the web"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-74fe1167725e",
+      "title": "Pets",
+      "url": "https://learn.chatgpt.com/docs/pets.md",
+      "product": "ChatGPT",
+      "category": [
+        "Pets"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Pets",
+        "Use a floating pet"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dea5d8982f04",
+      "title": "Plugins",
+      "url": "https://learn.chatgpt.com/docs/plugins.md",
+      "product": "ChatGPT",
+      "category": [
+        "Plugins"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "reusable-skills",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Plugins",
+        "Overview"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24e0a6ab1e90",
+      "title": "Pricing",
+      "url": "https://learn.chatgpt.com/docs/pricing.md",
+      "product": "ChatGPT",
+      "category": [
+        "Pricing"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Pricing",
+        "Invite friends and coworkers"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3353f8f8f4d9",
+      "title": "Projects and chats",
+      "url": "https://learn.chatgpt.com/docs/projects.md",
+      "product": "ChatGPT",
+      "category": [
+        "Projects"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "instructions",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Projects and chats",
+        "Choose a project or start without one"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0310706ee861",
+      "title": "Prompting",
+      "url": "https://learn.chatgpt.com/docs/prompting.md",
+      "product": "ChatGPT",
+      "category": [
+        "Prompting"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Prompting",
+        "Prompting overview"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b90e41678b02",
+      "title": "Quickstart",
+      "url": "https://learn.chatgpt.com/docs/quickstart.md",
+      "product": "ChatGPT",
+      "category": [
+        "Quickstart"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "first-task",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Quickstart",
+        "Where to use ChatGPT"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-11ef3e151227",
+      "title": "Troubleshooting",
+      "url": "https://learn.chatgpt.com/docs/reference/troubleshooting.md",
+      "product": "ChatGPT",
+      "category": [
+        "Reference"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Troubleshooting",
+        "Frequently Asked Questions"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-171fdaa74f75",
+      "title": "Remote connections",
+      "url": "https://learn.chatgpt.com/docs/remote-connections.md",
+      "product": "ChatGPT",
+      "category": [
+        "Remote Connections"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Remote connections",
+        "Local computer access with Work Cloud and Remote connections"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-84bbfccbaea9",
+      "title": "Resources",
+      "url": "https://learn.chatgpt.com/resources.md",
+      "product": "ChatGPT",
+      "category": [
+        "Resources"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": false,
+      "sourceHttp": 404,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [],
+      "legacy": false
+    },
+    {
+      "id": "src-668fd2258559",
+      "title": "Sandbox",
+      "url": "https://learn.chatgpt.com/docs/sandboxing.md",
+      "product": "Codex",
+      "category": [
+        "Sandboxing"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Sandbox",
+        "What the sandbox does"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f464374c0d89",
+      "title": "Auto-review",
+      "url": "https://learn.chatgpt.com/docs/sandboxing/auto-review.md",
+      "product": "Codex",
+      "category": [
+        "Sandboxing"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Auto-review",
+        "Select automatic review"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d5a186b7366e",
+      "title": "Codex Security",
+      "url": "https://learn.chatgpt.com/docs/security.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security",
+        "Choose where to start"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8d926b82884d",
+      "title": "Codex Security CI/CD overview",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security CI/CD overview",
+        "Prepare the workflow"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d4672d2ba61d",
+      "title": "Codex Security CLI FAQ",
+      "url": "https://learn.chatgpt.com/docs/security/cli/faq.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security CLI FAQ",
+        "Repository scans"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1716f9f1a07b",
+      "title": "Codex Security CLI quickstart",
+      "url": "https://learn.chatgpt.com/docs/security/cli.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security CLI quickstart",
+        "Check the prerequisites"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-909fb3f27618",
+      "title": "Codex Security CLI reference",
+      "url": "https://learn.chatgpt.com/docs/security/cli/reference.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security CLI reference",
+        "Command overview"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2d8d28cbaa95",
+      "title": "Codex Security Cloud FAQ",
+      "url": "https://learn.chatgpt.com/docs/security/faq.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security Cloud FAQ",
+        "Billing"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-10cdc56de639",
+      "title": "Codex Security Cloud setup",
+      "url": "https://learn.chatgpt.com/docs/security/setup.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security Cloud setup",
+        "Before you start"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-796d8353993f",
+      "title": "Codex Security plugin changelog",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/changelog.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security plugin changelog",
+        "0.1.30 (September 24, 2026)"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-bec1e26cb654",
+      "title": "Codex Security plugin quickstart",
+      "url": "https://learn.chatgpt.com/docs/security/plugin.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security plugin quickstart",
+        "Install the plugin"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-13b97f7316a6",
+      "title": "Codex Security TypeScript SDK",
+      "url": "https://learn.chatgpt.com/docs/security/sdk.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Pro",
+      "guide": "agent-platform",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Codex Security TypeScript SDK",
+        "Set up the SDK"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2908d6b44ee0",
+      "title": "Export and track security findings",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/export-findings.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Export and track security findings",
+        "Export a portable artifact"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-44471eb3eae1",
+      "title": "Fix and verify security findings",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/fix-findings.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Fix and verify security findings",
+        "Fix a finding in the UI"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0c53ef518880",
+      "title": "Improve the Cloud threat model",
+      "url": "https://learn.chatgpt.com/docs/security/threat-model.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Improve the Cloud threat model",
+        "What a threat model is"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24294757e701",
+      "title": "Propose security hardening",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/security-hardening.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Propose security hardening",
+        "Prepare the evidence"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-06694345b687",
+      "title": "Review code changes for security",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/code-changes.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Review code changes for security",
+        "Run a manual review"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-52ffdad46ad2",
+      "title": "Run a Codex Security scan",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/scans.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Run a Codex Security scan",
+        "Choose the scan area"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-03d337741f71",
+      "title": "Run a deep security scan",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/deep-scans.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Run a deep security scan",
+        "Choose between standard and deep scans"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0462b3e29101",
+      "title": "Run bulk security scans",
+      "url": "https://learn.chatgpt.com/docs/security/cli/bulk-scans.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Run bulk security scans",
+        "Choose a repository source"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-cb94fa07f6e7",
+      "title": "Run Codex Security in GitHub Actions",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci/github.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Run Codex Security in GitHub Actions",
+        "Prepare the workflow"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0c31a6fce966",
+      "title": "Run Codex Security in GitLab CI/CD",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci/gitlab.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Run Codex Security in GitLab CI/CD",
+        "Before you begin"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-862c857e0358",
+      "title": "Security Review",
+      "url": "https://learn.chatgpt.com/docs/security/security-review.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Security Review",
+        "Before you start"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3623d131a0f2",
+      "title": "Triage a backlog",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/triage-backlog.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Triage a backlog",
+        "Choose the findings to triage"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8486fe00c240",
+      "title": "Use the Codex Security workbench",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/workbench.md",
+      "product": "Codex",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Use the Codex Security workbench",
+        "Start a scan"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6afd18fb00f3",
+      "title": "Write vulnerability reports",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/vulnerability-reports.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "release-review",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Write vulnerability reports",
+        "Prepare the evidence"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f08ff2349b47",
+      "title": "Security",
+      "url": "https://learn.chatgpt.com/docs/security-administration.md",
+      "product": "ChatGPT",
+      "category": [
+        "Security Administration"
+      ],
+      "level": "Pro",
+      "learningLevel": "Pro",
+      "guide": "team-governance",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Security"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-60fa4628ebb9",
+      "title": "Sign in with ChatGPT",
+      "url": "https://learn.chatgpt.com/docs/sign-in-with-chatgpt.md",
+      "product": "ChatGPT",
+      "category": [
+        "Sign In With Chatgpt"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Sign in with ChatGPT",
+        "Partners"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3c6726ad6416",
+      "title": "Sites",
+      "url": "https://learn.chatgpt.com/docs/sites.md",
+      "product": "ChatGPT",
+      "category": [
+        "Sites"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "mini-site",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Sites",
+        "Explore ways to use sites"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-56e8c36f028e",
+      "title": "Create a site",
+      "url": "https://learn.chatgpt.com/docs/sites/creating-a-site.md",
+      "product": "ChatGPT",
+      "category": [
+        "Sites"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "mini-site",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Create a site",
+        "Get started with sites"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e0f092cc9829",
+      "title": "Data and connections",
+      "url": "https://learn.chatgpt.com/docs/sites/data-and-connections.md",
+      "product": "ChatGPT",
+      "category": [
+        "Sites"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "mini-site",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Data and connections",
+        "Choose storage and sign-in features"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8063f9ed486d",
+      "title": "Manage a site",
+      "url": "https://learn.chatgpt.com/docs/sites/managing-a-site.md",
+      "product": "ChatGPT",
+      "category": [
+        "Sites"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "mini-site",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Manage a site",
+        "Review site analytics"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-fc9cd7880ec6",
+      "title": "Publish and share",
+      "url": "https://learn.chatgpt.com/docs/sites/publishing-and-sharing.md",
+      "product": "ChatGPT",
+      "category": [
+        "Sites"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "mini-site",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Publish and share",
+        "Review before you share"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f06621b97709",
+      "title": "Skills & Plugins",
+      "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+      "product": "ChatGPT",
+      "category": [
+        "Skills And Plugins"
+      ],
+      "level": "Intermediate",
+      "learningLevel": "Intermediate",
+      "guide": "reusable-skills",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Skills & Plugins",
+        "Use skills for repeatable work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9eaf251f273c",
+      "title": "ChatGPT Space",
+      "url": "https://learn.chatgpt.com/docs/space.md",
+      "product": "ChatGPT",
+      "category": [
+        "Space"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT Space",
+        "Workspaces and spaces"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-418e37616592",
+      "title": "Collaborate in Space",
+      "url": "https://learn.chatgpt.com/docs/space/collaboration.md",
+      "product": "ChatGPT",
+      "category": [
+        "Space"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Collaborate in Space",
+        "Choose an access level"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-71293722d815",
+      "title": "Get started with ChatGPT Space",
+      "url": "https://learn.chatgpt.com/docs/space/getting-started.md",
+      "product": "ChatGPT",
+      "category": [
+        "Space"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "first-task",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Get started with ChatGPT Space",
+        "Open Space"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2d083870d670",
+      "title": "Work with agents in Space",
+      "url": "https://learn.chatgpt.com/docs/space/agents.md",
+      "product": "ChatGPT",
+      "category": [
+        "Space"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Work with agents in Space",
+        "Choose how to ask for help"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c7393fbab700",
+      "title": "Work with pages",
+      "url": "https://learn.chatgpt.com/docs/space/pages.md",
+      "product": "ChatGPT",
+      "category": [
+        "Space"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Work with pages",
+        "Create a page"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ba7354e17482",
+      "title": "Review GitHub pull requests with Codex",
+      "url": "https://learn.chatgpt.com/docs/third-party/github.md",
+      "product": "Codex",
+      "category": [
+        "Third Party"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "review-tests",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Review GitHub pull requests with Codex",
+        "Before you start"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e0c9ac1b89dd",
+      "title": "Review GitLab merge requests with Codex",
+      "url": "https://learn.chatgpt.com/docs/third-party/gitlab.md",
+      "product": "Codex",
+      "category": [
+        "Third Party"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "review-tests",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Review GitLab merge requests with Codex",
+        "Before you start"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-345f9e63361a",
+      "title": "Use ChatGPT in Slack",
+      "url": "https://learn.chatgpt.com/docs/third-party/slack.md",
+      "product": "ChatGPT",
+      "category": [
+        "Third Party"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "first-task",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Use ChatGPT in Slack",
+        "Set up the Slack app"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-434ee24ee096",
+      "title": "Use Codex in Linear",
+      "url": "https://learn.chatgpt.com/docs/third-party/linear.md",
+      "product": "Codex",
+      "category": [
+        "Third Party"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "git-and-diffs",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Use Codex in Linear",
+        "Set up the Linear integration"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d6b5aa6a43ce",
+      "title": "Use ChatGPT",
+      "url": "https://learn.chatgpt.com/docs/use-chatgpt.md",
+      "product": "ChatGPT",
+      "category": [
+        "Use Chatgpt"
+      ],
+      "level": "Zero",
+      "learningLevel": "Zero",
+      "guide": "first-task",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Use ChatGPT",
+        "Go from idea to useful result"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-154ca14e1ab7",
+      "title": "Videos",
+      "url": "https://learn.chatgpt.com/videos.md",
+      "product": "ChatGPT",
+      "category": [
+        "Videos"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": false,
+      "sourceHttp": 404,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [],
+      "legacy": false
+    },
+    {
+      "id": "src-989576428b61",
+      "title": "Visualizations",
+      "url": "https://learn.chatgpt.com/docs/visualizations.md",
+      "product": "ChatGPT",
+      "category": [
+        "Visualizations"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Visualizations",
+        "Check availability"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7eb60a7a820b",
+      "title": "ChatGPT on the web",
+      "url": "https://learn.chatgpt.com/docs/web.md",
+      "product": "ChatGPT",
+      "category": [
+        "Web"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "ChatGPT on the web",
+        "Research, analyze, and create in your browser"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-eb9462608041",
+      "title": "Web search",
+      "url": "https://learn.chatgpt.com/docs/web-search.md",
+      "product": "ChatGPT",
+      "category": [
+        "Web Search"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Web search",
+        "Research a topic in Work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d8e7ab2e8f18",
+      "title": "Site tools",
+      "url": "https://learn.chatgpt.com/docs/webmcp.md",
+      "product": "ChatGPT",
+      "category": [
+        "Webmcp"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Site tools",
+        "WebMCP vs. MCP"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-135e664cbdfe",
+      "title": "What's new",
+      "url": "https://learn.chatgpt.com/docs/whats-new.md",
+      "product": "ChatGPT",
+      "category": [
+        "Whats New"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "What's new",
+        "October 12–16, 2026"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b1af804010bc",
+      "title": "Create your dot in the ChatGPT mobile app",
+      "url": "https://learn.chatgpt.com/docs/whats-new/dots-october-9-2026.md",
+      "product": "ChatGPT",
+      "category": [
+        "Whats New"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Create your dot in the ChatGPT mobile app",
+        "Bring your dot into your Codex work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f45de159970e",
+      "title": "DevDay 2026",
+      "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026.md",
+      "product": "ChatGPT",
+      "category": [
+        "Whats New"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "DevDay 2026",
+        "ChatGPT"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e50abb55fbf8",
+      "title": "October 5–9, 2026",
+      "url": "https://learn.chatgpt.com/docs/whats-new/october-5-9-2026.md",
+      "product": "ChatGPT",
+      "category": [
+        "Whats New"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "October 5–9, 2026",
+        "[Create your dot in the ChatGPT mobile app](https://learn.chatgpt.com/docs/whats-new/dots-october-9-2026)"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b9b242960e22",
+      "title": "September 28–October 2, 2026",
+      "url": "https://learn.chatgpt.com/docs/whats-new/september-28-october-2-2026.md",
+      "product": "ChatGPT",
+      "category": [
+        "Whats New"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "September 28–October 2, 2026",
+        "Choose GPT-6.1 Sol for complex work"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d86b339c4d76",
+      "title": "Windows sandbox",
+      "url": "https://learn.chatgpt.com/docs/windows/windows-sandbox.md",
+      "product": "Codex",
+      "category": [
+        "Windows"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Windows sandbox",
+        "Configure the Windows sandbox"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b77766a43009",
+      "title": "WSL",
+      "url": "https://learn.chatgpt.com/docs/windows/wsl.md",
+      "product": "ChatGPT",
+      "category": [
+        "Windows"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "WSL",
+        "Launch VS Code from inside WSL"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9bf3380dbfdf",
+      "title": "OpenAI training",
+      "url": "https://developers.openai.com/training",
+      "product": "ChatGPT",
+      "category": [
+        "Supplementary learning"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Search the docs",
+        "Suggested"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d17597ae7fe9",
+      "title": "Learn Codex",
+      "url": "https://developers.openai.com/learn/codex",
+      "product": "Codex",
+      "category": [
+        "Supplementary learning"
+      ],
+      "level": "Beginner",
+      "learningLevel": "Beginner",
+      "guide": "codex-begin",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Search developer resources",
+        "Suggested"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-31ba1639da48",
+      "title": "Documentation MCP",
+      "url": "https://developers.openai.com/learn/docs-mcp",
+      "product": "Platform",
+      "category": [
+        "Supplementary learning"
+      ],
+      "level": "Advanced",
+      "learningLevel": "Advanced",
+      "guide": "approval",
+      "assignmentBasis": "topic_within_learning_level",
+      "indexSnapshot": "2026-10-24",
+      "verifiedLive": true,
+      "sourceHttp": 200,
+      "verifiedAt": "2026-10-25",
+      "sourceHeadings": [
+        "Search developer resources",
+        "Suggested"
+      ],
+      "legacy": false
+    }
+  ],
+  "editorial": {
+    "purpose": "Original plain-language explanations, analogies, practical exercises and pitfalls.",
+    "copyright": "Titles and outbound links only from indexed source; no copied full articles.",
+    "freshness": "Official pages change; verify the linked page before relying on UI/plan-specific instructions.",
+    "completion": "Self-checked practice is not OpenAI certification."
+  }
+}

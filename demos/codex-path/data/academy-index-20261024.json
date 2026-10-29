@@ -1,0 +1,3596 @@
+{
+  "schemaVersion": 1,
+  "snapshot": "2026-10-24",
+  "indexUrl": "https://learn.chatgpt.com/docs/llms.txt",
+  "classification": "Editorial metadata inferred from index titles and topics; verify current source before use.",
+  "sources": [
+    {
+      "id": "src-475519df88ba",
+      "title": "Combined ChatGPT docs",
+      "url": "https://learn.chatgpt.com/docs/llms-full.txt",
+      "categories": [
+        "Documentation sets"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Index",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-fd92e4296401",
+      "title": "Codex manual (Markdown)",
+      "url": "https://learn.chatgpt.com/docs/codex-manual.md",
+      "categories": [
+        "Documentation sets"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Index",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-4ad3796df1e6",
+      "title": "ChatGPT use cases",
+      "url": "https://learn.chatgpt.com/use-cases/llms.txt",
+      "categories": [
+        "Documentation sets"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Index",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-08825629d583",
+      "title": "Administration",
+      "url": "https://learn.chatgpt.com/docs/administration.md",
+      "categories": [
+        "Administration"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b7af4e0dbfe6",
+      "title": "Agent approvals & security",
+      "url": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+      "categories": [
+        "Agent Approvals Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-94f17e3de1ca",
+      "title": "Custom instructions with AGENTS.md",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+      "categories": [
+        "Agent Configuration"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6c7aa55b479f",
+      "title": "Rules",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/rules.md",
+      "categories": [
+        "Agent Configuration"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-55cdea3737e3",
+      "title": "Speed",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/speed.md",
+      "categories": [
+        "Agent Configuration"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-731168d993ec",
+      "title": "Subagents",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+      "categories": [
+        "Agent Configuration"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-fc9fbba758a5",
+      "title": "Use ChatGPT Work and Codex with Amazon Bedrock",
+      "url": "https://learn.chatgpt.com/docs/amazon-bedrock.md",
+      "categories": [
+        "Amazon Bedrock"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-04a85e845544",
+      "title": "Annotations Extensibility",
+      "url": "https://learn.chatgpt.com/docs/annotations-extensibility.md",
+      "categories": [
+        "Annotations Extensibility"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d6f4398aa465",
+      "title": "ChatGPT desktop app",
+      "url": "https://learn.chatgpt.com/docs/app.md",
+      "categories": [
+        "App"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dd7bb821828a",
+      "title": "ChatGPT desktop app commands",
+      "url": "https://learn.chatgpt.com/docs/reference/commands.md",
+      "categories": [
+        "App"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ce14d03dc374",
+      "title": "ChatGPT desktop app for Windows",
+      "url": "https://learn.chatgpt.com/docs/windows/windows-app.md",
+      "categories": [
+        "App",
+        "Windows"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1e04f0e46956",
+      "title": "ChatGPT desktop app settings",
+      "url": "https://learn.chatgpt.com/docs/reference/settings.md",
+      "categories": [
+        "App"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-341246db376e",
+      "title": "Codex App Server",
+      "url": "https://learn.chatgpt.com/docs/app-server.md",
+      "categories": [
+        "App Server"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c302b8efa03e",
+      "title": "Appshots",
+      "url": "https://learn.chatgpt.com/docs/appshots.md",
+      "categories": [
+        "Appshots"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1186da4cb8c2",
+      "title": "Work with files",
+      "url": "https://learn.chatgpt.com/docs/artifacts-viewer.md",
+      "categories": [
+        "Artifacts Viewer"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1454a3aad1fa",
+      "title": "Authentication",
+      "url": "https://learn.chatgpt.com/docs/auth.md",
+      "categories": [
+        "Auth"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b5406e60cbfa",
+      "title": "Scheduled tasks",
+      "url": "https://learn.chatgpt.com/docs/automations.md",
+      "categories": [
+        "Automations"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-a7de5b39bd26",
+      "title": "Browser",
+      "url": "https://learn.chatgpt.com/docs/browser.md",
+      "categories": [
+        "Browser"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0d81218eacd2",
+      "title": "Build plugins",
+      "url": "https://learn.chatgpt.com/docs/build-plugins.md",
+      "categories": [
+        "Build Plugins"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-575ba4762ea6",
+      "title": "Build skills",
+      "url": "https://learn.chatgpt.com/docs/build-skills.md",
+      "categories": [
+        "Build Skills"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-a74595707768",
+      "title": "Browser extension",
+      "url": "https://learn.chatgpt.com/docs/chrome-extension.md",
+      "categories": [
+        "Chrome Extension"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24d888be8e5f",
+      "title": "Codex CLI",
+      "url": "https://learn.chatgpt.com/docs/codex/cli.md",
+      "categories": [
+        "Cli"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-cf38bd5054be",
+      "title": "Command line options",
+      "url": "https://learn.chatgpt.com/docs/developer-commands.md?surface=cli",
+      "categories": [
+        "Cli"
+      ],
+      "aliases": [
+        "Slash commands in Codex CLI"
+      ],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Reference",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2a01a9d34cde",
+      "title": "CLI customization",
+      "url": "https://learn.chatgpt.com/docs/cli-customization.md",
+      "categories": [
+        "Cli Customization"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c302e8415c7f",
+      "title": "Codex Cloud",
+      "url": "https://learn.chatgpt.com/docs/cloud.md",
+      "categories": [
+        "Cloud"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b99b352f5f4f",
+      "title": "Codex Cloud (Legacy): internet access",
+      "url": "https://learn.chatgpt.com/docs/cloud/internet-access.md",
+      "categories": [
+        "Cloud"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-47b0440a51c2",
+      "title": "Code review",
+      "url": "https://learn.chatgpt.com/docs/code-review.md",
+      "categories": [
+        "Code Review"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e3c5173f4c4c",
+      "title": "Codex SDK",
+      "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
+      "categories": [
+        "Codex Sdk"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-304dc43b0d04",
+      "title": "Codex for Open Source",
+      "url": "https://developers.openai.com/community/codex-for-oss",
+      "categories": [
+        "Community"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7be3f970bd43",
+      "title": "Computer Use",
+      "url": "https://learn.chatgpt.com/docs/computer-use.md",
+      "categories": [
+        "Computer Use"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b011aa51b331",
+      "title": "Advanced Configuration",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-advanced.md",
+      "categories": [
+        "Config File"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d684e38d0094",
+      "title": "Config basics",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-basic.md",
+      "categories": [
+        "Config File"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c2332644faa1",
+      "title": "Configuration Reference",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference.md",
+      "categories": [
+        "Config File"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-22d54b5578c4",
+      "title": "Environment variables",
+      "url": "https://learn.chatgpt.com/docs/config-file/environment-variables.md",
+      "categories": [
+        "Config File"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f52101a0e133",
+      "title": "Sample Configuration",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-sample.md",
+      "categories": [
+        "Config File"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f05fc21d24fe",
+      "title": "Configuration",
+      "url": "https://learn.chatgpt.com/docs/configuration.md",
+      "categories": [
+        "Configuration"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-81a2fac530c8",
+      "title": "Custom Prompts",
+      "url": "https://learn.chatgpt.com/docs/custom-prompts.md",
+      "categories": [
+        "Custom Prompts"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-f3a0216fc3d2",
+      "title": "Computer History",
+      "url": "https://learn.chatgpt.com/docs/customization/computer-history.md",
+      "categories": [
+        "Customization"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2645e597941a",
+      "title": "Customization",
+      "url": "https://learn.chatgpt.com/docs/customization/overview.md",
+      "categories": [
+        "Customization"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7ea5a1f5cc6a",
+      "title": "Memories",
+      "url": "https://learn.chatgpt.com/docs/customization/memories.md",
+      "categories": [
+        "Customization"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-04f6dcc4a4fe",
+      "title": "Models and Trusted Access",
+      "url": "https://learn.chatgpt.com/docs/cyber-safety.md",
+      "categories": [
+        "Cyber Safety"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b74b7c76c711",
+      "title": "Recommended configuration",
+      "url": "https://learn.chatgpt.com/docs/cyber-safety/recommended-configuration.md",
+      "categories": [
+        "Cyber Safety"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e65d1fa4c1e1",
+      "title": "Developers",
+      "url": "https://learn.chatgpt.com/docs/developers.md",
+      "categories": [
+        "Developers"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1323ad886101",
+      "title": "Meet dots",
+      "url": "https://learn.chatgpt.com/docs/dots.md",
+      "categories": [
+        "Dots"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6e39401d1f47",
+      "title": "Connect computers and apps to your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/computers-and-apps.md",
+      "categories": [
+        "Dots"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e13354c6b025",
+      "title": "Control your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/controls.md",
+      "categories": [
+        "Dots"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7c8e52e0c73f",
+      "title": "Get started with your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/getting-started.md",
+      "categories": [
+        "Dots"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-4b4aabd54f9e",
+      "title": "Message your dot",
+      "url": "https://learn.chatgpt.com/docs/dots/channels.md",
+      "categories": [
+        "Dots"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9ffa6664dba7",
+      "title": "Tasks and memory",
+      "url": "https://learn.chatgpt.com/docs/dots/tasks-and-memory.md",
+      "categories": [
+        "Dots"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f5bc151215cd",
+      "title": "Access tokens",
+      "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-811aa7aeaf6b",
+      "title": "Admin rollout guide",
+      "url": "https://learn.chatgpt.com/docs/enterprise/admin-setup.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dccd5924f08b",
+      "title": "Agent Security",
+      "url": "https://learn.chatgpt.com/docs/enterprise/agent-security.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-88b1ced5fbcc",
+      "title": "Analytics API",
+      "url": "https://learn.chatgpt.com/docs/enterprise/analytics-api.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-886686d95c82",
+      "title": "Bedrock through LiteLLM",
+      "url": "https://learn.chatgpt.com/docs/enterprise/bedrock-through-litellm.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d5021d01af0b",
+      "title": "Best practices for ChatGPT Edu workspace configuration in higher education",
+      "url": "https://learn.chatgpt.com/docs/enterprise/higher-education-roles-and-permissions.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Reference",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-48de7f90f273",
+      "title": "ChatGPT usage limits and spend controls",
+      "url": "https://learn.chatgpt.com/docs/enterprise/usage-limits.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b498643ba7f3",
+      "title": "ChatGPT Work admin FAQ",
+      "url": "https://learn.chatgpt.com/docs/enterprise/work-admin-faq.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-eea2edbcef58",
+      "title": "ChatGPT Work cloud security",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-54e559ed4245",
+      "title": "ChatGPT Work local security",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-18ad336d66dd",
+      "title": "ChatGPT Work Overview",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ba100f6664b7",
+      "title": "ChatGPT Work: usage and cost",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-649ffe457194",
+      "title": "Codex security cookbook",
+      "url": "https://learn.chatgpt.com/docs/enterprise/security-cookbook.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9d54fab7ad72",
+      "title": "Compliance API and audit events",
+      "url": "https://learn.chatgpt.com/docs/enterprise/compliance-api.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3a9100c32164",
+      "title": "Deploy the Windows app and Codex CLI",
+      "url": "https://learn.chatgpt.com/docs/enterprise/windows-deployment.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-83d4edfaf8cd",
+      "title": "Dynamic groups",
+      "url": "https://learn.chatgpt.com/docs/enterprise/dynamic-groups.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e9de2a6a736d",
+      "title": "Gateway compatibility requirements",
+      "url": "https://learn.chatgpt.com/docs/enterprise/gateway-compatibility.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-05f8d80ccc7b",
+      "title": "Governance",
+      "url": "https://learn.chatgpt.com/docs/enterprise/governance.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-517f08511f57",
+      "title": "GPTs and Sharing",
+      "url": "https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-10dd8667120a",
+      "title": "Groups and provisioning",
+      "url": "https://learn.chatgpt.com/docs/enterprise/groups-and-provisioning.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d50d47c21e8f",
+      "title": "Local computer access for Work Cloud and dots",
+      "url": "https://learn.chatgpt.com/docs/enterprise/cloud-local-access.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24c62848a332",
+      "title": "Manage app updates",
+      "url": "https://learn.chatgpt.com/docs/enterprise/manage-app-updates.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-315e17f0f4b9",
+      "title": "Manage ChatGPT Space, pages, and slides",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-space.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8b62a89b49b8",
+      "title": "Manage dots permissions and capabilities",
+      "url": "https://learn.chatgpt.com/docs/enterprise/dots-admin-guide.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-77481efb12a6",
+      "title": "Managed configuration",
+      "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Reference",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-20bc98306a44",
+      "title": "Plugin controls",
+      "url": "https://learn.chatgpt.com/docs/enterprise/apps-and-connectors.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ab115ea47731",
+      "title": "Plugin management",
+      "url": "https://learn.chatgpt.com/docs/enterprise/plugin-management.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c369cec5f3b8",
+      "title": "Prisma AIRS",
+      "url": "https://learn.chatgpt.com/docs/enterprise/prisma-airs.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-a292ca32ae05",
+      "title": "Roles and workspace permissions",
+      "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d8c21044e817",
+      "title": "Roll out a gateway",
+      "url": "https://learn.chatgpt.com/docs/enterprise/roll-out-a-gateway.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7a5e03044e16",
+      "title": "Service accounts",
+      "url": "https://learn.chatgpt.com/docs/enterprise/service-accounts.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6be952b78a5d",
+      "title": "Set up and manage @ChatGPT in Slack and Microsoft Teams",
+      "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-slack-and-teams.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-81de09346a07",
+      "title": "Set up and manage teams and Team Tasks",
+      "url": "https://learn.chatgpt.com/docs/enterprise/teams.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e25dfff3918f",
+      "title": "Sign in with ChatGPT through a gateway",
+      "url": "https://learn.chatgpt.com/docs/enterprise/sign-in-with-chatgpt-through-a-gateway.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e62c8f8bdac9",
+      "title": "Sites administration",
+      "url": "https://learn.chatgpt.com/docs/enterprise/sites.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-160e62101398",
+      "title": "Skill controls",
+      "url": "https://learn.chatgpt.com/docs/enterprise/skills.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-354f957358f4",
+      "title": "Understand ChatGPT education plans",
+      "url": "https://learn.chatgpt.com/docs/enterprise/education-plans.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-474523711974",
+      "title": "Usage Insights for ChatGPT Work in Codex",
+      "url": "https://learn.chatgpt.com/docs/enterprise/usage-insights.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-5d0a94de49bd",
+      "title": "Use API/provider credentials through a gateway",
+      "url": "https://learn.chatgpt.com/docs/enterprise/connect-to-a-gateway.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-16cf27f48eb0",
+      "title": "User lifecycle management",
+      "url": "https://learn.chatgpt.com/docs/enterprise/user-lifecycle.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f094a985d5b8",
+      "title": "Using the Admin plugin in ChatGPT Work",
+      "url": "https://learn.chatgpt.com/docs/enterprise/admin-plugin.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e8a44d8693c2",
+      "title": "Workspace analytics",
+      "url": "https://learn.chatgpt.com/docs/enterprise/workspace-analytics.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d409bf3c6a23",
+      "title": "Workspace connections",
+      "url": "https://learn.chatgpt.com/docs/enterprise/shared-connections.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7d04f9ab1f4a",
+      "title": "Workspace model availability",
+      "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability.md",
+      "categories": [
+        "Enterprise"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7ac5ae1c18e0",
+      "title": "Cloud environments",
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environments.md",
+      "categories": [
+        "Environments"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-73011d6801bc",
+      "title": "Codex Cloud (Legacy)",
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environment.md",
+      "categories": [
+        "Environments"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-275a09b4f863",
+      "title": "Codex environments",
+      "url": "https://learn.chatgpt.com/docs/environments/modes.md",
+      "categories": [
+        "Environments"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-86cde8be2e24",
+      "title": "Local environments",
+      "url": "https://learn.chatgpt.com/docs/environments/local-environment.md",
+      "categories": [
+        "Environments"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d955137d94c4",
+      "title": "Worktrees",
+      "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+      "categories": [
+        "Environments"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dd3c07a3ae6a",
+      "title": "Model Context Protocol",
+      "url": "https://learn.chatgpt.com/docs/extend/mcp.md",
+      "categories": [
+        "Extend"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2c6e218368c0",
+      "title": "Record & Replay",
+      "url": "https://learn.chatgpt.com/docs/extend/record-and-replay.md",
+      "categories": [
+        "Extend"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d303113c34a6",
+      "title": "Feature Maturity",
+      "url": "https://learn.chatgpt.com/docs/feature-maturity.md",
+      "categories": [
+        "Feature Maturity"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f449586d4612",
+      "title": "Features",
+      "url": "https://learn.chatgpt.com/docs/features.md",
+      "categories": [
+        "Features"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3b6d55bd0132",
+      "title": "ChatGPT Voice",
+      "url": "https://learn.chatgpt.com/docs/features/voice.md",
+      "categories": [
+        "Features"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0169dfa5d4e3",
+      "title": "Codex Micro",
+      "url": "https://learn.chatgpt.com/docs/features/codex-micro.md",
+      "categories": [
+        "Features"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-acc8cb67be71",
+      "title": "Composer Predictions",
+      "url": "https://learn.chatgpt.com/docs/features/composer-predictions.md",
+      "categories": [
+        "Features"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2c7688c996bc",
+      "title": "Get started with ChatGPT Work",
+      "url": "https://learn.chatgpt.com/docs/get-started-with-work.md",
+      "categories": [
+        "Get Started With Work"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-30fdd98f8c3a",
+      "title": "Codex GitHub Action",
+      "url": "https://learn.chatgpt.com/docs/github-action.md",
+      "categories": [
+        "Github Action"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-694ea1470b4c",
+      "title": "Glossary",
+      "url": "https://learn.chatgpt.com/docs/glossary.md",
+      "categories": [
+        "Glossary"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ebab3fcbd80b",
+      "title": "Building an AI-Native Engineering Team",
+      "url": "https://learn.chatgpt.com/guides/build-ai-native-engineering-team.md",
+      "categories": [
+        "Guides"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0aecdb1ef0ce",
+      "title": "Hooks",
+      "url": "https://learn.chatgpt.com/docs/hooks.md",
+      "categories": [
+        "Hooks"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c7af5bbd5710",
+      "title": "Codex IDE extension",
+      "url": "https://learn.chatgpt.com/docs/codex/ide.md",
+      "categories": [
+        "Ide"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-bb9b0fb8d058",
+      "title": "Codex IDE extension commands",
+      "url": "https://learn.chatgpt.com/docs/developer-commands.md?surface=ide",
+      "categories": [
+        "Ide"
+      ],
+      "aliases": [
+        "Codex IDE extension slash commands"
+      ],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Reference",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b24c4cceb411",
+      "title": "Codex IDE extension settings",
+      "url": "https://learn.chatgpt.com/docs/developer-settings.md?surface=ide",
+      "categories": [
+        "Ide"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Reference",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6e5b50840145",
+      "title": "Image generation",
+      "url": "https://learn.chatgpt.com/docs/image-generation.md",
+      "categories": [
+        "Image Generation"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b64a9457088d",
+      "title": "Image inputs",
+      "url": "https://learn.chatgpt.com/docs/image-inputs.md",
+      "categories": [
+        "Image Inputs"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2b09a0f3c867",
+      "title": "Import from another agent",
+      "url": "https://learn.chatgpt.com/docs/import.md",
+      "categories": [
+        "Import"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3903992afce0",
+      "title": "Integrated terminal",
+      "url": "https://learn.chatgpt.com/docs/integrated-terminal.md",
+      "categories": [
+        "Integrated Terminal"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-67a7ce1fea36",
+      "title": "Best practices",
+      "url": "https://learn.chatgpt.com/guides/best-practices.md",
+      "categories": [
+        "Learn"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8701a8c2ceb3",
+      "title": "ChatGPT desktop app for Linux",
+      "url": "https://learn.chatgpt.com/docs/linux/linux-app.md",
+      "categories": [
+        "Linux"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-916e12c5bba5",
+      "title": "Long-running work",
+      "url": "https://learn.chatgpt.com/docs/long-running-work.md",
+      "categories": [
+        "Long Running Work"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b9429ef95fab",
+      "title": "Codex MCP server removal",
+      "url": "https://learn.chatgpt.com/docs/mcp-server.md",
+      "categories": [
+        "Mcp Server"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": true
+    },
+    {
+      "id": "src-866d18fe9ed3",
+      "title": "Moving your custom GPT workflows to plugins",
+      "url": "https://learn.chatgpt.com/docs/migrate-custom-gpts.md",
+      "categories": [
+        "Migrate Custom Gpts"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e49d01f23299",
+      "title": "Codex on mobile",
+      "url": "https://learn.chatgpt.com/docs/mobile.md",
+      "categories": [
+        "Mobile"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0e488ebbf8af",
+      "title": "Implementing model catalogs for gateways and clouds",
+      "url": "https://learn.chatgpt.com/docs/model-catalogs.md",
+      "categories": [
+        "Model Catalogs"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-088c850cc2af",
+      "title": "Model selection",
+      "url": "https://learn.chatgpt.com/docs/model-selection.md",
+      "categories": [
+        "Model Selection"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ae24d057324a",
+      "title": "Models",
+      "url": "https://learn.chatgpt.com/docs/models.md",
+      "categories": [
+        "Models"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8e570f2a8916",
+      "title": "Non-interactive mode",
+      "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
+      "categories": [
+        "Non Interactive Mode"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-30bc4c999399",
+      "title": "Notifications",
+      "url": "https://learn.chatgpt.com/docs/notifications.md",
+      "categories": [
+        "Notifications"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-79239d17dd17",
+      "title": "Open Source",
+      "url": "https://learn.chatgpt.com/docs/open-source.md",
+      "categories": [
+        "Open Source"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-10a780b90cf4",
+      "title": "ChatGPT",
+      "url": "https://learn.chatgpt.com/docs.md",
+      "categories": [
+        "Overview"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-907da152b649",
+      "title": "Permissions",
+      "url": "https://learn.chatgpt.com/docs/permission-modes.md",
+      "categories": [
+        "Permission Modes"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-4d7a5dc78b3c",
+      "title": "Permissions",
+      "url": "https://learn.chatgpt.com/docs/permissions.md",
+      "categories": [
+        "Permissions"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b81d7ecf0390",
+      "title": "Personalize ChatGPT",
+      "url": "https://learn.chatgpt.com/docs/personalize.md",
+      "categories": [
+        "Personalize"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-74fe1167725e",
+      "title": "Pets",
+      "url": "https://learn.chatgpt.com/docs/pets.md",
+      "categories": [
+        "Pets"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-dea5d8982f04",
+      "title": "Plugins",
+      "url": "https://learn.chatgpt.com/docs/plugins.md",
+      "categories": [
+        "Plugins"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24e0a6ab1e90",
+      "title": "Pricing",
+      "url": "https://learn.chatgpt.com/docs/pricing.md",
+      "categories": [
+        "Pricing"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3353f8f8f4d9",
+      "title": "Projects and chats",
+      "url": "https://learn.chatgpt.com/docs/projects.md",
+      "categories": [
+        "Projects"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0310706ee861",
+      "title": "Prompting",
+      "url": "https://learn.chatgpt.com/docs/prompting.md",
+      "categories": [
+        "Prompting"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b90e41678b02",
+      "title": "Quickstart",
+      "url": "https://learn.chatgpt.com/docs/quickstart.md",
+      "categories": [
+        "Quickstart"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-11ef3e151227",
+      "title": "Troubleshooting",
+      "url": "https://learn.chatgpt.com/docs/reference/troubleshooting.md",
+      "categories": [
+        "Reference"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Reference",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-171fdaa74f75",
+      "title": "Remote connections",
+      "url": "https://learn.chatgpt.com/docs/remote-connections.md",
+      "categories": [
+        "Remote Connections"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-84bbfccbaea9",
+      "title": "Resources",
+      "url": "https://learn.chatgpt.com/resources.md",
+      "categories": [
+        "Resources"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-668fd2258559",
+      "title": "Sandbox",
+      "url": "https://learn.chatgpt.com/docs/sandboxing.md",
+      "categories": [
+        "Sandboxing"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f464374c0d89",
+      "title": "Auto-review",
+      "url": "https://learn.chatgpt.com/docs/sandboxing/auto-review.md",
+      "categories": [
+        "Sandboxing"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d5a186b7366e",
+      "title": "Codex Security",
+      "url": "https://learn.chatgpt.com/docs/security.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8d926b82884d",
+      "title": "Codex Security CI/CD overview",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d4672d2ba61d",
+      "title": "Codex Security CLI FAQ",
+      "url": "https://learn.chatgpt.com/docs/security/cli/faq.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-1716f9f1a07b",
+      "title": "Codex Security CLI quickstart",
+      "url": "https://learn.chatgpt.com/docs/security/cli.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-909fb3f27618",
+      "title": "Codex Security CLI reference",
+      "url": "https://learn.chatgpt.com/docs/security/cli/reference.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Reference",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2d8d28cbaa95",
+      "title": "Codex Security Cloud FAQ",
+      "url": "https://learn.chatgpt.com/docs/security/faq.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-10cdc56de639",
+      "title": "Codex Security Cloud setup",
+      "url": "https://learn.chatgpt.com/docs/security/setup.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-796d8353993f",
+      "title": "Codex Security plugin changelog",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/changelog.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-bec1e26cb654",
+      "title": "Codex Security plugin quickstart",
+      "url": "https://learn.chatgpt.com/docs/security/plugin.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-13b97f7316a6",
+      "title": "Codex Security TypeScript SDK",
+      "url": "https://learn.chatgpt.com/docs/security/sdk.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2908d6b44ee0",
+      "title": "Export and track security findings",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/export-findings.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-44471eb3eae1",
+      "title": "Fix and verify security findings",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/fix-findings.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0c53ef518880",
+      "title": "Improve the Cloud threat model",
+      "url": "https://learn.chatgpt.com/docs/security/threat-model.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-24294757e701",
+      "title": "Propose security hardening",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/security-hardening.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-06694345b687",
+      "title": "Review code changes for security",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/code-changes.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-52ffdad46ad2",
+      "title": "Run a Codex Security scan",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/scans.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-03d337741f71",
+      "title": "Run a deep security scan",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/deep-scans.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0462b3e29101",
+      "title": "Run bulk security scans",
+      "url": "https://learn.chatgpt.com/docs/security/cli/bulk-scans.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-cb94fa07f6e7",
+      "title": "Run Codex Security in GitHub Actions",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci/github.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-0c31a6fce966",
+      "title": "Run Codex Security in GitLab CI/CD",
+      "url": "https://learn.chatgpt.com/docs/security/cli/ci/gitlab.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-862c857e0358",
+      "title": "Security Review",
+      "url": "https://learn.chatgpt.com/docs/security/security-review.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3623d131a0f2",
+      "title": "Triage a backlog",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/triage-backlog.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8486fe00c240",
+      "title": "Use the Codex Security workbench",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/workbench.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-6afd18fb00f3",
+      "title": "Write vulnerability reports",
+      "url": "https://learn.chatgpt.com/docs/security/plugin/vulnerability-reports.md",
+      "categories": [
+        "Security"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f08ff2349b47",
+      "title": "Security",
+      "url": "https://learn.chatgpt.com/docs/security-administration.md",
+      "categories": [
+        "Security Administration"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Pro",
+      "type": "Guide",
+      "audience": [
+        "Team Lead",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-60fa4628ebb9",
+      "title": "Sign in with ChatGPT",
+      "url": "https://learn.chatgpt.com/docs/sign-in-with-chatgpt.md",
+      "categories": [
+        "Sign In With Chatgpt"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-3c6726ad6416",
+      "title": "Sites",
+      "url": "https://learn.chatgpt.com/docs/sites.md",
+      "categories": [
+        "Sites"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-56e8c36f028e",
+      "title": "Create a site",
+      "url": "https://learn.chatgpt.com/docs/sites/creating-a-site.md",
+      "categories": [
+        "Sites"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e0f092cc9829",
+      "title": "Data and connections",
+      "url": "https://learn.chatgpt.com/docs/sites/data-and-connections.md",
+      "categories": [
+        "Sites"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-8063f9ed486d",
+      "title": "Manage a site",
+      "url": "https://learn.chatgpt.com/docs/sites/managing-a-site.md",
+      "categories": [
+        "Sites"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-fc9cd7880ec6",
+      "title": "Publish and share",
+      "url": "https://learn.chatgpt.com/docs/sites/publishing-and-sharing.md",
+      "categories": [
+        "Sites"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f06621b97709",
+      "title": "Skills & Plugins",
+      "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+      "categories": [
+        "Skills And Plugins"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Intermediate",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9eaf251f273c",
+      "title": "ChatGPT Space",
+      "url": "https://learn.chatgpt.com/docs/space.md",
+      "categories": [
+        "Space"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-418e37616592",
+      "title": "Collaborate in Space",
+      "url": "https://learn.chatgpt.com/docs/space/collaboration.md",
+      "categories": [
+        "Space"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-71293722d815",
+      "title": "Get started with ChatGPT Space",
+      "url": "https://learn.chatgpt.com/docs/space/getting-started.md",
+      "categories": [
+        "Space"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-2d083870d670",
+      "title": "Work with agents in Space",
+      "url": "https://learn.chatgpt.com/docs/space/agents.md",
+      "categories": [
+        "Space"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-c7393fbab700",
+      "title": "Work with pages",
+      "url": "https://learn.chatgpt.com/docs/space/pages.md",
+      "categories": [
+        "Space"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-ba7354e17482",
+      "title": "Review GitHub pull requests with Codex",
+      "url": "https://learn.chatgpt.com/docs/third-party/github.md",
+      "categories": [
+        "Third Party"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e0c9ac1b89dd",
+      "title": "Review GitLab merge requests with Codex",
+      "url": "https://learn.chatgpt.com/docs/third-party/gitlab.md",
+      "categories": [
+        "Third Party"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-345f9e63361a",
+      "title": "Use ChatGPT in Slack",
+      "url": "https://learn.chatgpt.com/docs/third-party/slack.md",
+      "categories": [
+        "Third Party"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-434ee24ee096",
+      "title": "Use Codex in Linear",
+      "url": "https://learn.chatgpt.com/docs/third-party/linear.md",
+      "categories": [
+        "Third Party"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d6b5aa6a43ce",
+      "title": "Use ChatGPT",
+      "url": "https://learn.chatgpt.com/docs/use-chatgpt.md",
+      "categories": [
+        "Use Chatgpt"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Zero",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-154ca14e1ab7",
+      "title": "Videos",
+      "url": "https://learn.chatgpt.com/videos.md",
+      "categories": [
+        "Videos"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Learning",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-989576428b61",
+      "title": "Visualizations",
+      "url": "https://learn.chatgpt.com/docs/visualizations.md",
+      "categories": [
+        "Visualizations"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-7eb60a7a820b",
+      "title": "ChatGPT on the web",
+      "url": "https://learn.chatgpt.com/docs/web.md",
+      "categories": [
+        "Web"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-eb9462608041",
+      "title": "Web search",
+      "url": "https://learn.chatgpt.com/docs/web-search.md",
+      "categories": [
+        "Web Search"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d8e7ab2e8f18",
+      "title": "Site tools",
+      "url": "https://learn.chatgpt.com/docs/webmcp.md",
+      "categories": [
+        "Webmcp"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-135e664cbdfe",
+      "title": "What's new",
+      "url": "https://learn.chatgpt.com/docs/whats-new.md",
+      "categories": [
+        "Whats New"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b1af804010bc",
+      "title": "Create your dot in the ChatGPT mobile app",
+      "url": "https://learn.chatgpt.com/docs/whats-new/dots-october-9-2026.md",
+      "categories": [
+        "Whats New"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-f45de159970e",
+      "title": "DevDay 2026",
+      "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026.md",
+      "categories": [
+        "Whats New"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-e50abb55fbf8",
+      "title": "October 5–9, 2026",
+      "url": "https://learn.chatgpt.com/docs/whats-new/october-5-9-2026.md",
+      "categories": [
+        "Whats New"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b9b242960e22",
+      "title": "September 28–October 2, 2026",
+      "url": "https://learn.chatgpt.com/docs/whats-new/september-28-october-2-2026.md",
+      "categories": [
+        "Whats New"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d86b339c4d76",
+      "title": "Windows sandbox",
+      "url": "https://learn.chatgpt.com/docs/windows/windows-sandbox.md",
+      "categories": [
+        "Windows"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-b77766a43009",
+      "title": "WSL",
+      "url": "https://learn.chatgpt.com/docs/windows/wsl.md",
+      "categories": [
+        "Windows"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-9bf3380dbfdf",
+      "title": "OpenAI training",
+      "url": "https://developers.openai.com/training",
+      "categories": [
+        "Supplementary learning"
+      ],
+      "aliases": [],
+      "product": "ChatGPT",
+      "level": "Beginner",
+      "type": "Learning",
+      "audience": [
+        "Newbie",
+        "Creator",
+        "Marketer"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-d17597ae7fe9",
+      "title": "Learn Codex",
+      "url": "https://developers.openai.com/learn/codex",
+      "categories": [
+        "Supplementary learning"
+      ],
+      "aliases": [],
+      "product": "Codex",
+      "level": "Beginner",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    },
+    {
+      "id": "src-31ba1639da48",
+      "title": "Documentation MCP",
+      "url": "https://developers.openai.com/learn/docs-mcp",
+      "categories": [
+        "Supplementary learning"
+      ],
+      "aliases": [],
+      "product": "Platform",
+      "level": "Advanced",
+      "type": "Guide",
+      "audience": [
+        "Developer",
+        "Pro"
+      ],
+      "legacy": false
+    }
+  ]
+}
