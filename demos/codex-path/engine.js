@@ -149,6 +149,19 @@
           capstoneConfirmed:values.capstoneConfirmed===true,
           lastUpdated:typeof values.lastUpdated==="string"?values.lastUpdated.slice(0,60):""};
  }
+ // Restores saved progress from the raw localStorage string. The origin is shared
+ // with other demos, so a bad value (wrong schema, invalid JSON, wrong type) must
+ // fall back to a fresh state instead of throwing and blocking the whole app.
+ function restoreState(raw,data){
+  if(raw==null||raw==="")return {state:initialState(defaults()),corrupt:false};
+  try{
+   const parsed=JSON.parse(raw);
+   if(parsed===null)return {state:initialState(defaults()),corrupt:false};
+   return {state:validateState(parsed,data),corrupt:false};
+  }catch{
+   return {state:initialState(defaults()),corrupt:true};
+  }
+ }
  function initialState(prefs){return {schema:1,prefs:normalizePrefs(prefs),done:[],notes:{},artifacts:{},steps:{},privateProof:"",capstoneConfirmed:false,lastUpdated:""}}
  function canMarkComplete(plan,state,id){
   const lesson=plan.lessons.find(l=>l.id===id);
@@ -187,5 +200,5 @@
   return lines.join("\n");
  }
  return {TIERS,ALLOWED_ROLES,HOUR_OPTIONS,defaults,normalizePrefs,safeUrl,validateCatalog,
-   getCareer,buildPlan,progress,validateState,initialState,canMarkComplete,readiness,markdown,expandAndSort};
+   getCareer,buildPlan,progress,validateState,restoreState,initialState,canMarkComplete,readiness,markdown,expandAndSort};
 });

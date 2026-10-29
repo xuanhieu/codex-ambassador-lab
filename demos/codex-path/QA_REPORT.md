@@ -29,7 +29,7 @@ This app is a study planning/portfolio aid. Quiz completion is local only; no re
 - Browser state self-attests results; there is no automatic remote verification of Codex execution, code correctness or job readiness.
 
 
-## Every Human verified extension — 2026-10-24
+## Every Human Learning Map (independent): verified extension — 2026-10-24
 
 - Source: 25 original Academy lessons + 36 independent additional original VI/EN lessons = **61**; 6 retained technical careers + 8 nontechnical routes = **14**, with 12 visible starter personas.
 - `python3 builders_curriculum.py` reconstructs the dataset deterministically (SHA-256 recorded in terminal).

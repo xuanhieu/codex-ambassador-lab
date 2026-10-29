@@ -25,7 +25,7 @@ TOOLS = {
 MAX_CAPTURE = 220
 LOCALE = {
     "vi": {
-        "heading": "Codex Builder Kit — Kiểm tra trước workshop",
+        "heading": "Học Codex: bộ công cụ thực hành (độc lập) — Kiểm tra trước workshop",
         "ready": "Sẵn sàng cho workshop cơ bản.",
         "blocked": "Còn bước chuẩn bị trước workshop.",
         "git": "Git chưa có trong PATH. Cài Git từ nguồn chính thức.",
@@ -39,7 +39,7 @@ LOCALE = {
         "privacy": "Chỉ kiểm tra tại máy; không thu token, email, tên tài khoản hay gửi HTTP.",
     },
     "en": {
-        "heading": "Codex Builder Kit — Workshop preflight",
+        "heading": "Learn Codex: builder kit (independent) — Workshop preflight",
         "ready": "Ready for the beginner workshop.",
         "blocked": "Setup action is still required before the workshop.",
         "git": "Git is missing from PATH. Install Git from its official source.",

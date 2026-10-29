@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render editorial VI/EN Codex for Everyone handbooks from verified local maps.
+"""Render editorial VI/EN Learn Codex (independent) handbooks from verified local maps.
 
 Only original explanations and brief titles/links from official index; no full
 third-party article content is redistributed.
@@ -13,7 +13,7 @@ def clean(value):
  return str(value).replace("|","/").replace("\n"," ").strip()
 def build(lang):
  vi=lang=="vi"
- name="Codex cho mọi người — Từ Zero đến Pro" if vi else "Codex for Everyone — From Zero to Pro"
+ name="Học Codex: cẩm nang từ Zero đến Pro (độc lập)" if vi else "Learn Codex: Zero to Pro handbook (independent)"
  intro=("Bắt đầu không cần biết lập trình. Chọn một việc nhỏ, thử với dữ liệu giả, tự kiểm tra rồi mới mở bài nâng cao."
         if vi else "Start without knowing how to code. Choose a small task, use fictional data, review it, then progress.")
  header=[

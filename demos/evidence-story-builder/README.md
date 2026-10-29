@@ -63,3 +63,38 @@ git diff --stat
 ```
 
 A good result: 31 tests, 31 pass, 0 fail (30 before the change); `git diff --stat` lists only `tests/test.cjs`. If Codex edits `core.js`, reject the change and ask again.
+
+## Tiếng Việt
+
+**Đây là gì?** Công cụ chạy trên trình duyệt giúp bạn viết phần giới thiệu dự án cho portfolio mà không "nói quá". Bạn nhập bằng chứng thật (đường link, loại bằng chứng, ghi chú), tách rõ điều đã kiểm chứng với điều mới chỉ là nhận định, rồi công cụ soạn sẵn một đoạn kể chuyện song ngữ và xuất ra Markdown hoặc JSON. Khi bạn gõ con số mà chưa xác nhận nguồn, công cụ sẽ cảnh báo. Mọi thứ nằm trong trình duyệt của bạn, không tải lên đâu cả.
+
+**Dành cho ai?** Người đang làm hồ sơ xin việc, xin học bổng hay ứng tuyển chương trình cộng đồng; học viên vừa xong một dự án với Codex và muốn mô tả lại cho trung thực; người hướng dẫn muốn dạy thói quen "có bằng chứng mới nói".
+
+**Cách chạy**
+
+```bash
+cd demos/evidence-story-builder
+python3 -m http.server 4173
+```
+
+Mở http://127.0.0.1:4173/ rồi bấm nạp dữ liệu mẫu để xem thử trước khi nhập dự án của mình.
+
+**Cách tự kiểm chứng**
+
+```bash
+node --test
+```
+
+Kết quả mong đợi: 30 test, 30 đạt, 0 lỗi (đo ngày 29/10/2026 với Node v24.22.1).
+
+**Thử với Codex**
+
+Làm trên một bản clone mới hoặc một nhánh dùng xong bỏ. Mở Codex trong thư mục `demos/evidence-story-builder` bằng lệnh `codex` rồi dán prompt sau (giữ nguyên tiếng Anh):
+
+```text
+Read core.js (sortEvidence) and tests/test.cjs. Add ONE new node:test case to tests/test.cjs proving that sortEvidence falls back to ascending order when the direction is neither "asc" nor "desc" (for example "sideways"), and that the input array is not mutated. Use the existing C import. Do not change core.js or any other file. Run `node --test`, then show me the diff and explain each assertion in one sentence.
+```
+
+Tự kiểm tra lại bằng `node --test` và `git diff --stat`. Kết quả tốt: 31 test, tất cả đạt (trước đó 30), và `git diff --stat` chỉ có `tests/test.cjs`. Nếu Codex sửa `core.js`, hãy từ chối và yêu cầu làm lại.
+
+**Giới hạn:** công cụ không tự mở link, không chạy test hộ bạn và không xác nhận điều gì là đúng. Số liệu và kết quả test đều do người dùng tự khai.

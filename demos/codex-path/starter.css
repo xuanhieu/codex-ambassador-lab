@@ -1,4 +1,4 @@
-/* Codex Path Every Human — compact, accessible starter flow */
+/* Codex Path · Every Human Learning Map (independent) — compact, accessible starter flow */
 html[data-entry="start"] .page-intro{min-height:105px;padding:12px 18px;margin-bottom:10px;grid-template-columns:1fr 120px}
 html[data-entry="start"] .page-intro h1{font-size:clamp(21px,2.2vw,30px);margin:3px 0 5px}
 html[data-entry="start"] .page-intro p{font-size:11px}

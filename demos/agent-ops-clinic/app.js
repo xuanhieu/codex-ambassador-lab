@@ -54,7 +54,7 @@ function riskPanel(task) {
     const resolved = task.decisions[risk] !== 'open';
     const sample = SAMPLES[risk === 'outbound' ? scenarioId : risk][lang];
     return `<section class="risk-item ${resolved ? 'resolved' : ''}" aria-labelledby="risk-${risk}">
-      <div class="risk-heading"><span class="status-dot" aria-hidden="true"></span><h4 id="risk-${risk}">${esc(tr(`risk_${risk}`))}</h4></div>
+      <div class="risk-heading"><span class="status-dot" aria-hidden="true"></span><h3 class="risk-title" id="risk-${risk}">${esc(tr(`risk_${risk}`))}</h3></div>
       <p>${esc(tr(`riskText_${risk}`))}</p>
       <details class="training-sample"><summary>${esc(tr('inspectSample'))}</summary><p><strong>${esc(tr('sampleSource'))}</strong><br>${esc(sample.source)}</p><p><strong>${esc(tr('sampleProposal'))}</strong><br>${esc(sample.proposal)}</p></details>
       ${resolved ? `<p class="success-text">✓ ${esc(tr(risk === 'outbound' ? 'distributionApproved' : 'remediated'))}</p>` : task.stage === 'review' ? `

@@ -1,4 +1,4 @@
-# Codex for Everyone — From Zero to Pro
+# Learn Codex: Zero to Pro handbook (independent)
 
 > Independent educational handbook / tài liệu học tập độc lập. Not an official OpenAI certification.
 > Editorial version: 2026-10-25. Source index: 2026-10-24. Features may differ by account and change.

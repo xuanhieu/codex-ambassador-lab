@@ -18,7 +18,7 @@ const strings={
   completed:"Hoàn thành",score:"Chính xác",none:"Không có phê duyệt",complete:"Đã kiểm tra",pass:"CHÍNH XÁC",fail:"CẦN XEM LẠI",
   expected:"Theo chính sách",missing:"Người duyệt còn thiếu",why:"Nguyên nhân",feedbackEmpty:"Hãy chọn một hành động.",
   approved:"Đã duyệt đúng phạm vi",missing_approval:"Thiếu phê duyệt bắt buộc",outside_scope:"Ngoài phạm vi cho phép",
-  raw_secret:"Không được công bố bí mật nguyên dạng",untrusted_instruction:"Chỉ dẫn trong dữ liệu ngoài không có quyền điều khiển agent",invalid:"Đầu vào không hợp lệ",confirmReset:"Xóa toàn bộ tiến độ chỉ trên trình duyệt này?" },
+  raw_secret:"Không được công bố bí mật nguyên dạng",untrusted_instruction:"Chỉ dẫn trong dữ liệu ngoài không có quyền điều khiển agent",invalid:"Đầu vào không hợp lệ",opened:"Đã mở tình huống {id}",confirmReset:"Xóa toàn bộ tiến độ chỉ trên trình duyệt này?" },
  en:{language:"Language",eyebrow:"AGENT SECURITY / FIELD EXERCISE 01",title:"Where should the agent stop?",
   intro:"Twelve synthetic requests. Six risk categories. Choose what proceeds, escalates to humans, or must stop.",
   simulation:"SIMULATION ONLY",noexecute:"No actions are executed. No content is sent.",
@@ -33,7 +33,7 @@ const strings={
   completed:"Completed",score:"Correct",none:"No approvals attached",complete:"Answered",pass:"CORRECT",fail:"REVIEW NEEDED",
   expected:"Policy verdict",missing:"Missing approvers",why:"Reason",feedbackEmpty:"Select a decision first.",
   approved:"Approved for exact scope",missing_approval:"Human approval missing",outside_scope:"Outside authorized scope",
-  raw_secret:"Raw secret disclosure prohibited",untrusted_instruction:"Untrusted data has no agent authority",invalid:"Invalid input",confirmReset:"Delete your local scores?" }
+  raw_secret:"Raw secret disclosure prohibited",untrusted_instruction:"Untrusted data has no agent authority",invalid:"Invalid input",opened:"Opened case {id}",confirmReset:"Delete your local scores?" }
 };
 let locale="vi",selected=0,answers={};
 try{
@@ -61,7 +61,11 @@ function updateProgress(){
  $("storage-status").textContent=answered?answered+" "+t("complete"):"—";
 }
 function renderList(){
- const nav=$("scenario-list");nav.replaceChildren();
+ const nav=$("scenario-list");
+ // Rebuilding the list removes the focused option; restore focus to the selected one (WCAG 2.4.3).
+ const hadFocus=nav.contains(document.activeElement);
+ nav.replaceChildren();
+ let current=null;
  for(let i=0;i<D.scenarios.length;i++){
   const row=D.scenarios[i],button=el("button","scenario-option");
   button.type="button";button.dataset.caseId=row.id;
@@ -70,9 +74,15 @@ function renderList(){
   const id=el("small","case-code",row.id),title=el("span","case-name",row.title[locale]||row.title.en);
   button.append(id,title);
   if(answers[row.id])button.append(el("span",answers[row.id].passed?"case-ok":"case-fail",answers[row.id].passed?"✓":"↻"));
-  button.addEventListener("click",()=>{selected=i;renderCase()});
+  button.addEventListener("click",()=>{selected=i;renderCase();announceCase()});
   nav.append(button);
+  if(i===selected)current=button;
  }
+ if(hadFocus&&current)current.focus();
+}
+function announceCase(){
+ const row=D.scenarios[selected];
+ $("case-announce").textContent=t("opened").replace("{id}",row.id)+": "+(row.title[locale]||row.title.en);
 }
 function renderMatrix(){
  const tbody=$("matrix");tbody.replaceChildren();
@@ -129,7 +139,7 @@ $("decision-form").addEventListener("submit",event=>{
  box.append(el("p","",t("expected")+": "+t(assessed.verdict)+" · "+t("why")+": "+t(assessed.reason)));
  if(assessed.missing.length)box.append(el("p","",t("missing")+": "+assessed.missing.map(x=>D.roles[x][locale]).join(" + ")));
 });
-$("next").addEventListener("click",()=>{selected=(selected+1)%D.scenarios.length;renderCase()});
+$("next").addEventListener("click",()=>{selected=(selected+1)%D.scenarios.length;renderCase();announceCase()});
 $("replay").addEventListener("click",()=>{
  const id=D.scenarios[selected].id;
  delete answers[id];save();renderCase();

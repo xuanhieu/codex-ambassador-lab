@@ -1,4 +1,4 @@
-/* Codex Path — EVERY HUMAN beginner onboarding, deterministic and offline. */
+/* Codex Path — Every Human Learning Map (independent) beginner onboarding, deterministic and offline. */
 (function(root,factory){
  const api=factory();
  if(typeof module==="object"&&module.exports)module.exports=api;

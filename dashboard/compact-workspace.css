@@ -23,7 +23,7 @@
 .overview-panel .btn{padding:5px 9px;font-size:10px}
 .compact-task-list,.compact-risk-list{display:grid;gap:5px}
 .compact-task{display:flex;align-items:center;gap:8px;border:1px solid var(--nui-outline);background:var(--nui-glass);border-radius:8px;padding:6px 9px;cursor:pointer;min-height:39px}
-.compact-task input{accent-color:var(--nui-blue);width:14px;height:14px;flex:none}
+.compact-task input{accent-color:var(--nui-blue-text);width:14px;height:14px;flex:none}
 .compact-task span{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:3px;min-width:0;flex:1}
 .compact-task strong{font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
 .compact-task small{font-size:9px;color:var(--nui-muted);white-space:nowrap}
@@ -32,7 +32,7 @@
 .compact-risk strong{font-size:11px;max-width:50%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .compact-risk small{color:var(--nui-muted);font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-left:auto;max-width:48%}
 .overview-extra{margin-top:7px;border-top:1px solid var(--nui-outline);font-size:11px}
-.overview-extra summary{cursor:pointer;color:var(--nui-blue);padding:6px 2px 0;font-weight:750}
+.overview-extra summary{cursor:pointer;color:var(--nui-blue-text);padding:6px 2px 0;font-weight:750}
 .overview-extra[open]{padding:7px 0}
 .overview-extra[open] .stack-list{padding-top:6px;max-height:250px;overflow:auto}
 .overview-links{padding:11px 13px;border:1px solid var(--nui-outline);background:var(--nui-glass);border-radius:13px}
@@ -41,10 +41,10 @@
 .overview-links-heading .btn{font-size:10px;padding:5px 9px}
 .overview-link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
 .overview-project-link{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--nui-ink);border:1px solid var(--nui-outline);background:var(--nui-card);border-radius:8px;padding:7px 9px;min-width:0}
-.overview-project-link:hover,.workspace-node a:hover{border-color:var(--nui-blue);color:var(--nui-blue)}
-.overview-project-link .link-id{font:750 10px ui-monospace,monospace;color:var(--nui-blue)}
+.overview-project-link:hover,.workspace-node a:hover{border-color:var(--nui-blue-text);color:var(--nui-blue-text)}
+.overview-project-link .link-id{font:750 10px ui-monospace,monospace;color:var(--nui-blue-text)}
 .overview-project-link strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
-.overview-project-link>span:last-child{margin-left:auto;color:var(--nui-blue)}
+.overview-project-link>span:last-child{margin-left:auto;color:var(--nui-blue-text)}
 .workspace-map-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .workspace-node{background:var(--nui-card);border:1px solid var(--nui-outline);border-radius:12px;padding:15px;min-width:0;display:flex;flex-direction:column;gap:8px}
 .workspace-node-top{display:flex;gap:5px;align-items:center}
@@ -126,10 +126,10 @@
 .idea-card-interactive .idea-foot{justify-content:flex-start;flex-wrap:wrap;margin-top:auto}
 .idea-card-interactive .idea-foot select{min-width:110px}
 .idea-card-interactive .idea-foot .priority{font-size:10px;white-space:nowrap}
-.idea-card-interactive .idea-detail-action{background:var(--nui-tint);color:var(--nui-blue);font-weight:850}
+.idea-card-interactive .idea-detail-action{background:var(--nui-tint);color:var(--nui-blue-text);font-weight:850}
 .idea-card-interactive .idea-foot a{font-size:10px;min-height:26px;padding:4px 9px}
-.pill.prio-p0{color:#c24923;background:#f37c331d;border-color:#f37c3350}
-.pill.prio-p1{color:var(--nui-blue);background:#1d70ff19;border-color:#1d70ff3b}
+.pill.prio-p0{color:#a63b17;background:#f37c331d;border-color:#f37c3350}
+.pill.prio-p1{color:var(--nui-blue-text);background:#1d70ff19;border-color:#1d70ff3b}
 .pill.prio-p2{color:var(--nui-muted)}
 .idea-load-more{width:100%;margin-top:14px}
 .idea-method{margin-top:13px;border:1px solid var(--nui-outline);border-radius:12px;padding:12px;font-size:11px;color:var(--nui-muted)}
@@ -153,3 +153,5 @@
 .win-panel{border-left:3px solid var(--nui-warning);margin:14px 0}
 .win-panel .grid-2{margin-top:6px}
 .settings-dialog .panel{margin-top:10px}
+/* WCAG 1.4.3: small priority text needs >=4.5:1 on the dark card tint too. */
+html[data-nui-theme=dark] .prio-p0{color:#ff9b6b}

@@ -38,6 +38,7 @@ const tl={
   noPlan:"Chọn lộ trình ở cột trái để bắt đầu.",completed:"Hoàn thành",level:"Cấp độ",week:"Tuần",
   goalWarning:"Mục tiêu ngắn hơn khối lượng giờ học dự kiến. Cân nhắc tăng giờ/tuần hoặc kéo dài thời gian.",
   goalOK:"Kế hoạch phù hợp trong phạm vi giờ đã chọn. Tiến độ thực tế tùy theo bài thực hành.",
+  storageRecovered:"Tiến độ đã lưu trên trình duyệt này bị hỏng nên đã được đặt lại. Bản cũ được giữ riêng; bạn có thể nhập lại từ file backup.",
   quizPrompt:"Chọn đáp án trước khi chấm.",imported:"Đã nhập bản backup hợp lệ.",invalidBackup:"Backup không hợp lệ: ",
   academyNone:"Chưa có dữ liệu Academy trên trình duyệt này.",academyAdded:"Đã nhập bài học đã hoàn thành từ Academy: ",
   locked:"Chưa thể đánh dấu vì thiếu bài tiên quyết hoặc quiz.",note:"Ghi chú riêng (tối đa 600 ký tự)",
@@ -74,6 +75,7 @@ const tl={
   noPlan:"Choose a route in the left panel to begin.",completed:"Completed",level:"Level",week:"Week",
   goalWarning:"Your target is shorter than estimated study workload. Increase weekly hours or extend your deadline.",
   goalOK:"The plan fits the selected weekly study budget. Actual learning time varies.",
+  storageRecovered:"Saved progress in this browser was unreadable and has been reset. The old copy is kept aside; you can re-import a backup file.",
   quizPrompt:"Select an answer to check.",imported:"Valid backup imported.",invalidBackup:"Cannot import backup: ",
   academyNone:"No Academy progress found in this browser.",academyAdded:"Imported completed lessons from Academy: ",
   locked:"Cannot mark complete: prerequisite or quiz missing.",note:"Private note (max 600 characters)",
@@ -92,10 +94,14 @@ function save(msg=false){
  if(msg)note(t("saved"));
  renderStats();
 }
-function note(msg){
+function note(msg,ms=2900){
  clearTimeout(toastTimer);
  const o=$("toast");o.textContent=String(msg||"").slice(0,220);o.classList.add("visible");
- toastTimer=setTimeout(()=>o.classList.remove("visible"),2900);
+ toastTimer=setTimeout(()=>o.classList.remove("visible"),ms);
+}
+// The page CSP blocks style="" attributes in HTML strings; widths are set through the CSSOM instead.
+function applyPercentWidths(root){
+ root.querySelectorAll("[data-pct]").forEach(el=>{const n=Number(el.dataset.pct);el.style.width=(Number.isFinite(n)?Math.min(100,Math.max(0,n)):0)+"%"});
 }
 function hrefSafe(u){return C.safeUrl(u)?esc(u):"#"}
 function pct(n,total){return total?Math.round(100*n/total):0}
@@ -207,8 +213,8 @@ function showPath(){
  const p=C.progress(plan,state);
  return section(t("course"),t("startedNote"),"03 / WEEKLY ROADMAP",
   button("export-md",t("exportMd"),"tiny"))
- +'<div class="surface-card" style="margin-bottom:12px"><div class="panel-head"><h3>'+t("progress")+' · '+p.completed+'/'+p.total+'</h3><span class="tag">'+plan.estimatedWeeks+' '+t("weeksTotal")+'</span></div>'
- +'<div class="progress-line"><i style="width:'+p.percent+'%"></i></div>'+stageMap()+'</div>'
+ +'<div class="surface-card u-mb-12"><div class="panel-head"><h3>'+t("progress")+' · '+p.completed+'/'+p.total+'</h3><span class="tag">'+plan.estimatedWeeks+' '+t("weeksTotal")+'</span></div>'
+ +'<div class="progress-line"><i data-pct="'+p.percent+'"></i></div>'+stageMap()+'</div>'
  +'<div class="path-grid">'+plan.weeks.map(w=>'<section class="week-group"><header class="week-heading"><h3>'+t("week")+' '+w.index+'</h3><small>'+w.minutes+' '+t("lessonMinutes")+' · '+w.lessonIds.length+' '+t("lesson")+'</small></header>'
  +'<div class="week-content">'+(w.lessonIds.length?w.lessonIds.map(id=>lessonRow(plan.lessons.find(x=>x.id===id))).join(""):'<span class="tag">'+t("build")+'</span>')+'</div>'
  +(w.capstone?'<div class="week-capstone"><strong>'+t("capstone")+' · '+w.capstoneMinutes+' min · steps '+w.capstoneSteps.join(",")+'/3</strong><p>'+esc(pick(plan.career.capstone))+'</p><button class="button tiny" data-tab="evidence">'+t("openEvidence")+' ↗</button></div>':'')
@@ -220,7 +226,7 @@ function showCareer(){
  +'<div class="career-grid">'+data.careers.map((item,i)=>'<article class="career-card '+(item.id===c.id?"selected":"")+'"><div class="career-top"><span class="career-number">TRACK 0'+(i+1)+'</span><span class="tag">'+esc(item.family)+'</span></div>'
  +careerHeading(item)+'<p>'+esc(pick(item.tagline))+'</p>'+skills(item)
  +'<div class="card-actions"><button class="button '+(item.id===c.id?"outline":"primary")+'" data-career="'+esc(item.id)+'">'+(item.id===c.id?t("selected"):t("selectCareer"))+' →</button></div></article>').join("")+'</div>'
- +'<div class="surface-card" style="margin-top:12px"><div class="panel-head"><h3>'+t("careerStages")+' · '+esc(pick(c.name))+'</h3></div><div class="stages" style="grid-template-columns:repeat(3,minmax(0,1fr))">'
+ +'<div class="surface-card u-mt-12"><div class="panel-head"><h3>'+t("careerStages")+' · '+esc(pick(c.name))+'</h3></div><div class="stages stages-3">'
  +c.seniority.map((name,index)=>'<div class="stage"><span>0'+(index+1)+'</span><strong>'+esc(name)+'</strong><small>'+t("startedNote")+'</small></div>').join("")+'</div>'
  +'<div class="career-target">'+t("build")+': '+esc(pick(c.capstone))+'</div></div>';
 }
@@ -247,7 +253,7 @@ function showEvidence(){
   button("export-json",t("exportJson"),"tiny"))
  +'<div class="capstone-card"><div class="eyebrow">'+t("capstone")+'</div><h3>'+esc(pick(c.name))+' · 01</h3><p>'+esc(pick(c.capstone))+'</p>'
  +'<ul class="checklist">'+c.evidence.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>'
- +'<div class="evidence-layout" style="margin-top:13px"><div class="surface-card"><h3>'+(isPrivate?(locale==="vi"?"Bằng chứng thực hành riêng tư":"Private practice evidence"):t("evidenceUrl"))+'</h3><p>'+t("evidenceDisclaimer")+'</p>'
+ +'<div class="evidence-layout u-mt-13"><div class="surface-card"><h3>'+(isPrivate?(locale==="vi"?"Bằng chứng thực hành riêng tư":"Private practice evidence"):t("evidenceUrl"))+'</h3><p>'+t("evidenceDisclaimer")+'</p>'
  +(isPrivate?
  '<label for="private-proof" class="eyebrow">'+(locale==="vi"?"Mô tả bài thực hành (tối thiểu 35 ký tự)":"Describe your practice (at least 35 characters)")+'</label>'
  +'<textarea class="evidence-input" id="private-proof" rows="4" maxlength="500" placeholder="'+(locale==="vi"?"Ví dụ: Tôi đã tạo checklist từ dữ liệu giả, tự kiểm tra 3 bước, ghi điều cần sửa…":"Example: I built a synthetic checklist, reviewed three steps, and recorded one revision…")+'">'+esc(state.privateProof||"")+'</textarea>'
@@ -256,11 +262,11 @@ function showEvidence(){
  '<label for="capstone-url" class="eyebrow">'+t("evidenceUrl")+'</label>'
  +'<input class="evidence-input" id="capstone-url" type="url" inputmode="url" placeholder="https://github.com/..." value="'+esc(url)+'" aria-describedby="url-validation">'
  +'<div class="field-feedback '+(valid?"valid":"invalid")+'" id="url-validation" role="status">'+(valid?t("evidenceValid"):url?t("evidenceInvalid"):t("evidenceMissing"))+'</div>')
- +'<label class="confirm-row"><input type="checkbox" id="capstone-confirm" '+(state.capstoneConfirmed?"checked":"")+'><span>'+t("confirmCapstone")+'</span></label></div>'  +'<div class="surface-card"><h3>'+t("evidenceGate")+'</h3><div class="progress-line"><i style="width:'+p.percent+'%"></i></div>'
- +'<strong style="font-size:18px">'+(report.ready?t("proofReady"):t("proofNotReady"))+'</strong><p>'+p.completed+'/'+p.total+' '+t("completed")+'</p>'
+ +'<label class="confirm-row"><input type="checkbox" id="capstone-confirm" '+(state.capstoneConfirmed?"checked":"")+'><span>'+t("confirmCapstone")+'</span></label></div>'  +'<div class="surface-card"><h3>'+t("evidenceGate")+'</h3><div class="progress-line"><i data-pct="'+p.percent+'"></i></div>'
+ +'<strong class="u-fs-18">'+(report.ready?t("proofReady"):t("proofNotReady"))+'</strong><p>'+p.completed+'/'+p.total+' '+t("completed")+'</p>'
  +'<div class="skill-cloud">'+report.gaps.map(x=>'<span class="tag warn">'+esc(x.replaceAll("_"," "))+'</span>').join("")+'</div><p>'+t("proofWarning")+'</p>'
  +'<div class="card-actions">'+button("export-md",t("exportMd"),"tiny")+button("import-json",t("importJson"),"tiny")+'</div></div></div>'
- +'<div class="surface-card" style="margin-top:12px"><div class="panel-head"><h3>PROGRESS BRIDGE · Academy → Path</h3></div>'
+ +'<div class="surface-card u-mt-12"><div class="panel-head"><h3>PROGRESS BRIDGE · Academy → Path</h3></div>'
  +'<p>'+t("startedNote")+'</p><div class="card-actions">'+button("academy-import",t("academyImport"),"tiny")
  +button("export-json",t("exportJson"),"tiny")+button("reset",t("reset"),"tiny")+'</div></div>';
 }
@@ -274,7 +280,7 @@ function render(){
   if(a.closest("nav")){a.classList.toggle("active",a.dataset.tab===route);a.setAttribute("aria-current",a.dataset.tab===route?"page":"false");}
  });
  text("current-tab",t(route));
- const view=$( "content");view.innerHTML=views[route]();
+ const view=$( "content");view.innerHTML=views[route]();applyPercentWidths(view);
  if(route==="start")window.CodexStartScreen.mount(locale);
  if(route==="guide")window.CodexGuideScreen.mount(locale);
  renderStats();
@@ -311,7 +317,7 @@ function openLesson(id){
   +'<button type="button" class="button tiny" data-copy-practice="'+esc(id)+'">'+(locale==="vi"?"Sao chép prompt ↗":"Copy prompt ↗")+'</button></details>'
   +'<h3>'+t("quiz")+'</h3><p>'+esc(quiz.question)+'</p>'
   +'<div class="lesson-list">'+quiz.options.map((option,i)=>
-    '<label class="confirm-row" style="padding:9px;background:var(--surface2);border-radius:8px;border:1px solid var(--line)">'
+    '<label class="confirm-row quiz-option">'
     +'<input type="radio" name="quiz-answer" value="'+i+'" '+(chosen===i?"checked":"")+'><span>'+esc(option)+'</span></label>').join("")+'</div>'
   +'<div class="card-actions"><button class="button tiny" id="check-quiz" type="button" data-quiz-check="'+esc(id)+'">'+t("quizCheck")+'</button></div>'
   +'<div class="field-feedback" id="quiz-feedback" aria-live="polite"></div>'
@@ -484,7 +490,8 @@ async function bootstrap(){
   if(!r.ok)throw Error("HTTP "+r.status);
   const obj=await r.json();
   C.validateCatalog(obj);data=obj;
-  const backup=lsRead(KEY);state=backup?C.validateState(backup,data):C.initialState(C.defaults());
+  let raw=null;try{raw=localStorage.getItem(KEY)}catch{}
+  const restored=C.restoreState(raw,data);state=restored.state;
      window.CodexStartScreen.configure({onApplyPath:({career,level})=>{
      replan({...state.prefs,career,level});
      location.hash="#path";
@@ -504,6 +511,12 @@ async function bootstrap(){
   state.prefs.locale=locale;
   plan=C.buildPlan(data,state.prefs);
   initSelectors();labels();bind();render();
+  if(restored.corrupt){
+   // Keep the unreadable value for inspection, then save the fresh state so the next load is clean.
+   try{localStorage.setItem(KEY+".corrupt",String(raw).slice(0,200000))}catch{}
+   save();
+   note(t("storageRecovered"),9000);
+  }
  }catch(err){
   $("content").replaceChildren();
   const container=document.createElement("div");container.className="notice";

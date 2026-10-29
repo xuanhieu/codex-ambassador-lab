@@ -1,4 +1,4 @@
-# Codex cho mọi người — Từ Zero đến Pro
+# Học Codex: cẩm nang từ Zero đến Pro (độc lập)
 
 > Independent educational handbook / tài liệu học tập độc lập. Not an official OpenAI certification.
 > Editorial version: 2026-10-25. Source index: 2026-10-24. Features may differ by account and change.

@@ -240,6 +240,37 @@ const PIClinic = (() => {
     };
   }
 
+  const REPLAY_STATUSES = ["CORRECT", "REVIEW_INCOMPLETE", "INCORRECT", "UNSAFE_ALLOW", "INVALID_INPUT"];
+  const REPLAY_LIMIT = 20;
+
+  // Restores the replay log from its raw localStorage string. The origin is shared
+  // with other demos, so the stored value is untrusted: anything that is not an
+  // array of well-formed entries is dropped and reported as corrupt instead of
+  // reaching list.unshift() and breaking every later Run.
+  function parseReplay(raw) {
+    if (raw == null || raw === "") return { entries: [], corrupt: false };
+    let value;
+    try { value = JSON.parse(raw); } catch (e) { return { entries: [], corrupt: true }; }
+    if (!Array.isArray(value)) return { entries: [], corrupt: true };
+    const entries = [];
+    for (const e of value) {
+      if (!e || typeof e !== "object" || Array.isArray(e)) continue;
+      const vsc = validateScenarioId(e.scenarioId);
+      if (!vsc.ok || !REPLAY_STATUSES.includes(e.status)) continue;
+      const vdec = validateDecision(e.decision);
+      const vc = validateChecks(e.checks, vsc.value);
+      entries.push({
+        scenarioId: vsc.value,
+        decision: vdec.ok ? vdec.value : null,
+        status: e.status,
+        checks: vc.ok ? vc.value : {},
+        lang: e.lang === "en" ? "en" : "vi",
+        at: typeof e.at === "string" ? e.at.slice(0, 40) : ""
+      });
+    }
+    return { entries: entries.slice(0, REPLAY_LIMIT), corrupt: entries.length !== value.length };
+  }
+
   function formatReplay(entries) {
     if (!Array.isArray(entries)) return [];
     return entries.map((e) => ({
@@ -284,7 +315,7 @@ const PIClinic = (() => {
   return {
     CHECKS, DECISIONS, SCENARIOS, HUMAN_OUTCOMES, DISCLAIMER, STORAGE_KEY,
     getScenario, validateScenarioId, validateDecision, validateChecks, evaluate,
-    createReplayEntry, formatReplay, scoreSummary, radioKeyTarget, describeOutcome
+    createReplayEntry, parseReplay, formatReplay, scoreSummary, radioKeyTarget, describeOutcome
   };
 })();
 
@@ -333,6 +364,7 @@ if (typeof document !== "undefined") {
       noReplay: "Chưa có nhật ký.",
       replayed: "Đã phát lại.",
       cleared: "Đã xóa nhật ký.",
+      storageRecovered: "Nhật ký phát lại đã lưu bị hỏng nên đã được đặt lại; các mục hợp lệ được giữ lại.",
       exported: "Đã xuất nhật ký.",
       invalidDecision: "Chọn một quyết định.",
       invalidScenario: "Tình huống không hợp lệ.",
@@ -381,6 +413,7 @@ if (typeof document !== "undefined") {
       noReplay: "No replay entries yet.",
       replayed: "Replayed.",
       cleared: "Log cleared.",
+      storageRecovered: "The saved replay log was unreadable and has been reset; valid entries were kept.",
       exported: "Log exported.",
       invalidDecision: "Choose a decision.",
       invalidScenario: "Invalid scenario.",
@@ -411,7 +444,19 @@ if (typeof document !== "undefined") {
   }
 
   function loadReplay() {
-    try { return JSON.parse(localStorage.getItem(C.STORAGE_KEY) || "[]"); } catch (e) { return []; }
+    let raw = null;
+    try { raw = localStorage.getItem(C.STORAGE_KEY); } catch (e) { return []; }
+    const parsed = C.parseReplay(raw);
+    if (parsed.corrupt) {
+      // Keep the unreadable value for inspection, store the clean list, and tell
+      // the user without blocking the page.
+      try {
+        localStorage.setItem(C.STORAGE_KEY + ".corrupt", String(raw).slice(0, 20000));
+        localStorage.setItem(C.STORAGE_KEY, JSON.stringify(parsed.entries));
+      } catch (e) {}
+      notice($s("storageRecovered"));
+    }
+    return parsed.entries;
   }
   function saveReplay(entry) {
     if (!entry) return;

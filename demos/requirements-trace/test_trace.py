@@ -145,5 +145,29 @@ class TraceTests(unittest.TestCase):
                 self.assertEqual(validator.main([str(path)]), 2)
 
 
+class PageCsp(unittest.TestCase):
+    """index.html ships a meta CSP whose hashes match its inline script/style exactly."""
+    def test_csp_hashes_current(self):
+        import base64, hashlib, re
+        html=(Path(__file__).resolve().parent/"index.html").read_text(encoding="utf-8")
+        csp=re.search(r'<meta http-equiv="Content-Security-Policy" content="([^"]+)">',html)
+        self.assertIsNotNone(csp)
+        directives={p.split()[0]:p.split()[1:] for p in csp.group(1).split(";") if p.strip()}
+        self.assertNotIn("'unsafe-inline'",csp.group(1)); self.assertNotIn("'unsafe-eval'",csp.group(1))
+        digest=lambda s:"'sha256-"+base64.b64encode(hashlib.sha256(s.encode("utf-8")).digest()).decode()+"'"
+        scripts=re.findall(r"<script>(.*?)</script>",html,re.S); styles=re.findall(r"<style>(.*?)</style>",html,re.S)
+        self.assertTrue(scripts and styles)
+        for s in scripts: self.assertIn(digest(s),directives["script-src"])
+        for s in styles: self.assertIn(digest(s),directives["style-src"])
+        self.assertIsNone(re.search(r'\sstyle=|\son[a-z]+="',html))
+
+    def test_bundled_sample_matches_fixtures(self):
+        import re
+        html=(ROOT/"index.html").read_text(encoding="utf-8")
+        block=re.search(r'<script type="application/json" id="sample-fixtures">(.*?)</script>',html,re.S)
+        self.assertIsNotNone(block)
+        self.assertEqual(json.loads(block.group(1)),validator.read_json(ROOT/"fixtures.json"))
+
+
 if __name__ == '__main__':
     unittest.main()

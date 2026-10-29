@@ -29,7 +29,7 @@ const steps=[
  {id:"s4",time:"21–26s",title:"Real tests",detail:"Hiển thị lệnh node --test với kết quả thật trên Mac, không dựng green test giả."},
  {id:"s5",time:"26–31s",title:"Community pledge",detail:"Kêu gọi chia sẻ bộ học tập song ngữ và tiếp nhận phản hồi community."}
 ];
-const scriptEN="Hi, I'm a Codex builder, a Vietnamese-speaking AI systems builder. I use Codex to turn complex workflows into tested, practical tools. This is Agent Ops Clinic: a bilingual lab where builders learn delegation, budget limits, and human approvals. As a Codex Ambassador, I'll share reproducible projects and hands-on lessons for Vietnamese and global communities, and bring honest feedback from builders back to OpenAI.";
+const scriptEN="Hi, I'm a Codex builder, a Vietnamese-speaking AI systems builder. I use Codex to turn complex workflows into tested, practical tools. This is Agent Ops Clinic: a bilingual lab where builders learn delegation, budget limits, and human approvals. If selected as a Codex Ambassador, I'll share reproducible projects and hands-on lessons for Vietnamese and global communities, and bring honest feedback from builders back to OpenAI.";
 const scriptVI="Xin chào, mình là người xây dựng Codex, người xây dựng hệ thống AI nói tiếng Việt. Mình dùng Codex để biến ý tưởng thành sản phẩm có kiểm thử, kiểm soát ngân sách và phê duyệt con người. Đây là Agent Ops Clinic, phòng thực hành song ngữ ai cũng có thể chạy và học theo. Nếu trở thành Đại sứ Codex, mình sẽ chia sẻ mã nguồn, hướng dẫn thực hành và phản hồi thật từ cộng đồng tới OpenAI.";
 const saved=()=>{app.lastSaved=new Date().toISOString();try{localStorage.setItem(KEY,JSON.stringify(app))}catch(e){toast("Trình duyệt không lưu được: hãy Export backup ngay.",true)}};
 const prefSave=()=>{try{localStorage.setItem(PREF,JSON.stringify(prefs))}catch{}};
@@ -39,7 +39,7 @@ async function copy(s){try{await navigator.clipboard.writeText(s);toast("Đã sa
 function pct(n,d){return Math.round(n/(d||1)*100)}
 function statusChip(x){const status={"verified":"Đã xác minh","draft":"Nháp • duyệt","missing":"Điền sau","blocked":"Cần minh chứng","confirmed":"Đã tự xác nhận"};return '<span class="status-chip '+esc(x)+'">'+(status[x]||esc(x))+'</span>'}
 function head(kicker,title,sub,actions=""){return '<div class="view-head"><div class="view-subtitle"><div class="eyebrow">'+esc(kicker)+'</div><h1>'+esc(title)+'</h1><p>'+esc(sub)+'</p></div><div class="view-actions">'+actions+'</div></div>'}
-function metric(name,value,sub,width,ico){return '<article class="metric"><div class="metric-top"><span class="metric-label">'+esc(name)+'</span><span class="metric-icon">'+ico+'</span></div><strong class="metric-number">'+esc(value)+'</strong><span class="metric-sub">'+esc(sub)+'</span><div class="metric-bar"><i style="width:'+Math.max(0,Math.min(100,width))+'%"></i></div></article>'}
+function metric(name,value,sub,width,ico){return '<article class="metric"><div class="metric-top"><span class="metric-label">'+esc(name)+'</span><span class="metric-icon" aria-hidden="true">'+ico+'</span></div><strong class="metric-number">'+esc(value)+'</strong><span class="metric-sub">'+esc(sub)+'</span><div class="metric-bar"><i style="width:'+Math.max(0,Math.min(100,width))+'%"></i></div></article>'}
 function taskCard(m){return '<label class="check-row"><input type="checkbox" data-task-id="'+esc(m.id)+'" '+(app.tasks[m.id]?"checked":"")+'><span><strong>'+esc(m.label)+'</strong><span>'+esc(m.day)+' · '+esc(m.group)+(m.proof?' · '+esc(m.proof):'')+'</span></span></label>'}
 function blockerList(audit,max=5){return audit.issues.length?audit.issues.slice(0,max).map(x=>'<div class="risk-row"><div><strong>'+esc(x.label)+'</strong><span>'+esc(x.message)+'</span></div></div>').join(""):'<div class="notice success"><strong>Form hợp lệ tại chỗ.</strong> Cần kiểm tra link bên ngoài, video và tư cách ứng viên bằng mắt trước khi gửi thật.</div>'}
 function progressHTML(){const done=DATA.milestones.filter(m=>app.tasks[m.id]).length;return '<div class="progress-row"><strong>'+done+'/'+DATA.milestones.length+' milestones</strong><span class="muted">'+pct(done,DATA.milestones.length)+'% completed</span></div><div class="progress-track"><i style="width:'+pct(done,DATA.milestones.length)+'%"></i></div>'}
@@ -394,7 +394,7 @@ document.addEventListener("click",async e=>{
  if(action==="copy-form"){await copy(formAsMarkdown());return}
  if(action==="copy-video-en"){await copy(scriptEN);return}
  if(action==="copy-video-vi"){await copy(scriptVI);return}
- if(action==="copy-strategy"){await copy("Codex Ambassador plan: Month 1 bilingual Agent Ops Clinic workshop; M2 first tested PR; M3 secure context; M4 responsible Growth Engineering; M5 multilingual accessibility; M6 maintainable software and retrospective.");return}
+ if(action==="copy-strategy"){await copy("Codex Ambassador application plan: Month 1 bilingual Agent Ops Clinic workshop; M2 first tested PR; M3 secure context; M4 responsible Growth Engineering; M5 multilingual accessibility; M6 maintainable software and retrospective.");return}
  if(action==="export-json"){download("codex-ambassador-backup-"+new Date().toISOString().slice(0,10)+".json",JSON.stringify({exportedAt:new Date().toISOString(),...app},null,2));toast("Đã xuất backup riêng tư.");return}
  if(action==="export-md"){download("codex-ambassador-form.md",formAsMarkdown(),"text/markdown;charset=utf-8");toast("Đã xuất draft Markdown.");return}
  if(action==="export-shortlist"){const arr=app.ideas.filter(i=>i.status!=="backlog").sort((a,b)=>L.scoreIdea(b)-L.scoreIdea(a));const text=arr.length?arr.map(x=>x.id+" | "+x.name+" | "+x.status+" | "+x.hours+"h | "+x.mvp).join("\n"):"No ideas selected yet.";download("codex-ambassador-shortlist.txt",text,"text/plain;charset=utf-8");toast("Đã xuất "+arr.length+" idea.");return}
@@ -509,7 +509,7 @@ $("motionToggle").addEventListener("click",toggleMotion);
 $("exportTop").addEventListener("click",()=>download("codex-ambassador-private-backup.json",JSON.stringify(app,null,2)));
 document.addEventListener("keydown",e=>{
  if(e.key==="/"&&!/INPUT|TEXTAREA/.test(document.activeElement?.tagName||"")&&!e.ctrlKey&&!e.metaKey){e.preventDefault();$("globalSearch").focus()}
- if(e.key==="Escape"&&$("sidebar").classList.contains("open")){$("sidebar").classList.remove("open");$("mobileMenu").setAttribute("aria-expanded","false")}
+ if(e.key==="Escape"&&$("sidebar").classList.contains("open")){const inside=$("sidebar").contains(document.activeElement);$("sidebar").classList.remove("open");$("mobileMenu").setAttribute("aria-expanded","false");if(inside)$("mobileMenu").focus()}
 });
 document.addEventListener("keydown",e=>{
  const card=e.target.closest?.(".idea-card[data-idea-open]");

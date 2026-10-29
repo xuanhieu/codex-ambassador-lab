@@ -4,6 +4,8 @@
 const A=window.AcademyLogic;
 const STORAGE="codex-zerohero-academy-v1", PREF="codex-zerohero-preferences-v1";
 const $=id=>document.getElementById(id);
+// The page CSP blocks style="" attributes in HTML strings; widths are set through the CSSOM instead.
+const applyPercentWidths=root=>root.querySelectorAll("[data-pct]").forEach(el=>{const n=Number(el.dataset.pct);el.style.width=(Number.isFinite(n)?Math.min(100,Math.max(0,n)):0)+"%"});
 const E=v=>String(v??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
 const url=r=>A.safeUrl(r)?" href=\""+E(r)+"\" target=\"_blank\" rel=\"noopener noreferrer\"":"";
 const I={
@@ -124,11 +126,11 @@ function showHome(){
   const tier=tierKeys[i],arr=lessons.filter(x=>x.level===tier);
   const d=arr.filter(x=>store.completed.includes(x.id)).length;
   html+='<div class="card path-card"><div class="step-num">0'+(i+1)+' / 05</div><h3>'+E(tier)+'</h3><p>'+E(arr[0][locale].purpose)+'</p>'
-      +'<div class="path-meter"><i style="width:'+A.percentage(d,arr.length)+'%"></i></div>'
+      +'<div class="path-meter"><i data-pct="'+A.percentage(d,arr.length)+'"></i></div>'
       +'<div class="card-foot">'+badge(d+" / "+arr.length+" "+l.complete,'accent')+openButton(arr.find(x=>!store.completed.includes(x.id))?.id||arr[0].id,l.begin)+'</div></div>';
  }
  html+='</div>';
- html+='<div class="section-head" style="margin-top:35px"><div><h2>'+E(l.homeSources)+'</h2><p>'+E(l.homeSourceSub)+'</p></div><button class="button" data-view="library">'+E(l.openLibrary)+' →</button></div>';
+ html+='<div class="section-head u-mt-35"><div><h2>'+E(l.homeSources)+'</h2><p>'+E(l.homeSourceSub)+'</p></div><button class="button" data-view="library">'+E(l.openLibrary)+' →</button></div>';
  const highlighted=["Codex CLI","Custom instructions with AGENTS.md","Plugins","Codex SDK"];
  const featured=highlighted.map(x=>catalog.sources.find(y=>y.title===x)).filter(Boolean);
  html+='<div class="grid cols-4">'+featured.map(s=>sourceCard(s)).join("")+'</div>';
@@ -164,7 +166,7 @@ function renderLibraryResults(){
  const pages=Math.max(1,Math.ceil(selected.length/16));
  docsFilter.page=Math.max(1,Math.min(pages,docsFilter.page));
  const shown=selected.slice((docsFilter.page-1)*16,docsFilter.page*16);
- let html='<p class="muted" style="font-size:12px">'+shown.length+' / '+selected.length+' '+E(l.results)+'</p>';
+ let html='<p class="muted u-fs-12">'+shown.length+' / '+selected.length+' '+E(l.results)+'</p>';
  html+=shown.length?'<div class="grid cols-4">'+shown.map(sourceCard).join("")+'</div>':'<div class="empty">'+E(l.empty)+'</div>';
  html+='<div class="pager"><button data-page="first"'+(docsFilter.page===1?' disabled':'')+' aria-label="'+E(l.first)+'">«</button>'
   +'<button data-page="prev"'+(docsFilter.page===1?' disabled':'')+'>'+E(l.prev)+'</button>'
@@ -201,12 +203,12 @@ function showProgress(){
  +'<button class="button" data-reset="yes">'+E(l.reset)+'</button>');
  const count=store.completed.length;
  html+='<div class="grid cols-3">'
-  +'<div class="card"><span class="eyebrow">'+E(l.completed)+'</span><strong style="font-size:33px">'+count+' / '+lessons.length+'</strong><div class="path-meter"><i style="width:'+A.percentage(count,lessons.length)+'%"></i></div></div>'
-  +'<div class="card"><span class="eyebrow">'+E(l.bookmarked)+'</span><strong style="font-size:33px">'+store.bookmarks.length+'</strong><p>'+E(l.fresh)+'</p></div>'
-  +'<div class="card"><span class="eyebrow">'+E(l.learning)+'</span><strong style="font-size:33px">'+Object.keys(store.checks).length+'</strong><p>'+E(l.privacy)+'</p></div></div>';
+  +'<div class="card"><span class="eyebrow">'+E(l.completed)+'</span><strong class="u-fs-33">'+count+' / '+lessons.length+'</strong><div class="path-meter"><i data-pct="'+A.percentage(count,lessons.length)+'"></i></div></div>'
+  +'<div class="card"><span class="eyebrow">'+E(l.bookmarked)+'</span><strong class="u-fs-33">'+store.bookmarks.length+'</strong><p>'+E(l.fresh)+'</p></div>'
+  +'<div class="card"><span class="eyebrow">'+E(l.learning)+'</span><strong class="u-fs-33">'+Object.keys(store.checks).length+'</strong><p>'+E(l.privacy)+'</p></div></div>';
  const finished=lessons.filter(x=>store.completed.includes(x.id));
  const bookmarked=catalog.sources.filter(x=>store.bookmarks.includes(x.id));
- html+='<div class="split" style="margin-top:19px">'
+ html+='<div class="split u-mt-19">'
    +'<div class="panel"><h3>'+E(l.completed)+'</h3>'
    +(finished.length?finished.map(x=>'<div class="list-row"><span>✓</span><div class="grow"><strong>'+E(x[locale].title)+'</strong><small>'+E(x.level)+'</small></div><button data-lesson="'+E(x.id)+'">'+E(l.details)+'</button></div>').join(''):'<div class="empty">'+E(l.emptyDone)+'</div>')
    +'</div><div class="panel"><h3>'+E(l.bookmarked)+'</h3>'
@@ -238,7 +240,7 @@ function renderContent(){
  if(!catalog)return;
  applyLabels();updateStats();
  const actions={home:showHome,library:showLibrary,paths:showPaths,progress:showProgress,lab:showLab};
- $("content").innerHTML=actions[view]();
+ $("content").innerHTML=actions[view]();applyPercentWidths($("content"));
  if(view==="library")renderLibraryResults();
 }
 function setLocale(next){

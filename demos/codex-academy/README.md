@@ -1,4 +1,4 @@
-# Codex × ChatGPT Zero-to-Hero Academy
+# Codex × ChatGPT Zero-to-Hero Academy (independent)
 
 Independent static web academy, 24 October 2026. Not an official OpenAI product, partner, license, certificate or certification.
 

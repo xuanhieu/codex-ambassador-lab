@@ -1,4 +1,4 @@
-# QA & provenance — Codex × ChatGPT Zero-to-Hero Academy
+# QA & provenance — Codex × ChatGPT Zero-to-Hero Academy (independent)
 
 Observed 2026-10-24 on the user's Mac mini. This is an independent original educational app, not an OpenAI certification.
 

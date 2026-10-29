@@ -77,4 +77,24 @@ class EvidenceTests(unittest.TestCase):
   root=Path(__file__).resolve().parents[1]
   m=json.loads((root/'fixtures/sample-manifest.json').read_text())
   self.assertTrue(e.verify_manifest(m,root/'fixtures/data')['ok'])
+class BrowserSampleTests(unittest.TestCase):
+ """The in-browser "Load sample" bundle must equal the shipped fixtures byte for byte."""
+ def setUp(self):
+  root=Path(__file__).resolve().parents[1]
+  text=(root/'sample.js').read_text(encoding='utf-8')
+  def grab(name):
+   start=text.index('window.'+name+'=')+len('window.'+name+'=')
+   return json.loads(text[start:text.index(';\n',start)])
+  self.chain=grab('SAMPLE_CHAIN');self.files=grab('SAMPLE_FILES');self.root=root
+ def test_sample_chain_matches_manifest(self):
+  self.assertEqual(self.chain,json.loads((self.root/'fixtures/sample-manifest.json').read_text(encoding='utf-8')))
+ def test_sample_files_match_fixture_bytes(self):
+  data=self.root/'fixtures/data'
+  self.assertEqual(sorted(self.files),sorted(p.name for p in data.iterdir()))
+  for name,text in self.files.items():
+   with self.subTest(name=name):self.assertEqual(text.encode('utf-8'),(data/name).read_bytes())
+ def test_sample_files_verify_against_chain(self):
+  with tempfile.TemporaryDirectory() as folder:
+   for name,text in self.files.items():(Path(folder)/name).write_bytes(text.encode('utf-8'))
+   self.assertTrue(e.verify_manifest(self.chain,Path(folder))['ok'])
 if __name__=='__main__':unittest.main()
