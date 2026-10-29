@@ -11,10 +11,10 @@
     "assets/cli-onboarding-cdp-desktop.png": "241e59680093386ab914cb4f129120660c0b793b300cdf678e45930f3e970814",
     "assets/cli-onboarding-cdp-mobile.png": "3ff42acb3ad3bacdfbd2a80a335a701b2c6da927e91ba85e334158e851a9ba28",
     "assets/portfolio-nav.css": "ef5b11f00ae7f130006475ebd6f1fd3035f34670cf58fc0ed1a2d9fdeef25949",
-    "dashboard/app.js": "4a83832fb3adf90dd5f6c3c0dbceef38a72ab055e48060529b783ccc62ee80c8",
-    "dashboard/compact-workspace.css": "75c1417f32afd8677a765fa513b5f36e7e716ecab18d823a94d2529e38d56640",
+    "dashboard/app.js": "4e72a7bb9faecc8f77fa88349abda3eab4e533a236dc7f8ea42c353ae49ef118",
+    "dashboard/compact-workspace.css": "288a8953603374e4f1ebf2b6ec1a4c5494d5dc576925f6d6a4742c8425596fd4",
     "dashboard/dashboard.css": "2070bea57dd6fa9cb95aed04b56fa35d482a2aa30962eb4689b70740a5672036",
-    "dashboard/data.js": "529e6b7892d5ef597636d92b8b6470e7e669c3779a36ea16f3f2b0482fd57654",
+    "dashboard/data.js": "90840f64ec28ec601f498a16347ccb46248336adad6d13611f19e007cdc38e2d",
     "dashboard/ideas-base.js": "82614ec7126d7a14f81205e63d52262ba95232fae8d7ea5c6f79e7baa7e3bba4",
     "dashboard/ideas.js": "4046f26349e219e8f124fa0d6801a44b81a8b3a07410181a43d8fedabc87032a",
     "dashboard/index.html": "f0751ff6d2c0b4f0b92f9f064b8c41972d1a599d4997701575ec2b77e9f29a9e",
@@ -215,5 +215,5 @@
     "index.html": "f2f7f3fcfe3f306f0a81f27992d3f37308d510de10a1efd92e6ca4bebe2cfc7a",
     "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
   },
-  "digest": "44b03398b33d7d72a6ac55fe5855a19d594006ff48daa7fa7c747cab69d5eac6"
+  "digest": "5dedc10dabd74413a88b898cf71edcfcc945864b667dfebbc42ebc46cc619aee"
 }
