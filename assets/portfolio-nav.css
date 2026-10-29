@@ -1,4 +1,4 @@
-.codex-portfolio-nav{position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui,sans-serif;box-shadow:0 4px 20px #0007}
-.codex-portfolio-nav a{color:#7fe3d7;text-decoration:none}
-.codex-portfolio-nav a:hover,.codex-portfolio-nav a:focus-visible{text-decoration:underline}
-.codex-portfolio-nav .codex-portfolio-sep{opacity:.6;margin:0 8px}
+nav.codex-portfolio-nav{all:initial;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 8px;box-sizing:border-box;width:100%;margin:32px 0 0;padding:12px 16px;border-top:1px solid #8884;font:600 14px/1.4 system-ui,sans-serif;color:inherit}
+nav.codex-portfolio-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:8px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+nav.codex-portfolio-nav a:focus-visible{outline:3px solid #4fb3ff;outline-offset:2px}
+nav.codex-portfolio-nav .codex-portfolio-sep{opacity:.6}

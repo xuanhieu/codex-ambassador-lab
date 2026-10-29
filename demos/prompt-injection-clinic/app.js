@@ -639,8 +639,11 @@ if (typeof document !== "undefined") {
     });
 
     document.addEventListener("keydown", (e) => {
-      const tag = (e.target && e.target.tagName) || "";
-      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      // Page shortcuts only when focus is not on a control: Enter must keep
+      // activating the focused link or button (keyboard users, decision buttons).
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const t = e.target;
+      if (t && t.closest && t.closest("a,button,input,textarea,select,summary,[role=button],[role=radio],[contenteditable]")) return;
       if (e.key === "Enter") {
         e.preventDefault();
         if (!$("run").disabled) runEvaluation();

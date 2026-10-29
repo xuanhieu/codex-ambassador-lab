@@ -1,6 +1,6 @@
 # Codex Path — Learning & Career OS
 
-**Independent learning and career planning product** by the local Codex Ambassador workspace.
+**Independent learning and career planning product** by github.com/xuanhieu. Not affiliated with or endorsed by OpenAI.
 
 ## Try the app
 
@@ -34,10 +34,11 @@ The local JSON backup retains completed practice steps. Older version-1 backups 
 
 ## Commands
 
+Run from the folder that contains this README (the repository root of `codex-learning-path`, or `demos/codex-path` inside `codex-ambassador-lab`):
+
 ```bash
-cd demos/codex-path
 python3 builders_curriculum.py
-node --test tests/test_engine.cjs tests/test_starter.cjs
+node --test tests/test_engine.cjs tests/test_starter.cjs tests/test_guides.cjs
 node --check app.js
 node --check motion.js
 node --check engine.js
@@ -45,7 +46,7 @@ node --check engine.js
 
 Verified 2026-10-24: **63/63 Node unit tests (engine + starter) and 75 Chrome interactions** (390/768/1440px, including the new exercise-step completion gate).
 
-Browser QA (from workspace root): `cd agents/BR-20261024-PARALLEL && ONLY_IDS=PATH node qa_multi.mjs`.
+Re-verified 2026-10-29: **98/98 Node tests** (engine + starter + guides). The browser QA harness lives in the author's private workspace; its results are summarised in QA_REPORT.md.
 
 ## Data lifecycle and limitations
 
@@ -89,7 +90,7 @@ Current canonical app: https://codex.xuanhieu.org/demos/codex-path/#start
 4. **Plain-language guide:** `#guide` includes 19 editorial summaries in VI/EN, a daily-life analogy, concrete example, common mistake, small challenge, direct practice links and 1–4 source pointers.
 5. **Source/lesson registry:** 204 indexed official resource URLs (45 Codex, 158 ChatGPT, 1 Platform). Each is classified into one primary guide with search, tier and product filters. This is the **24/10/2026 source index**, not a claim that each link was checked alive today or that its full contents were copied. Full texts stay with their owner.
 6. **Mapping algorithm:** `python3 builders_curriculum.py && python3 build_guide_map.py` rebuilds the deterministic source-to-lesson indexes from Academy's `lessons.json`, `catalog.json` and the curated original `every-human-extension.json`.
-7. **Start-to-finish QA:** `node --test tests/test_engine.cjs tests/test_starter.cjs tests/test_guides.cjs` passed **91/91**. Real Chrome 390/768/1440px tested the full 3-minute journey, source mapping, official document search/filtering, bilingual switch, 61 lessons and 14 routes without overflow. All first-win outputs are synthetic, not AI-generated claims.
+7. **Start-to-finish QA:** `node --test tests/test_engine.cjs tests/test_starter.cjs tests/test_guides.cjs` passed **91/91** at that date (98/98 on 2026-10-29). Real Chrome 390/768/1440px tested the full 3-minute journey, source mapping, official document search/filtering, bilingual switch, 61 lessons and 14 routes without overflow. All first-win outputs are synthetic, not AI-generated claims.
 8. **Limitations:** self-reported quiz and checkbox progress are not certifications. No backend user account, live AI API, personal data upload, complete reading of all 204 linked articles, real learner study or independent WCAG certification is claimed.
 
 Additional technical documentation: `docs/21_EVERY_HUMAN_LEARNING_MAP_2026-10-25.md` (local master workspace).
