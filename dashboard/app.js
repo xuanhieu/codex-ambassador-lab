@@ -15,7 +15,7 @@ try{Object.assign(prefs,JSON.parse(localStorage.getItem(PREF)||"{}"))}catch{}
 // Verified public source registry wins over an obsolete browser-local status.
 for(const project of PROJECTS){if(project.status==="public"){const linked=app.ideas.find(x=>x.id===project.id);if(linked)linked.status="public"}}
 
-let route="overview",ideasFilter={q:"",category:"",stage:"",speed:"",sort:"score"},formSearch="";
+let route="overview",ideasFilter={q:"",category:"",stage:"",speed:"",priority:"",sort:"priority"},ideaShown=24,formSearch="";
 const labels={overview:"Tổng quan",application:"Form ứng tuyển",ideas:"Idea Lab",portfolio:"Portfolio & Demo",timeline:"Deadline & Tasks",video:"Video Studio",strategy:"Chiến lược 6 tháng",settings:"Dữ liệu & Thiết lập",workspace:"Bản đồ dự án"};
 const categories=[...new Set(app.ideas.map(i=>i.category))].sort();
 const steps=[
@@ -46,10 +46,10 @@ function renderOverview(){
  const remaining=DATA.milestones.filter(m=>!app.tasks[m.id]);
  const hotIds=["N119","N118","N002","N094","N110","N107"];
  return '<div class="overview-compact">'
- +'<section class="hero"><div class="hero-inner"><div class="eyebrow">CODEX AMBASSADOR · MISSION CONTROL</div><h1>Build proof. <span>Earn trust.</span> Teach builders.</h1><p>Kiểm chứng sản phẩm • đưa ra bằng chứng • đóng góp học liệu cộng đồng. Mở rộng từng phần khi cần.</p><div class="hero-actions"><button class="btn" data-route="portfolio">Portfolio ↗</button><button class="btn btn-outline" data-route="application">Hồ sơ ↗</button><button class="btn btn-outline" data-route="workspace">Source map ↗</button></div></div><div class="hero-symbol" aria-hidden="true">◇</div></section>'
+ +'<section class="hero"><div class="hero-inner"><div class="eyebrow">CODEX AMBASSADOR · MISSION CONTROL</div><h1>Build proof. <span>Earn trust.</span> Teach builders.</h1><p>Kiểm chứng sản phẩm • đưa ra bằng chứng • đóng góp học liệu cộng đồng. Mở rộng từng phần khi cần.</p><div class="hero-actions"><button class="btn" data-route="portfolio">Portfolio ↗</button><button class="btn btn-outline" data-route="application">Hồ sơ ↗</button><button class="btn btn-outline" data-route="workspace">Source map ↗</button><button class="btn btn-outline" data-route="ideas">Idea Lab ↗</button></div></div><div class="hero-symbol" aria-hidden="true">◇</div></section>'
  +'<div class="grid-4 overview-metrics">'
  +metric("Form cần duyệt",audit.ready+'/'+audit.required,audit.requiredLeft+" trường còn thiếu",pct(audit.ready,audit.required),"▤")
- +metric("Idea Lab",app.ideas.length,"154 ý tưởng được phân loại",100,"✧")
+ +metric("Idea Lab",app.ideas.length,PROJECTS.filter(x=>x.status==="public").length+" demo đang Live",100,"✧")
  +metric("Demo public",published,"Liên kết công khai đã xác minh",pct(published,PROJECTS.length),"✓")
  +metric("Milestones",done+"/"+DATA.milestones.length,"Bấm timeline xem toàn bộ",pct(done,DATA.milestones.length),"◷")+'</div>'
  +'<section class="overview-columns">'
@@ -93,25 +93,77 @@ function renderApplication(){
  +'<div class="section-title"><h2>Ready to submit?</h2></div><div class="panel">'+(audit.gateOpen?'<div class="notice success">Các trường cơ bản hợp lệ; vẫn phải kiểm tra khả năng xem link, video và Terms trước khi thực sự nộp.</div>':'<div class="notice"><strong>CHƯA SẴN SÀNG.</strong> '+audit.issues.length+' blocker, không đánh dấu nộp thay người dùng.</div>')+'<button class="btn btn-primary" data-action="open-application">Mở OpenAI form ↗</button></div>';
 }
 
+
+// Release proof is authoritative. Browser-entered "public" labels are not verification.
+const P0_IDS=new Set(["N119","N118","O001","N002","N003","O002","O004","N071","N074"]);
+const P1_IDS=new Set(["N006","N019","N058","N065","N078","N094","N097","N101","N104","N106","N107","N108","N110","N111","N112","N120","O003","N054","N057","N060","N073","N076","N081","N086"]);
+const VERIFIED_IDS=new Set(PROJECTS.filter(p=>p.status==="public"&&p.href).map(p=>p.id));
+const STAGE_LABEL={backlog:"Chưa xây",shortlist:"Đã chọn",building:"Đang làm",tested:"Đã test",public:"Public (tự ghi)"};
+function priorityFor(i){
+ if(P0_IDS.has(i.id))return "P0";
+ if(P1_IDS.has(i.id))return "P1";
+ if(i.priority==="P0"||i.priority==="P1"||i.priority==="P2")return i.priority;
+ return L.scoreIdea(i)>=82&&Number(i.hours)<=4?"P1":"P2";
+}
+function verifiedProject(i){return PROJECTS.find(p=>p.id===i.id&&p.status==="public"&&p.href)||null}
+function ideaEvidenceState(i){return VERIFIED_IDS.has(i.id)?"deployed":i.status==="public"?"self-reported":i.status}
 function filteredIdeas(){
- let arr=app.ideas.filter(i=>(!ideasFilter.category||i.category===ideasFilter.category)&&(!ideasFilter.stage||i.status===ideasFilter.stage)&&(!ideasFilter.speed||(ideasFilter.speed==="fast"?i.hours<=4:i.hours>4)));
- if(ideasFilter.q){const q=ideasFilter.q.toLowerCase();arr=arr.filter(i=>(i.name+" "+i.category+" "+i.mvp+" "+i.audience+" "+(i.acceptance||"")+" "+(i.acceptance||"")+" "+(i.acceptance||"")+" "+(i.acceptance||"")+" "+(i.acceptance||"")+" "+(i.acceptance||"")).toLowerCase().includes(q))}
- arr.sort(ideasFilter.sort==="effort"?(a,b)=>a.hours-b.hours:ideasFilter.sort==="name"?(a,b)=>a.name.localeCompare(b.name):ideasFilter.sort==="impact"?(a,b)=>b.impact-a.impact:(a,b)=>L.scoreIdea(b)-L.scoreIdea(a));
- return arr;
+ let arr=app.ideas.filter(i=>(!ideasFilter.category||i.category===ideasFilter.category)
+  &&(!ideasFilter.stage||(ideasFilter.stage==="public"?!!verifiedProject(i):ideasFilter.stage==="unverified"?i.status==="public"&&!verifiedProject(i):i.status===ideasFilter.stage))
+  &&(!ideasFilter.priority||priorityFor(i)===ideasFilter.priority)
+  &&(!ideasFilter.speed||(ideasFilter.speed==="fast"?Number(i.hours)<=4:Number(i.hours)>4)));
+ if(ideasFilter.q){
+  const q=ideasFilter.q.trim().toLocaleLowerCase();
+  arr=arr.filter(i=>[i.id,i.name,i.category,i.mvp,i.audience,i.acceptance||"",i.origin||"",priorityFor(i)].join(" ").toLocaleLowerCase().includes(q));
+ }
+ const t={P0:0,P1:1,P2:2},s={deployed:0,tested:1,building:2,shortlist:3,backlog:4,"self-reported":5};
+ const compare=(a,b)=>ideasFilter.sort==="effort"?Number(a.hours)-Number(b.hours):
+   ideasFilter.sort==="name"?a.name.localeCompare(b.name):
+   ideasFilter.sort==="impact"?Number(b.impact||0)-Number(a.impact||0):
+   ideasFilter.sort==="score"?L.scoreIdea(b)-L.scoreIdea(a):
+   t[priorityFor(a)]-t[priorityFor(b)] || s[ideaEvidenceState(a)]-s[ideaEvidenceState(b)] ||
+    L.scoreIdea(b)-L.scoreIdea(a) || a.id.localeCompare(b.id);
+ return arr.sort(compare);
 }
 function renderIdea(i){
- return '<article class="idea-card"><div class="card-top"><span class="idea-number">#'+esc(i.id)+'</span><span class="pill '+(i.hours<=4?"ok":"warn")+'">'+esc(i.hours)+'h estimate</span><span class="pill blue">'+esc(i.category)+'</span></div><h3>'+esc(i.name)+'</h3><p>'+esc(i.mvp)+'</p><div class="idea-foot"><span class="priority">Score '+L.scoreIdea(i)+'/100</span><select aria-label="Trạng thái '+esc(i.name)+'" data-idea-stage="'+esc(i.id)+'">'+["backlog","shortlist","building","tested","public"].map(s=>'<option value="'+s+'"'+(i.status===s?" selected":"")+'>'+({backlog:"Backlog",shortlist:"Shortlist",building:"Building",tested:"Tested",public:"Public"}[s])+'</option>').join("")+'</select><button data-idea-detail="'+esc(i.id)+'">Details ↗</button>'+(PROJECTS.find(p=>p.id===i.id&&p.href)?'<a class="btn btn-sm" href="'+esc(PROJECTS.find(p=>p.id===i.id&&p.href).href)+'" target="_blank" rel="noopener noreferrer">Demo ↗</a>':'')+'</div></article>'
+ const p=verifiedProject(i),priority=priorityFor(i),evidence=ideaEvidenceState(i);
+ const status=p?"Live · HTTPS verified":evidence==="self-reported"?"Public chưa kiểm chứng":STAGE_LABEL[i.status]||i.status;
+ return '<article class="idea-card idea-card-interactive" tabindex="0" data-idea-open="'+esc(i.id)+'" aria-label="Xem chi tiết ý tưởng '+esc(i.id)+' — '+esc(i.name)+'">'
+  +'<div class="card-top"><span class="idea-number">#'+esc(i.id)+'</span><span class="pill prio-'+priority.toLowerCase()+'">'+priority+'</span>'
+  +'<span class="pill '+(p?"ok":i.status==="building"?"warn":"blue")+'">'+esc(status)+'</span><span class="pill blue">'+esc(i.category)+'</span></div>'
+  +'<h3>'+esc(i.name)+'</h3><p>'+esc(i.mvp)+'</p>'
+  +'<div class="idea-foot"><span class="priority">'+L.scoreIdea(i)+'/100 · '+esc(i.hours)+'h dự kiến</span>'
+  +'<button type="button" class="idea-detail-action" data-idea-detail="'+esc(i.id)+'">Xem chi tiết ↗</button>'
+  +(p?'<a class="btn btn-sm" href="'+esc(p.href)+'" target="_blank" rel="noopener noreferrer">Demo ↗</a>':'')
+  +'<select aria-label="Trạng thái làm việc '+esc(i.name)+'" data-idea-stage="'+esc(i.id)+'">'
+  +["backlog","shortlist","building","tested","public"].map(v=>'<option value="'+v+'"'+(i.status===v?" selected":"")+'>'+STAGE_LABEL[v]+'</option>').join("")
+  +'</select></div></article>';
 }
 function renderIdeas(){
- const shown=filteredIdeas(),shortlisted=app.ideas.filter(i=>i.status==="shortlist"),building=app.ideas.filter(i=>i.status==="building");
- const featuredIds=["N002","N001","O002","O013","N076","O018"];
- const topFast=featuredIds.map(id=>app.ideas.find(i=>i.id===id)).filter(Boolean);
- return head("BUILD PIPELINE","Idea Lab — "+app.ideas.length+" sản phẩm","Tự chấm nội bộ theo sức tác động và giờ MVP dự kiến — không phải tỷ lệ được OpenAI nhận. Lọc, xem use case, chuyển trạng thái và xuất shortlist.",'<button class="btn" data-action="export-shortlist">Export shortlist</button><button class="btn btn-primary" data-action="add-idea">+ Thêm idea</button>')
- +'<div class="grid-4">'+metric("Idea inventory",app.ideas.length,BASE.length+" core + "+EXTRA.length+" curated",100,"◇")+metric("Fast win",app.ideas.filter(i=>i.hours<=4).length,"Ước tính ≤4h/MVP",pct(app.ideas.filter(i=>i.hours<=4).length,app.ideas.length),"⚡")+metric("Shortlisted",shortlisted.length,"Chưa phải đã xây",pct(shortlisted.length,app.ideas.length),"☆")+metric("In build",building.length,"Trạng thái cập nhật thủ công",pct(building.length,app.ideas.length),"◷")+'</div>'
- +'<div class="section-title"><h2>Recommended fast wins</h2><span>Bản nháp lựa chọn — người dùng vẫn quyết định</span></div><div class="panel"><div class="grid-2">'+topFast.map(i=>'<div class="check-row"><div><strong>'+esc(i.name)+'</strong><span>'+esc(i.mvp)+' · '+i.hours+'h · '+L.scoreIdea(i)+' điểm</span><button class="btn btn-sm" data-idea-detail="'+esc(i.id)+'" style="margin-top:9px">Xem MVP ↗</button></div></div>').join("")+'</div></div>'
- +'<div class="section-title"><h2>All concepts</h2><span id="ideaCount">'+shown.length+' / '+app.ideas.length+' items</span></div>'
- +'<div class="filterbar"><input id="ideaSearch" type="search" placeholder="Tìm tên, nhóm, use case…" aria-label="Tìm ý tưởng" value="'+esc(ideasFilter.q)+'"><select id="categoryFilter" aria-label="Lọc nhóm"><option value="">Tất cả nhóm</option>'+categories.map(c=>'<option value="'+esc(c)+'"'+(ideasFilter.category===c?" selected":"")+'>'+esc(c)+'</option>').join("")+'</select><select id="speedFilter" aria-label="Lọc thời gian"><option value="">Mọi thời lượng</option><option value="fast"'+(ideasFilter.speed==="fast"?" selected":"")+'>≤4h fast MVP</option><option value="slow"'+(ideasFilter.speed==="slow"?" selected":"")+'>5h+ stretch</option></select><select id="stageFilter" aria-label="Lọc trạng thái"><option value="">Mọi trạng thái</option>'+["backlog","shortlist","building","tested","public"].map(s=>'<option value="'+s+'"'+(ideasFilter.stage===s?" selected":"")+'>'+s+'</option>').join("")+'</select><select id="sortFilter" aria-label="Sắp xếp"><option value="score"'+(ideasFilter.sort==="score"?" selected":"")+'>Score ↓</option><option value="effort"'+(ideasFilter.sort==="effort"?" selected":"")+'>Hours ↑</option><option value="impact"'+(ideasFilter.sort==="impact"?" selected":"")+'>Impact ↓</option><option value="name"'+(ideasFilter.sort==="name"?" selected":"")+'>Name A–Z</option></select><button class="btn btn-sm" data-action="reset-filters">Reset</button></div>'
- +'<div class="idea-grid" id="ideaGrid">'+(shown.length?shown.map(renderIdea).join(""):'<div class="empty-state">Không có sản phẩm phù hợp. Thử bỏ filter hoặc thêm idea mới.</div>')+'</div>';
+ const shown=filteredIdeas(),cards=shown.slice(0,ideaShown),deployed=PROJECTS.filter(p=>p.status==="public"&&p.href).length;
+ const counts={P0:0,P1:0,P2:0};for(const i of app.ideas)counts[priorityFor(i)]++;
+ const options=(values,current)=>values.map(v=>'<option value="'+esc(v[0])+'"'+(current===v[0]?' selected':'')+'>'+esc(v[1])+'</option>').join('');
+ return head("IDEA COMMAND CENTER","Idea Lab · "+app.ideas.length+" ý tưởng",
+  "Bấm bất kỳ thẻ để xem chi tiết · P0 là ưu tiên hồ sơ, không phải xác suất trúng tuyển. Trạng thái demo dựa vào danh mục triển khai đã đối soát.",
+  '<button class="btn btn-sm" data-action="focus-p0">P0 cần xử lý</button><button class="btn btn-sm" data-route="workspace">Dự án & source ↗</button><button class="btn btn-sm" data-action="export-shortlist">Export</button><button class="btn btn-primary" data-action="add-idea">+ Idea</button>')
+ +'<div class="idea-kpi-strip" role="group" aria-label="Thống kê idea">'
+ +'<span><strong>'+app.ideas.length+'</strong> Tổng idea</span>'
+ +'<span><strong>'+deployed+'</strong> Live HTTPS</span>'
+ +'<span><strong>'+counts.P0+'</strong> P0 ưu tiên</span>'
+ +'<span><strong>'+app.ideas.filter(i=>i.status==="building").length+'</strong> Đang xây</span>'
+ +'<span><strong>'+app.ideas.filter(i=>i.status==="tested").length+'</strong> Đã test (chưa deploy)</span></div>'
+ +'<div class="filterbar idea-filterbar">'
+ +'<input id="ideaSearch" type="search" placeholder="Tìm ID, tên, audience, chức năng..." aria-label="Tìm ý tưởng" value="'+esc(ideasFilter.q)+'">'
+ +'<select id="priorityFilter" aria-label="Lọc ưu tiên">'+options([["","Tất cả P0/P1/P2"],["P0","P0 · Deadline"],["P1","P1 · Giá trị"],["P2","P2 · Khám phá"]],ideasFilter.priority)+'</select>'
+ +'<select id="categoryFilter" aria-label="Lọc nhóm">'+options([["","Tất cả nhóm"],...categories.map(c=>[c,c])],ideasFilter.category)+'</select>'
+ +'<select id="stageFilter" aria-label="Lọc trạng thái">'+options([["","Mọi trạng thái"],["public","Đã deploy · HTTPS"],["unverified","Public tự ghi · chưa kiểm"],["tested","Đã test"],["building","Đang làm"],["shortlist","Đã chọn"],["backlog","Chưa xây"]],ideasFilter.stage)+'</select>'
+ +'<select id="speedFilter" aria-label="Lọc thời gian">'+options([["","Mọi thời lượng"],["fast","≤4h MVP"],["slow",">4h MVP"]],ideasFilter.speed)+'</select>'
+ +'<select id="sortFilter" aria-label="Sắp xếp">'+options([["priority","Ưu tiên P0 → P2"],["score","Score ↓"],["effort","Giờ ↑"],["impact","Impact ↓"],["name","Tên A–Z"]],ideasFilter.sort)+'</select>'
+ +'<button class="btn btn-sm" data-action="reset-filters">Bỏ lọc</button></div>'
+ +'<div class="section-title idea-section-title"><h2>Danh sách / sản phẩm</h2><span id="ideaCount">'+cards.length+' / '+shown.length+' kết quả · '+app.ideas.length+' idea</span></div>'
+ +'<div class="idea-grid" id="ideaGrid">'+(cards.length?cards.map(renderIdea).join(""):'<div class="empty-state">Không có idea khớp bộ lọc. Bấm Bỏ lọc.</div>')+'</div>'
+ +'<button id="ideaMore" class="btn idea-load-more" data-action="load-more-ideas" type="button"'+(shown.length<=ideaShown?' hidden':'')+'>Xem thêm '+Math.min(24,shown.length-ideaShown)+' / '+(shown.length-ideaShown)+' ý tưởng ↓</button>'
+ +'<details class="idea-method"><summary>Quy tắc ưu tiên & cách xác minh</summary><p><b>P0</b>: demo chủ lực, tài liệu cho người học, hồ sơ/video/community cần trước hạn. <b>P1</b>: bài thực hành hoặc công cụ giúp cộng đồng học Codex. <b>P2</b>: ý tưởng mở rộng. <b>Live</b> cần demo công khai trong danh mục đối soát; tự chuyển trạng thái Public không đủ bằng chứng. Ước tính giờ và điểm chỉ là nội bộ.</p></details>';
 }
 function renderPortfolio(){
  return head("REPRODUCIBLE EVIDENCE","Portfolio & Demo","Nguồn gốc code là quan trọng: fork được phân biệt rõ với repo gốc; static Pages demo chưa phải repo source công khai.",'<a class="btn btn-primary" href="../demos/agent-ops-clinic/index.html" target="_blank" rel="noopener">Mở Agent Ops Clinic ↗</a>')
@@ -119,7 +171,7 @@ function renderPortfolio(){
  +'<div class="panel"><div class="panel-head"><h2>Flagship build • Agent Ops Clinic</h2><span class="status-chip verified">36/36 logic tests passed</span></div><div class="grid-2"><a href="../assets/agent-ops-cdp-desktop.png" target="_blank" rel="noopener"><img class="screenshot" src="../assets/agent-ops-cdp-desktop.png" alt="Ảnh màn hình desktop thực tế của Agent Ops Clinic"></a><a href="../assets/agent-ops-cdp-mobile.png" target="_blank" rel="noopener"><img class="screenshot" src="../assets/agent-ops-cdp-mobile.png" alt="Ảnh mobile 390 CSS pixel thực tế"></a></div><p class="small muted" style="margin:15px 0">Xây bằng Codex CLI trên Mac, source được commit cục bộ 7c1ecdf. Ba tình huống giả lập, gating phê duyệt/budget, lưu trạng thái và JSON audit. Đã test viewport; không tự nhận là agent thực hiện deployment thật.</p><div class="view-actions"><a class="btn btn-primary" href="../demos/agent-ops-clinic/index.html" target="_blank" rel="noopener">Chạy demo ↗</a><a class="btn" href="../demos/agent-ops-clinic/README.vi.md" target="_blank" rel="noopener">Tài liệu VI</a><button class="btn" data-route="application">Gắn public URL vào form</button></div></div>'
  +'<div class="section-title"><h2>New teaching MVP • N002</h2><span>24 October 2026</span></div><div class="panel"><div class="panel-head"><h2>Codex CLI Onboarding Diagnostic</h2><span class="status-chip verified">16 Python unit tests passed</span></div><p class="small muted">Bộ kiểm tra workshop đọc dữ liệu cục bộ, không gọi API; 3 fixture mô phỏng song ngữ và hướng dẫn người học xác minh terminal. Kết quả online chỉ mô phỏng và không đo tình trạng thiết bị thật.</p><div class="view-actions"><a class="btn btn-primary" href="../demos/cli-onboarding/" target="_blank" rel="noopener noreferrer">Thử workshop tương tác ↗</a><a class="btn" href="../demos/cli-onboarding/cli_onboarding.py" target="_blank" rel="noopener noreferrer">Mã CLI Python</a><a class="btn" href="../demos/cli-onboarding/README.md" target="_blank" rel="noopener noreferrer">Hướng dẫn EN/VI</a><a class="btn" href="../demos/cli-onboarding/WORKSHOP_FACILITATOR.md" target="_blank" rel="noopener noreferrer">Bộ tổ chức workshop</a></div></div>'
  +'<div class="section-title"><h2>Career flagship • N119 — Codex Path</h2><span>Original learning + career navigator</span></div>'
- +'<div class="panel"><div class="panel-head"><h2>6 career tracks • 25 sourced VI/EN lessons • personalized weekly plans</h2><span class="status-chip verified">26/26 Node tests passed</span></div>'
+ +'<div class="panel"><div class="panel-head"><h2>14 learner journeys • 61 VI/EN lessons • personalized weekly plans</h2><span class="status-chip verified">26/26 Node tests passed</span></div>'
  +'<p class="small muted">Independent AI learning and career roadmap with verified source links, prerequisite-aware weekly schedule, quiz + explicit human completion, capstone proof ledger, responsive Noti-inspired UI and MIT-licensed ASCII Reveal. No OpenAI certification or employment promise.</p>'
  +'<div class="view-actions"><a class="btn btn-primary" href="../demos/codex-path/" target="_blank" rel="noopener noreferrer">Open Codex Path ↗</a>'
  +'<a class="btn" href="../demos/codex-path/README.md" target="_blank" rel="noopener noreferrer">README</a>'
@@ -141,12 +193,13 @@ function renderPortfolio(){
 function renderWorkspace(){
  const count=PROJECTS.filter(p=>p.status==="public").length;
  return head("CROSS-LINKED WORKSPACE","Bản đồ dự án / Finder","Một mã ID nối Idea Lab → demo → docs → source. Bản public không tiết lộ đường dẫn tuyệt đối của máy Mac. Reveal dùng helper chỉ chạy trên MacBook.",'<button class="btn btn-primary" data-route="portfolio">Portfolio ↗</button>')
- +'<div class="notice"><strong>Reveal in Finder:</strong> nút mở source trên Mac mini hoặc bản staged trên MacBook, tùy máy đang sử dụng; helper local 127.0.0.1:45918 phải đang chạy trên chính máy mở dashboard. Link public không thể và không nên tự đọc thư mục máy người xem. Agent đang build sẽ chưa có link demo public.</div>'
+ +(DATA.meta.publicBuild?'':'<div class="notice"><strong>Reveal in Finder:</strong> nút mở source trên Mac mini hoặc bản staged trên MacBook, tùy máy đang sử dụng; helper local 127.0.0.1:45918 phải đang chạy trên chính máy mở dashboard. Link public không thể và không nên tự đọc thư mục máy người xem. Agent đang build sẽ chưa có link demo public.</div>')
  +'<div class="workspace-map-grid">'+PROJECTS.map(p=>'<article class="workspace-node"><div class="workspace-node-top"><span class="pill blue">'+esc(p.id)+'</span><span class="pill '+(p.status==="public"?"ok":"warn")+'">'+esc(p.status)+'</span></div><h3>'+esc(p.title)+'</h3><p class="workspace-path">'+esc(p.file)+'</p><div class="workspace-node-actions">'
  +(p.href?'<a class="btn btn-sm btn-primary" href="'+esc(p.href)+'" target="_blank" rel="noopener noreferrer">Demo ↗</a>':'<span class="pill warn">Chưa public / đang chờ agent</span>')
  +(p.docs?'<a class="btn btn-sm" href="'+esc(p.docs)+'" target="_blank" rel="noopener noreferrer">README ↗</a>':'')
+ +(p.source?'<a class="btn btn-sm" href="'+esc(p.source)+'" target="_blank" rel="noopener noreferrer">GitHub ↗</a>':'<span class="pill warn" title="Demo live nhưng source chưa có trên GitHub">Source chưa public</span>')
  +'<a class="btn btn-sm" href="#ideas?idea='+esc(p.id)+'">Idea ↗</a>'
- +'<a class="btn btn-sm" href="http://127.0.0.1:45918/?item='+encodeURIComponent(p.slug)+'" target="_blank" rel="noopener noreferrer" title="Chỉ chạy nếu bật MacBook Finder helper">Reveal in Finder ↗</a>'
+ +(DATA.meta.publicBuild?'':'<a class="btn btn-sm" href="http://127.0.0.1:45918/?item='+encodeURIComponent(p.slug)+'" target="_blank" rel="noopener noreferrer" title="Chỉ chạy nếu bật MacBook Finder helper">Reveal in Finder ↗</a>')
  +'</div></article>').join("")+'</div>';
 }
 function renderTimeline(){
@@ -172,7 +225,7 @@ function renderStrategy(){
  ["M5","Multilingual & inclusive builders","TTS/caption demo có bản quyền, localization QA, accessibility."],
  ["M6","From prototype to maintainable app","Hướng dẫn CI, QA, incident review và case study cộng đồng."]
  ];
- return head("AMBASSADOR POSITIONING","Community contribution plan","Đề xuất Content-led, Việt Nam, song ngữ và tập trung khả năng người khác tái tạo dự án. Cam kết ít nhất một đóng góp hữu ích mỗi tháng.",'<button class="btn btn-primary" data-action="copy-strategy">Copy 6-month plan</button>')
+ return head("AMBASSADOR POSITIONING","Community contribution plan","Đề xuất Content-led, cộng đồng nói tiếng Việt, song ngữ và tập trung khả năng người khác tái tạo dự án. Cam kết ít nhất một đóng góp hữu ích mỗi tháng.",'<button class="btn btn-primary" data-action="copy-strategy">Copy 6-month plan</button>')
  +'<div class="hero" style="min-height:170px"><div><div class="eyebrow">THE CORE NARRATIVE</div><h1 style="font-size:30px">A builder who teaches<br>how to verify the build.</h1><p>Existing fork không được nhận là tác phẩm gốc. Codex proof, hoạt động giáo dục và tính minh bạch phải đi cùng nhau.</p></div></div>'
  +'<div class="section-title"><h2>Six-month public contribution calendar</h2><span>M1–M6 tính từ lúc được nhận, không phải tháng cố định</span></div><div class="phase-grid">'+months.map(m=>'<article class="phase-card"><div class="eyebrow">'+m[0]+'</div><strong>'+esc(m[1])+'</strong><p>'+esc(m[2])+'</p></article>').join("")+'</div>'
  +'<div class="section-title"><h2>6W2H tactical brief</h2></div><div class="grid-2"><div class="panel"><div class="eyebrow">WHAT / WHY / WHO</div><p class="small muted" style="margin-top:10px">Build practical Codex workflows and explain tradeoffs to Vietnamese-speaking junior builders, marketers becoming makers, and founders. Selection depends on real portfolio, community benefit, and needs/coverage.</p></div><div class="panel"><div class="eyebrow">WHEN / WHERE / HOW / HOW MUCH</div><p class="small muted" style="margin-top:10px">Submit by Oct 30. Demo as a static, zero-paid-API educational artifact with reproducible tests; deliver a small workshop each month. Make no unsupported claim about OpenAI selection probability or guaranteed credits.</p></div></div>';
@@ -201,7 +254,7 @@ function render(){
    }
  }
  const audit=L.auditForm(DATA.fields,app.values,app.statuses);
- $("nav-form-count").textContent=audit.requiredLeft||"✓";
+ $("nav-form-count").textContent=audit.requiredLeft||"✓";$("nav-idea-count").textContent=app.ideas.length;
  updateCountdown();
 }
 function updateCountdown(){
@@ -210,10 +263,36 @@ function updateCountdown(){
  $("sideProgress").style.width=(c.past?100:Math.max(8,100-Math.round(c.totalMinutes/(7*1440)*100)))+"%";
 }
 
-function openDialog(title,body){$("dialogTitle").textContent=title;$("dialogBody").innerHTML=body;$("detailsDialog").showModal()}
+function openDialog(title,body){
+ const dlg=$("detailsDialog");$("dialogTitle").textContent=title;$("dialogBody").innerHTML=body;
+ if(!dlg.open)dlg.showModal();
+}
 function ideaDialog(id){
- const i=app.ideas.find(x=>x.id===id);if(!i)return;
- openDialog(i.name,'<div class="dialog-content"><div class="card-top" style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill blue">'+esc(i.category)+'</span><span class="pill">'+esc(i.hours)+'h MVP estimate</span><span class="pill ok">Internal score '+L.scoreIdea(i)+'/100</span></div><dl class="detail-list"><dt>Audience</dt><dd>'+esc(i.audience)+'</dd><dt>Proposed MVP</dt><dd>'+esc(i.mvp)+'</dd>'+(i.acceptance?'<dt>Acceptance</dt><dd>'+esc(i.acceptance)+'</dd>':'')+'<dt>Status</dt><dd>'+esc(i.status)+'</dd><dt>Source</dt><dd>'+esc(i.origin)+'</dd></dl><div class="box"><strong>Why this is useful for the application</strong><p>An educational artifact becomes credible when it has source, a repeatable run path, tests, and a learner-facing explanation. Estimated hours are rough effort ranges, not delivery promises or win probabilities.</p></div><div class="view-actions" style="margin-top:17px"><button class="btn btn-primary" data-action="shortlist-modal" data-id="'+esc(i.id)+'">+ Đưa vào shortlist</button><button class="btn" data-action="copy-idea" data-id="'+esc(i.id)+'">Copy build brief</button></div></div>');
+ const i=app.ideas.find(x=>x.id===id);if(!i){toast("Không tìm thấy ID "+id,true);return}
+ const p=verifiedProject(i),tier=priorityFor(i),ev=ideaEvidenceState(i);
+ if(route==="ideas"&&location.hash!==("#ideas?idea="+encodeURIComponent(id)))history.replaceState(null,"","#ideas?idea="+encodeURIComponent(id));
+ const proof=p?'<div class="idea-proof-live"><strong>ĐÃ DEPLOY · HTTPS</strong><p>Demo này có URL công khai đã được đối soát với Project Map. Kiểm thử chức năng được ghi riêng, không suy diễn từ HTTP 200.</p><div class="view-actions">'
+  +'<a class="btn btn-primary" href="'+esc(p.href)+'" target="_blank" rel="noopener noreferrer">Mở demo ↗</a>'
+  +(p.docs?'<a class="btn" href="'+esc(p.docs)+'" target="_blank" rel="noopener noreferrer">README ↗</a>':'')
+  +(p.source?'<a class="btn" href="'+esc(p.source)+'" target="_blank" rel="noopener noreferrer">GitHub ↗</a>':'<span class="pill warn" title="Demo live nhưng source chưa có trên GitHub">Source chưa public</span>')
+  +'<button class="btn" data-route="workspace">Project Map →</button></div></div>'
+ :'<div class="notice"><strong>Chưa có demo công khai đã được xác minh.</strong> '+(ev==="self-reported"?"Trạng thái Public đang do trình duyệt lưu, chưa có bản triển khai trong Project Map.":"Cần source, README, test thật và URL production trước khi đổi sang đã deploy.")+'</div>';
+ const steps=p?"Duy trì test hồi quy → ghi case study thực và hướng dẫn cộng đồng.":"Xác định scope → dựng bản mẫu bằng dữ liệu giả → chạy test → chuẩn bị README/source → deploy staging → đối soát HTTPS.";
+ openDialog(i.id+" · "+i.name,'<div class="dialog-content idea-detail-panel">'
+  +'<div class="card-top"><span class="pill prio-'+tier.toLowerCase()+'">'+tier+' · ưu tiên</span>'
+  +'<span class="pill blue">'+esc(i.category)+'</span>'
+  +'<span class="pill">'+L.scoreIdea(i)+'/100 điểm nội bộ</span></div>'
+  +'<div class="idea-lead">'+esc(i.mvp)+'</div><dl class="detail-list">'
+  +'<dt>Đối tượng</dt><dd>'+esc(i.audience)+'</dd>'
+  +'<dt>Giờ MVP</dt><dd>'+esc(i.hours)+'h · ước tính, không cam kết</dd>'
+  +'<dt>Tình trạng</dt><dd>'+esc(p?"Live · kiểm HTTPS":ev==="self-reported"?"Public chưa kiểm chứng":STAGE_LABEL[i.status]||i.status)+'</dd>'
+  +'<dt>Mục tiêu nghiệm thu</dt><dd>'+esc(i.acceptance||"Demo hoạt động, README có bước tái hiện, tối thiểu một kiểm thử thực tế và nêu hạn chế.")+'</dd>'
+  +'<dt>Nguồn ý tưởng</dt><dd>'+esc(i.origin||"Chưa ghi")+'</dd>'
+  +'<dt>Hành động kế tiếp</dt><dd>'+esc(steps)+'</dd></dl>'
+  +proof
+  +'<div class="view-actions idea-detail-actions"><button class="btn btn-primary" data-action="copy-idea" data-id="'+esc(i.id)+'">Copy build brief</button>'
+  +(i.status==="backlog"?'<button class="btn" data-action="shortlist-modal" data-id="'+esc(i.id)+'">+ Shortlist</button>':'')
+  +'<a class="btn" href="#ideas?idea='+encodeURIComponent(id)+'">Link chi tiết ↗</a></div></div>');
 }
 function formAsMarkdown(){
  const sections=["Identity","Experience","Links","Evidence","Declarations"];
@@ -244,12 +323,15 @@ function updateField(k,v,checkbox=false){
  }
 }
 function refreshIdeaGrid(){
- const shown=filteredIdeas();
- const c=$("ideaCount"),grid=$("ideaGrid");
- if(c)c.textContent=shown.length+" / "+app.ideas.length+" items";
- if(grid)grid.innerHTML=shown.length?shown.map(renderIdea).join(""):'<div class="empty-state">Không có idea phù hợp.</div>';
+ const shown=filteredIdeas(),cards=shown.slice(0,ideaShown);
+ const c=$("ideaCount"),grid=$("ideaGrid"),more=$("ideaMore");
+ if(c)c.textContent=cards.length+" / "+shown.length+" kết quả · "+app.ideas.length+" idea";
+ if(more){more.hidden=shown.length<=ideaShown;more.textContent="Xem thêm "+Math.min(24,Math.max(0,shown.length-ideaShown))+" / "+Math.max(0,shown.length-ideaShown)+" ý tưởng ↓"}
+ if(grid)grid.innerHTML=cards.length?cards.map(renderIdea).join(""):'<div class="empty-state">Không có idea phù hợp.</div>';
 }
 document.addEventListener("click",async e=>{
+ const card=e.target.closest(".idea-card[data-idea-open]");
+ if(card&&!e.target.closest("button,a,select,input,textarea,label")){ideaDialog(card.dataset.ideaOpen);return}
  const btn=e.target.closest("button,[data-route]");if(!btn)return;
  if(btn.dataset.route){
   location.hash=btn.dataset.route;if(location.hash.slice(1)===route)render();
@@ -267,7 +349,7 @@ document.addEventListener("click",async e=>{
   app.statuses[k]="verified";saved();render();toast("Đánh dấu tự xác minh.");return;
  }
  const action=btn.dataset.action;if(!action)return;
- if(action==="close-dialog"){$("detailsDialog").close();return}
+ if(action==="close-dialog"){$("detailsDialog").close();if(location.hash.startsWith("#ideas?idea="))history.replaceState(null,"","#ideas");return}
  if(action==="open-application"){window.open(DATA.meta.application,"_blank","noopener,noreferrer");return}
  if(action==="copy-form"){await copy(formAsMarkdown());return}
  if(action==="copy-video-en"){await copy(scriptEN);return}
@@ -284,8 +366,10 @@ document.addEventListener("click",async e=>{
   if(!window.confirm("Xóa toàn bộ draft, task và idea status chỉ trong trình duyệt này? File gốc trên Mac không đổi."))return;
   app=L.initialState(DATA,BASE,EXTRA);saved();render();toast("Đã reset dữ liệu browser.");return;
  }
- if(action==="reset-filters"){ideasFilter={q:"",category:"",stage:"",speed:"",sort:"score"};render();return}
- if(action==="show-shortlist"){ideasFilter={q:"",category:"",stage:"",speed:"fast",sort:"score"};location.hash="ideas";return}
+ if(action==="reset-filters"){ideasFilter={q:"",category:"",stage:"",speed:"",priority:"",sort:"priority"};ideaShown=24;render();return}
+ if(action==="focus-p0"){ideasFilter={q:"",category:"",stage:"",speed:"",priority:"P0",sort:"priority"};ideaShown=24;location.hash="ideas";render();return}
+ if(action==="load-more-ideas"){ideaShown+=24;refreshIdeaGrid();return}
+ if(action==="show-shortlist"){ideasFilter={q:"",category:"",stage:"",speed:"fast",priority:"",sort:"priority"};ideaShown=24;location.hash="ideas";return}
  if(action==="scroll-first-blocker"){const issue=L.auditForm(DATA.fields,app.values,app.statuses).issues[0];if(issue){const el=$("wrap-"+issue.key);el?.scrollIntoView({behavior:prefs.motion?"smooth":"instant",block:"center"});el?.querySelector(".form-control")?.focus()}else toast("Không còn blocker cấu trúc.");return}
  if(action==="mark-submitted"){
   const audit=L.auditForm(DATA.fields,app.values,app.statuses);
@@ -318,7 +402,7 @@ document.addEventListener("input",e=>{
  const el=e.target;if(el.dataset.field){updateField(el.dataset.field,el.type==="checkbox"?el.checked:el.value,el.type==="checkbox");return}
  if(el.id==="videoUrlQuick"){updateField("video",el.value);return}
  if(el.id==="receiptInput"){app.submissionReceipt=el.value;app.submitted=false;saved();return}
- if(el.id==="ideaSearch"){ideasFilter.q=el.value;refreshIdeaGrid();return}
+ if(el.id==="ideaSearch"){ideasFilter.q=el.value;ideaShown=24;refreshIdeaGrid();return}
  if(el.id==="globalSearch"){
   ideasFilter.q=el.value;
   if(el.value.trim()&&route!=="ideas")location.hash="ideas";
@@ -347,8 +431,8 @@ document.addEventListener("change",e=>{
   }
   idea.status=after;saved();refreshIdeaGrid();toast("Cập nhật "+idea.name+": "+after);return;
  }
- const filterKey={categoryFilter:"category",speedFilter:"speed",stageFilter:"stage",sortFilter:"sort"}[el.id];
- if(filterKey){ideasFilter[filterKey]=el.value;refreshIdeaGrid()}
+ const filterKey={categoryFilter:"category",speedFilter:"speed",stageFilter:"stage",priorityFilter:"priority",sortFilter:"sort"}[el.id];
+ if(filterKey){ideasFilter[filterKey]=el.value;ideaShown=24;refreshIdeaGrid()}
 });
 $("importFile").addEventListener("change",async e=>{
  const file=e.target.files?.[0];if(!file)return;
@@ -386,6 +470,16 @@ $("exportTop").addEventListener("click",()=>download("codex-ambassador-private-b
 document.addEventListener("keydown",e=>{
  if(e.key==="/"&&!/INPUT|TEXTAREA/.test(document.activeElement?.tagName||"")&&!e.ctrlKey&&!e.metaKey){e.preventDefault();$("globalSearch").focus()}
  if(e.key==="Escape"&&$("sidebar").classList.contains("open")){$("sidebar").classList.remove("open");$("mobileMenu").setAttribute("aria-expanded","false")}
+});
+document.addEventListener("keydown",e=>{
+ const card=e.target.closest?.(".idea-card[data-idea-open]");
+ if(card&&e.target===card&&(e.key==="Enter"||e.key===" ")){e.preventDefault();ideaDialog(card.dataset.ideaOpen)}
+});
+$("detailsDialog").addEventListener("close",()=>{
+ if(location.hash.startsWith("#ideas?idea="))history.replaceState(null,"","#ideas");
+});
+$("detailsDialog").addEventListener("click",e=>{
+ if(e.target===$("detailsDialog"))$("detailsDialog").close();
 });
 window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
 render();setInterval(()=>{updateCountdown();checkNotification()},60_000);

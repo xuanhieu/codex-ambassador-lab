@@ -1,0 +1,4 @@
+.codex-portfolio-nav{position:fixed;bottom:12px;right:12px;z-index:2147483000;background:#122238ed;color:#fff;border:1px solid #507b91;border-radius:10px;padding:8px 12px;font:600 12px system-ui,sans-serif;box-shadow:0 4px 20px #0007}
+.codex-portfolio-nav a{color:#7fe3d7;text-decoration:none}
+.codex-portfolio-nav a:hover,.codex-portfolio-nav a:focus-visible{text-decoration:underline}
+.codex-portfolio-nav .codex-portfolio-sep{opacity:.6;margin:0 8px}
