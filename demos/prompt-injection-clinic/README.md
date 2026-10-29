@@ -70,8 +70,8 @@ node --test tests/test.cjs
 git diff --stat
 ```
 
-A good result: 26 tests, 26 pass, 0 fail (25 before the change); `git diff --stat` lists only `tests/test.cjs`. If Codex edits `app.js`, reject the change and ask again.
+A good result: 29 tests, 29 pass, 0 fail (28 before the change); `git diff --stat` lists only `tests/test.cjs`. If Codex edits `app.js`, reject the change and ask again.
 
 ## Status
 
-Live: https://codex.xuanhieu.org/demos/prompt-injection-clinic/. `node --test tests/test.cjs`: 25/25 pass (2026-10-29, Node v24.22.1).
+Live: https://codex.xuanhieu.org/demos/prompt-injection-clinic/. `node --test tests/test.cjs`: 28/28 pass (2026-10-29, Node v24.22.1).
