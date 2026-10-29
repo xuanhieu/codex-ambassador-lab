@@ -266,7 +266,7 @@ window.AMB_DATA={
       "label": "Audit official program / form",
       "group": "Hồ sơ",
       "done": true,
-      "proof": "docs/00_OFFICIAL_PROGRAM_AUDIT.md"
+      "proof": "plans/261029-0111-codex-ambassador-master-audit/PROGRAM_REQUIREMENTS_MATRIX.md"
     },
     {
       "id": "m2",
@@ -286,7 +286,7 @@ window.AMB_DATA={
     },
     {
       "id": "m4",
-      "day": "25/10",
+      "day": "24/10",
       "label": "Publish isolated GitHub demo",
       "group": "Product",
       "done": true,
@@ -301,6 +301,30 @@ window.AMB_DATA={
       "proof": "https://github.com/xuanhieu/codex-learning-path"
     },
     {
+      "id": "m12",
+      "day": "29/10",
+      "label": "All 23 demos have public source + MIT license",
+      "group": "Product",
+      "done": true,
+      "proof": "plans/261029-0111-codex-ambassador-master-audit/GITHUB_PUBLIC_PROOF_MATRIX.md"
+    },
+    {
+      "id": "m13",
+      "day": "29/10",
+      "label": "Remove private data from live site and GitHub history",
+      "group": "Hồ sơ",
+      "done": true,
+      "proof": "plans/261029-0111-codex-ambassador-master-audit/IMPLEMENTATION_CHANGELOG.md"
+    },
+    {
+      "id": "m9",
+      "day": "29/10",
+      "label": "Independent QA of evidence and draft answers",
+      "group": "Hồ sơ",
+      "done": true,
+      "proof": "plans/261029-0111-codex-ambassador-master-audit/FINAL_INDEPENDENT_AUDIT.md"
+    },
+    {
       "id": "m6",
       "day": "29/10",
       "label": "Record ~30s authentic intro",
@@ -310,22 +334,36 @@ window.AMB_DATA={
     {
       "id": "m7",
       "day": "29/10",
-      "label": "Upload unlisted video; check incognito",
+      "label": "Upload video; check signed-out desktop + mobile",
       "group": "Video",
       "done": false
     },
     {
-      "id": "m8",
+      "id": "m14",
       "day": "29/10",
-      "label": "First community learning contribution",
-      "group": "Community",
+      "label": "Owner proofreads answers on the live form",
+      "group": "Hồ sơ",
       "done": false
     },
     {
-      "id": "m9",
+      "id": "m15",
       "day": "29/10",
-      "label": "Independent QA and form proofreading",
+      "label": "Answer referral; confirm eligibility (student wording)",
       "group": "Hồ sơ",
+      "done": false
+    },
+    {
+      "id": "m16",
+      "day": "30/10",
+      "label": "Read and tick both attestations personally",
+      "group": "Hồ sơ",
+      "done": false
+    },
+    {
+      "id": "m8",
+      "day": "sau nộp",
+      "label": "First community learning contribution",
+      "group": "Community",
       "done": false
     },
     {

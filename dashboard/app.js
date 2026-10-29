@@ -14,6 +14,10 @@ try{const stored=localStorage.getItem(KEY);if(stored)app=L.validateImported(JSON
 try{Object.assign(prefs,JSON.parse(localStorage.getItem(PREF)||"{}"))}catch{}
 // Verified public source registry wins over an obsolete browser-local status.
 for(const project of PROJECTS){if(project.status==="public"){const linked=app.ideas.find(x=>x.id===project.id);if(linked)linked.status="public"}}
+// Owner-only analysis (dashboard/private-insights.js); absent and stripped in the public build.
+const PRIV=DATA.meta.publicBuild?null:(window.AMB_PRIVATE||null);
+// Evidence-backed milestones win over a stale browser-local tick.
+for(const m of DATA.milestones){if(m.done&&m.proof)app.tasks[m.id]=true}
 
 let route="overview",ideasFilter={q:"",category:"",stage:"",speed:"",priority:"",sort:"priority"},ideaShown=24,formSearch="";
 const labels={overview:"Tổng quan",application:"Form ứng tuyển",ideas:"Idea Lab",portfolio:"Portfolio & Demo",timeline:"Deadline & Tasks",video:"Video Studio",strategy:"Chiến lược 6 tháng",settings:"Dữ liệu & Thiết lập",workspace:"Bản đồ dự án"};
@@ -165,8 +169,36 @@ function renderIdeas(){
  +'<button id="ideaMore" class="btn idea-load-more" data-action="load-more-ideas" type="button"'+(shown.length<=ideaShown?' hidden':'')+'>Xem thêm '+Math.min(24,shown.length-ideaShown)+' / '+(shown.length-ideaShown)+' ý tưởng ↓</button>'
  +'<details class="idea-method"><summary>Quy tắc ưu tiên & cách xác minh</summary><p><b>P0</b>: demo chủ lực, tài liệu cho người học, hồ sơ/video/community cần trước hạn. <b>P1</b>: bài thực hành hoặc công cụ giúp cộng đồng học Codex. <b>P2</b>: ý tưởng mở rộng. <b>Live</b> cần demo công khai trong danh mục đối soát; tự chuyển trạng thái Public không đủ bằng chứng. Ước tính giờ và điểm chỉ là nội bộ.</p></details>';
 }
+const FIT_LABEL={strong:["ok","Phục vụ đơn: mạnh"],medium:["warn","Phục vụ đơn: vừa"],weak:["bad","Phục vụ đơn: yếu"]};
+function listHTML(xs){return xs&&xs.length?'<ul class="insight-list">'+xs.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>':''}
+function insightHTML(id){
+ const x=PRIV&&PRIV.ideas[id];if(!x)return "";
+ const fit=FIT_LABEL[x.fit];
+ const rows=[["Đây là gì",x.what],["Đáp ứng",x.serves],["Ngắn hạn",x.short],["Trung hạn",x.mid],["Dài hạn",x.long]].filter(r=>r[1]);
+ return '<section class="private-insight" aria-label="Phân tích riêng"><div class="private-insight-head"><strong>Phân tích riêng · chỉ bạn thấy</strong>'+(fit?'<span class="pill '+fit[0]+'">'+fit[1]+'</span>':'')+(x.decision?'<span class="pill">'+esc(x.decision)+' · '+esc(x.priority)+'</span>':'')+'</div>'
+  +(rows.length?'<dl class="detail-list">'+rows.map(r=>'<dt>'+r[0]+'</dt><dd>'+esc(r[1])+'</dd>').join("")+'</dl>':'<p class="small">'+esc(x.problem_audience||"")+'</p><p class="small muted">Chưa có phân tích chi tiết cho ý tưởng này (chỉ là ý tưởng, chưa xây).</p>')
+  +(x.pains&&x.pains.length?'<h4>Nỗi đau giải quyết</h4>'+listHTML(x.pains):'')
+  +(x.fitWhy?'<h4>Với đơn Codex Ambassador</h4><p class="small">'+esc(x.fitWhy)+'</p>':'')
+  +(x.gaps&&x.gaps.length?'<h4>Còn thiếu / rủi ro</h4>'+listHTML(x.gaps):'')
+  +'<p class="small muted">Điểm audit: Codex '+esc(x.codex_relevance||"?")+'/5 · giáo dục '+esc(x.educational_value||"?")+'/5 · mức hoàn thiện '+esc(x.maturity||"?")+(x.duplicate_of?' · trùng với '+esc(x.duplicate_of):'')+'</p></section>';
+}
+function portfolioValueHTML(){
+ if(!PRIV)return "";
+ return '<div class="section-title"><h2>Giá trị từng demo · nỗi đau &amp; lợi ích</h2><span>Chỉ hiện trên dashboard riêng</span></div><div class="portfolio-grid">'+PROJECTS.map(p=>{const x=PRIV.ideas[p.id]||{},fit=FIT_LABEL[x.fit];
+  return '<article class="portfolio-card value-card"><div class="card-top"><span class="pill blue">'+esc(p.id)+'</span>'+(fit?'<span class="pill '+fit[0]+'">'+fit[1]+'</span>':'')+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(x.serves||x.problem_audience||"")+'</p>'
+  +(x.pains&&x.pains.length?'<div class="small"><strong>Giải quyết</strong></div>'+listHTML(x.pains.slice(0,3)):'')
+  +'<div class="card-actions"><button class="btn btn-sm btn-primary" data-idea-detail="'+esc(p.id)+'">Phân tích đầy đủ</button><a class="btn btn-sm" href="'+esc(p.href)+'" target="_blank" rel="noopener noreferrer">Mở demo ↗</a></div></article>'}).join("")+'</div>';
+}
+function winHTML(){
+ const w=PRIV&&PRIV.win;if(!w||!w.verdict)return "";
+ const tone={high:"ok",medium:"warn",low:"bad"}[w.level]||"warn";
+ return '<div class="panel win-panel"><div class="panel-head"><div><div class="eyebrow">NHẬN ĐỊNH KHẢ NĂNG THẮNG · RIÊNG TƯ</div><h2>'+esc(w.verdict)+'</h2></div><span class="pill '+tone+'">'+esc(w.updatedAt)+'</span></div><p class="small">'+esc(w.summary)+'</p>'
+  +'<div class="grid-2"><div><h4>Điểm mạnh</h4>'+listHTML(w.strengths)+'</div><div><h4>Điểm yếu</h4>'+listHTML(w.weaknesses)+'</div></div>'
+  +'<div class="grid-2"><div><h4>Làm gì trong 30 giờ tới</h4>'+listHTML(w.next30h)+'</div><div><h4>Điều làm hỏng đơn</h4>'+listHTML(w.dealBreakers)+'</div></div></div>';
+}
 function renderPortfolio(){
  return head("REPRODUCIBLE EVIDENCE","Portfolio & Demo","Nguồn gốc code là quan trọng: fork được phân biệt rõ với repo gốc; static Pages demo chưa phải repo source công khai.",'<a class="btn btn-primary" href="../demos/agent-ops-clinic/index.html" target="_blank" rel="noopener">Mở Agent Ops Clinic ↗</a>')
+ +portfolioValueHTML()
  +'<div class="notice"><strong>Fork không phải project tự viết.</strong> 9router, html-anything và vieneu-tts là fork từ upstream. Không dùng làm bằng chứng build-original trừ khi có contribution riêng được kiểm chứng.</div>'
  +'<div class="panel"><div class="panel-head"><h2>Flagship build • Agent Ops Clinic</h2><span class="status-chip verified">36/36 logic tests passed</span></div><div class="grid-2"><a href="../assets/agent-ops-cdp-desktop.png" target="_blank" rel="noopener"><img class="screenshot" src="../assets/agent-ops-cdp-desktop.png" alt="Ảnh màn hình desktop thực tế của Agent Ops Clinic"></a><a href="../assets/agent-ops-cdp-mobile.png" target="_blank" rel="noopener"><img class="screenshot" src="../assets/agent-ops-cdp-mobile.png" alt="Ảnh mobile 390 CSS pixel thực tế"></a></div><p class="small muted" style="margin:15px 0">Xây bằng Codex CLI trên Mac, source được commit cục bộ 7c1ecdf. Ba tình huống giả lập, gating phê duyệt/budget, lưu trạng thái và JSON audit. Đã test viewport; không tự nhận là agent thực hiện deployment thật.</p><div class="view-actions"><a class="btn btn-primary" href="../demos/agent-ops-clinic/index.html" target="_blank" rel="noopener">Chạy demo ↗</a><a class="btn" href="../demos/agent-ops-clinic/README.vi.md" target="_blank" rel="noopener">Tài liệu VI</a><button class="btn" data-route="application">Gắn public URL vào form</button></div></div>'
  +'<div class="section-title"><h2>New teaching MVP • N002</h2><span>24 October 2026</span></div><div class="panel"><div class="panel-head"><h2>Codex CLI Onboarding Diagnostic</h2><span class="status-chip verified">16 Python unit tests passed</span></div><p class="small muted">Bộ kiểm tra workshop đọc dữ liệu cục bộ, không gọi API; 3 fixture mô phỏng song ngữ và hướng dẫn người học xác minh terminal. Kết quả online chỉ mô phỏng và không đo tình trạng thiết bị thật.</p><div class="view-actions"><a class="btn btn-primary" href="../demos/cli-onboarding/" target="_blank" rel="noopener noreferrer">Thử workshop tương tác ↗</a><a class="btn" href="../demos/cli-onboarding/cli_onboarding.py" target="_blank" rel="noopener noreferrer">Mã CLI Python</a><a class="btn" href="../demos/cli-onboarding/README.md" target="_blank" rel="noopener noreferrer">Hướng dẫn EN/VI</a><a class="btn" href="../demos/cli-onboarding/WORKSHOP_FACILITATOR.md" target="_blank" rel="noopener noreferrer">Bộ tổ chức workshop</a></div></div>'
@@ -205,8 +237,9 @@ function renderWorkspace(){
 function renderTimeline(){
  const done=DATA.milestones.filter(m=>app.tasks[m.id]).length;
  const cd=L.countdown(DATA.meta.targetSubmission);
- return head("SHIP / SUBMIT","Deadline & Tasks","Đặt lịch nộp 30/10/2026 sớm hơn hạn chương trình 01/11. Đã có Google Calendar popup nhắc trước 48h, 24h, 2h.",'<a class="btn btn-primary" href="'+esc(DATA.meta.calendar)+'" target="_blank" rel="noopener noreferrer">Xem Google Calendar ↗</a>')
+ return head("SHIP / SUBMIT","Deadline & Tasks","Đặt lịch nộp 30/10/2026 sớm hơn hạn chương trình 01/11. Đã có Google Calendar popup nhắc trước 48h, 24h, 2h.",(DATA.meta.calendar?'<a class="btn btn-primary" href="'+esc(DATA.meta.calendar)+'" target="_blank" rel="noopener noreferrer">Xem Google Calendar ↗</a>':''))
  +'<div class="grid-3">'+metric("Target countdown",cd.past?"Đến hạn":cd.days+"d "+cd.hours+"h",cd.past?"Kiểm tra lịch và tình trạng nộp":"Tính theo giờ máy của bạn",cd.past?0:Math.max(0,100-cd.days*14),"◷")+metric("Tasks done",done+"/"+DATA.milestones.length,pct(done,DATA.milestones.length)+"% checklist",pct(done,DATA.milestones.length),"✓")+metric("Official close","01/11","Không công bố rõ giờ cutoff, không chờ đến ngày cuối",85,"!")+'</div>'
+ +winHTML()
  +'<div class="dashboard-split"><div><div class="section-title"><h2>Execution checklist</h2><span>Manual completion</span></div><div class="panel"><div class="stack-list">'+DATA.milestones.map(taskCard).join("")+'</div>'+progressHTML()+'</div></div><div><div class="section-title"><h2>Submission gate</h2></div><div class="panel"><div class="eyebrow">FINAL REVIEW</div><p class="small muted" style="margin:9px 0 12px">Trạng thái nộp không được tự cập nhật. Chỉ đánh dấu sau khi OpenAI hiện màn hình xác nhận.</p><label class="field-card"><span class="small">Mã/screenshot xác nhận nộp đơn</span><textarea class="form-control" id="receiptInput" placeholder="Điền sau khi thực sự Submit trên OpenAI">'+esc(app.submissionReceipt)+'</textarea></label><button class="btn btn-primary" style="margin-top:12px" data-action="mark-submitted">Ghi nhận đã nộp</button>'+(app.submitted?'<div class="notice success" style="margin:12px 0 0">Đã đánh dấu người dùng tự xác nhận nộp. Không phải trạng thái lấy từ OpenAI.</div>':'<div class="mini-note" style="margin-top:12px">Chưa xác nhận nộp.</div>')+'</div><div class="section-title"><h2>Important links</h2></div><div class="panel stack-list">'+a("Form ứng tuyển",DATA.meta.application)+a("Thể lệ chính thức",DATA.meta.program)+a("Calendar deadline",DATA.meta.calendar)+'</div></div></div>';
 }
 
@@ -230,8 +263,12 @@ function renderStrategy(){
  +'<div class="section-title"><h2>Six-month public contribution calendar</h2><span>M1–M6 tính từ lúc được nhận, không phải tháng cố định</span></div><div class="phase-grid">'+months.map(m=>'<article class="phase-card"><div class="eyebrow">'+m[0]+'</div><strong>'+esc(m[1])+'</strong><p>'+esc(m[2])+'</p></article>').join("")+'</div>'
  +'<div class="section-title"><h2>6W2H tactical brief</h2></div><div class="grid-2"><div class="panel"><div class="eyebrow">WHAT / WHY / WHO</div><p class="small muted" style="margin-top:10px">Build practical Codex workflows and explain tradeoffs to Vietnamese-speaking junior builders, marketers becoming makers, and founders. Selection depends on real portfolio, community benefit, and needs/coverage.</p></div><div class="panel"><div class="eyebrow">WHEN / WHERE / HOW / HOW MUCH</div><p class="small muted" style="margin-top:10px">Submit by Oct 30. Demo as a static, zero-paid-API educational artifact with reproducible tests; deliver a small workshop each month. Make no unsupported claim about OpenAI selection probability or guaranteed credits.</p></div></div>';
 }
+const SETTINGS_TITLE="Dữ liệu & Thiết lập";
+function settingsOpen(){return $("detailsDialog").open&&$("dialogTitle").textContent===SETTINGS_TITLE}
+function openSettings(){openDialog(SETTINGS_TITLE,'<div class="dialog-content settings-dialog">'+renderSettings()+'</div>')}
+function refreshSettings(){if(settingsOpen())openSettings()}
 function renderSettings(){
- return head("LOCAL DATA / PRIVACY","Dữ liệu & Thiết lập","Tất cả draft và tiến độ lưu bằng localStorage của trình duyệt này. Không gửi dữ liệu ứng tuyển tới server hoặc OpenAI.",'<button class="btn btn-primary" data-action="export-json">Export backup JSON ↧</button>')
+ return '<p class="small muted">Tất cả draft và tiến độ lưu bằng localStorage của trình duyệt này. Không gửi dữ liệu ứng tuyển tới server hoặc OpenAI.</p>'
  +'<div class="panel"><div class="setting-row"><div><strong>Giao diện Noti-inspired</strong><p>Theme sáng/tối, aurora, liquid glass, microinteractions; CSS độc lập không tải tài nguyên ngoài.</p></div><button class="btn" data-action="toggle-theme">Đổi theme</button></div>'
  +'<div class="setting-row"><div><strong>Motion / reduced motion</strong><p>Tôn trọng prefers-reduced-motion; có thể tắt toàn bộ hiệu ứng.</p></div><button class="btn" data-action="toggle-motion">'+(prefs.motion?"Đang bật":"Đã tắt")+'</button></div>'
  +'<div class="setting-row"><div><strong>Thông báo tiếng Việt trong tab này</strong><p>Notification API chỉ chạy khi trình duyệt đang mở; không có push khi đóng máy/tab. Google Calendar là lịch nhắc thật.</p></div><button class="btn" data-action="toggle-notify">'+(prefs.notify?"Đang bật":"Bật (cần quyền)")+'</button></div>'
@@ -242,7 +279,8 @@ function renderSettings(){
 }
 function render(){
  const incoming=(location.hash||"#overview").slice(1).split("?")[0];
- route=labels[incoming]?incoming:"overview";
+ if(incoming==="settings"){history.replaceState(null,"","#"+(route==="settings"?"overview":route));queueMicrotask(openSettings)}
+ route=labels[incoming]&&incoming!=="settings"?incoming:(incoming==="settings"&&route!=="settings"?route:"overview");
  document.querySelectorAll("[data-route]").forEach(n=>{if(n.closest("nav"))n.classList.toggle("active",n.dataset.route===route)});
  $("headerTitle").textContent=labels[route];
  const renderer={overview:renderOverview,application:renderApplication,ideas:renderIdeas,portfolio:renderPortfolio,timeline:renderTimeline,video:renderVideo,strategy:renderStrategy,settings:renderSettings,workspace:renderWorkspace};
@@ -289,6 +327,7 @@ function ideaDialog(id){
   +'<dt>Mục tiêu nghiệm thu</dt><dd>'+esc(i.acceptance||"Demo hoạt động, README có bước tái hiện, tối thiểu một kiểm thử thực tế và nêu hạn chế.")+'</dd>'
   +'<dt>Nguồn ý tưởng</dt><dd>'+esc(i.origin||"Chưa ghi")+'</dd>'
   +'<dt>Hành động kế tiếp</dt><dd>'+esc(steps)+'</dd></dl>'
+  +insightHTML(i.id)
   +proof
   +'<div class="view-actions idea-detail-actions"><button class="btn btn-primary" data-action="copy-idea" data-id="'+esc(i.id)+'">Copy build brief</button>'
   +(i.status==="backlog"?'<button class="btn" data-action="shortlist-modal" data-id="'+esc(i.id)+'">+ Shortlist</button>':'')
@@ -333,6 +372,7 @@ document.addEventListener("click",async e=>{
  const card=e.target.closest(".idea-card[data-idea-open]");
  if(card&&!e.target.closest("button,a,select,input,textarea,label")){ideaDialog(card.dataset.ideaOpen);return}
  const btn=e.target.closest("button,[data-route]");if(!btn)return;
+ if(btn.dataset.route==="settings"){openSettings();$("sidebar").classList.remove("open");$("mobileMenu").setAttribute("aria-expanded","false");return}
  if(btn.dataset.route){
   location.hash=btn.dataset.route;if(location.hash.slice(1)===route)render();
   $("sidebar").classList.remove("open");$("mobileMenu").setAttribute("aria-expanded","false");
@@ -447,13 +487,13 @@ $("importFile").addEventListener("change",async e=>{
 $("mobileMenu").addEventListener("click",()=>{
  const open=$("sidebar").classList.toggle("open");$("mobileMenu").setAttribute("aria-expanded",String(open));
 });
-function toggleTheme(){prefs.theme=prefs.theme==="dark"?"light":"dark";document.documentElement.dataset.nuiTheme=prefs.theme;prefSave();toast("Theme: "+prefs.theme);if(route==="settings")render()}
-function toggleMotion(){prefs.motion=!prefs.motion;document.documentElement.classList.toggle("nui-motion-off",!prefs.motion);prefSave();toast(prefs.motion?"Đã bật motion.":"Đã tắt motion.");if(route==="settings")render()}
+function toggleTheme(){prefs.theme=prefs.theme==="dark"?"light":"dark";document.documentElement.dataset.nuiTheme=prefs.theme;prefSave();toast("Theme: "+prefs.theme);refreshSettings()}
+function toggleMotion(){prefs.motion=!prefs.motion;document.documentElement.classList.toggle("nui-motion-off",!prefs.motion);prefSave();toast(prefs.motion?"Đã bật motion.":"Đã tắt motion.");refreshSettings()}
 async function toggleNotify(){
- if(prefs.notify){prefs.notify=false;prefSave();render();toast("Đã tắt browser notification.");return}
+ if(prefs.notify){prefs.notify=false;prefSave();refreshSettings();toast("Đã tắt browser notification.");return}
  if(!("Notification" in window)){toast("Trình duyệt này không hỗ trợ Notification API.",true);return}
  try{const permission=await Notification.requestPermission();if(permission!=="granted"){toast("Chưa được cấp quyền thông báo. Lịch Google vẫn hoạt động.",true);return}
-  prefs.notify=true;prefSave();render();toast("Đã bật thông báo khi dashboard đang mở.");
+  prefs.notify=true;prefSave();refreshSettings();toast("Đã bật thông báo khi dashboard đang mở.");
  }catch{toast("Không yêu cầu được quyền thông báo trong file context.",true)}
 }
 function checkNotification(){
