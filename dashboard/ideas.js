@@ -1488,7 +1488,7 @@ window.AMB_EXTRA_IDEAS=[
   },
   {
     "id": "N118",
-    "name": "Codex & ChatGPT Zero-to-Hero Academy",
+    "name": "Codex & ChatGPT Zero-to-Hero Academy (independent)",
     "category": "Developer education",
     "hours": 18,
     "audience": "Newbie, Creator, Marketer, Developer, Team Lead, Pro — five proficiency tiers",
@@ -1522,7 +1522,7 @@ window.AMB_EXTRA_IDEAS=[
   },
   {
     "id": "N120",
-    "name": "Every Human Learning Passport",
+    "name": "Every Human Learning Passport (independent)",
     "category": "Developer education",
     "hours": 2,
     "audience": "Beginners and learners moving between phones and computers",

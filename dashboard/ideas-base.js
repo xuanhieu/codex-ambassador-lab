@@ -15,7 +15,7 @@ window.AMB_BASE_IDEAS=[
   },
   {
     "id": "O002",
-    "name": "Vietnamese Codex Builder Kit",
+    "name": "Learn Codex: Vietnamese-language builder kit (independent)",
     "category": "Vietnamese localization",
     "hours": 4,
     "audience": "Vietnamese/English dev teaching",

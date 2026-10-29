@@ -25,3 +25,19 @@ test("N120 rejects external prototype pollution fields and gigantic inputs",()=>
  const imported=C.importPassport(JSON.stringify({schema:"n120-learning-passport-v1",completed:["prompt"],__proto__:{poison:true}}));
  assert.deepEqual(imported,{schema:1,done:["prompt"]});
 });
+
+test("page CSP allows exactly its inline script/style by hash, with no inline attributes",()=>{
+ const fs=require("node:fs"),path=require("node:path"),crypto=require("node:crypto");
+ const html=fs.readFileSync(path.join(__dirname,"..","index.html"),"utf8");
+ const csp=(html.match(/<meta http-equiv="Content-Security-Policy" content="([^"]+)">/)||[])[1];
+ assert.ok(csp,"meta CSP present");
+ assert.doesNotMatch(csp,/unsafe-inline|unsafe-eval/);
+ const hash=s=>"'sha256-"+crypto.createHash("sha256").update(s,"utf8").digest("base64")+"'";
+ const dir=Object.fromEntries(csp.split(";").map(x=>x.trim().split(/\s+/)).map(([k,...v])=>[k,v]));
+ const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]),styles=[...html.matchAll(/<style>([\s\S]*?)<\/style>/g)].map(m=>m[1]);
+ assert.ok(scripts.length&&styles.length);
+ for(const s of scripts)assert.ok(dir["script-src"].includes(hash(s)),"script hash current");
+ for(const s of styles)assert.ok(dir["style-src"].includes(hash(s)),"style hash current");
+ assert.doesNotMatch(html,/\sstyle=|\son[a-z]+="/);
+});
+test("prefilled examples pass their step in both languages",()=>{for(const s of C.STEPS.filter(x=>x.type==="text"))for(const k of ["exampleVI","exampleEN"])assert.equal(C.validate(s.id,s[k]).ok,true,s.id+" "+k)});

@@ -13,3 +13,18 @@ test("external transfer raises risk for read-only task",()=>assert.equal(C.evalu
 test("blocked requests cannot generate receipts",()=>{let r=C.evaluate({action:"delete"});assert.equal(C.receipt(r,"approve"),null)});
 test("receipt never includes source description",()=>{let r=C.evaluate({action:"send",note:"my private sample draft",checks:all()});let out=C.receipt(r,"approve");assert.equal(out.humanDecision,"approve");assert.equal(out.sideEffectsExecuted,false);assert.ok(!JSON.stringify(out).includes("private sample draft"))});
 test("decision input cannot mutate via arbitrary values",()=>{let r=C.evaluate({action:"read",checks:all()});assert.equal(C.receipt(r,"autoApprove"),null)});
+
+test("page CSP allows exactly its inline script/style by hash, with no inline attributes",()=>{
+ const fs=require("node:fs"),path=require("node:path"),crypto=require("node:crypto");
+ const html=fs.readFileSync(path.join(__dirname,"..","index.html"),"utf8");
+ const csp=(html.match(/<meta http-equiv="Content-Security-Policy" content="([^"]+)">/)||[])[1];
+ assert.ok(csp,"meta CSP present");
+ assert.doesNotMatch(csp,/unsafe-inline|unsafe-eval/);
+ const hash=s=>"'sha256-"+crypto.createHash("sha256").update(s,"utf8").digest("base64")+"'";
+ const dir=Object.fromEntries(csp.split(";").map(x=>x.trim().split(/\s+/)).map(([k,...v])=>[k,v]));
+ const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]),styles=[...html.matchAll(/<style>([\s\S]*?)<\/style>/g)].map(m=>m[1]);
+ assert.ok(scripts.length&&styles.length);
+ for(const s of scripts)assert.ok(dir["script-src"].includes(hash(s)),"script hash current");
+ for(const s of styles)assert.ok(dir["style-src"].includes(hash(s)),"style hash current");
+ assert.doesNotMatch(html,/\sstyle=|\son[a-z]+="/);
+});

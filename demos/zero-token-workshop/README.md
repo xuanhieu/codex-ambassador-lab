@@ -18,7 +18,7 @@ Serve the parent `demos/` folder via `python3 -m http.server 4499` then open `ht
 Run `node --test tests/test_core.cjs` within this directory.
 
 ## Independent checks
-15/15 Node tests PASS; Chrome 390/1440px checks 6 interactions each and zero viewport overflow.
+17/17 Node tests PASS; Chrome 390/1440px checks 6 interactions each and zero viewport overflow.
 Source reviewed for external calls, file deletion, PII collection and secret-containing output. Live deployment requires the project's separate fail-closed sanitizer/quality gate.
 
 ## N120 Learning Passport — added idea built into N003

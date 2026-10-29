@@ -33,6 +33,7 @@ h1, h2, h3, h4 { line-height: 1.25; }
 h2 { font-size: var(--large); letter-spacing: -.035em; font-weight: 650; }
 h3 { font-size: var(--body); font-weight: 650; }
 h4 { font-size: var(--small); }
+.risk-heading h3.risk-title { font-size: var(--small); font-weight: bold; }
 p + p { margin-top: var(--s3); }
 .muted { color: var(--muted); }.small { font-size: var(--small); }.mono { font: var(--tiny)/1.5 var(--mono); font-variant-numeric: tabular-nums; letter-spacing: .03em; }
 .eyebrow { font: 600 var(--tiny)/1.5 var(--mono); letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }

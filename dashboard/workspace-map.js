@@ -143,7 +143,7 @@ window.AMB_WORKSPACE_MAP=[
   {
     "id": "N074",
     "slug": "workshop-curriculum-planner",
-    "title": "Workshop Curriculum Planner · Every Human",
+    "title": "Workshop Curriculum Planner · Every Human Learning Map (independent)",
     "href": "../demos/workshop-curriculum-planner/",
     "docs": "../demos/workshop-curriculum-planner/README.md",
     "file": "demos/workshop-curriculum-planner/",
