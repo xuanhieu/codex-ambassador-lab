@@ -11,7 +11,7 @@
     "assets/cli-onboarding-cdp-desktop.png": "241e59680093386ab914cb4f129120660c0b793b300cdf678e45930f3e970814",
     "assets/cli-onboarding-cdp-mobile.png": "3ff42acb3ad3bacdfbd2a80a335a701b2c6da927e91ba85e334158e851a9ba28",
     "assets/portfolio-nav.css": "fc7542cb5183e87042e717367dc6d979a57403e2c3ac73f5ade9ca6a71d0de48",
-    "dashboard/app.js": "3a4f012d5aee885538abd54ae6c0512ad624e9ce3891bc6cbaa4ab9683ea67e1",
+    "dashboard/app.js": "25dc051e382943f056b78a4c4d5f9d8f95e3fb73eccfa8a7c85ee16c7dac0bb6",
     "dashboard/compact-workspace.css": "7c99e6b18532a26c39d887ae4e51fc7ae445e5f933fe152d0e29407c2d2aeb52",
     "dashboard/dashboard.css": "d4fbf044e4c6d8464eb2171d2f73facfa52499e12119f30aa0a7551439fb1cf4",
     "dashboard/data.js": "6621ddfd7251b442a6d9c56356e964f26912706a2edfb4d03969db21573387e5",
@@ -227,5 +227,5 @@
     "index.html": "f7594222b3c79ccf97ff7bacced5b0779eef26a752629262a8bd773f5d6d2677",
     "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
   },
-  "digest": "a383468f17b6ad467411856debdc7f9f73b9b0ffedd989b0c48e9a127b81595a"
+  "digest": "4ceaa2edc047b5bfca05769cd594262ed4b842917e7b0d5f5ac1c07ce2090d2b"
 }
