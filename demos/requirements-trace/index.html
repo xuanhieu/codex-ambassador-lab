@@ -98,4 +98,4 @@ $('linkForm').onsubmit=e=>{e.preventDefault();const r=data.requirements.find(x=>
 $('provenance').onchange=()=>{data.provenance=$('provenance').value;render();};
 $('export').onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='receipt.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message('Exported current applied state; CLI validation required / Đã xuất trạng thái áp dụng; cần kiểm tra bằng CLI');};
 apply(JSON.parse($('json').value));
-</script><nav class="codex-portfolio-nav" aria-label="Portfolio navigation"><a href="../../dashboard/#workspace">← Project Map</a><span class="codex-portfolio-sep" aria-hidden="true">|</span><a href="../codex-academy/">Academy ↗</a></nav></body></html>
+</script><nav class="codex-portfolio-nav" aria-label="Portfolio navigation"><a href="../../">← Portfolio</a><span class="codex-portfolio-sep" aria-hidden="true">|</span><a href="../codex-academy/">Academy ↗</a></nav></body></html>

@@ -87,9 +87,9 @@ pre{margin:0;padding:20px;min-height:220px;white-space:pre-wrap;overflow-wrap:an
 <a class="skip" href="#lab" data-i18n="skip">Đến bài thực hành</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/dashboard/">CODEX <span>BUILDER LAB</span></a>
+    <a class="brand" href="/">CODEX <span>BUILDER LAB</span></a>
     <nav aria-label="Lesson tools">
-      <a class="navlink" href="/dashboard/" data-i18n="back">← Dashboard</a>
+      <a class="navlink" href="/" data-i18n="back">← Portfolio</a>
       <button class="lang" id="vi" type="button" aria-pressed="true">Tiếng Việt</button>
       <button class="lang" id="en" type="button" aria-pressed="false">English</button>
     </nav>
@@ -157,7 +157,7 @@ pre{margin:0;padding:20px;min-height:220px;white-space:pre-wrap;overflow-wrap:an
 var lang="vi",selected="new-student",fixtures=null,done=[false,false,false];
 var DATA={
 vi:{
-  skip:"Đến bài thực hành",back:"← Dashboard",eyebrow:"Codex Workshop • Bài học 01",headline:"Máy của bạn đã sẵn sàng xây dựng với Codex?",
+  skip:"Đến bài thực hành",back:"← Portfolio",eyebrow:"Codex Workshop • Bài học 01",headline:"Máy của bạn đã sẵn sàng xây dựng với Codex?",
   lead:"Bài thực hành song ngữ, miễn phí, không cần API key. Thử 3 môi trường giả lập rồi kiểm tra CLI thật trên máy.",
   duration:"20 phút",offline:"Không gọi API",privacy:"Không thu dữ liệu cá nhân",scenarios:"tình huống mô phỏng",checks:"điểm kiểm tra môi trường",
   scenarioLabel:"Chọn tình huống",scenarioTitle:"Bạn đang ở môi trường nào?",
@@ -177,7 +177,7 @@ vi:{
   ]
 },
 en:{
-  skip:"Skip to workshop",back:"← Dashboard",eyebrow:"Codex Workshop • Lesson 01",headline:"Is your machine ready to build with Codex?",
+  skip:"Skip to workshop",back:"← Portfolio",eyebrow:"Codex Workshop • Lesson 01",headline:"Is your machine ready to build with Codex?",
   lead:"A free bilingual hands-on lesson without API keys. Compare three synthetic environments, then run the real local CLI diagnostic.",
   duration:"20 minutes",offline:"No API calls",privacy:"No personal data collected",scenarios:"synthetic scenarios",checks:"environment checks",
   scenarioLabel:"Pick a scenario",scenarioTitle:"What environment are you in?",
@@ -257,4 +257,4 @@ fetch("./fixtures.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw Erro
 });
 })();
 </script>
-<nav class="codex-portfolio-nav" aria-label="Portfolio navigation"><a href="../../dashboard/#workspace">← Project Map</a><span class="codex-portfolio-sep" aria-hidden="true">|</span><a href="../codex-academy/">Academy ↗</a></nav></body></html>
+<nav class="codex-portfolio-nav" aria-label="Portfolio navigation"><a href="../../">← Portfolio</a><span class="codex-portfolio-sep" aria-hidden="true">|</span><a href="../codex-academy/">Academy ↗</a></nav></body></html>
