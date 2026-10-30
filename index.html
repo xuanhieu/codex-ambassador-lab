@@ -1,5 +1,214 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Codex Ambassador application workspace (independent)</title>
-<meta http-equiv="refresh" content="0;url=/dashboard/">
-<link rel="canonical" href="/dashboard/"><a href="/dashboard/">Mở dashboard</a></html>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; connect-src https://cloudflareinsights.com https://codex.xuanhieu.org/cdn-cgi/rum https://codex-amb-xuanhieu.pages.dev/cdn-cgi/rum; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="Phạm Xuân Hiếu: bilingual (VI/EN) Codex builder and educator. Open-source Codex workshops and tools with source code and tests.">
+<title>Phạm Xuân Hiếu · Codex builder &amp; educator (VI/EN)</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="hub.css">
+<script src="hub.js"></script>
+</head>
+<body>
+<a class="skip" href="#main" data-vi="Bỏ qua tới nội dung">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#top" aria-label="Phạm Xuân Hiếu, back to top"><span class="mark" aria-hidden="true">PXH</span><span class="brand-text"><span lang="vi">Phạm Xuân Hiếu</span><small data-vi="Codex builder · giảng dạy VI/EN">Codex builder · VI/EN educator</small></span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#flagship" data-vi="Dự án chính">Flagship</a>
+      <a href="#teaching" data-vi="Học tập">Teaching</a>
+      <a href="#tools" data-vi="Công cụ">Tools</a>
+      <a href="#demos" data-vi="23 demo">All demos</a>
+      <a href="#plan" data-vi="Kế hoạch">Plan</a>
+    </nav>
+    <div class="controls">
+      <button type="button" class="ctl" id="lang-toggle" aria-label="Xem bằng tiếng Việt" data-label-en="Xem bằng tiếng Việt" data-label-vi="View in English" hidden>VI</button>
+      <button type="button" class="ctl" id="theme-toggle" aria-label="Switch colour theme" hidden><span class="theme-icon" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="top" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow" data-vi="Dự án độc lập · mã nguồn mở · có test">Independent · open source · tested</p>
+      <h1 id="hero-title"><span lang="vi">Phạm Xuân Hiếu</span> <span class="h1-sub" data-vi="— người xây dựng &amp; giảng dạy Codex song ngữ (VI/EN)">— bilingual (VI/EN) Codex builder &amp; educator</span></h1>
+      <p class="mission" data-vi="Sứ mệnh: giúp người làm sản phẩm nói tiếng Việt đi từ prompt đến phần mềm đã được kiểm thử và có thể review, cùng Codex.">Mission: help Vietnamese-speaking builders go from prompt to tested, reviewable software with Codex.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="/demos/agent-ops-clinic/" data-vi="Thử Agent Ops Clinic →">Try the Agent Ops Clinic →</a>
+        <a class="btn ghost" href="https://github.com/xuanhieu" rel="noopener noreferrer">GitHub · xuanhieu ↗</a>
+      </div>
+    </div>
+    <aside class="hero-facts" aria-label="At a glance">
+      <h2 class="facts-title" data-vi="Tóm tắt">At a glance</h2>
+      <dl>
+        <div><dt>23</dt><dd data-vi="demo công khai, mỗi demo có mã nguồn">public demos, each with source</dd></div>
+        <div><dt>36</dt><dd data-vi="test cho Agent Ops Clinic (MIT)">tests in the Agent Ops Clinic (MIT)</dd></div>
+        <div><dt>20′</dt><dd data-vi="workshop song ngữ, 3 bài tập có sẵn">bilingual workshop, 3 built-in exercises</dd></div>
+      </dl>
+      <p class="fine" data-vi="Số test được chạy lại cục bộ ngày 30/10/2026.">Test counts re-run locally on 30 Oct 2026.</p>
+    </aside>
+  </section>
+
+  <section class="band" id="flagship" aria-labelledby="flagship-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">01 · <span data-vi="Dự án chính">Flagship</span></p>
+        <h2 id="flagship-title">Agent Ops Clinic</h2>
+        <p class="lede" data-vi="Phòng lab song ngữ, chạy offline, để luyện giao việc phần mềm cho agent mà vẫn giữ quyền phê duyệt của con người, nhật ký quyết định và trần chi phí.">A local-first, bilingual lab for practising how to delegate software work to agents while keeping human approval, a decision trail and a spend cap.</p>
+      </div>
+      <div class="flagship">
+        <article class="card flag-main">
+          <ul class="chips" aria-label="Key facts">
+            <li>MIT</li>
+            <li data-vi="36 test đạt">36 tests passing</li>
+            <li data-vi="Xây bằng Codex CLI">Built with Codex CLI</li>
+            <li>VI / EN</li>
+          </ul>
+          <h3 data-vi="Workshop 20 phút, 3 bài tập có sẵn">20-minute workshop, 3 built-in exercises</h3>
+          <ol class="exercises">
+            <li><strong data-vi="Làm cho “xong” đo được.">Make done observable.</strong> <span data-vi="Viết tiêu chí nghiệm thu cụ thể rồi chuyển việc cho Planner.">Write a concrete acceptance criterion, then hand the task to the Planner.</span></li>
+            <li><strong data-vi="Bắt một lần bàn giao rủi ro.">Catch a risky handoff.</strong> <span data-vi="Xem vì sao nút phát hành bị khóa, ghi quyết định rủi ro, yêu cầu sửa.">See why release is disabled, record the risk decision, request changes.</span></li>
+            <li><strong data-vi="Để ngân sách nói “không”.">Make the budget say no.</strong> <span data-vi="Đặt trần $1, thấy phát hành vẫn bị chặn cho tới khi mọi cổng kiểm soát đều đạt.">Set a $1 cap and watch release stay blocked until every gate passes.</span></li>
+          </ol>
+          <p class="fine" data-vi="Đây là mô phỏng do tác giả viết, không phải tích hợp Codex hay runtime đa agent.">An authored simulation, not a Codex integration or a multi-agent runtime.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="/demos/agent-ops-clinic/" data-vi="Mở demo trực tiếp →">Open live demo →</a>
+            <a class="btn ghost" href="https://github.com/xuanhieu/agent-ops-clinic" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a>
+          </div>
+        </article>
+        <aside class="card video-slot" aria-labelledby="video-title">
+          <span class="play" aria-hidden="true"></span>
+          <h3 id="video-title" data-vi="Video giới thiệu 30 giây">30-second intro video</h3>
+          <!-- OWNER: replace this <p> with <a class="btn ghost" href="https://www.youtube.com/watch?v=VIDEO_ID" rel="noopener noreferrer">Watch on YouTube ↗</a>. Link out only; no iframe (CSP). -->
+          <p class="pending" data-vi="Sắp có. Video sẽ là liên kết ra YouTube, không nhúng.">Coming soon. It will open on YouTube; nothing is embedded here.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="teaching" aria-labelledby="teaching-title">
+    <div class="sec-head">
+      <p class="kicker">02 · <span data-vi="Lộ trình học">Teaching track</span></p>
+      <h2 id="teaching-title">Codex Path + Academy</h2>
+      <p class="lede" data-vi="Hai ứng dụng tĩnh, song ngữ, không cần tài khoản: một lộ trình học và một thư viện bài học có dẫn nguồn tài liệu chính thức.">Two static, bilingual, no-login apps: a learning plan and a lesson library linked to official documentation.</p>
+    </div>
+    <div class="grid two">
+      <article class="card">
+        <h3>Codex Path</h3>
+        <p data-vi="Lộ trình học và định hướng nghề: 14 hướng đi, 61 bài thực hành VI/EN có checklist, quiz và prompt mẫu. Tiến độ chỉ lưu trên trình duyệt.">Learning and career planner: 14 tracks, 61 bilingual practice lessons with checklists, quizzes and copy-ready prompts. Progress stays in the browser.</p>
+        <div class="links"><a href="/demos/codex-path/" data-vi="Mở app ↗">Open app ↗</a><a href="https://github.com/xuanhieu/codex-learning-path" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a></div>
+      </article>
+      <article class="card">
+        <h3>Codex × ChatGPT Academy</h3>
+        <p data-vi="25 bài học gốc VI/EN qua 5 cấp độ (Zero → Pro), kèm chỉ mục 204 liên kết tài liệu chính thức có thể tìm kiếm.">25 original VI/EN lessons across 5 tiers (Zero → Pro), plus a searchable index of 204 official documentation links.</p>
+        <div class="links"><a href="/demos/codex-academy/" data-vi="Mở app ↗">Open app ↗</a><a href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/codex-academy" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="tools" aria-labelledby="tools-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">03 · <span data-vi="Công cụ hỗ trợ">Supporting tools</span></p>
+        <h2 id="tools-title" data-vi="Năm công cụ, mỗi công cụ giải một vấn đề">Five tools, one problem each</h2>
+        <p class="lede" data-vi="Đều chạy offline trong trình duyệt với dữ liệu mẫu tổng hợp, có test và README song ngữ.">All run offline in the browser on synthetic samples, with tests and a bilingual README.</p>
+      </div>
+      <ul class="tools" role="list">
+        <li class="card tool">
+          <h3>Prompt Injection Clinic</h3>
+          <p class="problem"><span class="lbl" data-vi="Vấn đề">Problem</span> <span data-vi="Tài liệu có thể giấu lệnh điều khiển agent.">Documents can hide instructions aimed at an agent.</span></p>
+          <p class="does"><span class="lbl" data-vi="Giải pháp">What it does</span> <span data-vi="4 tình huống giả lập dạy ranh giới tin cậy: làm sạch, chặn hoặc chuyển cho người duyệt.">Four simulated scenarios teach trust boundaries: sanitise, block or escalate to a human.</span></p>
+          <p class="meta" data-vi="35 test đạt">35 tests passing</p>
+          <div class="links"><a href="/demos/prompt-injection-clinic/" data-vi="Demo ↗">Demo ↗</a><a href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/prompt-injection-clinic" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a></div>
+        </li>
+        <li class="card tool">
+          <h3>Evidence Story Builder</h3>
+          <p class="problem"><span class="lbl" data-vi="Vấn đề">Problem</span> <span data-vi="Portfolio dễ trôi sang những tuyên bố không kiểm chứng được.">Portfolios drift into claims nobody can verify.</span></p>
+          <p class="does"><span class="lbl" data-vi="Giải pháp">What it does</span> <span data-vi="Tách sự thật đã kiểm chứng khỏi tuyên bố, giữ sổ bằng chứng có nhãn nguồn, xuất Markdown/JSON ngay trên máy.">Separates verified facts from claims, keeps an evidence ledger with provenance labels, exports Markdown/JSON locally.</span></p>
+          <p class="meta" data-vi="30 test đạt">30 tests passing</p>
+          <div class="links"><a href="/demos/evidence-story-builder/" data-vi="Demo ↗">Demo ↗</a><a href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/evidence-story-builder" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a></div>
+        </li>
+        <li class="card tool">
+          <h3>Workshop Accessibility Scorecard</h3>
+          <p class="problem"><span class="lbl" data-vi="Vấn đề">Problem</span> <span data-vi="Nhu cầu tiếp cận của người học hay bị bỏ sót trước buổi gặp.">Learners’ access needs get missed before a meetup.</span></p>
+          <p class="does"><span class="lbl" data-vi="Giải pháp">What it does</span> <span data-vi="Checklist VI/EN dùng bàn phím, có trạng thái “Chưa rõ”, chấm điểm xác định và gợi ý ưu tiên; xuất CSV/Markdown. Không phải chứng nhận WCAG.">Keyboard-first VI/EN checklist with a “Not sure” state, deterministic score and prioritised fixes; CSV/Markdown export. Not a WCAG certification.</span></p>
+          <p class="meta" data-vi="15 test đạt">15 tests passing</p>
+          <div class="links"><a href="/demos/workshop-accessibility-scorecard/" data-vi="Demo ↗">Demo ↗</a><a href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/workshop-accessibility-scorecard" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a></div>
+        </li>
+        <li class="card tool">
+          <h3>Approval Drill</h3>
+          <p class="problem"><span class="lbl" data-vi="Vấn đề">Problem</span> <span data-vi="Khi nào agent được làm tiếp, khi nào phải hỏi người, khi nào phải dừng?">When should an agent proceed, escalate or stop?</span></p>
+          <p class="does"><span class="lbl" data-vi="Giải pháp">What it does</span> <span data-vi="12 tác vụ agent giả lập trong 6 nhóm quyền; chọn Làm tiếp / Chuyển duyệt / Chặn và nhận giải thích xác định.">12 synthetic agent tasks across 6 permission categories; choose Proceed / Escalate / Block and get a deterministic explanation.</span></p>
+          <p class="meta" data-vi="16 test Node + 23 test Python đạt">16 Node + 23 Python tests passing</p>
+          <div class="links"><a href="/demos/approval-drill/" data-vi="Demo ↗">Demo ↗</a><a href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/approval-drill" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a></div>
+        </li>
+        <li class="card tool">
+          <h3>Screenshot Privacy Reviewer</h3>
+          <p class="problem"><span class="lbl" data-vi="Vấn đề">Problem</span> <span data-vi="Ảnh chụp màn hình dễ lộ email, khóa, avatar.">Screenshots leak emails, keys and avatars.</span></p>
+          <p class="does"><span class="lbl" data-vi="Giải pháp">What it does</span> <span data-vi="Che vùng nhạy cảm bằng khối đặc, bắt xác nhận đã rà soát rồi mới xuất PNG mới; không upload, không OCR.">Opaque masking with a review-confirmation gate before exporting a fresh PNG; no upload, no OCR.</span></p>
+          <p class="meta" data-vi="31 test đạt">31 tests passing</p>
+          <div class="links"><a href="/demos/screenshot-privacy-reviewer/" data-vi="Demo ↗">Demo ↗</a><a href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/screenshot-privacy-reviewer" rel="noopener noreferrer" data-vi="Mã nguồn ↗">Source ↗</a></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap section" id="demos" aria-labelledby="demos-title">
+    <div class="sec-head">
+      <p class="kicker">04 · <span data-vi="Toàn bộ">Everything</span></p>
+      <h2 id="demos-title" data-vi="Toàn bộ 23 demo">All 23 demos</h2>
+      <p class="lede" data-vi="Mỗi ô mở demo trực tiếp; liên kết “src” dẫn tới mã nguồn trên GitHub.">Each tile opens the live demo; the “src” link goes to GitHub.</p>
+    </div>
+    <ul class="demo-grid" role="list">
+      <li><a class="d-main" href="/demos/codex-path/"><span class="d-id">N119</span>Codex Path — Learning &amp; Career OS</a><a class="d-src" href="https://github.com/xuanhieu/codex-learning-path" rel="noopener noreferrer" aria-label="Codex Path source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/cli-onboarding/"><span class="d-id">N002</span>Codex CLI Onboarding</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/cli-onboarding" rel="noopener noreferrer" aria-label="Codex CLI Onboarding source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/requirements-trace/"><span class="d-id">N094</span>Requirements Trace Matrix</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/requirements-trace" rel="noopener noreferrer" aria-label="Requirements Trace Matrix source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/bug-report-kit/"><span class="d-id">N097</span>Sanitized Bug Report Kit</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/bug-report-kit" rel="noopener noreferrer" aria-label="Sanitized Bug Report Kit source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/vn-code-glossary/"><span class="d-id">N101</span>EN–VI Code Glossary</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/vn-code-glossary" rel="noopener noreferrer" aria-label="EN–VI Code Glossary source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/pr-evidence-receipt/viewer.html"><span class="d-id">N107</span>PR Evidence Receipt</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/pr-evidence-receipt" rel="noopener noreferrer" aria-label="PR Evidence Receipt source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/codex-academy/"><span class="d-id">N118</span>Codex × ChatGPT Academy</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/codex-academy" rel="noopener noreferrer" aria-label="Codex × ChatGPT Academy source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/agent-ops-clinic/"><span class="d-id">O001</span>Agent Ops Clinic</a><a class="d-src" href="https://github.com/xuanhieu/agent-ops-clinic" rel="noopener noreferrer" aria-label="Agent Ops Clinic source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/docs-change-radar/"><span class="d-id">N104</span>Documentation Change Radar</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/docs-change-radar" rel="noopener noreferrer" aria-label="Documentation Change Radar source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/evidence-chain/"><span class="d-id">N108</span>Evidence Chain Exporter</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/evidence-chain" rel="noopener noreferrer" aria-label="Evidence Chain Exporter source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/approval-drill/"><span class="d-id">N110</span>Agent Approval Drill</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/approval-drill" rel="noopener noreferrer" aria-label="Agent Approval Drill source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/screenshot-privacy-reviewer/"><span class="d-id">N111</span>Screenshot Privacy Reviewer</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/screenshot-privacy-reviewer" rel="noopener noreferrer" aria-label="Screenshot Privacy Reviewer source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/rate-limit-recovery/"><span class="d-id">N112</span>API Rate Limit Recovery Simulator</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/rate-limit-recovery" rel="noopener noreferrer" aria-label="API Rate Limit Recovery Simulator source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/readme-quality-linter/"><span class="d-id">N065</span>README Quality Linter — 12 Checkpoints</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/readme-quality-linter" rel="noopener noreferrer" aria-label="README Quality Linter source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/workshop-curriculum-planner/"><span class="d-id">N074</span>Workshop Curriculum Planner</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/workshop-curriculum-planner" rel="noopener noreferrer" aria-label="Workshop Curriculum Planner source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/zero-token-workshop/"><span class="d-id">N003</span>Zero-Token Workshop</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/zero-token-workshop" rel="noopener noreferrer" aria-label="Zero-Token Workshop source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/human-review-checklist/"><span class="d-id">N006</span>Human Review Checklist</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/human-review-checklist" rel="noopener noreferrer" aria-label="Human Review Checklist source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/first-pr-clinic/"><span class="d-id">O004</span>First Pull Request Clinic</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/first-pr-clinic" rel="noopener noreferrer" aria-label="First Pull Request Clinic source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/issue-to-workshop/"><span class="d-id">N106</span>Issue-to-Workshop Converter</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/issue-to-workshop" rel="noopener noreferrer" aria-label="Issue-to-Workshop Converter source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/reproducibility-receipt/"><span class="d-id">N078</span>Reproducibility Receipt</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/reproducibility-receipt" rel="noopener noreferrer" aria-label="Reproducibility Receipt source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/prompt-injection-clinic/"><span class="d-id">N019</span>Prompt Injection Defense Clinic</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/prompt-injection-clinic" rel="noopener noreferrer" aria-label="Prompt Injection Defense Clinic source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/evidence-story-builder/"><span class="d-id">N071</span>Evidence-to-Story Portfolio Builder</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/evidence-story-builder" rel="noopener noreferrer" aria-label="Evidence-to-Story Portfolio Builder source">src ↗</a></li>
+      <li><a class="d-main" href="/demos/workshop-accessibility-scorecard/"><span class="d-id">N058</span>Workshop Accessibility Scorecard</a><a class="d-src" href="https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/workshop-accessibility-scorecard" rel="noopener noreferrer" aria-label="Workshop Accessibility Scorecard source">src ↗</a></li>
+    </ul>
+  </section>
+
+  <section class="wrap section" id="plan" aria-labelledby="plan-title">
+    <div class="sec-head">
+      <p class="kicker">05 · <span data-vi="Nếu được chọn">If selected</span></p>
+      <h2 id="plan-title" data-vi="Tôi dự định đóng góp thế nào nếu trở thành ambassador">How I’d contribute as an ambassador (if selected)</h2>
+      <p class="lede" data-vi="Đây là kế hoạch, không phải thành tích đã đạt.">These are plans, not past achievements.</p>
+    </div>
+    <ol class="plan">
+      <li class="card"><h3 data-vi="Workshop song ngữ hằng tháng">A monthly bilingual workshop</h3><p data-vi="Dựa trên 3 bài tập của Agent Ops Clinic: tiêu chí nghiệm thu, bàn giao rủi ro, cổng ngân sách. Mỗi buổi 20 phút thực hành, tiếng Việt và tiếng Anh.">Built on the Clinic’s three exercises: acceptance criteria, risky handoffs and budget gates. Twenty minutes of hands-on practice in Vietnamese and English.</p></li>
+      <li class="card"><h3 data-vi="Hướng dẫn VI/EN">VI/EN written guides</h3><p data-vi="Biến các phần “Thử với Codex” trong README thành hướng dẫn ngắn: một prompt, một lệnh test, một tiêu chí đạt rõ ràng.">Turn each README’s “Try it with Codex” section into a short guide: one prompt, one test command, one clear pass condition.</p></li>
+      <li class="card"><h3 data-vi="Phản hồi công khai">Open feedback loop</h3><p data-vi="Nhận góp ý qua GitHub issues và cập nhật bài tập khi tài liệu Codex thay đổi.">Take feedback through GitHub issues and update exercises when the Codex docs change.</p></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <p data-vi="Dự án độc lập · không liên kết với và không được OpenAI xác nhận">Independent project · not affiliated with or endorsed by OpenAI</p>
+    <p><a href="https://github.com/xuanhieu" rel="noopener noreferrer">GitHub · xuanhieu ↗</a></p>
+  </div>
+</footer>
+</body>
+</html>
