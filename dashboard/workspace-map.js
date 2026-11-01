@@ -68,7 +68,7 @@ window.AMB_WORKSPACE_MAP=[
     "docs": "../demos/codex-academy/README.md",
     "file": "demos/codex-academy/",
     "status": "public",
-    "source": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/codex-academy"
+    "source": "https://codex.xuanhieu.org/demos/codex-academy/"
   },
   {
     "id": "O001",

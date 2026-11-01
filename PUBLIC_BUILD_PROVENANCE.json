@@ -1,7 +1,8 @@
 {
   "source": "certified Cloudflare Pages public dist",
   "digest": "bb480c052d6372b55d5655459851ce5fc14a02f46966e09333686b191217a2d4",
-  "source_assets": 225,
+  "source_assets": 179,
   "apps": 23,
-  "personal_data": "excluded"
+  "personal_data": "excluded",
+  "note": "Codex Path and Academy source excluded; live apps only."
 }

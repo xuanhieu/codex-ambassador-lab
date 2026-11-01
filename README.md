@@ -6,17 +6,17 @@ Independent practical apps and tutorials about Codex and ChatGPT. Source mirror 
 
 ## Interactive demo catalog
 
-23 tested teaching demos, each with its own source folder.
+23 tested teaching demos. 21 have their source here; Codex Path and the Codex × ChatGPT Academy are published as live apps only.
 
 | ID | Product | Source / public demo |
 |---|---|---|
-| N119 | Codex Path — Learning &amp; Career OS | [Source](./demos/codex-path/) · [Live](https://codex.xuanhieu.org/demos/codex-path/) |
+| N119 | Codex Path — Learning &amp; Career OS | [Live app](https://codex.xuanhieu.org/demos/codex-path/) (source private) |
 | N002 | Codex CLI Onboarding | [Source](./demos/cli-onboarding/) · [Live](https://codex.xuanhieu.org/demos/cli-onboarding/) |
 | N094 | Requirements Trace Matrix | [Source](./demos/requirements-trace/) · [Live](https://codex.xuanhieu.org/demos/requirements-trace/) |
 | N097 | Sanitized Bug Report Kit | [Source](./demos/bug-report-kit/) · [Live](https://codex.xuanhieu.org/demos/bug-report-kit/) |
 | N101 | EN–VI Code Glossary | [Source](./demos/vn-code-glossary/) · [Live](https://codex.xuanhieu.org/demos/vn-code-glossary/) |
 | N107 | PR Evidence Receipt | [Source](./demos/pr-evidence-receipt/) · [Live](https://codex.xuanhieu.org/demos/pr-evidence-receipt/) |
-| N118 | Codex × ChatGPT Academy | [Source](./demos/codex-academy/) · [Live](https://codex.xuanhieu.org/demos/codex-academy/) |
+| N118 | Codex × ChatGPT Academy | [Live app](https://codex.xuanhieu.org/demos/codex-academy/) (source private) |
 | O001 | Agent Ops Clinic | [Source](./demos/agent-ops-clinic/) · [Live](https://codex.xuanhieu.org/demos/agent-ops-clinic/) |
 | N104 | Documentation Change Radar | [Source](./demos/docs-change-radar/) · [Live](https://codex.xuanhieu.org/demos/docs-change-radar/) |
 | N108 | Evidence Chain Exporter | [Source](./demos/evidence-chain/) · [Live](https://codex.xuanhieu.org/demos/evidence-chain/) |
@@ -42,12 +42,11 @@ From repository root:
 Open: http://127.0.0.1:4177/
 
 Examples of offline tests:
-    node --test demos/codex-path/tests/test_engine.cjs
     node --test demos/agent-ops-clinic/tests/domain.test.js
     node --test demos/screenshot-privacy-reviewer/tests/test_redaction.cjs
 
 The public release contains only allowlisted files from Cloudflare Pages; local personal form data, secrets, browser sessions and raw private agent logs have not been included.
 
-A standalone Codex Learning Path repository is separately available under the same GitHub account. Original vendor code retains its own licensing notices; no blanket license is implied.
+Original vendor code retains its own licensing notices; no blanket license is implied.
 
 For current Codex commands use official documentation at https://developers.openai.com/codex.

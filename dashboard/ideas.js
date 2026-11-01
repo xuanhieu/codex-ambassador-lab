@@ -1501,7 +1501,7 @@ window.AMB_EXTRA_IDEAS=[
     "localUnitTests": 56,
     "publicUrl": "https://codex.xuanhieu.org/demos/codex-academy/",
     "verifiedAt": "2026-10-24",
-    "sourceUrl": "https://github.com/xuanhieu/codex-ambassador-lab/tree/main/demos/codex-academy"
+    "sourceUrl": "https://codex.xuanhieu.org/demos/codex-academy/"
   },
   {
     "id": "N119",
